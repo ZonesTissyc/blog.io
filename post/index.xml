@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on ZTC&#39;Blog</title>
+        <link>http://localhost:1313/post/</link>
+        <description>Recent content in Posts on ZTC&#39;Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>ZTC@</copyright>
+        <lastBuildDate>Sun, 29 Dec 2024 16:26:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>非线性齐次方程组</title>
+        <link>http://localhost:1313/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
+        <pubDate>Sun, 29 Dec 2024 16:26:23 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</guid>
+        <description>&lt;h2 id=&#34;从一个例子说起&#34;&gt;从一个例子说起
+&lt;/h2&gt;&lt;p&gt;在使用拉格朗日乘数法求极值时，列出了下面的方程组：&lt;/p&gt;
+$$
+\left \{
+\begin{aligned}
+L_{x_1} &amp;= p_1 + \lambda \alpha x_1^{\alpha -1} = 0 \\\\
+L_{x_2} &amp;= p_2 + \lambda \beta  x_2^{\beta  -1} = 0 \\\\
+L_{\lambda} &amp;= x_1^{\alpha}x_2^{\beta} -6 = 0 \\\\
+&amp; \alpha + \beta = 1
+\end{aligned}
+\right.
+$$&lt;p&gt;其中，把$p_1,p_2,\alpha ,\beta$均看做变量。求$x_1,x_2$的最简表达式（解）。&lt;/p&gt;
+&lt;p&gt;下面是一种解法&lt;/p&gt;
+&lt;h2 id=&#34;解法一&#34;&gt;解法一
+&lt;/h2&gt;&lt;h3 id=&#34;步骤-1从-lambda-的表达式出发&#34;&gt;&lt;strong&gt;步骤 1：从 $\lambda$ 的表达式出发&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;从第一式：
+&lt;/p&gt;
+$$
+\lambda = -\frac{p_1}{\alpha x_1^{\alpha - 1}},
+$$&lt;p&gt;
+从第二式：
+&lt;/p&gt;
+$$
+\lambda = -\frac{p_2}{\beta x_2^{\beta - 1}}.
+$$&lt;p&gt;
+消去 $\lambda$：
+&lt;/p&gt;
+$$
+\frac{p_1}{\alpha x_1^{\alpha - 1}} = \frac{p_2}{\beta x_2^{\beta - 1}}.
+$$&lt;p&gt;
+化简得：
+&lt;/p&gt;
+$$
+\frac{x_2^{\beta - 1}}{x_1^{\alpha - 1}} = \frac{\alpha p_2}{\beta p_1}.
+$$&lt;p&gt;
+两边同乘 $x_1^{\alpha - 1}$ 和 $x_2^{1 - \beta}$，得：
+&lt;/p&gt;
+$$
+\frac{x_1}{x_2} = \frac{\beta p_1}{\alpha p_2}.
+$$&lt;p&gt;
+即：
+&lt;/p&gt;
+$$
+x_1 = x_2 \cdot \frac{\beta p_1}{\alpha p_2}.
+$$&lt;hr&gt;
+&lt;p&gt;由约束条件：
+&lt;/p&gt;
+$$
+x_1^\alpha x_2^\beta = 6,
+$$&lt;p&gt;
+代入 $x_1 = x_2 \cdot \frac{\beta p_1}{\alpha p_2}$：
+&lt;/p&gt;
+$$
+\left(x_2 \cdot \frac{\beta p_1}{\alpha p_2}\right)^\alpha \cdot x_2^\beta = 6.
+$$&lt;p&gt;
+展开：
+&lt;/p&gt;
+$$
+x_2^\alpha \cdot \left(\frac{\beta p_1}{\alpha p_2}\right)^\alpha \cdot x_2^\beta = 6.
+$$$$
+x_2^{\alpha + \beta} \cdot \left(\frac{\beta p_1}{\alpha p_2}\right)^\alpha = 6.
+$$&lt;p&gt;
+由于 $\alpha + \beta = 1$，所以：
+&lt;/p&gt;
+$$
+x_2 \cdot \left(\frac{\beta p_1}{\alpha p_2}\right)^\alpha = 6.
+$$&lt;p&gt;
+解出 $x_2$：
+&lt;/p&gt;
+$$
+x_2 = \frac{6}{\left(\frac{\beta p_1}{\alpha p_2}\right)^\alpha}.
+$$&lt;p&gt;
+整理为：
+&lt;/p&gt;
+$$
+x_2 = 6 \cdot \left(\frac{\alpha p_2}{\beta p_1}\right)^\alpha.
+$$&lt;hr&gt;
+&lt;h3 id=&#34;步骤-3求-x_1&#34;&gt;&lt;strong&gt;步骤 3：求 $x_1$&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;由 $x_1 = x_2 \cdot \frac{\beta p_1}{\alpha p_2}$，代入 $x_2$ 的解：
+&lt;/p&gt;
+$$
+x_1 = \left(6 \cdot \left(\frac{\alpha p_2}{\beta p_1}\right)^\alpha\right) \cdot \frac{\beta p_1}{\alpha p_2}.
+$$&lt;p&gt;
+化简：
+&lt;/p&gt;
+$$
+x_1 = 6 \cdot \left(\frac{\alpha p_2}{\beta p_1}\right)^\alpha \cdot \frac{\beta p_1}{\alpha p_2}.
+$$$$
+x_1 = 6 \cdot \left(\frac{\alpha p_2}{\beta p_1}\right)^{\alpha - 1}.
+$$&lt;hr&gt;
+&lt;h3 id=&#34;最终结果&#34;&gt;&lt;strong&gt;最终结果&lt;/strong&gt;
+&lt;/h3&gt;$$
+x_1 = 6 \cdot \left(\frac{\alpha p_2}{\beta p_1}\right)^{\beta},
+$$$$
+x_2 = 6 \cdot \left(\frac{\beta p_1}{\alpha p_2}\right)^{\alpha}.
+$$&lt;hr&gt;
+&lt;h3 id=&#34;结果对称性&#34;&gt;&lt;strong&gt;结果对称性&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;可以验证：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;将 $\alpha, \beta$ 互换，同时交换 $p_1, p_2$，$x_1$ 和 $x_2$ 会对称互换。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;符合对称轮换性。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最终结果：
+&lt;/p&gt;
+$$
+x_1 = 6 \cdot \left(\frac{\alpha p_2}{\beta p_1}\right)^\beta, \quad 
+x_2 = 6 \cdot \left(\frac{\beta p_1}{\alpha p_2}\right)^\alpha.
+$$</description>
+        </item>
+        <item>
+        <title>分母低次幂积型的不定积分</title>
+        <link>http://localhost:1313/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</link>
+        <pubDate>Wed, 25 Dec 2024 18:05:10 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</guid>
+        <description>&lt;h2 id=&#34;定义&#34;&gt;定义
+&lt;/h2&gt;&lt;p&gt;约定有理真分式
+&lt;/p&gt;
+$$\frac{P(x)}{Q(x)}=\frac{P(x)}{c_0(x-a)^k(x^2+px+q)}$$&lt;p&gt;
+,（其中$k$,$l$是正整数，$p^2-4q&amp;lt;0$）
+可唯一因式分解为有限个最简有理分式之和，即
+&lt;/p&gt;
+$$
+\frac{P(x)}{Q(x)}=\frac{A_1}{x-a}+\frac{A_2}{(x-a)^2}+\cdots+\frac{A_k}{(x-a)^k} + \frac{B_1x+D_1}{x^2+px+q}+\frac{B_2x+D_2}{x^2+px+q}+\cdots+\frac{B_lx+D_l}{x^2+px+q}
+$$$$\begin{aligned}
+S_{△ABC}
+&amp; = \frac{底 * 高}{2} \\
+&amp; = 8
+\end{aligned}$$</description>
+        </item>
+        <item>
+        <title>三角函数的积分</title>
+        <link>http://localhost:1313/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
+        <pubDate>Sat, 14 Dec 2024 16:10:48 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
+        <description>&lt;h2 id=&#34;基本三角函数的积分&#34;&gt;基本三角函数的积分
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;$$\int \sin x dx=-\cos x+C$$&lt;/li&gt;
+&lt;li&gt;$$\int \cos x dx=\sin x+C$$&lt;/li&gt;
+&lt;li&gt;$$\int \tan x dx=-\ln |\cos x|+C$$&lt;/li&gt;
+&lt;li&gt;$$\int \sec x dx = \ln |\sec x + \tan x|+C$$&lt;/li&gt;
+&lt;li&gt;$$\int \csc x dx = \ln |\csc x - \cot x|+C$$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;类型1&#34;&gt;类型1
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+$$\int \frac{1}{(x^2-2x+2)^2}dx$$&lt;p&gt;分母为二次最简式，尝试写成$((x-c)^2+A)^2$的形式。
+分母&lt;/p&gt;
+$$(x^2-2x+2)^2 = ((x-1)^2+1)^2$$&lt;p&gt;
+令$x-1=\tan x$，则$x=\tan x +1$&lt;/p&gt;
+&lt;p&gt;分母为$((\tan t)^2+1)^2=\sec^4 t$&lt;/p&gt;
+&lt;p&gt;$dx = \sec^2 t$&lt;/p&gt;
+&lt;p&gt;于是，原式为&lt;/p&gt;
+$$
+    \begin{split}
+    I &amp;= \int \frac{1}{(x^2-2x+2)^2}dx \\\\
+    &amp;= \int \frac{1}{\sec^4 t} \sec^2 t dt \\\\
+    &amp;= \int \cos^2 t dt \\\\
+    &amp;= \frac{t}{2}+\frac{\sin 2t}{4}+C \\\\
+    &amp;= \frac{t}{2}+\frac{\sin t \cos t}{2}+C \\\\
+    \end{split}
+    $$&lt;p&gt;注意到，
+在三角形中，&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>开根号</title>
+        <link>http://localhost:1313/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</link>
+        <pubDate>Fri, 06 Dec 2024 20:51:30 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</guid>
+        <description>&lt;h2 id=&#34;例&#34;&gt;例
+&lt;/h2&gt;$$
+\begin{align}
+\sqrt{37} &amp; = \sqrt{\frac{73^2-1}{12^2}} \\ 
+&amp; = \sqrt{\frac{73^2}{12^2} \cdot \frac{73^2-1}{73^2}} \\ 
+&amp; = \frac{73}{12} \sqrt{1 - \frac{1}{73^2}} \\ &amp; \approx \frac{73}{12} \left( 1 - \frac{1}{2 \cdot 73^2} \right) 
+\end{align}
+$$</description>
+        </item>
+        <item>
+        <title>有理函数的积分</title>
+        <link>http://localhost:1313/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
+        <pubDate>Fri, 06 Dec 2024 20:51:30 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
+        <description>&lt;h2 id=&#34;什么是有理函数&#34;&gt;什么是有理函数
+&lt;/h2&gt;&lt;p&gt;设$f(x)$是定义在$D$上的函数，若存在$F(x)$，使得$f(x)$在$D$上的任一开区间上都有定义，且$F(x)$在$D$上连续，则称$F(x)$为$f(x)$的原函数，记作$F(x)=f(x)+C$，其中$C$是任意常数。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;对于一个函数$f(x)$，若$f(x)$可以表示为以下形式：&lt;/strong&gt;
+&lt;/p&gt;
+$$
+f(x)=\frac{P(x)}{Q(x)}
+$$&lt;p&gt;
+其中$P(x)$和$Q(x)$是两个&lt;em&gt;多项式&lt;/em&gt;函数，且$Q(x)$的最高次项系数不为0，则称$f(x)$为有理函数。&lt;/p&gt;
+&lt;h2 id=&#34;有理函数的积分方法&#34;&gt;有理函数的积分方法
+&lt;/h2&gt;&lt;p&gt;接下来逐级讨论不同复杂度的积分方法。这里设$P(x)$的最高次项为$p$，$Q(x)$的最高次项为$q$。&lt;/p&gt;
+&lt;h3 id=&#34;p0-q0的类型&#34;&gt;p=0, q&amp;gt;0的类型
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+$$\int \frac{1}{x}dx$$&lt;/li&gt;
+&lt;li&gt;
+$$\int \frac{1}{x+3}dx$$&lt;p&gt;此类型可直接找出原函数，如(2)为 $ln|x+3|+C$。&lt;/p&gt;
+&lt;p&gt;类似的，
+&lt;/p&gt;
+$$
+    \int \frac{1}{1+x^2} dx= \frac{1}{2} \arctan x +C,
+    $$$$
+    \int \frac{1}{x^q}dx = \frac{x^{1-q}}{1-q} +C
+    $$$$
+    \int \frac{1}{ax+b} dx = \frac{1}{a} \ln |x+\frac{b}{a}| +C
+    $$&lt;p&gt;将x升高次数，令q=2&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+$$\int \frac{1}{x^2+3}dx$$&lt;p&gt;
+此类型分母可以写成 $(x-c)^2 \pm a^2$的形式。&lt;/p&gt;
+&lt;p&gt;如为$x^2+a^2$,&lt;/p&gt;
+$$
+    \int \frac{1}{x^2+a^2} dx = \frac{1}{a} \arctan (\frac{x}{a}) +C
+    $$&lt;/li&gt;
+&lt;li&gt;
+$$\int \frac{1}{x^2-3} dx$$&lt;p&gt;
+该题与题$3$一样，不过分母变为$x^2-(\sqrt{3})^2$,&lt;/p&gt;
+&lt;p&gt;如果分母为$x^2-a^2$,&lt;/p&gt;
+$$
+    \int \frac{1}{x^2-a^2} dx = \frac{1}{2a} \int (\frac{1}{x-a}-\frac{1}{x+a}) dx =  \frac{1}{2a} \ln \mid \frac{x-a}{x+a} \mid +C
+    $$&lt;/li&gt;
+&lt;li&gt;
+$$\int \frac{1}{x^2-5x}dx$$&lt;p&gt;
+此类分母的二次方程常数为$0$，一次项系数不为$0$，即$\frac{1}{x^2+bx}$型
+将分母化为$x(x+b)$
+即得，
+&lt;/p&gt;
+$$
+   \int \frac{1}{x^2+bx} dx = \frac{1}{b} \int (\frac{1}{x}-\frac{1}{x+b})dx = \frac{1}{b} \ln \mid \frac{x}{x+b} \mid +C
+   $$&lt;/li&gt;
+&lt;li&gt;
+$$\int \frac{1}{x^2+3x+2}dx$$&lt;p&gt;此类分母的二次方程常数为$0$，一次项系数不为$0$，即$\frac{1}{x^2+bx}$型难以将分母化为上面的形式。
+需将分母化为$(x-c)^2 \pm a^2$的形式
+对于本题，不妨设
+&lt;/p&gt;
+$$(x-c)^2+A = x^2+3x+2$$&lt;p&gt;
+解得，&lt;/p&gt;
+$$
+    \begin{matrix} c=-\frac{3}{2} \\A=-\frac{1}{4}\end{matrix}
+    $$&lt;p&gt;
+原式&lt;/p&gt;
+$$
+    = \int \frac{1}{(x+\frac{3}{2})^2-(\frac{1}{2})^2}dx
+    $$&lt;p&gt;
+再用$3.$与$4.$的方法进一步求出积分&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;p1-q1的类型&#34;&gt;p=1, q&amp;gt;1的类型
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+$$\int \frac{3x}{x^2+3x+4}dx$$&lt;p&gt;
+此类分母的的一次项系数与常数项不为0，即$\frac{ax+c}{x^2+px+q}$型，且有$p^2-4aq&amp;lt;0$。此时分母在实数范围内无法写成$(x-a)(x-b)$的形式。我们称此时分母最简。&lt;/p&gt;
+&lt;p&gt;对于本题，不妨设$u=x^2+3x+4$,$du = 2x+3$
+分子&lt;/p&gt;
+$$3x=\frac{3}{2}[(2x+3)-\frac{9}{2}]$$$$
+    I = \frac{3}{2}(\int \frac{2x+3}{x^2+3x+4}dx - \frac{9}{2} \int \frac{1}{x^+3x+4}dx)
+    $$&lt;p&gt;再用上述方法进一步求积分。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+$$\int \frac{3x}{x^2+3x-4}dx$$&lt;p&gt;此类分母的的一次项系数与常数项不为0，即$\frac{ax+c}{x^2+px+q}$型，且有$p^2-4aq&amp;gt;0$。此时分母在实数范围内可以写成$(x-a)(x-b)$的形式。&lt;/p&gt;
+&lt;p&gt;将分母化为$(x+4)(x-1)$&lt;/p&gt;
+$$
+    I = \frac{3}{5} (\ln |\frac{x-1}{x+4}|) +C
+    $$&lt;p&gt;当然，也可以用$1.$的方法进一步求积分。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+$$\int \frac{3x+3}{x^2+3x+4}dx$$&lt;p&gt;分子有常数项，可以用$1.$和$2.$的思路。&lt;/p&gt;
+&lt;p&gt;到现在，形如&lt;/p&gt;
+$$\int \frac{ax+c}{x^2+px+q}dx$$&lt;p&gt;
+的积分可求&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;pq2的类型&#34;&gt;p=q=2的类型
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+$$\int \frac{3x^2+3x}{x^2+3x+4}dx$$&lt;p&gt;
+分子和分母最高次均为2，可以将分母为基准进行参变分离。&lt;/p&gt;
+&lt;p&gt;本题可化为，&lt;/p&gt;
+$$
+    \begin{align}
+    I &amp;= \int \frac{3(x^2+3x+4)-6x-12}{x^2+3x+4} dx \\
+    &amp;= 3 \int dx - \int \frac{6x+12}{x^2+3x+4} dx
+    \end{align}
+    $$&lt;p&gt;因此，形如，&lt;/p&gt;
+$$
+    \int \frac{ax^2+bx+c}{x^2+px+q}dx
+    $$&lt;p&gt;的积分可求。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;qp2的类型&#34;&gt;q&amp;gt;p&amp;gt;2的类型
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+$$\int \frac{x^2+3x+4}{x^3+3x^2+2x}dx$$&lt;p&gt;
+分子和分母最高次均大于2，可以将分母为基准因式分解。&lt;/p&gt;
+&lt;p&gt;分母可化为, $x(x+1)(x+2)$.
+原式化为，&lt;/p&gt;
+$$
+    \begin{split}
+    I &amp;= \int \frac{x^2+3x+4}{x(x+1)(x+2)}dx
+    \\
+    &amp;= \int ( \frac{2}{x} - \frac{2}{x+1}+ \frac{1}{x+2})dx
+    \end{split}
+    $$&lt;/li&gt;
+&lt;li&gt;
+$$\int \frac{x^2+3x+4}{x^3+3x^2+2x+1}dx$$&lt;p&gt;此时不可以将分母为基准因式分解，分部积分与换元积分均失效。
+无法写成初等函数的形式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;pq2的类型-1&#34;&gt;p&amp;gt;q=2的类型
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+$$\int \frac{x^4}{x^2-3}dx$$&lt;p&gt;
+此类可以用多项式的除法对分子进行分离。&lt;/p&gt;
+$$
+    \begin{split}
+    &amp;\underline{x^2+3} \\
+    x^2-3)&amp;x^4 \\
+    &amp;\underline{x^4-3x^2} \\
+    &amp;3x^2 \\
+    &amp;\underline{3x^2-9} \\
+    &amp;9
+    \end{split}
+    $$&lt;p&gt;原式可以化为，&lt;/p&gt;
+$$
+    \begin{split}
+    I = \int (x^2+3) + \frac{9}{x^2+3}dx
+    \end{split}
+    $$&lt;p&gt;因此，形如， &lt;/p&gt;
+$$\int \frac{ax^p+mx^{p-1}+\cdots +C}{x^2+bx+c}dx$$&lt;p&gt;的积分可求。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;分母低次幂积型&#34;&gt;分母低次幂积型
+&lt;/h2&gt;&lt;p&gt;约定有理真分式$\frac{P(x)}{Q(x)}=\frac{P(x)}{c_0(x-a)^k(x^2+px+q)}$,（其中$k$,$l$是正整数，$p^2-4q&amp;lt;0$）
+可唯一因式分解为有限个最简有理分式之和，即
+&lt;/p&gt;
+$$
+\frac{P(x)}{Q(x)}=\frac{A_1}{x-a}+\frac{A_2}{(x-a)^2}+\cdots+\frac{A_k}{(x-a)^k} + \frac{B_1x+D_1}{x^2+px+q}+\frac{B_2x+D_2}{x^2+px+q}+\cdots+\frac{B_lx+D_l}{x^2+px+q}
+$$&lt;p&gt;
+满足上面要求，则可以用待定系数法改写成上述形式。&lt;/p&gt;
+&lt;h2 id=&#34;例题&#34;&gt;例题
+&lt;/h2&gt;&lt;p&gt;最后，试试下面的例子。&lt;/p&gt;
+$$
+\int \frac{3x+6}{(x-1)^2(x^2+x+1)}dx
+$$&lt;p&gt;相信聪明的你一定可以求出。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
