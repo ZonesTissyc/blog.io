@@ -132,7 +132,18 @@ $$</description>
         <pubDate>Tue, 31 Dec 2024 16:19:08 +0800</pubDate>
         
         <guid>https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</guid>
-        <description></description>
+        <description>&lt;h2 id=&#34;最大公因数问题&#34;&gt;最大公因数问题
+&lt;/h2&gt;&lt;p&gt;任给两个不全为零的整数，必存在一个的数，它同时是两个数的因子，这个数称为&lt;strong&gt;公因数&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;不互质的两个数的公因数可以有多个，寻找最大的公因数就被称为&lt;strong&gt;最大公因数问题&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;设有两个非零整数$a,b$，其最大公因数可表示为&lt;/p&gt;
+$$
+(a,b)
+$$&lt;p&gt;例如，&lt;/p&gt;
+$$
+(4,6) = 2
+$$&lt;h2 id=&#34;小学二年级做法&#34;&gt;小学二年级做法
+&lt;/h2&gt;&lt;p&gt;小学二年级时我们已经知道，可以使用&lt;strong&gt;短除法&lt;/strong&gt;来先找出所有的公因数，再把他们相乘。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>Linux Shell的基础命令</title>
