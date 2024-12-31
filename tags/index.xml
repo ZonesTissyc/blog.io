@@ -6,6 +6,15 @@
         <description>Recent content in Tags on ZTC&#39;Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>ZTC@</copyright><atom:link href="https://blog.ztcdream.top/tags/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>ZTC@</copyright>
+        <lastBuildDate>Tue, 31 Dec 2024 12:22:21 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux-Shell</title>
+        <link>https://blog.ztcdream.top/tags/linux-shell/</link>
+        <pubDate>Tue, 31 Dec 2024 12:22:21 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.top/tags/linux-shell/</guid>
+        <description></description>
+        </item>
+        
     </channel>
 </rss>

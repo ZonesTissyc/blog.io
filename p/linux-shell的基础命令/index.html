@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="涉及知识点\r能斯特方程：$E = E^{\\circ}+\\frac{0.0592V}{n}\\lg\\frac{[氧化态]}{[还原态]}$（在$298K$时），用于计算非标准状态下电极电势，其中$E$为非标准电极电势，$E^{\\circ}$为标准电极电势，$n$为电极反应中转移的电子数。\n$Fe^{3+}/Fe^{2+}$电对的电极反应：$Fe^{3+}+e^-\\rightleftharpoons Fe^{2+}$，$n = 1$，标准电极电势$E^{\\circ}(Fe^{3+}/Fe^{2+}) = 0.771V$。\n解题思路\r已知$E^{\\circ}(Fe^{3+}/Fe^{2+}) = 0.771V$，$c(Fe^{3+}) = 0.2000mol/L$，假设$c(Fe^{2+}) = 1mol/L$（标准浓度）。 根据能斯特方程$E = E^{\\circ}+\\frac{0.0592V}{n}\\lg\\frac{[Fe^{3+}]}{[Fe^{2+}]}$计算电极电势$E$。 计算过程\r$$ \\begin{aligned} E &= 0.771V+\\frac{0.0592V}{1}\\lg\\frac{0.2000mol/L}{1mol/L} \\\\ &= 0.771V + 0.0592V\\times\\lg0.2 \\\\ &= 0.771V + 0.0592V\\times(- 0.699) (\\lg0.2\\approx - 0.699) \\\\ &\\approx 0.771V - 0.041V \\\\ &= 0.730V \\end{aligned} $$所以当$c(Fe^{3+}) = 0.2000mol/L$时，$Fe^{3+}/Fe^{2+}$电对的电极电势约为$0.730V$。（计算结果保留三位有效数字）\n">
-<title>电极电势</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="文件与目录\r">
+<title>Linux Shell的基础命令</title>
 
-<link rel='canonical' href='https://blog.ztcdream.top/p/%E7%94%B5%E6%9E%81%E7%94%B5%E5%8A%BF/'>
+<link rel='canonical' href='https://blog.ztcdream.top/p/linux-shell%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/'>
 
-<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="电极电势">
-<meta property='og:description' content="涉及知识点\r能斯特方程：$E = E^{\\circ}+\\frac{0.0592V}{n}\\lg\\frac{[氧化态]}{[还原态]}$（在$298K$时），用于计算非标准状态下电极电势，其中$E$为非标准电极电势，$E^{\\circ}$为标准电极电势，$n$为电极反应中转移的电子数。\n$Fe^{3+}/Fe^{2+}$电对的电极反应：$Fe^{3+}+e^-\\rightleftharpoons Fe^{2+}$，$n = 1$，标准电极电势$E^{\\circ}(Fe^{3+}/Fe^{2+}) = 0.771V$。\n解题思路\r已知$E^{\\circ}(Fe^{3+}/Fe^{2+}) = 0.771V$，$c(Fe^{3+}) = 0.2000mol/L$，假设$c(Fe^{2+}) = 1mol/L$（标准浓度）。 根据能斯特方程$E = E^{\\circ}+\\frac{0.0592V}{n}\\lg\\frac{[Fe^{3+}]}{[Fe^{2+}]}$计算电极电势$E$。 计算过程\r$$ \\begin{aligned} E &= 0.771V+\\frac{0.0592V}{1}\\lg\\frac{0.2000mol/L}{1mol/L} \\\\ &= 0.771V + 0.0592V\\times\\lg0.2 \\\\ &= 0.771V + 0.0592V\\times(- 0.699) (\\lg0.2\\approx - 0.699) \\\\ &\\approx 0.771V - 0.041V \\\\ &= 0.730V \\end{aligned} $$所以当$c(Fe^{3+}) = 0.2000mol/L$时，$Fe^{3+}/Fe^{2+}$电对的电极电势约为$0.730V$。（计算结果保留三位有效数字）\n">
-<meta property='og:url' content='https://blog.ztcdream.top/p/%E7%94%B5%E6%9E%81%E7%94%B5%E5%8A%BF/'>
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="Linux Shell的基础命令">
+<meta property='og:description' content="文件与目录\r">
+<meta property='og:url' content='https://blog.ztcdream.top/p/linux-shell%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-12-30T20:27:17&#43;08:00'/><meta property='article:modified_time' content='2024-12-30T20:27:17&#43;08:00'/>
-<meta name="twitter:title" content="电极电势">
-<meta name="twitter:description" content="涉及知识点\r能斯特方程：$E = E^{\\circ}+\\frac{0.0592V}{n}\\lg\\frac{[氧化态]}{[还原态]}$（在$298K$时），用于计算非标准状态下电极电势，其中$E$为非标准电极电势，$E^{\\circ}$为标准电极电势，$n$为电极反应中转移的电子数。\n$Fe^{3+}/Fe^{2+}$电对的电极反应：$Fe^{3+}+e^-\\rightleftharpoons Fe^{2+}$，$n = 1$，标准电极电势$E^{\\circ}(Fe^{3+}/Fe^{2+}) = 0.771V$。\n解题思路\r已知$E^{\\circ}(Fe^{3+}/Fe^{2+}) = 0.771V$，$c(Fe^{3+}) = 0.2000mol/L$，假设$c(Fe^{2+}) = 1mol/L$（标准浓度）。 根据能斯特方程$E = E^{\\circ}+\\frac{0.0592V}{n}\\lg\\frac{[Fe^{3+}]}{[Fe^{2+}]}$计算电极电势$E$。 计算过程\r$$ \\begin{aligned} E &= 0.771V+\\frac{0.0592V}{1}\\lg\\frac{0.2000mol/L}{1mol/L} \\\\ &= 0.771V + 0.0592V\\times\\lg0.2 \\\\ &= 0.771V + 0.0592V\\times(- 0.699) (\\lg0.2\\approx - 0.699) \\\\ &\\approx 0.771V - 0.041V \\\\ &= 0.730V \\end{aligned} $$所以当$c(Fe^{3+}) = 0.2000mol/L$时，$Fe^{3+}/Fe^{2+}$电对的电极电势约为$0.730V$。（计算结果保留三位有效数字）\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux-Shell' /><meta property='article:published_time' content='2024-12-31T12:22:21&#43;08:00'/><meta property='article:modified_time' content='2024-12-31T12:22:21&#43;08:00'/>
+<meta name="twitter:title" content="Linux Shell的基础命令">
+<meta name="twitter:description" content="文件与目录\r">
     </head>
     <body class="
     article-page
@@ -270,13 +270,7 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
-      <ol>
-        <li><a href="#涉及知识点">涉及知识点</a></li>
-        <li><a href="#解题思路">解题思路</a></li>
-        <li><a href="#计算过程">计算过程</a></li>
-      </ol>
-    </li>
+    <li><a href="#文件与目录">文件与目录</a></li>
   </ol>
 </nav>
         </div>
@@ -295,8 +289,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E5%8C%96%E5%AD%A6/" style="background-color: #2a9d8f; color: #fff;">
-                化学
+            <a href="/categories/linux/" style="background-color: #2a9d8f; color: #fff;">
+                Linux
             </a>
         
     </header>
@@ -304,7 +298,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E7%94%B5%E6%9E%81%E7%94%B5%E5%8A%BF/">电极电势</a>
+            <a href="/p/linux-shell%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">Linux Shell的基础命令</a>
         </h2>
     
         
@@ -326,7 +320,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Dec 30, 2024</time>
+                <time class="article-time--published">Dec 31, 2024</time>
             </div>
         
 
@@ -356,36 +350,19 @@
     <section class="article-content">
     
     
-    <h3 id="涉及知识点">涉及知识点
-</h3><ol>
-<li>
-<p><strong>能斯特方程</strong>：$E = E^{\circ}+\frac{0.0592V}{n}\lg\frac{[氧化态]}{[还原态]}$（在$298K$时），用于计算非标准状态下电极电势，其中$E$为非标准电极电势，$E^{\circ}$为标准电极电势，$n$为电极反应中转移的电子数。</p>
-</li>
-<li>
-<p><strong>$Fe^{3+}/Fe^{2+}$电对的电极反应</strong>：$Fe^{3+}+e^-\rightleftharpoons Fe^{2+}$，$n = 1$，标准电极电势$E^{\circ}(Fe^{3+}/Fe^{2+}) = 0.771V$。</p>
-</li>
-</ol>
-<h3 id="解题思路">解题思路
-</h3><ol>
-<li>已知$E^{\circ}(Fe^{3+}/Fe^{2+}) = 0.771V$，$c(Fe^{3+}) = 0.2000mol/L$，假设$c(Fe^{2+}) = 1mol/L$（标准浓度）。</li>
-<li>根据能斯特方程$E = E^{\circ}+\frac{0.0592V}{n}\lg\frac{[Fe^{3+}]}{[Fe^{2+}]}$计算电极电势$E$。</li>
-</ol>
-<h3 id="计算过程">计算过程
-</h3>$$
-\begin{aligned}
-E &= 0.771V+\frac{0.0592V}{1}\lg\frac{0.2000mol/L}{1mol/L} \\
-&= 0.771V + 0.0592V\times\lg0.2 \\
-&= 0.771V + 0.0592V\times(- 0.699) (\lg0.2\approx - 0.699) \\
-&\approx 0.771V - 0.041V \\
-&= 0.730V
-\end{aligned}
-$$<p>所以当$c(Fe^{3+}) = 0.2000mol/L$时，$Fe^{3+}/Fe^{2+}$电对的电极电势约为$0.730V$。（计算结果保留三位有效数字）</p>
-
+    <h2 id="文件与目录">文件与目录
+</h2>
 </section>
 
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/linux-shell/">Linux-Shell</a>
+        
+    </section>
+
 
     
     <section class="article-copyright">
