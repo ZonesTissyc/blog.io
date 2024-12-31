@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Tue, 31 Dec 2024 12:22:21 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 31 Dec 2024 16:19:08 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>非线性齐次方程组</title>
         <link>https://blog.ztcdream.top/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
         <pubDate>Sun, 29 Dec 2024 16:26:23 +0800</pubDate>
@@ -125,6 +125,14 @@ $$
 x_1 = 6 \cdot \left(\frac{\alpha p_2}{\beta p_1}\right)^\beta, \quad 
 x_2 = 6 \cdot \left(\frac{\beta p_1}{\alpha p_2}\right)^\alpha.
 $$</description>
+        </item>
+        <item>
+        <title>辗转相除法</title>
+        <link>https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</link>
+        <pubDate>Tue, 31 Dec 2024 16:19:08 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</guid>
+        <description></description>
         </item>
         <item>
         <title>Linux Shell的基础命令</title>
