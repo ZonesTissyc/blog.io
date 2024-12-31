@@ -229,7 +229,7 @@ $$(a,b)=(b,r)$$&lt;p&gt;通过不断重复，直到$b_i/r_i=c$可以整除，那
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;最后&amp;amp;22/11=2&amp;amp;，最后的除数$11$就是最大公因数。&lt;/p&gt;
+&lt;p&gt;最后$22/11=2$，最后的除数$11$就是最大公因数。&lt;/p&gt;
 &lt;p&gt;该算法是循环过程，当$a&amp;gt;b$时，运算&lt;code&gt;r_1=a%b&lt;/code&gt; ，重复&lt;code&gt;r_i=b_(i-1)%r_(i-1)&lt;/code&gt;，直到&lt;code&gt;r_i=0&lt;/code&gt;，输出&lt;code&gt;r_(i-1)&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;代码实现如下，&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
