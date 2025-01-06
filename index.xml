@@ -178,8 +178,8 @@ $$&lt;hr&gt;
 &lt;/p&gt;
 $$
 y_1 = \ln x_1, \quad y_2 = \ln x_2
-$$&lt;h1 id=&#34;endbmatrix&#34;&gt;于是：
-$$
+$$&lt;p&gt;于是：&lt;/p&gt;
+&lt;h1 id=&#34;endbmatrix&#34;&gt;$$
 \begin{bmatrix}
 \alpha - 1 &amp;amp; -(\beta - 1) \
 \alpha &amp;amp; \beta
@@ -255,13 +255,12 @@ $$
 z = f(g_1,g_2,g_3 \dots)
 $$&lt;p&gt;其中，$g_1,g_2,g_3,\dots$是关于$x,y$的二元或一元函数&lt;/p&gt;
 &lt;p&gt;则，&lt;/p&gt;
-&lt;p&gt;$$
+$$
 \begin{aligned}
-\frac{\partial z}{\partial x} &amp;amp; = f_1g_{1_x} + f_2g_{2_x} + f_3g_{3_x} +\dots  \
-\frac{\partial^2z}{\partial xy} &amp;amp;= \frac{d(g_{1_x})}{dy}f_1+g_{1_x}(f_{11}\frac{\partial g_1}{\partial y}+f_{12}\frac{\partial g_2}{\partial y}+\dots) + \dots
-\end{aligned}&lt;/p&gt;
-&lt;p&gt;$$&lt;/p&gt;
-</description>
+\frac{\partial z}{\partial x} &amp; = f_1g_{1_x} + f_2g_{2_x} + f_3g_{3_x} +\dots  \\
+\frac{\partial^2z}{\partial xy} &amp;= \frac{d(g_{1_x})}{dy}f_1+g_{1_x}(f_{11}\frac{\partial g_1}{\partial y}+f_{12}\frac{\partial g_2}{\partial y}+\dots) + \dots
+\end{aligned}
+$$</description>
         </item>
         <item>
         <title>二元函数偏微商与连续的关系</title>
