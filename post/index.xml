@@ -227,15 +227,41 @@ $$&lt;hr&gt;
         
         <guid>https://blog.ztcdream.top/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/</guid>
         <description>&lt;h2 id=&#34;先上例题&#34;&gt;先上例题
-&lt;/h2&gt;&lt;p&gt;设函数$f$有二阶偏导，且$z=f(xy,x+y)$.&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;设函数$f$有二阶连续偏导，且$z=f(xy,x+y)$.&lt;/p&gt;
 &lt;p&gt;求&lt;/p&gt;
-$$\frac{\partial^2z}{\partial xy} $$&lt;h2 id=&#34;分析&#34;&gt;分析
-&lt;/h2&gt;&lt;p&gt;求二阶偏导，先求出一阶偏导。&lt;/p&gt;
+$$
+\frac{\partial^2z}{\partial xy} 
+$$&lt;h2 id=&#34;分析&#34;&gt;分析
+&lt;/h2&gt;&lt;p&gt;求二阶偏导，先求出一阶偏导。
+当二阶偏导连续，有：&lt;/p&gt;
 $$
 \frac{\partial^2z}{\partial xy} 
 = \frac{\partial (\frac{\partial x}{\partial y})}{\partial x} 
-= \frac{}{\partial} \fra
-$$</description>
+= \frac{\partial(\frac{\partial z}{\partial x})}{\partial y} 
+$$&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/01/06/xvefg8.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;注意到$f_1$和$f_2$均有$(xy),(x+y)$的变量&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结
+&lt;/h2&gt;&lt;p&gt;对于抽象函数&lt;/p&gt;
+$$
+z = f(g_1,g_2,g_3 \dots)
+$$&lt;p&gt;其中，$g_1,g_2,g_3,\dots$是关于$x,y$的二元或一元函数&lt;/p&gt;
+&lt;p&gt;则，&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\frac{\partial z}{\partial x} &amp;amp; = f_1g_{1_x} + f_2g_{2_x} + f_3g_{3_x} +\dots  \
+\frac{\partial^2z}{\partial xy} &amp;amp;= \frac{d(g_{1_x})}{dy}f_1+g_{1_x}(f_{11}\frac{\partial g_1}{\partial y}+f_{12}\frac{\partial g_2}{\partial y}+\dots) + \dots
+\end{aligned}&lt;/p&gt;
+&lt;p&gt;$$&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>二元函数偏微商与连续的关系</title>
