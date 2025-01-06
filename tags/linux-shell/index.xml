@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Linux-Shell on ZTC&#39;Blog</title>
-        <link>https://blog.ztcdream.top/tags/linux-shell/</link>
+        <link>http://localhost:1313/tags/linux-shell/</link>
         <description>Recent content in Linux-Shell on ZTC&#39;Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Tue, 31 Dec 2024 12:22:21 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/tags/linux-shell/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 31 Dec 2024 12:22:21 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/linux-shell/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux Shell的基础命令</title>
-        <link>https://blog.ztcdream.top/p/linux-shell%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
+        <link>http://localhost:1313/p/linux-shell%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Tue, 31 Dec 2024 12:22:21 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/linux-shell%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
+        <guid>http://localhost:1313/p/linux-shell%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h2 id=&#34;文件与目录&#34;&gt;文件与目录
 &lt;/h2&gt;</description>
         </item>

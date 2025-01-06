@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>数学 on ZTC&#39;Blog</title>
-        <link>https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/</link>
+        <link>http://localhost:1313/categories/%E6%95%B0%E5%AD%A6/</link>
         <description>Recent content in 数学 on ZTC&#39;Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Mon, 06 Jan 2025 18:22:38 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 06 Jan 2025 18:22:38 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>非线性齐次方程组</title>
-        <link>https://blog.ztcdream.top/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
+        <link>http://localhost:1313/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
         <pubDate>Sun, 29 Dec 2024 16:26:23 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</guid>
+        <guid>http://localhost:1313/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</guid>
         <description>&lt;h2 id=&#34;从一个例子说起&#34;&gt;从一个例子说起
 &lt;/h2&gt;&lt;p&gt;在使用拉格朗日乘数法求极值时，列出了下面的方程组：&lt;/p&gt;
 $$
@@ -222,10 +222,10 @@ $$&lt;hr&gt;
         </item>
         <item>
         <title>多元函数二阶偏导</title>
-        <link>https://blog.ztcdream.top/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/</link>
+        <link>http://localhost:1313/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/</link>
         <pubDate>Mon, 06 Jan 2025 18:22:38 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/</guid>
+        <guid>http://localhost:1313/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/</guid>
         <description>&lt;h2 id=&#34;先上例题&#34;&gt;先上例题
 &lt;/h2&gt;&lt;p&gt;设函数$f$有二阶连续偏导，且$z=f(xy,x+y)$.&lt;/p&gt;
 &lt;p&gt;求&lt;/p&gt;
@@ -264,10 +264,10 @@ $$</description>
         </item>
         <item>
         <title>二元函数偏微商与连续的关系</title>
-        <link>https://blog.ztcdream.top/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
+        <link>http://localhost:1313/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
         <pubDate>Sat, 04 Jan 2025 19:01:40 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
+        <guid>http://localhost:1313/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
         <description>&lt;h2 id=&#34;图&#34;&gt;图
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/01/04/vhv1vt.png&#34;
 	
@@ -283,10 +283,10 @@ $$</description>
         </item>
         <item>
         <title>辗转相除法</title>
-        <link>https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</link>
+        <link>http://localhost:1313/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</link>
         <pubDate>Tue, 31 Dec 2024 16:19:08 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</guid>
+        <guid>http://localhost:1313/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</guid>
         <description>&lt;h2 id=&#34;最大公因数问题&#34;&gt;最大公因数问题
 &lt;/h2&gt;&lt;p&gt;任给两个不全为零的整数，必存在一个的数，它同时是两个数的因子，这个数称为&lt;strong&gt;公因数&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;不互质的两个数的公因数可以有多个，寻找最大的公因数就被称为&lt;strong&gt;最大公因数问题&lt;/strong&gt;。&lt;/p&gt;
@@ -462,10 +462,10 @@ $$&lt;p&gt;已知最大公因数，即可求出最小公倍数&lt;/p&gt;
         </item>
         <item>
         <title>一张图巧计三角求导积分公式</title>
-        <link>https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/</link>
+        <link>http://localhost:1313/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/</link>
         <pubDate>Mon, 30 Dec 2024 19:54:39 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/</guid>
+        <guid>http://localhost:1313/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/</guid>
         <description>&lt;h2 id=&#34;先上图&#34;&gt;先上图
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/01/01/m1ir2.png&#34;
 	
@@ -481,10 +481,10 @@ $$&lt;p&gt;已知最大公因数，即可求出最小公倍数&lt;/p&gt;
         </item>
         <item>
         <title>分母低次幂积型的不定积分</title>
-        <link>https://blog.ztcdream.top/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</link>
+        <link>http://localhost:1313/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</link>
         <pubDate>Wed, 25 Dec 2024 18:05:10 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</guid>
+        <guid>http://localhost:1313/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</guid>
         <description>&lt;h2 id=&#34;定义&#34;&gt;定义
 &lt;/h2&gt;&lt;p&gt;约定有理真分式
 &lt;/p&gt;
@@ -566,10 +566,10 @@ $$</description>
         </item>
         <item>
         <title>三角函数的积分</title>
-        <link>https://blog.ztcdream.top/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
+        <link>http://localhost:1313/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
         <pubDate>Sat, 14 Dec 2024 16:10:48 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
+        <guid>http://localhost:1313/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
         <description>&lt;h2 id=&#34;基本三角函数的积分&#34;&gt;基本三角函数的积分
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;$$\int \sin x dx=-\cos x+C$$&lt;/li&gt;
@@ -604,10 +604,10 @@ $$
         </item>
         <item>
         <title>开根号</title>
-        <link>https://blog.ztcdream.top/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</link>
+        <link>http://localhost:1313/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</link>
         <pubDate>Fri, 06 Dec 2024 20:51:30 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</guid>
+        <guid>http://localhost:1313/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</guid>
         <description>&lt;h2 id=&#34;例&#34;&gt;例
 &lt;/h2&gt;$$
 \begin{align}
@@ -619,10 +619,10 @@ $$</description>
         </item>
         <item>
         <title>有理函数的积分</title>
-        <link>https://blog.ztcdream.top/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
+        <link>http://localhost:1313/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
         <pubDate>Fri, 06 Dec 2024 20:51:30 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
+        <guid>http://localhost:1313/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
         <description>&lt;h2 id=&#34;什么是有理函数&#34;&gt;什么是有理函数
 &lt;/h2&gt;&lt;p&gt;设$f(x)$是定义在$D$上的函数，若存在$F(x)$，使得$f(x)$在$D$上的任一开区间上都有定义，且$F(x)$在$D$上连续，则称$F(x)$为$f(x)$的原函数，记作$F(x)=f(x)+C$，其中$C$是任意常数。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;对于一个函数$f(x)$，若$f(x)$可以表示为以下形式：&lt;/strong&gt;
