@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>数学 on ZTC&#39;Blog</title>
-        <link>http://localhost:1313/categories/%E6%95%B0%E5%AD%A6/</link>
+        <link>https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/</link>
         <description>Recent content in 数学 on ZTC&#39;Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Mon, 06 Jan 2025 18:22:38 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 06 Jan 2025 18:22:38 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>非线性齐次方程组</title>
-        <link>http://localhost:1313/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
+        <link>https://blog.ztcdream.top/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
         <pubDate>Sun, 29 Dec 2024 16:26:23 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</guid>
+        <guid>https://blog.ztcdream.top/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</guid>
         <description>&lt;h2 id=&#34;从一个例子说起&#34;&gt;从一个例子说起
 &lt;/h2&gt;&lt;p&gt;在使用拉格朗日乘数法求极值时，列出了下面的方程组：&lt;/p&gt;
 $$
@@ -128,43 +128,34 @@ $$&lt;h2 id=&#34;解法二化线性设矩阵&#34;&gt;解法二：化线性设矩
 &lt;/h2&gt;&lt;p&gt;使用矩阵方法解决这个问题，需要将非线性系统转化为线性方程组或者近似解法。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;给定的方程组&#34;&gt;给定的方程组：
-&lt;/h3&gt;&lt;p&gt;$$
-\left {
-\begin{aligned}&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&amp;amp; \quad p_1 + \lambda \alpha x_1^{\alpha - 1} = 0 \\&lt;/li&gt;
-&lt;li&gt;&amp;amp; \quad p_2 + \lambda \beta x_2^{\beta - 1} = 0 \\&lt;/li&gt;
-&lt;li&gt;&amp;amp; \quad x_1^\alpha x_2^\beta - 6 = 0 \\&lt;/li&gt;
-&lt;li&gt;&amp;amp; \quad \alpha + \beta = 1
+&lt;/h3&gt;$$
+\left \{
+\begin{aligned}
+ &amp; \quad p_1 + \lambda \alpha x_1^{\alpha - 1} = 0 \\
+ &amp; \quad p_2 + \lambda \beta x_2^{\beta - 1} = 0 \\
+ &amp; \quad x_1^\alpha x_2^\beta - 6 = 0 \\
+ &amp; \quad \alpha + \beta = 1
 \end{aligned}
 \right.
-$$&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
+$$&lt;hr&gt;
 &lt;h3 id=&#34;第一步线性化方程组&#34;&gt;第一步：线性化方程组
 &lt;/h3&gt;&lt;p&gt;由于部分方程是非线性的，我们需要处理。&lt;/p&gt;
-&lt;p&gt;从 (1) 和 (2) 中，将 $\lambda$ 解出来：
-&lt;/p&gt;
+&lt;p&gt;从 (1) 和 (2) 中，将 $\lambda$ 解出来：&lt;/p&gt;
 $$
 \lambda = -\frac{p_1}{\alpha x_1^{\alpha-1}}, \quad \lambda = -\frac{p_2}{\beta x_2^{\beta-1}}
-$$&lt;p&gt;令这两个表达式相等：
-&lt;/p&gt;
+$$&lt;p&gt;令这两个表达式相等：&lt;/p&gt;
 $$
 \frac{p_1}{\alpha x_1^{\alpha-1}} = \frac{p_2}{\beta x_2^{\beta-1}}
-$$&lt;p&gt;整理为：
-&lt;/p&gt;
+$$&lt;p&gt;整理为：&lt;/p&gt;
 $$
 \frac{x_1^{\alpha-1}}{x_2^{\beta-1}} = \frac{p_1 \beta}{p_2 \alpha}
-$$&lt;p&gt;取对数（为了方便线性化），设 $k = \frac{p_1 \beta}{p_2 \alpha}$，得到：
-&lt;/p&gt;
+$$&lt;p&gt;取对数（为了方便线性化），设 $k = \frac{p_1 \beta}{p_2 \alpha}$，得到：&lt;/p&gt;
 $$
 (\alpha - 1)\ln x_1 - (\beta - 1)\ln x_2 = \ln k
-$$&lt;p&gt;此外，从 (3) 中：
-&lt;/p&gt;
+$$&lt;p&gt;此外，从 (3) 中：&lt;/p&gt;
 $$
 x_1^\alpha x_2^\beta = 6 \implies \alpha \ln x_1 + \beta \ln x_2 = \ln 6
-$$&lt;p&gt;至此，我们得到了两个关于 $\ln x_1$ 和 $\ln x_2$ 的线性方程：
-&lt;/p&gt;
+$$&lt;p&gt;至此，我们得到了两个关于 $\ln x_1$ 和 $\ln x_2$ 的线性方程：&lt;/p&gt;
 $$
 \left \{
 \begin{aligned}
@@ -174,8 +165,7 @@ $$
 \right.
 $$&lt;hr&gt;
 &lt;h3 id=&#34;第二步矩阵形式&#34;&gt;第二步：矩阵形式
-&lt;/h3&gt;&lt;p&gt;将上述方程组写成矩阵形式，令：
-&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;将上述方程组写成矩阵形式，令：&lt;/p&gt;
 $$
 y_1 = \ln x_1, \quad y_2 = \ln x_2
 $$&lt;p&gt;于是：&lt;/p&gt;
@@ -193,22 +183,18 @@ y_2
 \ln 6
 \end{bmatrix}
 $$&lt;/p&gt;
-&lt;p&gt;记矩阵为 $A$，未知量为 $\mathbf{y}$，常数向量为 $\mathbf{b}$，即：
-&lt;/p&gt;
+&lt;p&gt;记矩阵为 $A$，未知量为 $\mathbf{y}$，常数向量为 $\mathbf{b}$，即：&lt;/p&gt;
 $$
 A \cdot \mathbf{y} = \mathbf{b}
 $$&lt;hr&gt;
 &lt;h3 id=&#34;第三步求解-mathbfy&#34;&gt;第三步：求解 $\mathbf{y}$
-&lt;/h3&gt;&lt;p&gt;矩阵方程的解为：
-&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;矩阵方程的解为：&lt;/p&gt;
 $$
 \mathbf{y} = A^{-1} \cdot \mathbf{b}
-$$&lt;p&gt;计算 $A^{-1}$ （矩阵的逆），从而得到：
-&lt;/p&gt;
+$$&lt;p&gt;计算 $A^{-1}$ （矩阵的逆），从而得到：&lt;/p&gt;
 $$
 y_1 = \ln x_1, \quad y_2 = \ln x_2
-$$&lt;p&gt;通过指数运算：
-&lt;/p&gt;
+$$&lt;p&gt;通过指数运算：&lt;/p&gt;
 $$
 x_1 = e^{y_1}, \quad x_2 = e^{y_2}
 $$&lt;hr&gt;
@@ -222,10 +208,10 @@ $$&lt;hr&gt;
         </item>
         <item>
         <title>多元函数二阶偏导</title>
-        <link>http://localhost:1313/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/</link>
+        <link>https://blog.ztcdream.top/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/</link>
         <pubDate>Mon, 06 Jan 2025 18:22:38 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/</guid>
+        <guid>https://blog.ztcdream.top/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/</guid>
         <description>&lt;h2 id=&#34;先上例题&#34;&gt;先上例题
 &lt;/h2&gt;&lt;p&gt;设函数$f$有二阶连续偏导，且$z=f(xy,x+y)$.&lt;/p&gt;
 &lt;p&gt;求&lt;/p&gt;
@@ -260,14 +246,21 @@ $$
 \frac{\partial z}{\partial x} &amp; = f_1g_{1_x} + f_2g_{2_x} + f_3g_{3_x} +\dots  \\
 \frac{\partial^2z}{\partial xy} &amp;= \frac{d(g_{1_x})}{dy}f_1+g_{1_x}(f_{11}\frac{\partial g_1}{\partial y}+f_{12}\frac{\partial g_2}{\partial y}+\dots) + \dots
 \end{aligned}
+$$&lt;p&gt;注意到，$f_1$仍然是包含$g_n$的函数。例如&lt;/p&gt;
+$$
+\begin{aligned}
+z &amp; = f(u,v)  
+= u^v  \\
+\frac{\partial z}{\partial u} &amp;= f_1(u,v)=vu^{v-1}
+\end{aligned}
 $$</description>
         </item>
         <item>
         <title>二元函数偏微商与连续的关系</title>
-        <link>http://localhost:1313/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
+        <link>https://blog.ztcdream.top/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
         <pubDate>Sat, 04 Jan 2025 19:01:40 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
+        <guid>https://blog.ztcdream.top/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
         <description>&lt;h2 id=&#34;图&#34;&gt;图
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/01/04/vhv1vt.png&#34;
 	
@@ -283,10 +276,10 @@ $$</description>
         </item>
         <item>
         <title>辗转相除法</title>
-        <link>http://localhost:1313/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</link>
+        <link>https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</link>
         <pubDate>Tue, 31 Dec 2024 16:19:08 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</guid>
+        <guid>https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</guid>
         <description>&lt;h2 id=&#34;最大公因数问题&#34;&gt;最大公因数问题
 &lt;/h2&gt;&lt;p&gt;任给两个不全为零的整数，必存在一个的数，它同时是两个数的因子，这个数称为&lt;strong&gt;公因数&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;不互质的两个数的公因数可以有多个，寻找最大的公因数就被称为&lt;strong&gt;最大公因数问题&lt;/strong&gt;。&lt;/p&gt;
@@ -462,10 +455,10 @@ $$&lt;p&gt;已知最大公因数，即可求出最小公倍数&lt;/p&gt;
         </item>
         <item>
         <title>一张图巧计三角求导积分公式</title>
-        <link>http://localhost:1313/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/</link>
+        <link>https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/</link>
         <pubDate>Mon, 30 Dec 2024 19:54:39 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/</guid>
+        <guid>https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/</guid>
         <description>&lt;h2 id=&#34;先上图&#34;&gt;先上图
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/01/01/m1ir2.png&#34;
 	
@@ -481,10 +474,10 @@ $$&lt;p&gt;已知最大公因数，即可求出最小公倍数&lt;/p&gt;
         </item>
         <item>
         <title>分母低次幂积型的不定积分</title>
-        <link>http://localhost:1313/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</link>
+        <link>https://blog.ztcdream.top/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</link>
         <pubDate>Wed, 25 Dec 2024 18:05:10 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</guid>
+        <guid>https://blog.ztcdream.top/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</guid>
         <description>&lt;h2 id=&#34;定义&#34;&gt;定义
 &lt;/h2&gt;&lt;p&gt;约定有理真分式
 &lt;/p&gt;
@@ -566,10 +559,10 @@ $$</description>
         </item>
         <item>
         <title>三角函数的积分</title>
-        <link>http://localhost:1313/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
+        <link>https://blog.ztcdream.top/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
         <pubDate>Sat, 14 Dec 2024 16:10:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
+        <guid>https://blog.ztcdream.top/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
         <description>&lt;h2 id=&#34;基本三角函数的积分&#34;&gt;基本三角函数的积分
 &lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;$$\int \sin x dx=-\cos x+C$$&lt;/li&gt;
@@ -604,10 +597,10 @@ $$
         </item>
         <item>
         <title>开根号</title>
-        <link>http://localhost:1313/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</link>
+        <link>https://blog.ztcdream.top/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</link>
         <pubDate>Fri, 06 Dec 2024 20:51:30 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</guid>
+        <guid>https://blog.ztcdream.top/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</guid>
         <description>&lt;h2 id=&#34;例&#34;&gt;例
 &lt;/h2&gt;$$
 \begin{align}
@@ -619,10 +612,10 @@ $$</description>
         </item>
         <item>
         <title>有理函数的积分</title>
-        <link>http://localhost:1313/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
+        <link>https://blog.ztcdream.top/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
         <pubDate>Fri, 06 Dec 2024 20:51:30 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
+        <guid>https://blog.ztcdream.top/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
         <description>&lt;h2 id=&#34;什么是有理函数&#34;&gt;什么是有理函数
 &lt;/h2&gt;&lt;p&gt;设$f(x)$是定义在$D$上的函数，若存在$F(x)$，使得$f(x)$在$D$上的任一开区间上都有定义，且$F(x)$在$D$上连续，则称$F(x)$为$f(x)$的原函数，记作$F(x)=f(x)+C$，其中$C$是任意常数。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;对于一个函数$f(x)$，若$f(x)$可以表示为以下形式：&lt;/strong&gt;

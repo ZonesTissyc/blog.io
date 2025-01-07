@@ -7,13 +7,19 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Tue, 31 Dec 2024 16:19:08 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/def/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>辗转相除法</title>
-        <link>https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</link>
-        <pubDate>Tue, 31 Dec 2024 16:19:08 +0800</pubDate>
+        <lastBuildDate>Tue, 07 Jan 2025 09:25:08 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/def/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Test</title>
+        <link>https://blog.ztcdream.top/p/test/</link>
+        <pubDate>Tue, 07 Jan 2025 09:25:08 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</guid>
-        <description></description>
+        <guid>https://blog.ztcdream.top/p/test/</guid>
+        <description>&lt;h2 id=&#34;w&#34;&gt;w
+&lt;/h2&gt;$$
+\begin{bmatrix}
+\ln k \\
+\ln 6
+\end{bmatrix}
+$$</description>
         </item>
         
     </channel>

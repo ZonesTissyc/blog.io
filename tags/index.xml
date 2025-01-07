@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on ZTC&#39;Blog</title>
-        <link>http://localhost:1313/tags/</link>
+        <link>https://blog.ztcdream.top/tags/</link>
         <description>Recent content in Tags on ZTC&#39;Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Tue, 31 Dec 2024 12:22:21 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 31 Dec 2024 12:22:21 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux-Shell</title>
-        <link>http://localhost:1313/tags/linux-shell/</link>
+        <link>https://blog.ztcdream.top/tags/linux-shell/</link>
         <pubDate>Tue, 31 Dec 2024 12:22:21 +0800</pubDate>
         
-        <guid>http://localhost:1313/tags/linux-shell/</guid>
+        <guid>https://blog.ztcdream.top/tags/linux-shell/</guid>
         <description></description>
         </item>
         
