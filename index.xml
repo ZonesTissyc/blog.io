@@ -214,26 +214,13 @@ $$&lt;hr&gt;
         <guid>https://blog.ztcdream.top/p/test/</guid>
         <description>&lt;h2 id=&#34;w&#34;&gt;w
 &lt;/h2&gt;$$
+\begin{aligned}
 \begin{bmatrix}
 \ln k \\
 \ln 6
 \end{bmatrix}
-$$&lt;p&gt;$$
-\begin{bmatrix}
-\alpha - 1 &amp;amp; -(\beta - 1) \
-\alpha &amp;amp; \beta
-\end{bmatrix}
-\times
-\begin{bmatrix}
-y_1 \
-y_2
-\end{bmatrix}&lt;/p&gt;
-&lt;p&gt;\begin{bmatrix}
-\ln k \
-\ln 6
-\end{bmatrix}
-$$&lt;/p&gt;
-</description>
+\end{aligned}
+$$</description>
         </item>
         <item>
         <title>多元函数二阶偏导</title>
