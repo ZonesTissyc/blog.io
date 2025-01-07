@@ -470,6 +470,79 @@ $$&lt;p&gt;已知最大公因数，即可求出最小公倍数&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
+&lt;h2 id=&#34;公式&#34;&gt;公式
+&lt;/h2&gt;&lt;h3 id=&#34;bac&#34;&gt;b=ac
+&lt;/h3&gt;&lt;p&gt;任意函数等于相邻函数的乘积&lt;/p&gt;
+&lt;p&gt;例如，&lt;/p&gt;
+$$
+\begin{aligned}
+\tan x &amp; =\sec x \sin x   \\
+\sin x &amp; =\tan x \cos x   \\
+\end{aligned}
+$$&lt;h3 id=&#34;平方和与1的关系&#34;&gt;平方和与1的关系
+&lt;/h3&gt;&lt;p&gt;我们知道，&lt;/p&gt;
+$$
+\sin^2 x + \cos^2 x = 1
+$$&lt;p&gt;实际上，对应图中所有的最小倒立三角形，&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;底部平方 = 上面两个的平方和
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;例如，&lt;/p&gt;
+$$
+\begin{aligned}
+ \sin^2 x + \cos^2 x &amp;=1 \\
+ \tan^2 x + 1 &amp;= \sec^2 x \\
+ 1 + \cot^2 x &amp;= \csc^2 x
+\end{aligned}
+$$&lt;h3 id=&#34;求导积分&#34;&gt;求导积分
+&lt;/h3&gt;&lt;p&gt;记住口诀&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;中下二，下中下 \\
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;导相乘，对对和
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;无论求导还是积分，中间的函数($\tan x,\cot x$)积分/求导后，只与其下方的函数有关；下方的函数求导/积分，与中间和下方（自己）有关。&lt;/p&gt;
+&lt;p&gt;如果是求导，则相乘；积分则相加，加绝对值，取对数。&lt;/p&gt;
+&lt;p&gt;例如，$\tan x$，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;找相关函数。&lt;/p&gt;
+&lt;p&gt;$tan x$在中间，由中下二，求导/积分后与 $\sec x$,$\sec x$有关,即$D(\sec x,\sec x)$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;确定运算符&lt;/p&gt;
+&lt;p&gt;如果是求导，则相乘：$\sec x \times \sec x$。积分，相加，加绝对值，取对数:$\ln|\sec x+\sec x|$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;确定正负，积分加C&lt;/p&gt;
+&lt;p&gt;左边的函数求导/积分为正，右边为负。&lt;/p&gt;
+$$\int\tan xdx=-\ln |2\sec x|+C$$&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;适当化简&lt;/p&gt;
+&lt;p&gt;如$-\ln |2\sec x|+C=-\ln |\sec x|+C$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;笔记附图&#34;&gt;笔记附图
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/01/07/h1gvx4.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
