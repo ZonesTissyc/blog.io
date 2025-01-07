@@ -223,6 +223,7 @@ $$&lt;h1 id=&#34;endbmatrix&#34;&gt;$$
 \alpha - 1 &amp;amp; -(\beta - 1) \
 \alpha &amp;amp; \beta
 \end{bmatrix}
+\times
 \begin{bmatrix}
 y_1 \
 y_2
