@@ -619,7 +619,7 @@ $$
 \begin{aligned}
 &amp; A =2 \\
 &amp; B =-1 \\
-&amp; C = 0
+&amp; D = 0
 \end{aligned}
 \right.
 $$&lt;p&gt;因此，原积分化为&lt;/p&gt;
@@ -627,6 +627,48 @@ $$
 \begin{aligned}
 \int \frac{x+2}{(2x+1)(x^2+x+1)} dx &amp;= \int (\frac{2}{2x+1}-\frac{x}{x^2+x+}) dx \\
 &amp;= \int \frac{2}{2x+1}dx- \int \frac{x}{x^2+x+1} dx
+\end{aligned}
+$$&lt;h3 id=&#34;留数法&#34;&gt;留数法
+&lt;/h3&gt;&lt;p&gt;当设出&lt;/p&gt;
+$$
+\frac{x+2}{(2x+1)(x^2+x+1)} = \frac{A}{2x+1} + \frac{Bx+D}{x^2+x+1}
+$$&lt;p&gt;想要不通分，因为通分过程相当耗时，最后得到的一次方程组也不一定好解。
+因此用留数和极限的技巧将A,B,D解出&lt;/p&gt;
+&lt;h4 id=&#34;求一次项待定系数a&#34;&gt;求一次项待定系数A
+&lt;/h4&gt;&lt;p&gt;如求$A$,两边乘上$A$下的分母$(2x+1)$,让$A$的分母消失&lt;/p&gt;
+$$
+\frac{x+2}{x^2+x+1}=A+\frac{(Bx+D)(2x+1)}{x^2+x+1}
+$$&lt;p&gt;再令$2x+1=0$，即$x=-\frac{1}{2}$，让$A$右边的等式消失&lt;/p&gt;
+$$
+\begin{aligned}
+\frac{x+2}{x^2+x+1} &amp; = A  \\
+\end{aligned}
+$$&lt;p&gt;这时，直接得到A的分式，带入$x=-\frac{1}{2}$即可&lt;/p&gt;
+$$
+A=\frac{-\frac{1}{2}+2}{(-\frac{1}{2})^2+(-\frac{1}{2})+1}=2
+$$&lt;h4 id=&#34;求二次项的待定系数bd&#34;&gt;求二次项的待定系数B,D
+&lt;/h4&gt;&lt;p&gt;仿照上面求$A$的思路，不难想到也是两边乘上$(x^2+x+1)$，&lt;/p&gt;
+$$
+\frac{x+2}{2x+1}=\frac{A(x^2+x+1)}{2x+1}+Bx+D
+$$&lt;p&gt;再令$x^2+x+1=0$，解出$x$&lt;/p&gt;
+&lt;p&gt;注意到，$x$的解是两个复数根，不好求，求出来代入也不好化简。因此要另想办法。&lt;/p&gt;
+&lt;p&gt;回到刚才求$A$时，两边乘上$(2x+1)$&lt;/p&gt;
+$$
+\begin{aligned}
+\frac{x+2}{x^2+x+1}=A+\frac{(Bx+D)(2x+1)}{x^2+x+1}
+\end{aligned}
+$$&lt;p&gt;两边同时取$x \to \infty$的极限&lt;/p&gt;
+$$
+\begin{aligned}
+\lim_{x \to \infty}\frac{x+2}{x^2+x+1} &amp; = \lim_{x \to \infty} [A+\frac{(Bx+D)(2x+1)}{x^2+x+1}]  \\
+0 &amp;= 2 + \lim_{x \to \infty}\frac{2Bx^2+2Dx+Bx+D}{x^2+x+1} \\
+B &amp;= -1
+\end{aligned}
+$$&lt;p&gt;再令$x=0$，（可以是其他好算的值）&lt;/p&gt;
+$$
+\begin{aligned}
+2 &amp; = A  + D  \\
+D &amp;= 2-A =0
 \end{aligned}
 $$</description>
         </item>
