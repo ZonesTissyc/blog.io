@@ -218,7 +218,7 @@ $$&lt;hr&gt;
 \ln k \\
 \ln 6
 \end{bmatrix}
-$$&lt;h1 id=&#34;endbmatrix&#34;&gt;$$
+$$&lt;p&gt;$$
 \begin{bmatrix}
 \alpha - 1 &amp;amp; -(\beta - 1) \
 \alpha &amp;amp; \beta
@@ -227,8 +227,8 @@ $$&lt;h1 id=&#34;endbmatrix&#34;&gt;$$
 \begin{bmatrix}
 y_1 \
 y_2
-\end{bmatrix}
-&lt;/h1&gt;&lt;p&gt;\begin{bmatrix}
+\end{bmatrix}&lt;/p&gt;
+&lt;p&gt;\begin{bmatrix}
 \ln k \
 \ln 6
 \end{bmatrix}
