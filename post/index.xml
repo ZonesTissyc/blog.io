@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Tue, 07 Jan 2025 09:25:08 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 17 Jan 2025 23:01:01 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>非线性齐次方程组</title>
         <link>https://blog.ztcdream.top/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
         <pubDate>Sun, 29 Dec 2024 16:26:23 +0800</pubDate>
@@ -204,6 +204,76 @@ $$&lt;hr&gt;
 $$
 \lambda = -\frac{p_1}{\alpha x_1^{\alpha-1}}
 $$&lt;hr&gt;
+</description>
+        </item>
+        <item>
+        <title>Win系统工具</title>
+        <link>https://blog.ztcdream.top/p/win%E7%B3%BB%E7%BB%9F%E5%B7%A5%E5%85%B7/</link>
+        <pubDate>Fri, 17 Jan 2025 23:01:01 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.top/p/win%E7%B3%BB%E7%BB%9F%E5%B7%A5%E5%85%B7/</guid>
+        <description>&lt;h2 id=&#34;激活工具&#34;&gt;激活工具
+&lt;/h2&gt;&lt;h3 id=&#34;heu_kms_activator&#34;&gt;HEU_KMS_Activator
+&lt;/h3&gt;&lt;p&gt;项目地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/zbezj/HEU_KMS_Activator&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/zbezj/HEU_KMS_Activator&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载直链 &lt;a class=&#34;link&#34; href=&#34;https://github.com/zbezj/HEU_KMS_Activator/releases/download/42.3.1/HEU_KMS_Activator_v42.3.1.rar&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HEU_KMS_Activator_v42.3.1&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;压缩工具&#34;&gt;压缩工具
+&lt;/h2&gt;&lt;h3 id=&#34;360压缩国际版&#34;&gt;360压缩国际版
+&lt;/h3&gt;&lt;p&gt;官网地址 &lt;a class=&#34;link&#34; href=&#34;https://www.360totalsecurity.com/en/360zip/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.360totalsecurity.com/en/360zip/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载直链 &lt;a class=&#34;link&#34; href=&#34;https://www.360totalsecurity.com/en/download-free-360-zip/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;360ZIP.exe&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;安全软件&#34;&gt;安全软件
+&lt;/h2&gt;&lt;h3 id=&#34;火绒安全软件&#34;&gt;火绒安全软件
+&lt;/h3&gt;&lt;p&gt;官网地址 &lt;a class=&#34;link&#34; href=&#34;https://www.huorong.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.huorong.cn/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载直链 &lt;a class=&#34;link&#34; href=&#34;https://www.huorong.cn/product/downloadHr60.php?pro=hr60&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;火绒安全6.0&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;注册表优化&#34;&gt;注册表优化
+&lt;/h2&gt;&lt;h3 id=&#34;dismm&#34;&gt;Dismm++
+&lt;/h3&gt;&lt;p&gt;项目地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Chuyu-Team/Dism-Multi-language&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/Chuyu-Team/Dism-Multi-language&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载直链 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Chuyu-Team/Dism-Multi-language/releases/download/v10.1.1002.2/Dism&amp;#43;&amp;#43;10.1.1002.1B.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Dism++&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;剪贴板&#34;&gt;剪贴板
+&lt;/h2&gt;&lt;h3 id=&#34;copyq&#34;&gt;CopyQ
+&lt;/h3&gt;&lt;p&gt;项目地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/hluk/CopyQ/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/hluk/CopyQ/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载直链 &lt;a class=&#34;link&#34; href=&#34;https://github.com/hluk/CopyQ/releases/download/v9.1.0/copyq-9.1.0-setup.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CopyQ&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;音量控制&#34;&gt;音量控制
+&lt;/h2&gt;&lt;h3 id=&#34;eartrumpet&#34;&gt;EarTrumpet
+&lt;/h3&gt;&lt;p&gt;项目官网 &lt;a class=&#34;link&#34; href=&#34;https://github.com/File-New-Project/EarTrumpet&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/File-New-Project/EarTrumpet&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载直链 &lt;a class=&#34;link&#34; href=&#34;https://apps.microsoft.com/detail/9nblggh516xp?&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EarTrumpet&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;截图&#34;&gt;截图
+&lt;/h2&gt;&lt;h3 id=&#34;snipaste&#34;&gt;Snipaste
+&lt;/h3&gt;&lt;p&gt;官网地址 &lt;a class=&#34;link&#34; href=&#34;https://zh.snipaste.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://zh.snipaste.com/&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;哈希校验&#34;&gt;哈希校验
+&lt;/h2&gt;&lt;h3 id=&#34;hashcaculator&#34;&gt;HashCaculator
+&lt;/h3&gt;&lt;p&gt;项目地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/hrpzcf/HashCalculator&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/hrpzcf/HashCalculator&lt;/a&gt;
+下载直链 &lt;a class=&#34;link&#34; href=&#34;https://github.com/hrpzcf/HashCalculator/releases/download/5.28.0/HashCalculator-5.28.0.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HashCaculator&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;代理工具&#34;&gt;代理工具
+&lt;/h2&gt;&lt;h3 id=&#34;nekoray&#34;&gt;Nekoray
+&lt;/h3&gt;&lt;p&gt;项目地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/MatsuriDayo/nekoray&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/MatsuriDayo/nekoray&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载直链 &lt;a class=&#34;link&#34; href=&#34;https://github.com/MatsuriDayo/nekoray/releases/download/4.0.1/nekoray-4.0.1-2024-12-12-windows64.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;nekoray.zip&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tailscale&#34;&gt;Tailscale
+&lt;/h3&gt;&lt;p&gt;官网地址 &lt;a class=&#34;link&#34; href=&#34;https://www.tailscale.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.tailscale.com&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
