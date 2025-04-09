@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Fri, 17 Jan 2025 23:01:01 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 09 Apr 2025 17:33:19 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>非线性齐次方程组</title>
         <link>https://blog.ztcdream.top/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
         <pubDate>Sun, 29 Dec 2024 16:26:23 +0800</pubDate>
@@ -205,6 +205,72 @@ $$
 \lambda = -\frac{p_1}{\alpha x_1^{\alpha-1}}
 $$&lt;hr&gt;
 </description>
+        </item>
+        <item>
+        <title>光线传播问题</title>
+        <link>https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/</link>
+        <pubDate>Wed, 09 Apr 2025 17:33:19 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/</guid>
+        <description>&lt;h2 id=&#34;问题描述&#34;&gt;问题描述
+&lt;/h2&gt;&lt;p&gt;该问题源自我们课题组选择的课程项目，原题来自浙江大学的陈宇璟教授。&lt;/p&gt;
+&lt;p&gt;在 n*m 的网格中，有一些位置可以往上下左右发射速度为 xij 的光芒(这里速度为 xij 的
+意思表示到达下一个网格的时间为 xij 秒钟)，每经过一个网格，速度就增加 1，直到遇到障
+碍物或到网格边缘停止。现在假设每个有光芒发射器的位置都同时发射光线，问每个网格最
+早收到光线的时间是多少?&lt;/p&gt;
+&lt;p&gt;光芒发射器发射出的光线互不干扰，只考虑到达每个位置的时间，同时光线传播的过程
+可以忽略光芒发射器的存在(即只有障碍物才会阻止光线的传播)，光芒发射器不影响经过的
+光线。&lt;/p&gt;
+&lt;p&gt;输入格式:&lt;/p&gt;
+&lt;p&gt;第一行两个正整数 n，m(1&amp;lt;=n，m&amp;lt;=50)，表示网格大小。&lt;/p&gt;
+&lt;p&gt;接下来为 n 行 m 列由空格分隔开的整数 xij(-1&amp;lt;=xij&amp;lt;=100)。&lt;/p&gt;
+&lt;p&gt;如果 xij=-1，表示当前网格是障碍物；&lt;/p&gt;
+&lt;p&gt;如果 xij=0，表示当前网格什么都没有，光线可通过；&lt;/p&gt;
+&lt;p&gt;如果 xij&amp;gt;0，表示这个位置是光芒发射器，同时他的初始速度为 xij。&lt;/p&gt;
+&lt;p&gt;输出格式:&lt;/p&gt;
+&lt;p&gt;n 行 m 列的整数，正整数表示相应位置光线最早到达的时间；光源的光线到达时间为
+0；如果不能到达，则输出-1。&lt;/p&gt;
+&lt;p&gt;输入样例 1:&lt;/p&gt;
+&lt;p&gt;4 4&lt;/p&gt;
+&lt;p&gt;0 0 0 0&lt;/p&gt;
+&lt;p&gt;-1 -1 -1 -1&lt;/p&gt;
+&lt;p&gt;0 0 2 0&lt;/p&gt;
+&lt;p&gt;0 0 0 0&lt;/p&gt;
+&lt;p&gt;输出样例 1:&lt;/p&gt;
+&lt;p&gt;-1 -1 -1 -1&lt;/p&gt;
+&lt;p&gt;-1 -1 -1 -1&lt;/p&gt;
+&lt;p&gt;5 2 0 2&lt;/p&gt;
+&lt;p&gt;-1 -1 2 -1&lt;/p&gt;
+&lt;p&gt;输入样例 2:&lt;/p&gt;
+&lt;p&gt;4 4&lt;/p&gt;
+&lt;p&gt;0 0 0 0&lt;/p&gt;
+&lt;p&gt;-1 1 1 -1&lt;/p&gt;
+&lt;p&gt;0 0 2 0&lt;/p&gt;
+&lt;p&gt;0 0 0 0&lt;/p&gt;
+&lt;p&gt;输出样例 2:&lt;/p&gt;
+&lt;p&gt;-1 1 1 -1&lt;/p&gt;
+&lt;p&gt;-1 0 0 -1&lt;/p&gt;
+&lt;p&gt;5 1 0 2&lt;/p&gt;
+&lt;p&gt;-1 3 2 -1&lt;/p&gt;
+&lt;p&gt;输入样例 3:&lt;/p&gt;
+&lt;p&gt;7 14&lt;/p&gt;
+&lt;p&gt;22 0 -1 0 -1 17 21 -1 0 0 -1 0 30 15&lt;/p&gt;
+&lt;p&gt;11 -1 0 -1 0 0 -1 -1 -1 25 -1 1 -1 -1&lt;/p&gt;
+&lt;p&gt;-1 6 0 29 -1 2 0 0 0 5 0 0 -1 11&lt;/p&gt;
+&lt;p&gt;-1 9 11 10 -1 0 3 0 0 -1 11 -1 -1 -1&lt;/p&gt;
+&lt;p&gt;5 23 26 0 -1 -1 0 17 0 27 25 0 -1 0&lt;/p&gt;
+&lt;p&gt;-1 0 1 0 18 24 0 3 0 20 25 -1 0 0&lt;/p&gt;
+&lt;p&gt;-1 0 -1 -1 -1 -1 0 8 0 -1 13 -1 24 -1&lt;/p&gt;
+&lt;p&gt;输出样例 3:&lt;/p&gt;
+&lt;p&gt;0 22 -1 -1 -1 0 0 -1 -1 11 -1 1 0 0&lt;/p&gt;
+&lt;p&gt;0 -1 10 -1 -1 2 -1 -1 -1 0 -1 0 -1 -1&lt;/p&gt;
+&lt;p&gt;-1 0 6 0 -1 0 2 5 5 0 5 1 -1 0&lt;/p&gt;
+&lt;p&gt;-1 0 0 0 -1 2 0 3 7 -1 0 -1 -1 -1&lt;/p&gt;
+&lt;p&gt;0 0 0 10 -1 -1 3 0 17 0 0 25 -1 -1&lt;/p&gt;
+&lt;p&gt;-1 1 0 1 0 0 3 0 3 0 0 -1 24 -1&lt;/p&gt;
+&lt;p&gt;-1 30 -1 -1 -1 -1 8 0 8 -1 0 -1 0 -1&lt;/p&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析
+&lt;/h2&gt;</description>
         </item>
         <item>
         <title>Win系统工具</title>
