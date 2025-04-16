@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Mon, 06 Jan 2025 18:22:38 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 16 Apr 2025 20:39:48 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>非线性齐次方程组</title>
         <link>https://blog.ztcdream.top/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
         <pubDate>Sun, 29 Dec 2024 16:26:23 +0800</pubDate>
@@ -205,6 +205,47 @@ $$
 \lambda = -\frac{p_1}{\alpha x_1^{\alpha-1}}
 $$&lt;hr&gt;
 </description>
+        </item>
+        <item>
+        <title>（易错）求伴随矩阵的行列式</title>
+        <link>https://blog.ztcdream.top/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/</link>
+        <pubDate>Wed, 16 Apr 2025 20:39:48 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.top/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/</guid>
+        <description>&lt;h2 id=&#34;错误呈现&#34;&gt;错误呈现
+&lt;/h2&gt;&lt;p&gt;给出$3$阶矩阵$|A|=\frac{1}{2}$，求$|A^*|$.&lt;/p&gt;
+&lt;p&gt;一看有$|A|$和$|A^*|$，很容易联想到伴随矩阵的性质：&lt;/p&gt;
+$$
+AA^*=A*A=|A|E
+$$&lt;p&gt;则&lt;/p&gt;
+$$
+\begin{aligned}
+   |AA^*| =|A||A^*|&amp;=||A|E|\\ 
+    &amp;= |A||E| \\
+    &amp;= |A|
+\end{aligned}
+$$&lt;p&gt;两边约去$|A|$，得&lt;/p&gt;
+$$
+|A^*|=1
+$$&lt;p&gt;似乎题目给出的$|A|=\frac{1}{2}$是多余的。&lt;/p&gt;
+&lt;h2 id=&#34;错误分析&#34;&gt;错误分析
+&lt;/h2&gt;&lt;p&gt;但是，这对吗？&lt;/p&gt;
+&lt;p&gt;这不对！&lt;/p&gt;
+&lt;p&gt;问题就出在将$||A|E|$最外层的 $||$去掉这一步&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+||A|E| &amp;amp; \ne |A||E| \&lt;/p&gt;
+&lt;p&gt;||A|E| &amp;amp;= |A|^3|E| \
+&amp;amp;= |A|^3&lt;/p&gt;
+&lt;p&gt;\end{aligned}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结
+&lt;/h2&gt;&lt;p&gt;因此对于一个$n$阶矩阵$A$，$A$可逆&lt;/p&gt;
+$$
+\begin{aligned}
+    |A^*|=|A|^{n-1}
+\end{aligned}
+$$</description>
         </item>
         <item>
         <title>多元函数二阶偏导</title>
