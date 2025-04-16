@@ -239,7 +239,7 @@ $$
 &amp;= |A|^3
 \end{aligned}
 $$&lt;h2 id=&#34;总结&#34;&gt;总结
-&lt;/h2&gt;&lt;p&gt;因此对于一个$n$阶矩阵$A$，$A$可逆&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;因此对于一个$n$阶矩阵$A$，$A$可逆，那么伴随矩阵：&lt;/p&gt;
 $$
 \begin{aligned}
     |A^*|=|A|^{n-1}
