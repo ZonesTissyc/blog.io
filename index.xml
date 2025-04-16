@@ -232,14 +232,13 @@ $$&lt;p&gt;似乎题目给出的$|A|=\frac{1}{2}$是多余的。&lt;/p&gt;
 &lt;/h2&gt;&lt;p&gt;但是，这对吗？&lt;/p&gt;
 &lt;p&gt;这不对！&lt;/p&gt;
 &lt;p&gt;问题就出在将$||A|E|$最外层的 $||$去掉这一步&lt;/p&gt;
-&lt;p&gt;$$
+$$
 \begin{aligned}
-||A|E| &amp;amp; \ne |A||E| \&lt;/p&gt;
-&lt;p&gt;||A|E| &amp;amp;= |A|^3|E| \
-&amp;amp;= |A|^3&lt;/p&gt;
-&lt;p&gt;\end{aligned}
-$$&lt;/p&gt;
-&lt;h2 id=&#34;总结&#34;&gt;总结
+||A|E| &amp; \ne |A||E| \\
+||A|E| &amp;= |A|^3|E| \\
+&amp;= |A|^3
+\end{aligned}
+$$&lt;h2 id=&#34;总结&#34;&gt;总结
 &lt;/h2&gt;&lt;p&gt;因此对于一个$n$阶矩阵$A$，$A$可逆&lt;/p&gt;
 $$
 \begin{aligned}
