@@ -540,7 +540,7 @@
 <h3 id="定时清空日志">定时清空日志
 </h3><p>仍使用crontab来清空git的日志</p>
 <p>只需要在crontab配置文件加一条即可：</p>
-<p><code>0 0 * * * &gt; /web/site1/cron-sync.log</code></p>
+<p><code>0 0 * * * &gt; /web/site1//web/site1/git_pull.log</code></p>
 <h2 id="小结">小结
 </h2><p>如果应付简单的场景，crontab足矣。</p>
 <p>追求实时更新和性能，更推荐监听webhook的方式。</p>
