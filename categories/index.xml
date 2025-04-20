@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Sun, 20 Apr 2025 17:09:00 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 20 Apr 2025 17:15:09 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux</title>
+        <link>https://blog.ztcdream.top/categories/linux/</link>
+        <pubDate>Sun, 20 Apr 2025 17:15:09 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.top/categories/linux/</guid>
+        <description>&lt;img src="https://blog.ztcdream.top/categories/linux/Tux.svg.png" alt="Featured image of post Linux" /&gt;</description>
+        </item>
+        <item>
         <title>Def</title>
         <link>https://blog.ztcdream.top/categories/def/</link>
         <pubDate>Sun, 20 Apr 2025 17:09:00 +0800</pubDate>
@@ -22,14 +30,6 @@
         
         <guid>https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/</guid>
         <description>&lt;img src="https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/math.jpg" alt="Featured image of post 数学" /&gt;</description>
-        </item>
-        <item>
-        <title>Linux</title>
-        <link>https://blog.ztcdream.top/categories/linux/</link>
-        <pubDate>Tue, 31 Dec 2024 12:22:21 +0800</pubDate>
-        
-        <guid>https://blog.ztcdream.top/categories/linux/</guid>
-        <description>&lt;img src="https://blog.ztcdream.top/categories/linux/Tux.svg.png" alt="Featured image of post Linux" /&gt;</description>
         </item>
         <item>
         <title>化学</title>

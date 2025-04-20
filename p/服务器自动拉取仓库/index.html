@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="文件与目录\r">
-<title>Linux Shell的基础命令</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="问题引入\r网站的静态html文件托管在了github仓库上，每次修改网页构建的文件就git push至github仓库，服务器再git pull拉取仓库，实现网站的更新。\n按照这个流程，每修改一次网站，都要在服务器上执行一次git pull，很不方便。因此要让服务器自动执行这个过程，实现自动化。\n假设网站静态文件仓库在/web/site/index，我们把自动化的脚本放在上一级/web/site1。\nCrontab定时更新\rcrontab是linux里自带的自动化程序，在crontab -e修改配置文件，定时执行shell命令（通常是运行一个shell脚本），达到自动化的目的。\n创建更新仓库的sh脚本\rnano /web/site1/auto-fetch.sh\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 #!/bin/bash REPO_DIR=&#34;/web/site1/index&#34; # 切换到git目录 cd &#34;$REPO_DIR&#34; || exit 1 echo &#34;[`date`] Forcing git fetch and reset...&#34; &gt;&gt; /web/site1/git_pull.log # 写入日志 # 取最新远程变更 git fetch origin # 强制把本地重置为远程分支 git reset --hard origin/main # 可选：清理多余文件 git clean -fd echo &#34;[`date`] Update complete&#34; &gt;&gt; /web/site1/git_pull.log 别忘了赋权\n">
+<title>服务器自动拉取仓库</title>
 
-<link rel='canonical' href='https://blog.ztcdream.top/p/linux-shell%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/'>
+<link rel='canonical' href='https://blog.ztcdream.top/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/'>
 
-<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="Linux Shell的基础命令">
-<meta property='og:description' content="文件与目录\r">
-<meta property='og:url' content='https://blog.ztcdream.top/p/linux-shell%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/'>
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="服务器自动拉取仓库">
+<meta property='og:description' content="问题引入\r网站的静态html文件托管在了github仓库上，每次修改网页构建的文件就git push至github仓库，服务器再git pull拉取仓库，实现网站的更新。\n按照这个流程，每修改一次网站，都要在服务器上执行一次git pull，很不方便。因此要让服务器自动执行这个过程，实现自动化。\n假设网站静态文件仓库在/web/site/index，我们把自动化的脚本放在上一级/web/site1。\nCrontab定时更新\rcrontab是linux里自带的自动化程序，在crontab -e修改配置文件，定时执行shell命令（通常是运行一个shell脚本），达到自动化的目的。\n创建更新仓库的sh脚本\rnano /web/site1/auto-fetch.sh\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 #!/bin/bash REPO_DIR=&#34;/web/site1/index&#34; # 切换到git目录 cd &#34;$REPO_DIR&#34; || exit 1 echo &#34;[`date`] Forcing git fetch and reset...&#34; &gt;&gt; /web/site1/git_pull.log # 写入日志 # 取最新远程变更 git fetch origin # 强制把本地重置为远程分支 git reset --hard origin/main # 可选：清理多余文件 git clean -fd echo &#34;[`date`] Update complete&#34; &gt;&gt; /web/site1/git_pull.log 别忘了赋权\n">
+<meta property='og:url' content='https://blog.ztcdream.top/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Linux-Shell' /><meta property='article:published_time' content='2024-12-31T12:22:21&#43;08:00'/><meta property='article:modified_time' content='2024-12-31T12:22:21&#43;08:00'/>
-<meta name="twitter:title" content="Linux Shell的基础命令">
-<meta name="twitter:description" content="文件与目录\r">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-20T17:15:09&#43;08:00'/><meta property='article:modified_time' content='2025-04-20T17:15:09&#43;08:00'/>
+<meta name="twitter:title" content="服务器自动拉取仓库">
+<meta name="twitter:description" content="问题引入\r网站的静态html文件托管在了github仓库上，每次修改网页构建的文件就git push至github仓库，服务器再git pull拉取仓库，实现网站的更新。\n按照这个流程，每修改一次网站，都要在服务器上执行一次git pull，很不方便。因此要让服务器自动执行这个过程，实现自动化。\n假设网站静态文件仓库在/web/site/index，我们把自动化的脚本放在上一级/web/site1。\nCrontab定时更新\rcrontab是linux里自带的自动化程序，在crontab -e修改配置文件，定时执行shell命令（通常是运行一个shell脚本），达到自动化的目的。\n创建更新仓库的sh脚本\rnano /web/site1/auto-fetch.sh\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 #!/bin/bash REPO_DIR=&#34;/web/site1/index&#34; # 切换到git目录 cd &#34;$REPO_DIR&#34; || exit 1 echo &#34;[`date`] Forcing git fetch and reset...&#34; &gt;&gt; /web/site1/git_pull.log # 写入日志 # 取最新远程变更 git fetch origin # 强制把本地重置为远程分支 git reset --hard origin/main # 可选：清理多余文件 git clean -fd echo &#34;[`date`] Update complete&#34; &gt;&gt; /web/site1/git_pull.log 别忘了赋权\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -272,7 +272,21 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#文件与目录">文件与目录</a></li>
+    <li><a href="#问题引入">问题引入</a></li>
+    <li><a href="#crontab定时更新">Crontab定时更新</a>
+      <ol>
+        <li><a href="#创建更新仓库的sh脚本">创建更新仓库的sh脚本</a></li>
+        <li><a href="#配置crontab">配置crontab</a></li>
+      </ol>
+    </li>
+    <li><a href="#webhook实时更新">webhook实时更新</a>
+      <ol>
+        <li><a href="#创建更新脚本">创建更新脚本</a></li>
+        <li><a href="#编写webhook服务脚本">编写webhook服务脚本</a></li>
+        <li><a href="#创建-systemd-服务管理-webhook">创建 systemd 服务管理 webhook</a></li>
+        <li><a href="#heading"></a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -300,7 +314,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/linux-shell%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">Linux Shell的基础命令</a>
+            <a href="/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/">服务器自动拉取仓库</a>
         </h2>
     
         
@@ -322,7 +336,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Dec 31, 2024</time>
+                <time class="article-time--published">Apr 20, 2025</time>
             </div>
         
 
@@ -352,19 +366,174 @@
     <section class="article-content">
     
     
-    <h2 id="文件与目录">文件与目录
-</h2>
+    <h2 id="问题引入">问题引入
+</h2><p>网站的静态html文件托管在了github仓库上，每次修改网页构建的文件就<code>git push</code>至github仓库，服务器再<code>git pull</code>拉取仓库，实现网站的更新。</p>
+<p>按照这个流程，每修改一次网站，都要在服务器上执行一次<code>git pull</code>，很不方便。因此要让服务器自动执行这个过程，实现自动化。</p>
+<p>假设网站静态文件仓库在<code>/web/site/index</code>，我们把自动化的脚本放在上一级<code>/web/site1</code>。</p>
+<h2 id="crontab定时更新">Crontab定时更新
+</h2><p>crontab是linux里自带的自动化程序，在<code>crontab -e</code>修改配置文件，定时执行shell命令（通常是运行一个shell脚本），达到自动化的目的。</p>
+<h3 id="创建更新仓库的sh脚本">创建更新仓库的sh脚本
+</h3><p><code>nano /web/site1/auto-fetch.sh</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nv">REPO_DIR</span><span class="o">=</span><span class="s2">&#34;/web/site1/index&#34;</span> <span class="c1"># 切换到git目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="s2">&#34;</span><span class="nv">$REPO_DIR</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;[`date`] Forcing git fetch and reset...&#34;</span> &gt;&gt; /web/site1/git_pull.log <span class="c1"># 写入日志</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 取最新远程变更</span>
+</span></span><span class="line"><span class="cl">git fetch origin
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 强制把本地重置为远程分支</span>
+</span></span><span class="line"><span class="cl">git reset --hard origin/main
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 可选：清理多余文件</span>
+</span></span><span class="line"><span class="cl">git clean -fd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;[`date`] Update complete&#34;</span> &gt;&gt; /web/site1/git_pull.log
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>别忘了赋权</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x /web/site1/auto-fetch.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="配置crontab">配置crontab
+</h3><p>使用<code>crontab -e</code>修改crontab的配置文件</p>
+<p>在末尾加入两行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">*/1 * * * * /bin/bash /web/site1/auto-fetch.sh &gt;&gt; /web/site1/cron-sync.log 2&gt;&amp;1
+</span></span><span class="line"><span class="cl">0 0 * * * &gt; /web/site1/cron-sync.log
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>第一行 <code>*/1 * * * *</code>是每隔一分钟执行一次，运行<code>auto-fetch.sh</code>，并将错误输出连同标准输出写入<code>cron-sync.log</code>。</p>
+<p>第二行是每天0点清空<code>cron-sync.log</code>，避免日志文件无限增大。</p>
+<p>保存退出后，crontab就立即生效了。</p>
+<h2 id="webhook实时更新">webhook实时更新
+</h2><p>crontab的配置过程简单，但缺点是定时。因为是强制更新，因此crontab设置自动更新的时间间隔不宜过短，因为会影响性能。</p>
+<p>webhook可以实时监听远程仓库的状态，当且仅当远程仓库变化时，服务器才自动push。</p>
+<h3 id="创建更新脚本">创建更新脚本
+</h3><p>这一步参考crontab的<code>auto-fetch</code>脚本</p>
+<h3 id="编写webhook服务脚本">编写webhook服务脚本
+</h3><p>这里要用到python的flask模块</p>
+<p><code>pip3 install flask</code></p>
+<p><code>nano /web/site1/webhook_server.py</code></p>
+<p>写入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">subprocess</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/git-webhook&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">webhook</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;/web/site1/auto-fetch.sh&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;Webhook received&#39;</span><span class="p">,</span> <span class="mi">200</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">9000</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>根据自身情况修改 subprocess.Popen的脚本路径 和 port=9000 的端口号。（这个webhook是运行在服务器上的，注意端口是否被占用）</p>
+<h3 id="创建-systemd-服务管理-webhook">创建 systemd 服务管理 webhook
+</h3><p><code>nano /etc/systemd/system/git-webhook.service</code></p>
+<p>写入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Unit]
+</span></span><span class="line"><span class="cl">Description=Git Webhook Listener
+</span></span><span class="line"><span class="cl">After=network.target
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[Service]
+</span></span><span class="line"><span class="cl">User=root
+</span></span><span class="line"><span class="cl">WorkingDirectory=/web/site1
+</span></span><span class="line"><span class="cl">ExecStart=/usr/bin/python3 /web/site1/webhook_server.py
+</span></span><span class="line"><span class="cl">Restart=always
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[Install]
+</span></span><span class="line"><span class="cl">WantedBy=multi-user.target
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面的<code>User=root</code>，按需修改成可以执行脚本的用户</p>
+<p>启用并启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl daemon-reexec
+</span></span><span class="line"><span class="cl">systemctl daemon-reload
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> --now git-webhook.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看状态</p>
+<p><code>systemctl</code></p>
+<h3 id="heading">
+</h3>
 </section>
 
 
     <footer class="article-footer">
     
-    <section class="article-tags">
-        
-            <a href="/tags/linux-shell/">Linux-Shell</a>
-        
-    </section>
-
 
     
     <section class="article-copyright">
@@ -421,12 +590,12 @@
             
                 
 <article class="">
-    <a href="/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/">
+    <a href="/p/linux-shell%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">服务器自动拉取仓库</h2>
+            <h2 class="article-title">Linux Shell的基础命令</h2>
         </div>
     </a>
 </article>
