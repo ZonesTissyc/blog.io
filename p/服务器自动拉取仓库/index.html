@@ -284,9 +284,11 @@
         <li><a href="#创建更新脚本">创建更新脚本</a></li>
         <li><a href="#编写webhook服务脚本">编写webhook服务脚本</a></li>
         <li><a href="#创建-systemd-服务管理-webhook">创建 systemd 服务管理 webhook</a></li>
-        <li><a href="#heading"></a></li>
+        <li><a href="#github设置webhook">github设置webhook</a></li>
+        <li><a href="#定时清空日志">定时清空日志</a></li>
       </ol>
     </li>
+    <li><a href="#小结">小结</a></li>
   </ol>
 </nav>
         </div>
@@ -351,7 +353,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -527,8 +529,21 @@
 </div>
 </div><p>查看状态</p>
 <p><code>systemctl</code></p>
-<h3 id="heading">
-</h3>
+<h3 id="github设置webhook">github设置webhook
+</h3><p>点进项目仓库，上边栏找到Settings，点击Webhooks。</p>
+<p>点击Add webhook。</p>
+<p>Payload URL = http://your-server-ip:9000/git-webhook</p>
+<p>Content type = application/json</p>
+<p>Events = Push events</p>
+<p>保存后检查是否正常工作</p>
+<h3 id="定时清空日志">定时清空日志
+</h3><p>仍使用crontab来清空git的日志</p>
+<p>只需要在crontab配置文件加一条即可：</p>
+<p><code>0 0 * * * &gt; /web/site1/cron-sync.log</code></p>
+<h2 id="小结">小结
+</h2><p>如果应付简单的场景，crontab足矣。</p>
+<p>追求实时更新和性能，更推荐监听webhook的方式。</p>
+
 </section>
 
 
