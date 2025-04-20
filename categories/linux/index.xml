@@ -17,7 +17,7 @@
 &lt;/h2&gt;&lt;p&gt;网站的静态html文件托管在了github仓库上，每次修改网页构建的文件就&lt;code&gt;git push&lt;/code&gt;至github仓库，服务器再&lt;code&gt;git pull&lt;/code&gt;拉取仓库，实现网站的更新。&lt;/p&gt;
 &lt;p&gt;按照这个流程，每修改一次网站，都要在服务器上执行一次&lt;code&gt;git pull&lt;/code&gt;，很不方便。因此要让服务器自动执行这个过程，实现自动化。&lt;/p&gt;
 &lt;p&gt;假设网站静态文件仓库在&lt;code&gt;/web/site/index&lt;/code&gt;，我们把自动化的脚本放在上一级&lt;code&gt;/web/site1&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&#34;crontab定时更新&#34;&gt;Crontab定时更新
+&lt;h2 id=&#34;方法一-crontab定时更新&#34;&gt;方法一 Crontab定时更新
 &lt;/h2&gt;&lt;p&gt;crontab是linux里自带的自动化程序，在&lt;code&gt;crontab -e&lt;/code&gt;修改配置文件，定时执行shell命令（通常是运行一个shell脚本），达到自动化的目的。&lt;/p&gt;
 &lt;h3 id=&#34;创建更新仓库的sh脚本&#34;&gt;创建更新仓库的sh脚本
 &lt;/h3&gt;&lt;p&gt;&lt;code&gt;nano /web/site1/auto-fetch.sh&lt;/code&gt;&lt;/p&gt;
@@ -84,7 +84,7 @@
 &lt;/div&gt;&lt;p&gt;第一行 &lt;code&gt;*/1 * * * *&lt;/code&gt;是每隔一分钟执行一次，运行&lt;code&gt;auto-fetch.sh&lt;/code&gt;，并将错误输出连同标准输出写入&lt;code&gt;cron-sync.log&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;第二行是每天0点清空&lt;code&gt;cron-sync.log&lt;/code&gt;，避免日志文件无限增大。&lt;/p&gt;
 &lt;p&gt;保存退出后，crontab就立即生效了。&lt;/p&gt;
-&lt;h2 id=&#34;webhook实时更新&#34;&gt;webhook实时更新
+&lt;h2 id=&#34;方法二-webhook实时更新&#34;&gt;方法二 webhook实时更新
 &lt;/h2&gt;&lt;p&gt;crontab的配置过程简单，但缺点是定时。因为是强制更新，因此crontab设置自动更新的时间间隔不宜过短，因为会影响性能。&lt;/p&gt;
 &lt;p&gt;webhook可以实时监听远程仓库的状态，当且仅当远程仓库变化时，服务器才自动push。&lt;/p&gt;
 &lt;h3 id=&#34;创建更新脚本&#34;&gt;创建更新脚本
