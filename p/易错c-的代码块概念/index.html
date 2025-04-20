@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="这不对吗？从一个例子讲起\r请读者先仔细观察下面的代码\n1 2 3 4 5 int a=8; if (a&lt;9){ int b=a; } std::cout&lt;&lt;b; 上面会输出什么？如果你心想：这还用问，b=a=8，当然输出8了。\n然而，结果却是\n'b' was not declared in this scope\n这不对吧？为什么b是未定义的？这是因为c语言中有代码块的概念。\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="这不对吗？从一个例子讲起\r请读者先仔细观察下面的代码\n1 2 3 4 5 int a=8; if (a&lt;9){ int b=a; } std::cout&lt;&lt;b; 提问：上面会输出什么？\n你心想：这还用问，b=a=8，当然输出8了。\n然而，结果却是\n'b' was not declared in this scope\n这不对吧？为什么b是未定义的？这是因为c语言中有代码块的概念。\n">
 <title>（易错）C&#43;&#43;的代码块概念</title>
 
 <link rel='canonical' href='https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%E6%A6%82%E5%BF%B5/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="（易错）C++的代码块概念">
-<meta property='og:description' content="这不对吗？从一个例子讲起\r请读者先仔细观察下面的代码\n1 2 3 4 5 int a=8; if (a&lt;9){ int b=a; } std::cout&lt;&lt;b; 上面会输出什么？如果你心想：这还用问，b=a=8，当然输出8了。\n然而，结果却是\n'b' was not declared in this scope\n这不对吧？为什么b是未定义的？这是因为c语言中有代码块的概念。\n">
+<meta property='og:description' content="这不对吗？从一个例子讲起\r请读者先仔细观察下面的代码\n1 2 3 4 5 int a=8; if (a&lt;9){ int b=a; } std::cout&lt;&lt;b; 提问：上面会输出什么？\n你心想：这还用问，b=a=8，当然输出8了。\n然而，结果却是\n'b' was not declared in this scope\n这不对吧？为什么b是未定义的？这是因为c语言中有代码块的概念。\n">
 <meta property='og:url' content='https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%E6%A6%82%E5%BF%B5/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-20T17:09:00&#43;08:00'/><meta property='article:modified_time' content='2025-04-20T17:09:00&#43;08:00'/>
 <meta name="twitter:title" content="（易错）C++的代码块概念">
-<meta name="twitter:description" content="这不对吗？从一个例子讲起\r请读者先仔细观察下面的代码\n1 2 3 4 5 int a=8; if (a&lt;9){ int b=a; } std::cout&lt;&lt;b; 上面会输出什么？如果你心想：这还用问，b=a=8，当然输出8了。\n然而，结果却是\n'b' was not declared in this scope\n这不对吧？为什么b是未定义的？这是因为c语言中有代码块的概念。\n">
+<meta name="twitter:description" content="这不对吗？从一个例子讲起\r请读者先仔细观察下面的代码\n1 2 3 4 5 int a=8; if (a&lt;9){ int b=a; } std::cout&lt;&lt;b; 提问：上面会输出什么？\n你心想：这还用问，b=a=8，当然输出8了。\n然而，结果却是\n'b' was not declared in this scope\n这不对吧？为什么b是未定义的？这是因为c语言中有代码块的概念。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -370,7 +370,8 @@
 </span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">b</span><span class="p">;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>上面会输出什么？如果你心想：这还用问，b=a=8，当然输出8了。</p>
+</div><p>提问：<strong>上面会输出什么？</strong></p>
+<p>你心想：这还用问，b=a=8，当然输出8了。</p>
 <p>然而，结果却是</p>
 <p><img src="https://image.ztcdream.top/i/2025/04/20/12dz8qw.png"
 	

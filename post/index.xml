@@ -414,7 +414,8 @@ $$&lt;hr&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;上面会输出什么？如果你心想：这还用问，b=a=8，当然输出8了。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;提问：&lt;strong&gt;上面会输出什么？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;你心想：这还用问，b=a=8，当然输出8了。&lt;/p&gt;
 &lt;p&gt;然而，结果却是&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/04/20/12dz8qw.png&#34;
 	
