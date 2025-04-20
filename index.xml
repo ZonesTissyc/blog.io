@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Wed, 16 Apr 2025 20:39:48 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 20 Apr 2025 17:09:00 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>非线性齐次方程组</title>
         <link>https://blog.ztcdream.top/p/%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B%E7%BB%84/</link>
         <pubDate>Sun, 29 Dec 2024 16:26:23 +0800</pubDate>
@@ -205,6 +205,15 @@ $$
 \lambda = -\frac{p_1}{\alpha x_1^{\alpha-1}}
 $$&lt;hr&gt;
 </description>
+        </item>
+        <item>
+        <title>（易错）C&#43;&#43;的代码块概念</title>
+        <link>https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%E6%A6%82%E5%BF%B5/</link>
+        <pubDate>Sun, 20 Apr 2025 17:09:00 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%E6%A6%82%E5%BF%B5/</guid>
+        <description>&lt;h2 id=&#34;问题导入&#34;&gt;问题导入
+&lt;/h2&gt;</description>
         </item>
         <item>
         <title>（易错）求伴随矩阵的行列式</title>
