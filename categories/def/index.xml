@@ -14,7 +14,8 @@
         
         <guid>https://blog.ztcdream.top/p/test_lasttime/</guid>
         <description>&lt;h2 id=&#34;测试&#34;&gt;测试
-&lt;/h2&gt;</description>
+&lt;/h2&gt;&lt;p&gt;hello&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>（易错）C&#43;&#43;的代码块概念</title>
