@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="这不对吧？从一个例子讲起\r请读者先仔细观察下面的代码\n1 2 3 4 5 int a=8; if (a&lt;9){ int b=a; } cout&lt;&lt;b; 提问：上面会输出什么？\n你心想：这还用问，b=a=8，当然输出8了。\n然而，结果却是\n'b' was not declared in this scope\n这不对吧？为什么b是未定义的？这是因为c语言中有作用域的概念。\n代码块\rc++中用花括号${}$标识一个代码块,${}$内的所有语句被视为一句语句。在if,while,for等控制语句中经常用到。\n块级作用域\rc语言规定 { }里新定义的变量，只能在当前{ }里使用，即块级作用域。\n1 2 3 4 int a; { int b; } 上面$\\left{ \\phantom{a} \\right}$内的变量b，只能在$\\left{ \\phantom{a} \\right}$里使用。\n下面的例子更是典型：\n1 2 3 4 for(int i=0;i&lt;8;i++){ continue; } cout&lt;&lt;i&lt;&lt;endl; 上面的输出是什么？\n答案不是输出9。因为这里的for语句就是一个代码块，在里面新定义的变量只能在for语句中使用。\n想让for语句结束后输出变量i，那么变量i必须在for语句之前定义。\n下面两种方案是可行的：\n1 2 3 4 5 int i; for(i=0; i&lt;8; i++){ continue; } cout&lt;&lt;i&lt;&lt;endl; 或\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="这不对吧？从一个例子讲起\r请读者先仔细观察下面的代码\n1 2 3 4 5 int a=8; if (a&lt;9){ int b=a; } cout&lt;&lt;b; 提问：上面会输出什么？\n你心想：这还用问，b=a=8，当然输出8了。\n然而，结果却是\n'b' was not declared in this scope\n这不对吧？为什么b是未定义的？这是因为c语言中有作用域的概念。\n代码块\rc++中用花括号$ { } $标识一个代码块,${}$内的所有语句被视为一句语句。在if,while,for等控制语句中经常用到。\n块级作用域\rc语言规定 { }里新定义的变量，只能在当前{ }里使用，即块级作用域。\n1 2 3 4 int a; { int b; } 上面内的变量b，只能在$\\left{ \\phantom{a} \\right}$里使用。\n下面的例子更是典型：\n1 2 3 4 for(int i=0;i&lt;8;i++){ continue; } cout&lt;&lt;i&lt;&lt;endl; 上面的输出是什么？\n答案不是输出9。因为这里的for语句就是一个代码块，在里面新定义的变量只能在for语句中使用。\n想让for语句结束后输出变量i，那么变量i必须在for语句之前定义。\n下面两种方案是可行的：\n1 2 3 4 5 int i; for(i=0; i&lt;8; i++){ continue; } cout&lt;&lt;i&lt;&lt;endl; 或\n">
 <title>（易错）C&#43;&#43;的作用域概念</title>
 
 <link rel='canonical' href='https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="（易错）C++的作用域概念">
-<meta property='og:description' content="这不对吧？从一个例子讲起\r请读者先仔细观察下面的代码\n1 2 3 4 5 int a=8; if (a&lt;9){ int b=a; } cout&lt;&lt;b; 提问：上面会输出什么？\n你心想：这还用问，b=a=8，当然输出8了。\n然而，结果却是\n'b' was not declared in this scope\n这不对吧？为什么b是未定义的？这是因为c语言中有作用域的概念。\n代码块\rc++中用花括号${}$标识一个代码块,${}$内的所有语句被视为一句语句。在if,while,for等控制语句中经常用到。\n块级作用域\rc语言规定 { }里新定义的变量，只能在当前{ }里使用，即块级作用域。\n1 2 3 4 int a; { int b; } 上面$\\left{ \\phantom{a} \\right}$内的变量b，只能在$\\left{ \\phantom{a} \\right}$里使用。\n下面的例子更是典型：\n1 2 3 4 for(int i=0;i&lt;8;i++){ continue; } cout&lt;&lt;i&lt;&lt;endl; 上面的输出是什么？\n答案不是输出9。因为这里的for语句就是一个代码块，在里面新定义的变量只能在for语句中使用。\n想让for语句结束后输出变量i，那么变量i必须在for语句之前定义。\n下面两种方案是可行的：\n1 2 3 4 5 int i; for(i=0; i&lt;8; i++){ continue; } cout&lt;&lt;i&lt;&lt;endl; 或\n">
+<meta property='og:description' content="这不对吧？从一个例子讲起\r请读者先仔细观察下面的代码\n1 2 3 4 5 int a=8; if (a&lt;9){ int b=a; } cout&lt;&lt;b; 提问：上面会输出什么？\n你心想：这还用问，b=a=8，当然输出8了。\n然而，结果却是\n'b' was not declared in this scope\n这不对吧？为什么b是未定义的？这是因为c语言中有作用域的概念。\n代码块\rc++中用花括号$ { } $标识一个代码块,${}$内的所有语句被视为一句语句。在if,while,for等控制语句中经常用到。\n块级作用域\rc语言规定 { }里新定义的变量，只能在当前{ }里使用，即块级作用域。\n1 2 3 4 int a; { int b; } 上面内的变量b，只能在$\\left{ \\phantom{a} \\right}$里使用。\n下面的例子更是典型：\n1 2 3 4 for(int i=0;i&lt;8;i++){ continue; } cout&lt;&lt;i&lt;&lt;endl; 上面的输出是什么？\n答案不是输出9。因为这里的for语句就是一个代码块，在里面新定义的变量只能在for语句中使用。\n想让for语句结束后输出变量i，那么变量i必须在for语句之前定义。\n下面两种方案是可行的：\n1 2 3 4 5 int i; for(i=0; i&lt;8; i++){ continue; } cout&lt;&lt;i&lt;&lt;endl; 或\n">
 <meta property='og:url' content='https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-20T17:09:00&#43;08:00'/><meta property='article:modified_time' content='2025-04-20T17:09:00&#43;08:00'/>
 <meta name="twitter:title" content="（易错）C++的作用域概念">
-<meta name="twitter:description" content="这不对吧？从一个例子讲起\r请读者先仔细观察下面的代码\n1 2 3 4 5 int a=8; if (a&lt;9){ int b=a; } cout&lt;&lt;b; 提问：上面会输出什么？\n你心想：这还用问，b=a=8，当然输出8了。\n然而，结果却是\n'b' was not declared in this scope\n这不对吧？为什么b是未定义的？这是因为c语言中有作用域的概念。\n代码块\rc++中用花括号${}$标识一个代码块,${}$内的所有语句被视为一句语句。在if,while,for等控制语句中经常用到。\n块级作用域\rc语言规定 { }里新定义的变量，只能在当前{ }里使用，即块级作用域。\n1 2 3 4 int a; { int b; } 上面$\\left{ \\phantom{a} \\right}$内的变量b，只能在$\\left{ \\phantom{a} \\right}$里使用。\n下面的例子更是典型：\n1 2 3 4 for(int i=0;i&lt;8;i++){ continue; } cout&lt;&lt;i&lt;&lt;endl; 上面的输出是什么？\n答案不是输出9。因为这里的for语句就是一个代码块，在里面新定义的变量只能在for语句中使用。\n想让for语句结束后输出变量i，那么变量i必须在for语句之前定义。\n下面两种方案是可行的：\n1 2 3 4 5 int i; for(i=0; i&lt;8; i++){ continue; } cout&lt;&lt;i&lt;&lt;endl; 或\n">
+<meta name="twitter:description" content="这不对吧？从一个例子讲起\r请读者先仔细观察下面的代码\n1 2 3 4 5 int a=8; if (a&lt;9){ int b=a; } cout&lt;&lt;b; 提问：上面会输出什么？\n你心想：这还用问，b=a=8，当然输出8了。\n然而，结果却是\n'b' was not declared in this scope\n这不对吧？为什么b是未定义的？这是因为c语言中有作用域的概念。\n代码块\rc++中用花括号$ { } $标识一个代码块,${}$内的所有语句被视为一句语句。在if,while,for等控制语句中经常用到。\n块级作用域\rc语言规定 { }里新定义的变量，只能在当前{ }里使用，即块级作用域。\n1 2 3 4 int a; { int b; } 上面内的变量b，只能在$\\left{ \\phantom{a} \\right}$里使用。\n下面的例子更是典型：\n1 2 3 4 for(int i=0;i&lt;8;i++){ continue; } cout&lt;&lt;i&lt;&lt;endl; 上面的输出是什么？\n答案不是输出9。因为这里的for语句就是一个代码块，在里面新定义的变量只能在for语句中使用。\n想让for语句结束后输出变量i，那么变量i必须在for语句之前定义。\n下面两种方案是可行的：\n1 2 3 4 5 int i; for(i=0; i&lt;8; i++){ continue; } cout&lt;&lt;i&lt;&lt;endl; 或\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -394,7 +394,7 @@
 <p><code>'b' was not declared in this scope</code></p>
 <p>这不对吧？为什么b是未定义的？这是因为c语言中有<strong>作用域</strong>的概念。</p>
 <h2 id="代码块">代码块
-</h2><p>c++中用花括号${}$标识一个代码块,${}$内的所有语句被视为一句语句。在if,while,for等控制语句中经常用到。</p>
+</h2><p>c++中用花括号$ { } $标识一个代码块,${}$内的所有语句被视为一句语句。在if,while,for等控制语句中经常用到。</p>
 <h3 id="块级作用域">块级作用域
 </h3><p>c语言规定 <strong>{ }里新定义的变量，只能在当前{ }里使用</strong>，即块级作用域。</p>
 <div class="highlight"><div class="chroma">
@@ -411,7 +411,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>上面$\left{ \phantom{a} \right}$内的变量b，只能在$\left{ \phantom{a} \right}$里使用。</p>
+</div><p>上面内的变量b，只能在$\left{ \phantom{a} \right}$里使用。</p>
 <p>下面的例子更是典型：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

@@ -57,7 +57,7 @@
 &lt;p&gt;&lt;code&gt;&#39;b&#39; was not declared in this scope&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;这不对吧？为什么b是未定义的？这是因为c语言中有&lt;strong&gt;作用域&lt;/strong&gt;的概念。&lt;/p&gt;
 &lt;h2 id=&#34;代码块&#34;&gt;代码块
-&lt;/h2&gt;&lt;p&gt;c++中用花括号${}$标识一个代码块,${}$内的所有语句被视为一句语句。在if,while,for等控制语句中经常用到。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;c++中用花括号$ { } $标识一个代码块,${}$内的所有语句被视为一句语句。在if,while,for等控制语句中经常用到。&lt;/p&gt;
 &lt;h3 id=&#34;块级作用域&#34;&gt;块级作用域
 &lt;/h3&gt;&lt;p&gt;c语言规定 &lt;strong&gt;{ }里新定义的变量，只能在当前{ }里使用&lt;/strong&gt;，即块级作用域。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -74,7 +74,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;上面$\left{ \phantom{a} \right}$内的变量b，只能在$\left{ \phantom{a} \right}$里使用。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;上面内的变量b，只能在$\left{ \phantom{a} \right}$里使用。&lt;/p&gt;
 &lt;p&gt;下面的例子更是典型：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
