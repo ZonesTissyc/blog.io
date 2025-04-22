@@ -172,7 +172,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;查看状态&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;systemctl&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo systemctl status git-webhook.service&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;github设置webhook&#34;&gt;github设置webhook
 &lt;/h3&gt;&lt;p&gt;点进项目仓库，上边栏找到Settings，点击Webhooks。&lt;/p&gt;
 &lt;p&gt;点击Add webhook。&lt;/p&gt;
