@@ -593,7 +593,7 @@ $$&lt;hr&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;总结&#34;&gt;总结
-&lt;/h2&gt;&lt;p&gt;块级作用域 ${}$，可以简单理解成中央与地方的关系。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;块级作用域${}$，可以简单理解成中央与地方的关系。&lt;/p&gt;
 &lt;p&gt;把${}$外面的变量看作中央文件，${}$内部的变量看作地方法规。中央出台的文件对所有地方省份都生效，各省份可以根据自身情况修改中央文件，修改后也仅对该区域生效，不会影响到中央和其他地方省份。&lt;/p&gt;
 </description>
         </item>
