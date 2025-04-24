@@ -288,6 +288,7 @@
             <li><a href="#2">2</a></li>
           </ol>
         </li>
+        <li><a href="#3">3</a></li>
       </ol>
     </li>
   </ol>
@@ -403,7 +404,7 @@
 <p><code>'b' was not declared in this scope</code></p>
 <p>这不对吧？为什么b是未定义的？这是因为c语言中有<strong>作用域</strong>的概念。</p>
 <h2 id="代码块">代码块
-</h2><p>c++中用花括号 <strong>{ }</strong> 标识一个代码块, <strong>{ }</strong> 内的所有语句被视为一句语句。在if,while,for等控制语句中经常用到。</p>
+</h2><p>c++中用花括号 <strong>{ }</strong> 标识一个代码块, <strong>{ }</strong> 内的所有语句被视为一句语句。在<strong>if</strong>,<strong>while</strong>,<strong>for</strong>等控制语句中经常用到。</p>
 <h3 id="块级作用域">块级作用域
 </h3><p>c语言规定 <strong>{ }里新定义的变量，只能在当前{ }里使用</strong> ，即块级作用域。</p>
 <div class="highlight"><div class="chroma">
@@ -557,7 +558,7 @@
 </div>
 </div><h2 id="总结">总结
 </h2><p>块级作用域 <strong>{ }</strong>，可以简单理解成中央与地方的关系。</p>
-<p>把 <strong>{ }</strong> 外面的变量看作中央文件， <strong>{ }</strong> 内部的变量看作地方法规。中央出台的文件对所有地方省份都生效，各省份可以根据自身情况修改中央文件，修改后也仅对该区域生效，不会影响到中央和其他地方省份。</p>
+<p><strong>{ }</strong> 外面的变量相当于是中央文件， <strong>{ }</strong> 内部的变量看作地方法规。中央出台的文件对所有地方省份都生效，各省份可以根据自身情况修改中央文件，或者制定新的法规。地方修改后的中央文件和新法规也仅对该区域生效，不会影响到中央和其他地方省份。</p>
 <h3 id="小测">小测
 </h3><h4 id="1">1
 </h4><p>下面的for循环可以完整输出字符数组strA的所有内容吗？如果不能，请改正。</p>
@@ -605,7 +606,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="mi">11</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span><span class="mi">11</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
 </span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
@@ -617,6 +618,34 @@
 </span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="o">&lt;&lt;</span><span class="s">&#34;不是质数&#34;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3">3
+</h3><p>思考下面代码的运行结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="o">=</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">b</span><span class="o">&lt;&lt;</span><span class="sc">&#39; &#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">b</span><span class="o">&lt;&lt;</span><span class="sc">&#39; &#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">c</span><span class="p">;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -700,19 +729,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Datetime</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">光线传播问题</h2>
         </div>
     </a>
 </article>
