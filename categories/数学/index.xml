@@ -21,7 +21,7 @@ AA^*=A*A=|A|E
 $$&lt;p&gt;则&lt;/p&gt;
 $$
 \begin{aligned}
-   |AA^*| =|A||A^*|&amp;=||A|E|\\ 
+   |AA^*| =|A||A^*|&amp;=||A|E| \\
     &amp;= |A||E| \\
     &amp;= |A|
 \end{aligned}
