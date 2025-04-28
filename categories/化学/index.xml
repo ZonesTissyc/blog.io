@@ -6,39 +6,6 @@
         <description>Recent content in 化学 on ZTC&#39;Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>ZTC@</copyright>
-        <lastBuildDate>Mon, 30 Dec 2024 20:27:17 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/%E5%8C%96%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>电极电势</title>
-        <link>https://blog.ztcdream.top/p/%E7%94%B5%E6%9E%81%E7%94%B5%E5%8A%BF/</link>
-        <pubDate>Mon, 30 Dec 2024 20:27:17 +0800</pubDate>
-        
-        <guid>https://blog.ztcdream.top/p/%E7%94%B5%E6%9E%81%E7%94%B5%E5%8A%BF/</guid>
-        <description>&lt;h3 id=&#34;涉及知识点&#34;&gt;涉及知识点
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;能斯特方程&lt;/strong&gt;：$E = E^{\circ}+\frac{0.0592V}{n}\lg\frac{[氧化态]}{[还原态]}$（在$298K$时），用于计算非标准状态下电极电势，其中$E$为非标准电极电势，$E^{\circ}$为标准电极电势，$n$为电极反应中转移的电子数。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;$Fe^{3+}/Fe^{2+}$电对的电极反应&lt;/strong&gt;：$Fe^{3+}+e^-\rightleftharpoons Fe^{2+}$，$n = 1$，标准电极电势$E^{\circ}(Fe^{3+}/Fe^{2+}) = 0.771V$。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;解题思路&#34;&gt;解题思路
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;已知$E^{\circ}(Fe^{3+}/Fe^{2+}) = 0.771V$，$c(Fe^{3+}) = 0.2000mol/L$，假设$c(Fe^{2+}) = 1mol/L$（标准浓度）。&lt;/li&gt;
-&lt;li&gt;根据能斯特方程$E = E^{\circ}+\frac{0.0592V}{n}\lg\frac{[Fe^{3+}]}{[Fe^{2+}]}$计算电极电势$E$。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;计算过程&#34;&gt;计算过程
-&lt;/h3&gt;$$
-\begin{aligned}
-E &amp;= 0.771V+\frac{0.0592V}{1}\lg\frac{0.2000mol/L}{1mol/L} \\
-&amp;= 0.771V + 0.0592V\times\lg0.2 \\
-&amp;= 0.771V + 0.0592V\times(- 0.699) (\lg0.2\approx - 0.699) \\
-&amp;\approx 0.771V - 0.041V \\
-&amp;= 0.730V
-\end{aligned}
-$$&lt;p&gt;所以当$c(Fe^{3+}) = 0.2000mol/L$时，$Fe^{3+}/Fe^{2+}$电对的电极电势约为$0.730V$。（计算结果保留三位有效数字）&lt;/p&gt;
-</description>
-        </item>
-        
+        <copyright>ZTC@</copyright><atom:link href="https://blog.ztcdream.top/categories/%E5%8C%96%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>

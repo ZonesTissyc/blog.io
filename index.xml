@@ -7,33 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Thu, 24 Apr 2025 23:53:37 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Phototest</title>
-        <link>https://blog.ztcdream.top/p/phototest/</link>
-        <pubDate>Thu, 24 Apr 2025 23:49:56 +0800</pubDate>
-        
-        <guid>https://blog.ztcdream.top/p/phototest/</guid>
-        <description>&lt;h2 id=&#34;test&#34;&gt;test
-&lt;/h2&gt;&lt;p&gt;测试&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/01/01/m1ir2.png&#34;
-    alt=&#34;alt text&#34;&gt;&lt;figcaption&gt;
-      &lt;h4&gt;点我预览&lt;/h4&gt;
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-</description>
-        </item>
-        <item>
-        <title>Test_lasttime</title>
-        <link>https://blog.ztcdream.top/p/test_lasttime/</link>
-        <pubDate>Mon, 21 Apr 2025 17:09:22 +0800</pubDate>
-        
-        <guid>https://blog.ztcdream.top/p/test_lasttime/</guid>
-        <description>&lt;h2 id=&#34;测试&#34;&gt;测试
-&lt;/h2&gt;&lt;p&gt;hello&lt;/p&gt;
-</description>
-        </item>
-        <item>
+        <lastBuildDate>Thu, 24 Apr 2025 22:52:25 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>服务器自动拉取仓库</title>
         <link>https://blog.ztcdream.top/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/</link>
         <pubDate>Sun, 20 Apr 2025 17:15:09 +0800</pubDate>
@@ -544,16 +518,6 @@ $$
 $$</description>
         </item>
         <item>
-        <title>Datetime</title>
-        <link>https://blog.ztcdream.top/p/datetime/</link>
-        <pubDate>Wed, 09 Apr 2025 22:52:41 +0800</pubDate>
-        
-        <guid>https://blog.ztcdream.top/p/datetime/</guid>
-        <description>&lt;h2 id=&#34;heading&#34;&gt;
-&lt;/h2&gt;&lt;p&gt;测试时间&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>Win系统工具</title>
         <link>https://blog.ztcdream.top/p/win%E7%B3%BB%E7%BB%9F%E5%B7%A5%E5%85%B7/</link>
         <pubDate>Fri, 17 Jan 2025 23:01:01 +0800</pubDate>
@@ -621,38 +585,6 @@ $$</description>
 &lt;h3 id=&#34;tailscale&#34;&gt;Tailscale
 &lt;/h3&gt;&lt;p&gt;官网地址 &lt;a class=&#34;link&#34; href=&#34;https://www.tailscale.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.tailscale.com&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Test</title>
-        <link>https://blog.ztcdream.top/p/test/</link>
-        <pubDate>Tue, 07 Jan 2025 09:25:08 +0800</pubDate>
-        
-        <guid>https://blog.ztcdream.top/p/test/</guid>
-        <description>&lt;h2 id=&#34;w&#34;&gt;w
-&lt;/h2&gt;$$
-\begin{aligned}
-\begin{bmatrix}
-\ln k \\
-\ln 6
-\end{bmatrix}
-\end{aligned}
-$$&lt;h1 id=&#34;endbmatrix&#34;&gt;$$
-\begin{aligned}
-\begin{bmatrix}
-\alpha - 1 &amp;amp; -(\beta - 1) \
-\alpha &amp;amp; \beta
-\end{bmatrix}
-\begin{bmatrix}
-y_1 \
-y_2
-\end{bmatrix}
-&lt;/h1&gt;&lt;p&gt;\begin{bmatrix}
-\ln k \
-\ln 6
-\end{bmatrix}
-\end{aligned}
-$$&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -901,47 +833,6 @@ $$&lt;p&gt;已知最大公因数，即可求出最小公倍数&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>Linux Shell的基础命令</title>
-        <link>https://blog.ztcdream.top/p/linux-shell%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
-        <pubDate>Tue, 31 Dec 2024 12:22:21 +0800</pubDate>
-        
-        <guid>https://blog.ztcdream.top/p/linux-shell%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
-        <description>&lt;h2 id=&#34;文件与目录&#34;&gt;文件与目录
-&lt;/h2&gt;</description>
-        </item>
-        <item>
-        <title>电极电势</title>
-        <link>https://blog.ztcdream.top/p/%E7%94%B5%E6%9E%81%E7%94%B5%E5%8A%BF/</link>
-        <pubDate>Mon, 30 Dec 2024 20:27:17 +0800</pubDate>
-        
-        <guid>https://blog.ztcdream.top/p/%E7%94%B5%E6%9E%81%E7%94%B5%E5%8A%BF/</guid>
-        <description>&lt;h3 id=&#34;涉及知识点&#34;&gt;涉及知识点
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;能斯特方程&lt;/strong&gt;：$E = E^{\circ}+\frac{0.0592V}{n}\lg\frac{[氧化态]}{[还原态]}$（在$298K$时），用于计算非标准状态下电极电势，其中$E$为非标准电极电势，$E^{\circ}$为标准电极电势，$n$为电极反应中转移的电子数。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;$Fe^{3+}/Fe^{2+}$电对的电极反应&lt;/strong&gt;：$Fe^{3+}+e^-\rightleftharpoons Fe^{2+}$，$n = 1$，标准电极电势$E^{\circ}(Fe^{3+}/Fe^{2+}) = 0.771V$。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;解题思路&#34;&gt;解题思路
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;已知$E^{\circ}(Fe^{3+}/Fe^{2+}) = 0.771V$，$c(Fe^{3+}) = 0.2000mol/L$，假设$c(Fe^{2+}) = 1mol/L$（标准浓度）。&lt;/li&gt;
-&lt;li&gt;根据能斯特方程$E = E^{\circ}+\frac{0.0592V}{n}\lg\frac{[Fe^{3+}]}{[Fe^{2+}]}$计算电极电势$E$。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;计算过程&#34;&gt;计算过程
-&lt;/h3&gt;$$
-\begin{aligned}
-E &amp;= 0.771V+\frac{0.0592V}{1}\lg\frac{0.2000mol/L}{1mol/L} \\
-&amp;= 0.771V + 0.0592V\times\lg0.2 \\
-&amp;= 0.771V + 0.0592V\times(- 0.699) (\lg0.2\approx - 0.699) \\
-&amp;\approx 0.771V - 0.041V \\
-&amp;= 0.730V
-\end{aligned}
-$$&lt;p&gt;所以当$c(Fe^{3+}) = 0.2000mol/L$时，$Fe^{3+}/Fe^{2+}$电对的电极电势约为$0.730V$。（计算结果保留三位有效数字）&lt;/p&gt;
-</description>
         </item>
         <item>
         <title>一张图巧计三角求导积分公式</title>
@@ -1239,21 +1130,6 @@ $$
 &lt;/li&gt;
 &lt;/ol&gt;
 </description>
-        </item>
-        <item>
-        <title>开根号</title>
-        <link>https://blog.ztcdream.top/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</link>
-        <pubDate>Fri, 06 Dec 2024 20:51:30 +0800</pubDate>
-        
-        <guid>https://blog.ztcdream.top/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</guid>
-        <description>&lt;h2 id=&#34;例&#34;&gt;例
-&lt;/h2&gt;$$
-\begin{align}
-\sqrt{37} &amp; = \sqrt{\frac{73^2-1}{12^2}} \\ 
-&amp; = \sqrt{\frac{73^2}{12^2} \cdot \frac{73^2-1}{73^2}} \\ 
-&amp; = \frac{73}{12} \sqrt{1 - \frac{1}{73^2}} \\ &amp; \approx \frac{73}{12} \left( 1 - \frac{1}{2 \cdot 73^2} \right) 
-\end{align}
-$$</description>
         </item>
         <item>
         <title>有理函数的积分</title>

@@ -7,13 +7,13 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Thu, 24 Apr 2025 23:53:37 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Def</title>
-        <link>https://blog.ztcdream.top/categories/def/</link>
-        <pubDate>Thu, 24 Apr 2025 23:49:56 +0800</pubDate>
+        <lastBuildDate>Sun, 20 Apr 2025 17:09:00 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>编程</title>
+        <link>https://blog.ztcdream.top/categories/%E7%BC%96%E7%A8%8B/</link>
+        <pubDate>Sun, 20 Apr 2025 17:09:00 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/categories/def/</guid>
-        <description></description>
+        <guid>https://blog.ztcdream.top/categories/%E7%BC%96%E7%A8%8B/</guid>
+        <description>&lt;img src="https://blog.ztcdream.top/categories/%E7%BC%96%E7%A8%8B/Prog-languages.png" alt="Featured image of post 编程" /&gt;</description>
         </item>
         <item>
         <title>数学</title>
@@ -22,14 +22,6 @@
         
         <guid>https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/</guid>
         <description>&lt;img src="https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/math.jpg" alt="Featured image of post 数学" /&gt;</description>
-        </item>
-        <item>
-        <title>化学</title>
-        <link>https://blog.ztcdream.top/categories/%E5%8C%96%E5%AD%A6/</link>
-        <pubDate>Mon, 30 Dec 2024 20:27:17 +0800</pubDate>
-        
-        <guid>https://blog.ztcdream.top/categories/%E5%8C%96%E5%AD%A6/</guid>
-        <description>&lt;img src="https://blog.ztcdream.top/categories/%E5%8C%96%E5%AD%A6/csm_Website_16zu9_94_Chemicals_RGB_g_ca08d41db7.webp" alt="Featured image of post 化学" /&gt;</description>
         </item>
         <item>
         <title>Linux</title>
@@ -46,6 +38,14 @@
         
         <guid>https://blog.ztcdream.top/categories/test/</guid>
         <description>&lt;img src="https://blog.ztcdream.top/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
+        </item>
+        <item>
+        <title>化学</title>
+        <link>https://blog.ztcdream.top/categories/%E5%8C%96%E5%AD%A6/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.ztcdream.top/categories/%E5%8C%96%E5%AD%A6/</guid>
+        <description>&lt;img src="https://blog.ztcdream.top/categories/%E5%8C%96%E5%AD%A6/csm_Website_16zu9_94_Chemicals_RGB_g_ca08d41db7.webp" alt="Featured image of post 化学" /&gt;</description>
         </item>
         
     </channel>

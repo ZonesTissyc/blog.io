@@ -552,21 +552,6 @@ $$
 </description>
         </item>
         <item>
-        <title>开根号</title>
-        <link>https://blog.ztcdream.top/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</link>
-        <pubDate>Fri, 06 Dec 2024 20:51:30 +0800</pubDate>
-        
-        <guid>https://blog.ztcdream.top/p/%E5%BC%80%E6%A0%B9%E5%8F%B7/</guid>
-        <description>&lt;h2 id=&#34;例&#34;&gt;例
-&lt;/h2&gt;$$
-\begin{align}
-\sqrt{37} &amp; = \sqrt{\frac{73^2-1}{12^2}} \\ 
-&amp; = \sqrt{\frac{73^2}{12^2} \cdot \frac{73^2-1}{73^2}} \\ 
-&amp; = \frac{73}{12} \sqrt{1 - \frac{1}{73^2}} \\ &amp; \approx \frac{73}{12} \left( 1 - \frac{1}{2 \cdot 73^2} \right) 
-\end{align}
-$$</description>
-        </item>
-        <item>
         <title>有理函数的积分</title>
         <link>https://blog.ztcdream.top/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
         <pubDate>Fri, 06 Dec 2024 20:51:30 +0800</pubDate>
