@@ -531,7 +531,7 @@ $$</description>
 &lt;/h3&gt;&lt;h4 id=&#34;atoi函数&#34;&gt;atoi函数
 &lt;/h4&gt;&lt;p&gt;$atoi$ 函数是c语言就有的函数，可以把字符串转换为int整数。&lt;/p&gt;
 &lt;p&gt;原型为  &lt;code&gt;int atoi(const char *str)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;调用atoi时，从左开始扫描字符串，遇到首个非空字符且为数字或字符号开始转换，直到遇到非数字字符或&amp;rsquo;\0&amp;rsquo;时停止，并返回转换后的整数，其余情况返回0。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;工作原理&lt;/strong&gt;：调用atoi时，从左开始扫描字符串，遇到首个非空字符且为数字或字符号开始转换，直到遇到非数字字符或&amp;rsquo;\0&amp;rsquo;时停止，并返回转换后的整数，其余情况返回0。&lt;/p&gt;
 &lt;p&gt;正常用法：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
