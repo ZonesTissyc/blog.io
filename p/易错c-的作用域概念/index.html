@@ -371,7 +371,12 @@
     
     
     <h2 id="这不对吧从一个例子讲起">这不对吧？从一个例子讲起
-</h2><p>请读者先仔细观察下面的代码</p>
+
+
+</h2>
+
+
+<p>请读者先仔细观察下面的代码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -404,9 +409,19 @@
 <p><code>'b' was not declared in this scope</code></p>
 <p>这不对吧？为什么b是未定义的？这是因为c语言中有<strong>作用域</strong>的概念。</p>
 <h2 id="代码块">代码块
-</h2><p>c++中用花括号 <strong>{ }</strong> 标识一个代码块, <strong>{ }</strong> 内的所有语句被视为一句语句。在<strong>if</strong>,<strong>while</strong>,<strong>for</strong>等控制语句中经常用到。</p>
+
+
+</h2>
+
+
+<p>c++中用花括号 <strong>{ }</strong> 标识一个代码块, <strong>{ }</strong> 内的所有语句被视为一句语句。在<strong>if</strong>,<strong>while</strong>,<strong>for</strong>等控制语句中经常用到。</p>
 <h3 id="块级作用域">块级作用域
-</h3><p>c语言规定 <strong>{ }里新定义的变量，只能在当前{ }里使用</strong> ，即块级作用域。</p>
+
+
+</h3>
+
+
+<p>c语言规定 <strong>{ }里新定义的变量，只能在当前{ }里使用</strong> ，即块级作用域。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -475,7 +490,12 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="作用域遮蔽shadowing">作用域遮蔽(Shadowing)
-</h3><p><strong>{ }</strong> 代码块外部若已定义一个变量，在 <strong>{ }</strong> 里允许对该变量重新定义，且仅在该代码块内失效。</p>
+
+
+</h3>
+
+
+<p><strong>{ }</strong> 代码块外部若已定义一个变量，在 <strong>{ }</strong> 里允许对该变量重新定义，且仅在该代码块内失效。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -496,7 +516,12 @@
 </div>
 </div><p>输出 $5.6$ 和 $0$</p>
 <h2 id="函数作用域">函数作用域
-</h2><p>在自定义函数里定义的普通变量，是局部变量，仅在该函数体内可用。</p>
+
+
+</h2>
+
+
+<p>在自定义函数里定义的普通变量，是局部变量，仅在该函数体内可用。</p>
 <p>特别要注意的是，main函数也是函数，在main里定义的变量在自定义函数里是无法直接使用的。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -557,11 +582,26 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="总结">总结
-</h2><p>块级作用域 <strong>{ }</strong>，可以简单理解成中央与地方的关系。</p>
+
+
+</h2>
+
+
+<p>块级作用域 <strong>{ }</strong>，可以简单理解成中央与地方的关系。</p>
 <p><strong>{ }</strong> 外面的变量相当于是中央文件， <strong>{ }</strong> 内部的变量看作地方法规。中央出台的文件对所有地方省份都生效，各省份可以根据自身情况修改中央文件，或者制定新的法规。地方修改后的中央文件和新法规也仅对该区域生效，不会影响到中央和其他地方省份。</p>
 <h3 id="小测">小测
-</h3><h4 id="1">1
-</h4><p>下面的for循环可以完整输出字符数组strA的所有内容吗？如果不能，请改正。</p>
+
+
+</h3>
+
+
+<h4 id="1">1
+
+
+</h4>
+
+
+<p>下面的for循环可以完整输出字符数组strA的所有内容吗？如果不能，请改正。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -585,7 +625,12 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="2">2
-</h4><p>下面的语句能不能判断a是不是质数？如果不能，请更正。</p>
+
+
+</h4>
+
+
+<p>下面的语句能不能判断a是不是质数？如果不能，请更正。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -621,7 +666,12 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="3">3
-</h4><p>思考下面代码的运行结果：</p>
+
+
+</h4>
+
+
+<p>思考下面代码的运行结果：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1

@@ -369,13 +369,28 @@
     
     
     <h2 id="问题引入">问题引入
-</h2><p>网站的静态html文件托管在了github仓库上，每次修改网页构建的文件就<code>git push</code>至github仓库，服务器再<code>git pull</code>拉取仓库，实现网站的更新。</p>
+
+
+</h2>
+
+
+<p>网站的静态html文件托管在了github仓库上，每次修改网页构建的文件就<code>git push</code>至github仓库，服务器再<code>git pull</code>拉取仓库，实现网站的更新。</p>
 <p>按照这个流程，每修改一次网站，都要在服务器上执行一次<code>git pull</code>，很不方便。因此要让服务器自动执行这个过程，实现自动化。</p>
 <p>假设网站静态文件仓库在<code>/web/site/index</code>，我们把自动化的脚本放在上一级<code>/web/site1</code>。</p>
 <h2 id="方法一-crontab定时更新">方法一 Crontab定时更新
-</h2><p>crontab是linux里自带的自动化程序，在<code>crontab -e</code>修改配置文件，定时执行shell命令（通常是运行一个shell脚本），达到自动化的目的。</p>
+
+
+</h2>
+
+
+<p>crontab是linux里自带的自动化程序，在<code>crontab -e</code>修改配置文件，定时执行shell命令（通常是运行一个shell脚本），达到自动化的目的。</p>
 <h3 id="创建更新仓库的sh脚本">创建更新仓库的sh脚本
-</h3><p><code>nano /web/site1/auto-fetch.sh</code></p>
+
+
+</h3>
+
+
+<p><code>nano /web/site1/auto-fetch.sh</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -424,7 +439,12 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="配置crontab">配置crontab
-</h3><p>使用<code>crontab -e</code>修改crontab的配置文件</p>
+
+
+</h3>
+
+
+<p>使用<code>crontab -e</code>修改crontab的配置文件</p>
 <p>在末尾加入两行</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -440,12 +460,27 @@
 <p>第二行是每天0点清空<code>cron-sync.log</code>，避免日志文件无限增大。</p>
 <p>保存退出后，crontab就立即生效了。</p>
 <h2 id="方法二-webhook实时更新">方法二 webhook实时更新
-</h2><p>crontab的配置过程简单，但缺点是定时。因为是强制更新，因此crontab设置自动更新的时间间隔不宜过短，因为会影响性能。</p>
+
+
+</h2>
+
+
+<p>crontab的配置过程简单，但缺点是定时。因为是强制更新，因此crontab设置自动更新的时间间隔不宜过短，因为会影响性能。</p>
 <p>webhook可以实时监听远程仓库的状态，当且仅当远程仓库变化时，服务器才自动push。</p>
 <h3 id="创建更新脚本">创建更新脚本
-</h3><p>这一步参考crontab的<code>auto-fetch</code>脚本</p>
+
+
+</h3>
+
+
+<p>这一步参考crontab的<code>auto-fetch</code>脚本</p>
 <h3 id="编写webhook服务脚本">编写webhook服务脚本
-</h3><p>这里要用到python的flask模块</p>
+
+
+</h3>
+
+
+<p>这里要用到python的flask模块</p>
 <p><code>pip3 install flask</code></p>
 <p><code>nano /web/site1/webhook_server.py</code></p>
 <p>写入</p>
@@ -481,7 +516,12 @@
 </div>
 </div><p>根据自身情况修改 subprocess.Popen的脚本路径 和 port=9000 的端口号。（这个webhook是运行在服务器上的，注意端口是否被占用）</p>
 <h3 id="创建-systemd-服务管理-webhook">创建 systemd 服务管理 webhook
-</h3><p><code>nano /etc/systemd/system/git-webhook.service</code></p>
+
+
+</h3>
+
+
+<p><code>nano /etc/systemd/system/git-webhook.service</code></p>
 <p>写入</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -530,7 +570,12 @@
 </div><p>查看状态</p>
 <p><code>sudo systemctl status git-webhook.service</code></p>
 <h3 id="github设置webhook">github设置webhook
-</h3><p>点进项目仓库，上边栏找到Settings，点击Webhooks。</p>
+
+
+</h3>
+
+
+<p>点进项目仓库，上边栏找到Settings，点击Webhooks。</p>
 <p>点击Add webhook。</p>
 <p>Payload URL = <a class="link" href="http://your-server-ip:9000/git-webhook"  target="_blank" rel="noopener"
     >http://your-server-ip:9000/git-webhook</a></p>
@@ -538,11 +583,21 @@
 <p>Events = Push events</p>
 <p>保存后检查是否正常工作</p>
 <h3 id="定时清空日志">定时清空日志
-</h3><p>仍使用crontab来清空git的日志</p>
+
+
+</h3>
+
+
+<p>仍使用crontab来清空git的日志</p>
 <p>只需要在crontab配置文件加一条即可：</p>
 <p><code>0 0 * * * &gt; /web/site1//web/site1/git_pull.log</code></p>
 <h2 id="小结">小结
-</h2><p>如果应付简单的场景，crontab足矣。</p>
+
+
+</h2>
+
+
+<p>如果应付简单的场景，crontab足矣。</p>
 <p>追求实时更新和性能，更推荐监听webhook的方式。</p>
 
 </section>

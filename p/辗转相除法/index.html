@@ -364,7 +364,12 @@
     
     
     <h2 id="最大公因数问题">最大公因数问题
-</h2><p>任给两个不全为零的整数，必存在一个的数，它同时是两个数的因子，这个数称为<strong>公因数</strong>。</p>
+
+
+</h2>
+
+
+<p>任给两个不全为零的整数，必存在一个的数，它同时是两个数的因子，这个数称为<strong>公因数</strong>。</p>
 <p>不互质的两个数的公因数可以有多个，寻找最大的公因数就被称为<strong>最大公因数问题</strong>。</p>
 <p>设有两个非零整数$a,b$，其最大公因数可表示为</p>
 $$
@@ -373,7 +378,12 @@ $$<p>例如，</p>
 $$
 (4,6) = 2
 $$<h2 id="短除法">短除法
-</h2><p>小学二年级时我们已经知道，可以使用<strong>短除法</strong>来先找出所有的较小公因数，再把他们相乘。</p>
+
+
+</h2>
+
+
+<p>小学二年级时我们已经知道，可以使用<strong>短除法</strong>来先找出所有的较小公因数，再把他们相乘。</p>
 <p>例如求$(12,16)$，</p>
 <p><img src="https://image.ztcdream.top/i/2024/12/31/xcdccn.png"
 	
@@ -447,7 +457,12 @@ $$<h2 id="短除法">短除法
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="辗转相除法">辗转相除法
-</h2><p><em>定理</em>：设整数$a/b$的余数为$r$,则</p>
+
+
+</h2>
+
+
+<p><em>定理</em>：设整数$a/b$的余数为$r$,则</p>
 $$(a,b)=(b,r)$$<p>通过不断重复，直到$b_i/r_i=c$可以整除，那么$(a,b)=r_i$</p>
 <p>以$(5423,3157)$为例，</p>
 <p><img src="https://image.ztcdream.top/i/2024/12/31/12x4m1n.png"
@@ -462,7 +477,12 @@ $$(a,b)=(b,r)$$<p>通过不断重复，直到$b_i/r_i=c$可以整除，那么$(a
 ></p>
 <p>最后$22/11=2$，最后的除数$11$就是最大公因数。</p>
 <h3 id="代码实现">代码实现
-</h3><p>该算法是循环过程，当$a&gt;b$时，运算<code>r_1=a%b</code> ，重复<code>r_i=b_(i-1)%r_(i-1)</code>，直到<code>r_i=0</code>，输出<code>r_(i-1)</code>。</p>
+
+
+</h3>
+
+
+<p>该算法是循环过程，当$a&gt;b$时，运算<code>r_1=a%b</code> ，重复<code>r_i=b_(i-1)%r_(i-1)</code>，直到<code>r_i=0</code>，输出<code>r_(i-1)</code>。</p>
 <p>代码实现如下，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -493,14 +513,24 @@ $$(a,b)=(b,r)$$<p>通过不断重复，直到$b_i/r_i=c$可以整除，那么$(a
 </div><p><em>注意到，这里不用判断$a,b$的大小,如果 $a&lt;b$，第一次相除后变成了gcd(b,a)</em></p>
 <p>对比短除法，可谓是相当简洁了。</p>
 <h2 id="最小公倍数问题">最小公倍数问题
-</h2><p>求一个两个数的最小公倍数$(GCD)$，可以用</p>
+
+
+</h2>
+
+
+<p>求一个两个数的最小公倍数$(GCD)$，可以用</p>
 $$
 \begin{aligned}
 lcm(a,b) = \frac{|a \times b|}{gcd(a,b)}
 \end{aligned}
 $$<p>已知最大公因数，即可求出最小公倍数</p>
 <h3 id="代码实现-1">代码实现
-</h3><div class="highlight"><div class="chroma">
+
+
+</h3>
+
+
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
