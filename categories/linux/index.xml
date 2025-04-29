@@ -61,7 +61,7 @@
 
 
 &lt;p&gt;ssh密钥是一个密钥对，分为公钥和私钥。私钥放在本地电脑上，理论上具有唯一性。公钥放在服务器上，每当登陆服务器时，服务器端检查公钥是否与本地的私钥配对，确保连接是安全的。&lt;/p&gt;
-&lt;p&gt;新生成的密钥默认保存在 &lt;code&gt;~/.ssh&lt;/code&gt; 文件夹下，用 &lt;code&gt;cat .\ssh\id_rsa.pub&lt;/code&gt; 查看公钥并复制。&lt;/p&gt;
+&lt;p&gt;新生成的密钥默认保存在本地的 &lt;code&gt;~/.ssh&lt;/code&gt; 文件夹下，用 &lt;code&gt;cat .\ssh\id_rsa.pub&lt;/code&gt; 查看公钥并复制。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
