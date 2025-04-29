@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/'>
 
-<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="VSCode配置ssh密钥登陆">
+<link rel="stylesheet" href="/scss/style.min.7eb98325238a5dbfd9bc2d673213d9c5fa7045eca3e820352f4ec149134ef0ae.css"><meta property='og:title' content="VSCode配置ssh密钥登陆">
 <meta property='og:description' content="需求\r使用VSCode的远程主机SSH插件时，每次登陆远程服务器均需要手动输入密码，不能保存密码，这是VSCode出于安全考虑而禁用了密码自动登陆。\n如果想实现免密登陆，可以使用ssh密钥登陆。\n配置ssh密钥登陆\r本地创建ssh密钥\r按 Win+R ，输入 powershell 打开终端。打开后默认处于 C:\\Users\\yourname 文件夹。\n执行\n1 ssh-keygen -t rsa -b 4096 连续按三次回车，看到 The key's randomart image is: 表明成功生成ssh密钥。\n如图\n将公钥复制到服务器\rssh密钥是一个密钥对，分为公钥和私钥。私钥放在本地电脑上，理论上具有唯一性。公钥放在服务器上，每当登陆服务器时，服务器端检查公钥是否与本地的私钥配对，确保连接是安全的。\n新生成的密钥默认保存在本地的 ~/.ssh 文件夹下，用 cat .\\ssh\\id_rsa.pub 查看公钥并复制。\n1 cat .\\ssh\\id_rsa.pub 复制后登陆远程服务器，粘贴到 ~/.ssh/authorized_keys 文件中并保存。\n至此，退出vscode然后重进，已经可以免密登陆了。\n小结\r通常连接远程Linux主机时，是不使用密码登陆的，因为这样明文密码安全性极低。本文介绍的ssh密钥登陆对于其他ssh终端如 XShell 、 Tabby 等同样适用。\n">
 <meta property='og:url' content='https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>

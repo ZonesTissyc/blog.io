@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://blog.ztcdream.top/p/c%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%86%B3%E6%95%B4%E6%95%B0%E5%89%8D%E6%9C%890%E7%9A%84%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98/'>
 
-<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="C语言解决整数前有0的输入问题">
+<link rel="stylesheet" href="/scss/style.min.7eb98325238a5dbfd9bc2d673213d9c5fa7045eca3e820352f4ec149134ef0ae.css"><meta property='og:title' content="C语言解决整数前有0的输入问题">
 <meta property='og:description' content="问题\rcpp中使用cin输入数字，像05,08这样的输入，并不能转换成我们预期的5和8。原因是以0开头的整数被视为八进制数，如果输入08，八进制里没有&quot;8&quot;，会直接报错。\n那如果用户一定要输入以0开头的整数，该如何解决呢？\n解决方案\r字符串转换\ratoi函数\r$atoi$ 函数是c语言就有的函数，可以把字符串转换为int整数。\n原型为 int atoi(const char *str)\n工作原理：调用atoi时，从左开始扫描字符串，遇到首个非空字符且为数字或字符号开始转换，直到遇到非数字字符或&rsquo;\\0&rsquo;时停止，并返回转换后的整数，其余情况返回0。\n正常用法：\n1 2 3 4 5 6 7 8 #include &lt;iostream&gt; using namespace std; int main() { char a[]=&#34; 0122 d&#34;; cout&lt;&lt;atoi(a); return 0; } 返回$122$\n不当用法：\n1 2 3 4 5 6 7 8 #include &lt;iostream&gt; using namespace std; int main() { char a[]=&#34; -+0122 &#34;; cout&lt;&lt;atoi(a); return 0; } 默认返回$0$\n相似的函数还有：\nitoa()\n将整数转为字符串\natof\n将字符串转为浮点型\n">
 <meta property='og:url' content='https://blog.ztcdream.top/p/c%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%86%B3%E6%95%B4%E6%95%B0%E5%89%8D%E6%9C%890%E7%9A%84%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
