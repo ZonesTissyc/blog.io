@@ -482,6 +482,76 @@ $$\int\tan xdx=-\ln |2\sec x|+C$$&lt;/li&gt;
 </description>
         </item>
         <item>
+        <title>考研题-不定积分</title>
+        <link>https://blog.ztcdream.top/p/%E8%80%83%E7%A0%94%E9%A2%98-%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</link>
+        <pubDate>Mon, 30 Dec 2024 11:23:47 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.top/p/%E8%80%83%E7%A0%94%E9%A2%98-%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</guid>
+        <description>&lt;h2 id=&#34;题干&#34;&gt;题干
+
+
+&lt;/h2&gt;
+
+
+$$
+\int_0^1 \frac{1}{(x+1)(x^2-2x+2)}dx.
+$$&lt;h2 id=&#34;解题&#34;&gt;解题
+
+
+&lt;/h2&gt;
+
+
+&lt;h3 id=&#34;设&#34;&gt;设
+
+
+&lt;/h3&gt;
+
+
+$$
+\frac{1}{(x+1)(x^2-2x+2)}=\frac{A}{x+1}+\frac{Bx+D}{x^2-2x+2}
+$$&lt;h3 id=&#34;通分&#34;&gt;通分
+
+
+&lt;/h3&gt;
+
+
+$$
+(A+B)x^2+(B+D-2A)x+2A+D-1=0
+$$&lt;h3 id=&#34;列方程组&#34;&gt;列方程组
+
+
+&lt;/h3&gt;
+
+
+$$
+\left \{
+\begin{aligned}
+&amp; A+B=0 \\
+&amp; D+B-2A =0 \\
+&amp; 2A+D-1 =0
+\end{aligned}
+\right.
+$$&lt;p&gt;解得&lt;/p&gt;
+$$
+\left \{
+\begin{aligned}
+&amp; A=\frac{1}{5} \\
+&amp; B=-\frac{1}{5} \\
+&amp; D=\frac{3}{5}
+\end{aligned}
+\right.
+$$&lt;h3 id=&#34;代入&#34;&gt;代入
+
+
+&lt;/h3&gt;
+
+
+$$
+\frac{1}{(x+1)(x^2-2x+2)}=\frac{1}{5(x+1)}+\frac{-x+3}{5(x^2-2x+2)}
+$$&lt;p&gt;剩下的就是&lt;a class=&#34;link&#34; href=&#34;https://blog.ztcdream.top/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/&#34; &gt;有理函数的积分&lt;/a&gt;的内容了&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>分母低次幂积型的不定积分</title>
         <link>https://blog.ztcdream.top/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</link>
         <pubDate>Wed, 25 Dec 2024 18:05:10 +0800</pubDate>
