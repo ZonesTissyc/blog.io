@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/'>
 
-<link rel="stylesheet" href="/scss/style.min.e4f727a438a10869755ac8a2003a428f6f14488bddae30c3db93ae17ce0bd9cd.css"><meta property='og:title' content="（易错）C++的作用域概念">
+<link rel="stylesheet" href="/scss/style.min.71b2a9eaa277772c59251640db097624ff006bc6b8eb845a902f24f33c2eac0f.css"><meta property='og:title' content="（易错）C++的作用域概念">
 <meta property='og:description' content="这不对吧？从一个例子讲起\r请读者先仔细观察下面的代码\n1 2 3 4 5 int a=8; if (a&lt;9){ int b=a; } cout&lt;&lt;b; 提问：上面会输出什么？\n你心想：这还用问，b=a=8，当然输出8了。\n然而，结果却是\n'b' was not declared in this scope\n这不对吧？为什么b是未定义的？这是因为c语言中有作用域的概念。\n代码块\rc++中用花括号 { } 标识一个代码块, { } 内的所有语句被视为一句语句。在if,while,for等控制语句中经常用到。\n块级作用域\rc语言规定 { }里新定义的变量，只能在当前{ }里使用 ，即 块级作用域 。\n1 2 3 4 int a; { int b; } 上面 { } 内的变量b，只能在 { } 里使用。\n下面的例子更是典型：\n1 2 3 4 for(int i=0;i&lt;8;i++){ continue; } cout&lt;&lt;i&lt;&lt;endl; 上面的输出是什么？\n">
 <meta property='og:url' content='https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
