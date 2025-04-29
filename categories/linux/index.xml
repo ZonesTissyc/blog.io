@@ -88,7 +88,7 @@
 &lt;/h2&gt;
 
 
-&lt;p&gt;通常连接远程Linux主机时，是不使用密码登陆的，因为这样明文密码安全性极低。本文介绍的ssh密钥登陆对于其他ssh终端如XShell、Tabby等同样适用。&lt;/p&gt;
+&lt;p&gt;通常连接远程Linux主机时，是不使用密码登陆的，因为这样明文密码安全性极低。本文介绍的ssh密钥登陆对于其他ssh终端如 &lt;strong&gt;XShell&lt;/strong&gt; 、 &lt;strong&gt;Tabby&lt;/strong&gt; 等同样适用。&lt;/p&gt;
 </description>
         </item>
         <item>
