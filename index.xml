@@ -1636,7 +1636,7 @@ $$
 0 &amp;= 2 + \lim_{x \to \infty}\frac{2Bx^2+2Dx+Bx+D}{x^2+x+1} \\
 B &amp;= -1
 \end{aligned}
-$$&lt;p&gt;再令$x=0$，（可以是其他好算的值）&lt;/p&gt;
+$$&lt;p&gt;再令$x=0$，（也可以是其他好算的值）&lt;/p&gt;
 $$
 \begin{aligned}
 2 &amp; = A  + D  \\
