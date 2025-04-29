@@ -7,7 +7,92 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Sun, 20 Apr 2025 17:15:09 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 29 Apr 2025 10:35:43 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>VSCode配置ssh密钥登陆</title>
+        <link>https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/</link>
+        <pubDate>Tue, 29 Apr 2025 10:35:43 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/</guid>
+        <description>&lt;h2 id=&#34;需求&#34;&gt;需求
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;使用VSCode的远程主机SSH插件时，每次登陆远程服务器均需要手动输入密码，不能保存密码，这是VSCode出于安全考虑而禁用了密码自动登陆。&lt;/p&gt;
+&lt;p&gt;如果想实现免密登陆，可以使用ssh密钥登陆。&lt;/p&gt;
+&lt;h2 id=&#34;配置ssh密钥登陆&#34;&gt;配置ssh密钥登陆
+
+
+&lt;/h2&gt;
+
+
+&lt;h3 id=&#34;本地创建ssh密钥&#34;&gt;本地创建ssh密钥
+
+
+&lt;/h3&gt;
+
+
+&lt;p&gt;按 &lt;code&gt;Win+R&lt;/code&gt; ，输入 &lt;code&gt;powershell&lt;/code&gt; 打开终端。打开后默认处于 &lt;code&gt;C:\Users\yourname&lt;/code&gt; 文件夹。&lt;/p&gt;
+&lt;p&gt;执行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;ssh-keygen&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rsa&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-b&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;4096&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;连续按三次回车，看到 &lt;code&gt;The key&#39;s randomart image is:&lt;/code&gt; 表明成功生成ssh密钥。&lt;/p&gt;
+&lt;p&gt;如图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/04/29/hdv8kq.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;powershell 生成ssh密钥&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;将公钥复制到服务器&#34;&gt;将公钥复制到服务器
+
+
+&lt;/h3&gt;
+
+
+&lt;p&gt;ssh密钥是一个密钥对，分为公钥和私钥。私钥放在本地电脑上，理论上具有唯一性。公钥放在服务器上，每当登陆服务器时，服务器端检查公钥是否与本地的私钥配对，确保连接是安全的。&lt;/p&gt;
+&lt;p&gt;新生成的密钥默认保存在 &lt;code&gt;~/.ssh&lt;/code&gt; 文件夹下，用 &lt;code&gt;cat .\ssh\id_rsa.pub&lt;/code&gt; 查看公钥并复制。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cat &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ssh&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id_rsa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;pub&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/04/29/i725ug.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;查看公钥内容&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;复制后登陆远程服务器，粘贴到 &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt; 文件中并保存。&lt;/p&gt;
+&lt;p&gt;至此，退出vscode然后重进，已经可以免密登陆了。&lt;/p&gt;
+&lt;h2 id=&#34;小结&#34;&gt;小结
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;通常连接远程Linux主机时，是不使用密码登陆的，因为这样明文密码安全性极低。本文介绍的ssh密钥登陆对于其他ssh终端如XShell、Tabby等同样适用。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>服务器自动拉取仓库</title>
         <link>https://blog.ztcdream.top/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/</link>
         <pubDate>Sun, 20 Apr 2025 17:15:09 +0800</pubDate>

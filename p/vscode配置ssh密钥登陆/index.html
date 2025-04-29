@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="问题引入\r网站的静态html文件托管在了github仓库上，每次修改网页构建的文件就git push至github仓库，服务器再git pull拉取仓库，实现网站的更新。\n按照这个流程，每修改一次网站，都要在服务器上执行一次git pull，很不方便。因此要让服务器自动执行这个过程，实现自动化。\n假设网站静态文件仓库在/web/site/index，我们把自动化的脚本放在上一级/web/site1。\n方法一 Crontab定时更新\rcrontab是linux里自带的自动化程序，在crontab -e修改配置文件，定时执行shell命令（通常是运行一个shell脚本），达到自动化的目的。\n创建更新仓库的sh脚本\rnano /web/site1/auto-fetch.sh\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 #!/bin/bash REPO_DIR=&#34;/web/site1/index&#34; # 切换到git目录 cd &#34;$REPO_DIR&#34; || exit 1 echo &#34;[`date`] Forcing git fetch and reset...&#34; &gt;&gt; /web/site1/git_pull.log # 写入日志 # 取最新远程变更 git fetch origin # 强制把本地重置为远程分支 git reset --hard origin/main # 可选：清理多余文件 git clean -fd echo &#34;[`date`] Update complete&#34; &gt;&gt; /web/site1/git_pull.log 别忘了赋权\n">
-<title>服务器自动拉取仓库</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="需求\r使用VSCode的远程主机SSH插件时，每次登陆远程服务器均需要手动输入密码，不能保存密码，这是VSCode出于安全考虑而禁用了密码自动登陆。\n如果想实现免密登陆，可以使用ssh密钥登陆。\n配置ssh密钥登陆\r本地创建ssh密钥\r按 Win+R ，输入 powershell 打开终端。打开后默认处于 C:\\Users\\yourname 文件夹。\n执行\n1 ssh-keygen -t rsa -b 4096 连续按三次回车，看到 The key's randomart image is: 表明成功生成ssh密钥。\n如图\n将公钥复制到服务器\rssh密钥是一个密钥对，分为公钥和私钥。私钥放在本地电脑上，理论上具有唯一性。公钥放在服务器上，每当登陆服务器时，服务器端检查公钥是否与本地的私钥配对，确保连接是安全的。\n新生成的密钥默认保存在 ~/.ssh 文件夹下，用 cat .\\ssh\\id_rsa.pub 查看公钥并复制。\n1 cat .\\ssh\\id_rsa.pub 复制后登陆远程服务器，粘贴到 ~/.ssh/authorized_keys 文件中并保存。\n至此，退出vscode然后重进，已经可以免密登陆了。\n小结\r通常连接远程Linux主机时，是不使用密码登陆的，因为这样明文密码安全性极低。本文介绍的ssh密钥登陆对于其他ssh终端如XShell、Tabby等同样适用。\n">
+<title>VSCode配置ssh密钥登陆</title>
 
-<link rel='canonical' href='https://blog.ztcdream.top/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/'>
+<link rel='canonical' href='https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/'>
 
-<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="服务器自动拉取仓库">
-<meta property='og:description' content="问题引入\r网站的静态html文件托管在了github仓库上，每次修改网页构建的文件就git push至github仓库，服务器再git pull拉取仓库，实现网站的更新。\n按照这个流程，每修改一次网站，都要在服务器上执行一次git pull，很不方便。因此要让服务器自动执行这个过程，实现自动化。\n假设网站静态文件仓库在/web/site/index，我们把自动化的脚本放在上一级/web/site1。\n方法一 Crontab定时更新\rcrontab是linux里自带的自动化程序，在crontab -e修改配置文件，定时执行shell命令（通常是运行一个shell脚本），达到自动化的目的。\n创建更新仓库的sh脚本\rnano /web/site1/auto-fetch.sh\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 #!/bin/bash REPO_DIR=&#34;/web/site1/index&#34; # 切换到git目录 cd &#34;$REPO_DIR&#34; || exit 1 echo &#34;[`date`] Forcing git fetch and reset...&#34; &gt;&gt; /web/site1/git_pull.log # 写入日志 # 取最新远程变更 git fetch origin # 强制把本地重置为远程分支 git reset --hard origin/main # 可选：清理多余文件 git clean -fd echo &#34;[`date`] Update complete&#34; &gt;&gt; /web/site1/git_pull.log 别忘了赋权\n">
-<meta property='og:url' content='https://blog.ztcdream.top/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/'>
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="VSCode配置ssh密钥登陆">
+<meta property='og:description' content="需求\r使用VSCode的远程主机SSH插件时，每次登陆远程服务器均需要手动输入密码，不能保存密码，这是VSCode出于安全考虑而禁用了密码自动登陆。\n如果想实现免密登陆，可以使用ssh密钥登陆。\n配置ssh密钥登陆\r本地创建ssh密钥\r按 Win+R ，输入 powershell 打开终端。打开后默认处于 C:\\Users\\yourname 文件夹。\n执行\n1 ssh-keygen -t rsa -b 4096 连续按三次回车，看到 The key's randomart image is: 表明成功生成ssh密钥。\n如图\n将公钥复制到服务器\rssh密钥是一个密钥对，分为公钥和私钥。私钥放在本地电脑上，理论上具有唯一性。公钥放在服务器上，每当登陆服务器时，服务器端检查公钥是否与本地的私钥配对，确保连接是安全的。\n新生成的密钥默认保存在 ~/.ssh 文件夹下，用 cat .\\ssh\\id_rsa.pub 查看公钥并复制。\n1 cat .\\ssh\\id_rsa.pub 复制后登陆远程服务器，粘贴到 ~/.ssh/authorized_keys 文件中并保存。\n至此，退出vscode然后重进，已经可以免密登陆了。\n小结\r通常连接远程Linux主机时，是不使用密码登陆的，因为这样明文密码安全性极低。本文介绍的ssh密钥登陆对于其他ssh终端如XShell、Tabby等同样适用。\n">
+<meta property='og:url' content='https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-20T17:15:09&#43;08:00'/><meta property='article:modified_time' content='2025-04-20T17:15:09&#43;08:00'/>
-<meta name="twitter:title" content="服务器自动拉取仓库">
-<meta name="twitter:description" content="问题引入\r网站的静态html文件托管在了github仓库上，每次修改网页构建的文件就git push至github仓库，服务器再git pull拉取仓库，实现网站的更新。\n按照这个流程，每修改一次网站，都要在服务器上执行一次git pull，很不方便。因此要让服务器自动执行这个过程，实现自动化。\n假设网站静态文件仓库在/web/site/index，我们把自动化的脚本放在上一级/web/site1。\n方法一 Crontab定时更新\rcrontab是linux里自带的自动化程序，在crontab -e修改配置文件，定时执行shell命令（通常是运行一个shell脚本），达到自动化的目的。\n创建更新仓库的sh脚本\rnano /web/site1/auto-fetch.sh\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 #!/bin/bash REPO_DIR=&#34;/web/site1/index&#34; # 切换到git目录 cd &#34;$REPO_DIR&#34; || exit 1 echo &#34;[`date`] Forcing git fetch and reset...&#34; &gt;&gt; /web/site1/git_pull.log # 写入日志 # 取最新远程变更 git fetch origin # 强制把本地重置为远程分支 git reset --hard origin/main # 可选：清理多余文件 git clean -fd echo &#34;[`date`] Update complete&#34; &gt;&gt; /web/site1/git_pull.log 别忘了赋权\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-29T10:35:43&#43;08:00'/><meta property='article:modified_time' content='2025-04-29T10:35:43&#43;08:00'/>
+<meta name="twitter:title" content="VSCode配置ssh密钥登陆">
+<meta name="twitter:description" content="需求\r使用VSCode的远程主机SSH插件时，每次登陆远程服务器均需要手动输入密码，不能保存密码，这是VSCode出于安全考虑而禁用了密码自动登陆。\n如果想实现免密登陆，可以使用ssh密钥登陆。\n配置ssh密钥登陆\r本地创建ssh密钥\r按 Win+R ，输入 powershell 打开终端。打开后默认处于 C:\\Users\\yourname 文件夹。\n执行\n1 ssh-keygen -t rsa -b 4096 连续按三次回车，看到 The key's randomart image is: 表明成功生成ssh密钥。\n如图\n将公钥复制到服务器\rssh密钥是一个密钥对，分为公钥和私钥。私钥放在本地电脑上，理论上具有唯一性。公钥放在服务器上，每当登陆服务器时，服务器端检查公钥是否与本地的私钥配对，确保连接是安全的。\n新生成的密钥默认保存在 ~/.ssh 文件夹下，用 cat .\\ssh\\id_rsa.pub 查看公钥并复制。\n1 cat .\\ssh\\id_rsa.pub 复制后登陆远程服务器，粘贴到 ~/.ssh/authorized_keys 文件中并保存。\n至此，退出vscode然后重进，已经可以免密登陆了。\n小结\r通常连接远程Linux主机时，是不使用密码登陆的，因为这样明文密码安全性极低。本文介绍的ssh密钥登陆对于其他ssh终端如XShell、Tabby等同样适用。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -272,20 +272,11 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#问题引入">问题引入</a></li>
-    <li><a href="#方法一-crontab定时更新">方法一 Crontab定时更新</a>
+    <li><a href="#需求">需求</a></li>
+    <li><a href="#配置ssh密钥登陆">配置ssh密钥登陆</a>
       <ol>
-        <li><a href="#创建更新仓库的sh脚本">创建更新仓库的sh脚本</a></li>
-        <li><a href="#配置crontab">配置crontab</a></li>
-      </ol>
-    </li>
-    <li><a href="#方法二-webhook实时更新">方法二 webhook实时更新</a>
-      <ol>
-        <li><a href="#创建更新脚本">创建更新脚本</a></li>
-        <li><a href="#编写webhook服务脚本">编写webhook服务脚本</a></li>
-        <li><a href="#创建-systemd-服务管理-webhook">创建 systemd 服务管理 webhook</a></li>
-        <li><a href="#github设置webhook">github设置webhook</a></li>
-        <li><a href="#定时清空日志">定时清空日志</a></li>
+        <li><a href="#本地创建ssh密钥">本地创建ssh密钥</a></li>
+        <li><a href="#将公钥复制到服务器">将公钥复制到服务器</a></li>
       </ol>
     </li>
     <li><a href="#小结">小结</a></li>
@@ -316,7 +307,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/">服务器自动拉取仓库</a>
+            <a href="/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/">VSCode配置ssh密钥登陆</a>
         </h2>
     
         
@@ -338,7 +329,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025年4月20日</time>
+                <time class="article-time--published">2025年4月29日</time>
             </div>
         
 
@@ -353,7 +344,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 1 分钟
                 </time>
             </div>
         
@@ -368,237 +359,83 @@
     <section class="article-content">
     
     
-    <h2 id="问题引入">问题引入
+    <h2 id="需求">需求
 
 
 </h2>
 
 
-<p>网站的静态html文件托管在了github仓库上，每次修改网页构建的文件就<code>git push</code>至github仓库，服务器再<code>git pull</code>拉取仓库，实现网站的更新。</p>
-<p>按照这个流程，每修改一次网站，都要在服务器上执行一次<code>git pull</code>，很不方便。因此要让服务器自动执行这个过程，实现自动化。</p>
-<p>假设网站静态文件仓库在<code>/web/site/index</code>，我们把自动化的脚本放在上一级<code>/web/site1</code>。</p>
-<h2 id="方法一-crontab定时更新">方法一 Crontab定时更新
+<p>使用VSCode的远程主机SSH插件时，每次登陆远程服务器均需要手动输入密码，不能保存密码，这是VSCode出于安全考虑而禁用了密码自动登陆。</p>
+<p>如果想实现免密登陆，可以使用ssh密钥登陆。</p>
+<h2 id="配置ssh密钥登陆">配置ssh密钥登陆
 
 
 </h2>
 
 
-<p>crontab是linux里自带的自动化程序，在<code>crontab -e</code>修改配置文件，定时执行shell命令（通常是运行一个shell脚本），达到自动化的目的。</p>
-<h3 id="创建更新仓库的sh脚本">创建更新仓库的sh脚本
+<h3 id="本地创建ssh密钥">本地创建ssh密钥
 
 
 </h3>
 
 
-<p><code>nano /web/site1/auto-fetch.sh</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nv">REPO_DIR</span><span class="o">=</span><span class="s2">&#34;/web/site1/index&#34;</span> <span class="c1"># 切换到git目录</span>
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="s2">&#34;</span><span class="nv">$REPO_DIR</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;[`date`] Forcing git fetch and reset...&#34;</span> &gt;&gt; /web/site1/git_pull.log <span class="c1"># 写入日志</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 取最新远程变更</span>
-</span></span><span class="line"><span class="cl">git fetch origin
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 强制把本地重置为远程分支</span>
-</span></span><span class="line"><span class="cl">git reset --hard origin/main
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 可选：清理多余文件</span>
-</span></span><span class="line"><span class="cl">git clean -fd
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;[`date`] Update complete&#34;</span> &gt;&gt; /web/site1/git_pull.log
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>别忘了赋权</p>
+<p>按 <code>Win+R</code> ，输入 <code>powershell</code> 打开终端。打开后默认处于 <code>C:\Users\yourname</code> 文件夹。</p>
+<p>执行</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x /web/site1/auto-fetch.sh
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">ssh-keygen</span> <span class="n">-t</span> <span class="n">rsa</span> <span class="n">-b</span> <span class="mf">4096</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="配置crontab">配置crontab
+</div><p>连续按三次回车，看到 <code>The key's randomart image is:</code> 表明成功生成ssh密钥。</p>
+<p>如图</p>
+<p><img src="https://image.ztcdream.top/i/2025/04/29/hdv8kq.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="powershell 生成ssh密钥"
+	
+	
+></p>
+<h3 id="将公钥复制到服务器">将公钥复制到服务器
 
 
 </h3>
 
 
-<p>使用<code>crontab -e</code>修改crontab的配置文件</p>
-<p>在末尾加入两行</p>
+<p>ssh密钥是一个密钥对，分为公钥和私钥。私钥放在本地电脑上，理论上具有唯一性。公钥放在服务器上，每当登陆服务器时，服务器端检查公钥是否与本地的私钥配对，确保连接是安全的。</p>
+<p>新生成的密钥默认保存在 <code>~/.ssh</code> 文件夹下，用 <code>cat .\ssh\id_rsa.pub</code> 查看公钥并复制。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">*/1 * * * * /bin/bash /web/site1/auto-fetch.sh &gt;&gt; /web/site1/cron-sync.log 2&gt;&amp;1
-</span></span><span class="line"><span class="cl">0 0 * * * &gt; /web/site1/cron-sync.log
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cat </span><span class="p">.\</span><span class="n">ssh</span><span class="p">\</span><span class="n">id_rsa</span><span class="p">.</span><span class="py">pub</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>第一行 <code>*/1 * * * *</code>是每隔一分钟执行一次，运行<code>auto-fetch.sh</code>，并将错误输出连同标准输出写入<code>cron-sync.log</code>。</p>
-<p>第二行是每天0点清空<code>cron-sync.log</code>，避免日志文件无限增大。</p>
-<p>保存退出后，crontab就立即生效了。</p>
-<h2 id="方法二-webhook实时更新">方法二 webhook实时更新
-
-
-</h2>
-
-
-<p>crontab的配置过程简单，但缺点是定时。因为是强制更新，因此crontab设置自动更新的时间间隔不宜过短，因为会影响性能。</p>
-<p>webhook可以实时监听远程仓库的状态，当且仅当远程仓库变化时，服务器才自动push。</p>
-<h3 id="创建更新脚本">创建更新脚本
-
-
-</h3>
-
-
-<p>这一步参考crontab的<code>auto-fetch</code>脚本</p>
-<h3 id="编写webhook服务脚本">编写webhook服务脚本
-
-
-</h3>
-
-
-<p>这里要用到python的flask模块</p>
-<p><code>pip3 install flask</code></p>
-<p><code>nano /web/site1/webhook_server.py</code></p>
-<p>写入</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">subprocess</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/git-webhook&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">webhook</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">    <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;/web/site1/auto-fetch.sh&#39;</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;Webhook received&#39;</span><span class="p">,</span> <span class="mi">200</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">9000</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>根据自身情况修改 subprocess.Popen的脚本路径 和 port=9000 的端口号。（这个webhook是运行在服务器上的，注意端口是否被占用）</p>
-<h3 id="创建-systemd-服务管理-webhook">创建 systemd 服务管理 webhook
-
-
-</h3>
-
-
-<p><code>nano /etc/systemd/system/git-webhook.service</code></p>
-<p>写入</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Unit]
-</span></span><span class="line"><span class="cl">Description=Git Webhook Listener
-</span></span><span class="line"><span class="cl">After=network.target
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">[Service]
-</span></span><span class="line"><span class="cl">User=root
-</span></span><span class="line"><span class="cl">WorkingDirectory=/web/site1
-</span></span><span class="line"><span class="cl">ExecStart=/usr/bin/python3 /web/site1/webhook_server.py
-</span></span><span class="line"><span class="cl">Restart=always
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">[Install]
-</span></span><span class="line"><span class="cl">WantedBy=multi-user.target
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>上面的<code>User=root</code>，按需修改成可以执行脚本的用户</p>
-<p>启用并启动</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl daemon-reexec
-</span></span><span class="line"><span class="cl">systemctl daemon-reload
-</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> --now git-webhook.service
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>查看状态</p>
-<p><code>sudo systemctl status git-webhook.service</code></p>
-<h3 id="github设置webhook">github设置webhook
-
-
-</h3>
-
-
-<p>点进项目仓库，上边栏找到Settings，点击Webhooks。</p>
-<p>点击Add webhook。</p>
-<p>Payload URL = <a class="link" href="http://your-server-ip:9000/git-webhook"  target="_blank" rel="noopener"
-    >http://your-server-ip:9000/git-webhook</a></p>
-<p>Content type = application/json</p>
-<p>Events = Push events</p>
-<p>保存后检查是否正常工作</p>
-<h3 id="定时清空日志">定时清空日志
-
-
-</h3>
-
-
-<p>仍使用crontab来清空git的日志</p>
-<p>只需要在crontab配置文件加一条即可：</p>
-<p><code>0 0 * * * &gt; /web/site1//web/site1/git_pull.log</code></p>
+</div><p><img src="https://image.ztcdream.top/i/2025/04/29/i725ug.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="查看公钥内容"
+	
+	
+></p>
+<p>复制后登陆远程服务器，粘贴到 <code>~/.ssh/authorized_keys</code> 文件中并保存。</p>
+<p>至此，退出vscode然后重进，已经可以免密登陆了。</p>
 <h2 id="小结">小结
 
 
 </h2>
 
 
-<p>如果应付简单的场景，crontab足矣。</p>
-<p>追求实时更新和性能，更推荐监听webhook的方式。</p>
+<p>通常连接远程Linux主机时，是不使用密码登陆的，因为这样明文密码安全性极低。本文介绍的ssh密钥登陆对于其他ssh终端如XShell、Tabby等同样适用。</p>
 
 </section>
 
@@ -661,12 +498,12 @@
             
                 
 <article class="">
-    <a href="/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/">
+    <a href="/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">VSCode配置ssh密钥登陆</h2>
+            <h2 class="article-title">服务器自动拉取仓库</h2>
         </div>
     </a>
 </article>
