@@ -408,52 +408,52 @@ $$<h2 id="短除法">短除法
 ></p>
 <p>不难看出，短除法的思路是不断将两个数同时倍比缩小，直到无法继续同除一个数，在这个过程中也就找到了这个最大公因数的因式。但关键在于无法确定每一步的除数，实际情况可能是一个一个试，保险起见还可能是从小到大试。这样的复杂度无异于直接将两数都分解，但我们只需要最大公因数，而我们却多此一举，找出了这个数的因式。</p>
 <p>依据这个算法，可以写成</p>
-<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">11
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">12
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">13
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">14
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">15
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">16
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">17
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">18
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">19
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">20
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">21
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c678dd">def</span> <span style="color:#61afef;font-weight:bold">gcd_short_division</span>(<span style="color:#e06c75">a</span>, <span style="color:#e06c75">b</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">if</span> <span style="color:#e06c75">a</span> <span style="color:#56b6c2">&lt;</span> <span style="color:#e06c75">b</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">a</span>, <span style="color:#e06c75">b</span> <span style="color:#56b6c2">=</span> <span style="color:#e06c75">b</span>, <span style="color:#e06c75">a</span>  <span style="color:#7f848e"># 确保 a 是较大的数</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#e06c75">divisor</span> <span style="color:#56b6c2">=</span> <span style="color:#d19a66">2</span>  <span style="color:#7f848e"># 从最小的质数开始</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#e06c75">gcd</span> <span style="color:#56b6c2">=</span> <span style="color:#d19a66">1</span>      <span style="color:#7f848e"># 初始最大公约数为 1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">while</span> <span style="color:#e06c75">a</span> <span style="color:#56b6c2">&gt;=</span> <span style="color:#e06c75">divisor</span> <span style="color:#56b6c2">and</span> <span style="color:#e06c75">b</span> <span style="color:#56b6c2">&gt;=</span> <span style="color:#e06c75">divisor</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">if</span> <span style="color:#e06c75">a</span> <span style="color:#56b6c2">%</span> <span style="color:#e06c75">divisor</span> <span style="color:#56b6c2">==</span> <span style="color:#d19a66">0</span> <span style="color:#56b6c2">and</span> <span style="color:#e06c75">b</span> <span style="color:#56b6c2">%</span> <span style="color:#e06c75">divisor</span> <span style="color:#56b6c2">==</span> <span style="color:#d19a66">0</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#7f848e"># 如果 divisor 是 a 和 b 的公因数</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#e06c75">gcd</span> <span style="color:#56b6c2">*=</span> <span style="color:#e06c75">divisor</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#e06c75">a</span> <span style="color:#56b6c2">//=</span> <span style="color:#e06c75">divisor</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#e06c75">b</span> <span style="color:#56b6c2">//=</span> <span style="color:#e06c75">divisor</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">elif</span> <span style="color:#e06c75">a</span> <span style="color:#56b6c2">%</span> <span style="color:#e06c75">divisor</span> <span style="color:#56b6c2">==</span> <span style="color:#d19a66">0</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#e06c75">a</span> <span style="color:#56b6c2">//=</span> <span style="color:#e06c75">divisor</span>  <span style="color:#7f848e"># 只对 a 进行除法</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">elif</span> <span style="color:#e06c75">b</span> <span style="color:#56b6c2">%</span> <span style="color:#e06c75">divisor</span> <span style="color:#56b6c2">==</span> <span style="color:#d19a66">0</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#e06c75">b</span> <span style="color:#56b6c2">//=</span> <span style="color:#e06c75">divisor</span>  <span style="color:#7f848e"># 只对 b 进行除法</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">else</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#e06c75">divisor</span> <span style="color:#56b6c2">+=</span> <span style="color:#d19a66">1</span>  <span style="color:#7f848e"># 尝试下一个更大的因数</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#e06c75">gcd</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">gcd_short_division</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>  <span class="c1"># 确保 a 是较大的数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">divisor</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># 从最小的质数开始</span>
+</span></span><span class="line"><span class="cl">    <span class="n">gcd</span> <span class="o">=</span> <span class="mi">1</span>      <span class="c1"># 初始最大公约数为 1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="n">divisor</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;=</span> <span class="n">divisor</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">a</span> <span class="o">%</span> <span class="n">divisor</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">%</span> <span class="n">divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 如果 divisor 是 a 和 b 的公因数</span>
+</span></span><span class="line"><span class="cl">            <span class="n">gcd</span> <span class="o">*=</span> <span class="n">divisor</span>
+</span></span><span class="line"><span class="cl">            <span class="n">a</span> <span class="o">//=</span> <span class="n">divisor</span>
+</span></span><span class="line"><span class="cl">            <span class="n">b</span> <span class="o">//=</span> <span class="n">divisor</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">a</span> <span class="o">%</span> <span class="n">divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">a</span> <span class="o">//=</span> <span class="n">divisor</span>  <span class="c1"># 只对 a 进行除法</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">b</span> <span class="o">%</span> <span class="n">divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">b</span> <span class="o">//=</span> <span class="n">divisor</span>  <span class="c1"># 只对 b 进行除法</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">divisor</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># 尝试下一个更大的因数</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">gcd</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="辗转相除法">辗转相除法
@@ -484,30 +484,30 @@ $$(a,b)=(b,r)$$<p>通过不断重复，直到$b_i/r_i=c$可以整除，那么$(a
 
 <p>该算法是循环过程，当$a&gt;b$时，运算<code>r_1=a%b</code> ，重复<code>r_i=b_(i-1)%r_(i-1)</code>，直到<code>r_i=0</code>，输出<code>r_(i-1)</code>。</p>
 <p>代码实现如下，</p>
-<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">10
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c678dd">def</span> <span style="color:#61afef;font-weight:bold">gcd_euclidean</span>(<span style="color:#e06c75">a</span>, <span style="color:#e06c75">b</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">while</span> <span style="color:#e06c75">b</span> <span style="color:#56b6c2">!=</span> <span style="color:#d19a66">0</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">a</span>, <span style="color:#e06c75">b</span> <span style="color:#56b6c2">=</span> <span style="color:#e06c75">b</span>, <span style="color:#e06c75">a</span> <span style="color:#56b6c2">%</span> <span style="color:#e06c75">b</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#e06c75">a</span>
-</span></span><span style="display:flex;"><span><span style="color:#7f848e"># 测试</span>
-</span></span><span style="display:flex;"><span><span style="color:#e06c75">a</span> <span style="color:#56b6c2">=</span> <span style="color:#d19a66">3157</span>
-</span></span><span style="display:flex;"><span><span style="color:#e06c75">b</span> <span style="color:#56b6c2">=</span> <span style="color:#d19a66">5423</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e06c75">gcd</span> <span style="color:#56b6c2">=</span> <span style="color:#e06c75">gcd_euclidean</span>(<span style="color:#e06c75">a</span>,<span style="color:#e06c75">b</span>)
-</span></span><span style="display:flex;"><span><span style="color:#e5c07b">print</span>(<span style="color:#e06c75">gcd</span>)
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">gcd_euclidean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 测试</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">3157</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">5423</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">gcd</span> <span class="o">=</span> <span class="n">gcd_euclidean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">gcd</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><em>注意到，这里不用判断$a,b$的大小,如果 $a&lt;b$，第一次相除后变成了gcd(b,a)</em></p>
@@ -530,38 +530,38 @@ $$<p>已知最大公因数，即可求出最小公倍数</p>
 </h3>
 
 
-<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">11
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">12
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">13
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">14
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c678dd">def</span> <span style="color:#61afef;font-weight:bold">lcm_euclidean</span>(<span style="color:#e06c75">a</span>,<span style="color:#e06c75">b</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#e06c75">c</span> <span style="color:#56b6c2">=</span> <span style="color:#e06c75">a</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#e06c75">d</span> <span style="color:#56b6c2">=</span> <span style="color:#e06c75">b</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">while</span> <span style="color:#e06c75">d</span> <span style="color:#56b6c2">!=</span> <span style="color:#d19a66">0</span>:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">c</span>, <span style="color:#e06c75">d</span> <span style="color:#56b6c2">=</span> <span style="color:#e06c75">d</span>, <span style="color:#e06c75">c</span> <span style="color:#56b6c2">%</span> <span style="color:#e06c75">d</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#e06c75">lcm</span> <span style="color:#56b6c2">=</span> <span style="color:#e5c07b">abs</span>(<span style="color:#e06c75">a</span><span style="color:#56b6c2">*</span><span style="color:#e06c75">b</span>)<span style="color:#56b6c2">/</span><span style="color:#e06c75">c</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#e06c75">lcm</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#7f848e"># 测试</span>
-</span></span><span style="display:flex;"><span><span style="color:#e06c75">a</span> <span style="color:#56b6c2">=</span> <span style="color:#d19a66">24</span>
-</span></span><span style="display:flex;"><span><span style="color:#e06c75">b</span> <span style="color:#56b6c2">=</span> <span style="color:#d19a66">28</span>
-</span></span><span style="display:flex;"><span><span style="color:#e06c75">lcm</span> <span style="color:#56b6c2">=</span> <span style="color:#e06c75">lcm_euclidean</span>(<span style="color:#e06c75">a</span>,<span style="color:#e06c75">b</span>)
-</span></span><span style="display:flex;"><span><span style="color:#e5c07b">print</span>(<span style="color:#e06c75">lcm</span>)
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">lcm_euclidean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">    <span class="n">d</span> <span class="o">=</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">d</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="p">,</span> <span class="n">c</span> <span class="o">%</span> <span class="n">d</span>
+</span></span><span class="line"><span class="cl">    <span class="n">lcm</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="n">c</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">lcm</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 测试</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">24</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">28</span>
+</span></span><span class="line"><span class="cl"><span class="n">lcm</span> <span class="o">=</span> <span class="n">lcm_euclidean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">lcm</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div>

@@ -381,12 +381,12 @@
 
 <p>按 <code>Win+R</code> ，输入 <code>powershell</code> 打开终端。打开后默认处于 <code>C:\Users\yourname</code> 文件夹。</p>
 <p>执行</p>
-<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#e5c07b">ssh-keygen</span> <span style="color:#e06c75">-t</span> <span style="color:#e06c75">rsa</span> <span style="color:#e06c75">-b</span> <span style="color:#d19a66">4096</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">ssh-keygen</span> <span class="n">-t</span> <span class="n">rsa</span> <span class="n">-b</span> <span class="mf">4096</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>连续按三次回车，看到 <code>The key's randomart image is:</code> 表明成功生成ssh密钥。</p>
@@ -409,12 +409,12 @@
 
 <p>ssh密钥是一个密钥对，分为公钥和私钥。私钥放在本地电脑上，理论上具有唯一性。公钥放在服务器上，每当登陆服务器时，服务器端检查公钥是否与本地的私钥配对，确保连接是安全的。</p>
 <p>新生成的密钥默认保存在本地的 <code>~/.ssh</code> 文件夹下，用 <code>cat .\ssh\id_rsa.pub</code> 查看公钥并复制。</p>
-<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">1
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#e5c07b">cat </span>.\<span style="color:#e06c75">ssh</span>\<span style="color:#e06c75">id_rsa</span>.<span style="color:#e06c75">pub</span>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cat </span><span class="p">.\</span><span class="n">ssh</span><span class="p">\</span><span class="n">id_rsa</span><span class="p">.</span><span class="py">pub</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="https://image.ztcdream.top/i/2025/04/29/i725ug.png"
