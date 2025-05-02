@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="问题描述\r\u200b给定\u200b：三个正整数$k$、$m$、$n$，表示一个群体中有：\n$k$个纯合显性个体（AA）\n$m$个杂合子个体（Aa）\n$n$个纯合隐性个体（aa）\n\u200b要求\u200b：计算随机选取两个个体交配时，后代携带至少一个显性等位基因（即表现为显性性状）的概率。假设任意两个个体均可交配。\n推导过程\r这个随机事件可以分解为两步：\n第一步 随机选取两个个体\n第二步 统计所选取的个体交配的后代\n第一步的结果会影响到第二步的结果，因此要用到全概率。\n并且，\n$$\rP(A\\_)=P(AA)+P(Aa)=1-P(aa)\r$$可以逆向先求出 $P(aa)$.\n$$\r\\begin{aligned}\rP(aa) = P(AA,AA)P(aa|AA,AA) &+ P(AA,Aa)P(aa|AA,Aa) +\\\\\rP(AA,aa)P(aa|AA,aa) &+ P(Aa,Aa)P(aa|Aa,Aa) + \\\\\rP(Aa,aa)P(aa|Aa,aa) &+ P(aa,aa)P(aa|aa,aa)\r\\end{aligned}\r$$其中，\n$$\rP(aa|AA,AA)=P(aa|AA,Aa)=P(aa|AA,aa)=0\r$$因此，\n$$ \\begin{aligned} P(aa) &amp;= P(Aa,Aa)P(aa|Aa,Aa) + P(Aa,aa)P(aa|Aa,aa) + P(aa,aa)P(aa|aa,aa) \\ &amp;=\\frac{C_m^2}{C_{k+m+n}^{2}} \\times \\frac{1}{4}\n\\frac{C_m^1C_n^1}{C_{k+m+n}^2} \\times \\frac{1}{2} \\frac{C_n^2}{C_{k+m+n}^2} \\times 1 \\ &amp;= \\frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2} \\end{aligned} $$ 最后，\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="问题描述\r\u200b给定\u200b：三个正整数$k$、$m$、$n$，表示一个群体中有：\n$k$个纯合显性个体（AA）\n$m$个杂合子个体（Aa）\n$n$个纯合隐性个体（aa）\n\u200b要求\u200b：计算随机选取两个个体交配时，后代携带至少一个显性等位基因（即表现为显性性状）的概率。假设任意两个个体均可交配。\n推导过程\r这个随机事件可以分解为两步：\n第一步 随机选取两个个体\n第二步 统计所选取的个体交配的后代\n第一步的结果会影响到第二步的结果，因此要用到全概率。\n并且，\n$$\rP(A\\_)=P(AA)+P(Aa)=1-P(aa)\r$$可以逆向先求出 $P(aa)$.\n$$\r\\begin{aligned}\rP(aa) = P(AA,AA)P(aa|AA,AA) &+ P(AA,Aa)P(aa|AA,Aa) +\\\\\rP(AA,aa)P(aa|AA,aa) &+ P(Aa,Aa)P(aa|Aa,Aa) + \\\\\rP(Aa,aa)P(aa|Aa,aa) &+ P(aa,aa)P(aa|aa,aa)\r\\end{aligned}\r$$其中，\n$$\rP(aa|AA,AA)=P(aa|AA,Aa)=P(aa|AA,aa)=0\r$$因此，\n$$\r\\begin{aligned}\rP(aa) &= P(Aa,Aa)P(aa|Aa,Aa) + P(Aa,aa)P(aa|Aa,aa) + P(aa,aa)P(aa|aa,aa) \\\\\r&=\\frac{C_m^2}{C_{k+m+n}^{2}} \\times \\frac{1}{4}+ \\frac{C_m^1C_n^1}{C_{k+m+n}^2} \\times \\frac{1}{2}+ \\frac{C_n^2}{C_{k+m+n}^2} \\times 1 \\\\\r&= \\frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2}\r\\end{aligned}\r$$最后，\n$$\r\\begin{aligned}\rP(A\\_) &= 1-P(aa) \\\\\r&= 1 - \\frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2}\r\\end{aligned}\r$$">
 <title>群体显性后代问题</title>
 
 <link rel='canonical' href='https://blog.ztcdream.top/p/%E7%BE%A4%E4%BD%93%E6%98%BE%E6%80%A7%E5%90%8E%E4%BB%A3%E9%97%AE%E9%A2%98/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="群体显性后代问题">
-<meta property='og:description' content="问题描述\r\u200b给定\u200b：三个正整数$k$、$m$、$n$，表示一个群体中有：\n$k$个纯合显性个体（AA）\n$m$个杂合子个体（Aa）\n$n$个纯合隐性个体（aa）\n\u200b要求\u200b：计算随机选取两个个体交配时，后代携带至少一个显性等位基因（即表现为显性性状）的概率。假设任意两个个体均可交配。\n推导过程\r这个随机事件可以分解为两步：\n第一步 随机选取两个个体\n第二步 统计所选取的个体交配的后代\n第一步的结果会影响到第二步的结果，因此要用到全概率。\n并且，\n$$\rP(A\\_)=P(AA)+P(Aa)=1-P(aa)\r$$可以逆向先求出 $P(aa)$.\n$$\r\\begin{aligned}\rP(aa) = P(AA,AA)P(aa|AA,AA) &+ P(AA,Aa)P(aa|AA,Aa) +\\\\\rP(AA,aa)P(aa|AA,aa) &+ P(Aa,Aa)P(aa|Aa,Aa) + \\\\\rP(Aa,aa)P(aa|Aa,aa) &+ P(aa,aa)P(aa|aa,aa)\r\\end{aligned}\r$$其中，\n$$\rP(aa|AA,AA)=P(aa|AA,Aa)=P(aa|AA,aa)=0\r$$因此，\n$$ \\begin{aligned} P(aa) &amp;= P(Aa,Aa)P(aa|Aa,Aa) + P(Aa,aa)P(aa|Aa,aa) + P(aa,aa)P(aa|aa,aa) \\ &amp;=\\frac{C_m^2}{C_{k+m+n}^{2}} \\times \\frac{1}{4}\n\\frac{C_m^1C_n^1}{C_{k+m+n}^2} \\times \\frac{1}{2} \\frac{C_n^2}{C_{k+m+n}^2} \\times 1 \\ &amp;= \\frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2} \\end{aligned} $$ 最后，\n">
+<meta property='og:description' content="问题描述\r\u200b给定\u200b：三个正整数$k$、$m$、$n$，表示一个群体中有：\n$k$个纯合显性个体（AA）\n$m$个杂合子个体（Aa）\n$n$个纯合隐性个体（aa）\n\u200b要求\u200b：计算随机选取两个个体交配时，后代携带至少一个显性等位基因（即表现为显性性状）的概率。假设任意两个个体均可交配。\n推导过程\r这个随机事件可以分解为两步：\n第一步 随机选取两个个体\n第二步 统计所选取的个体交配的后代\n第一步的结果会影响到第二步的结果，因此要用到全概率。\n并且，\n$$\rP(A\\_)=P(AA)+P(Aa)=1-P(aa)\r$$可以逆向先求出 $P(aa)$.\n$$\r\\begin{aligned}\rP(aa) = P(AA,AA)P(aa|AA,AA) &+ P(AA,Aa)P(aa|AA,Aa) +\\\\\rP(AA,aa)P(aa|AA,aa) &+ P(Aa,Aa)P(aa|Aa,Aa) + \\\\\rP(Aa,aa)P(aa|Aa,aa) &+ P(aa,aa)P(aa|aa,aa)\r\\end{aligned}\r$$其中，\n$$\rP(aa|AA,AA)=P(aa|AA,Aa)=P(aa|AA,aa)=0\r$$因此，\n$$\r\\begin{aligned}\rP(aa) &= P(Aa,Aa)P(aa|Aa,Aa) + P(Aa,aa)P(aa|Aa,aa) + P(aa,aa)P(aa|aa,aa) \\\\\r&=\\frac{C_m^2}{C_{k+m+n}^{2}} \\times \\frac{1}{4}+ \\frac{C_m^1C_n^1}{C_{k+m+n}^2} \\times \\frac{1}{2}+ \\frac{C_n^2}{C_{k+m+n}^2} \\times 1 \\\\\r&= \\frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2}\r\\end{aligned}\r$$最后，\n$$\r\\begin{aligned}\rP(A\\_) &= 1-P(aa) \\\\\r&= 1 - \\frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2}\r\\end{aligned}\r$$">
 <meta property='og:url' content='https://blog.ztcdream.top/p/%E7%BE%A4%E4%BD%93%E6%98%BE%E6%80%A7%E5%90%8E%E4%BB%A3%E9%97%AE%E9%A2%98/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='概率论' /><meta property='article:published_time' content='2025-05-02T19:13:02&#43;08:00'/><meta property='article:modified_time' content='2025-05-02T19:13:02&#43;08:00'/>
 <meta name="twitter:title" content="群体显性后代问题">
-<meta name="twitter:description" content="问题描述\r\u200b给定\u200b：三个正整数$k$、$m$、$n$，表示一个群体中有：\n$k$个纯合显性个体（AA）\n$m$个杂合子个体（Aa）\n$n$个纯合隐性个体（aa）\n\u200b要求\u200b：计算随机选取两个个体交配时，后代携带至少一个显性等位基因（即表现为显性性状）的概率。假设任意两个个体均可交配。\n推导过程\r这个随机事件可以分解为两步：\n第一步 随机选取两个个体\n第二步 统计所选取的个体交配的后代\n第一步的结果会影响到第二步的结果，因此要用到全概率。\n并且，\n$$\rP(A\\_)=P(AA)+P(Aa)=1-P(aa)\r$$可以逆向先求出 $P(aa)$.\n$$\r\\begin{aligned}\rP(aa) = P(AA,AA)P(aa|AA,AA) &+ P(AA,Aa)P(aa|AA,Aa) +\\\\\rP(AA,aa)P(aa|AA,aa) &+ P(Aa,Aa)P(aa|Aa,Aa) + \\\\\rP(Aa,aa)P(aa|Aa,aa) &+ P(aa,aa)P(aa|aa,aa)\r\\end{aligned}\r$$其中，\n$$\rP(aa|AA,AA)=P(aa|AA,Aa)=P(aa|AA,aa)=0\r$$因此，\n$$ \\begin{aligned} P(aa) &amp;= P(Aa,Aa)P(aa|Aa,Aa) + P(Aa,aa)P(aa|Aa,aa) + P(aa,aa)P(aa|aa,aa) \\ &amp;=\\frac{C_m^2}{C_{k+m+n}^{2}} \\times \\frac{1}{4}\n\\frac{C_m^1C_n^1}{C_{k+m+n}^2} \\times \\frac{1}{2} \\frac{C_n^2}{C_{k+m+n}^2} \\times 1 \\ &amp;= \\frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2} \\end{aligned} $$ 最后，\n">
+<meta name="twitter:description" content="问题描述\r\u200b给定\u200b：三个正整数$k$、$m$、$n$，表示一个群体中有：\n$k$个纯合显性个体（AA）\n$m$个杂合子个体（Aa）\n$n$个纯合隐性个体（aa）\n\u200b要求\u200b：计算随机选取两个个体交配时，后代携带至少一个显性等位基因（即表现为显性性状）的概率。假设任意两个个体均可交配。\n推导过程\r这个随机事件可以分解为两步：\n第一步 随机选取两个个体\n第二步 统计所选取的个体交配的后代\n第一步的结果会影响到第二步的结果，因此要用到全概率。\n并且，\n$$\rP(A\\_)=P(AA)+P(Aa)=1-P(aa)\r$$可以逆向先求出 $P(aa)$.\n$$\r\\begin{aligned}\rP(aa) = P(AA,AA)P(aa|AA,AA) &+ P(AA,Aa)P(aa|AA,Aa) +\\\\\rP(AA,aa)P(aa|AA,aa) &+ P(Aa,Aa)P(aa|Aa,Aa) + \\\\\rP(Aa,aa)P(aa|Aa,aa) &+ P(aa,aa)P(aa|aa,aa)\r\\end{aligned}\r$$其中，\n$$\rP(aa|AA,AA)=P(aa|AA,Aa)=P(aa|AA,aa)=0\r$$因此，\n$$\r\\begin{aligned}\rP(aa) &= P(Aa,Aa)P(aa|Aa,Aa) + P(Aa,aa)P(aa|Aa,aa) + P(aa,aa)P(aa|aa,aa) \\\\\r&=\\frac{C_m^2}{C_{k+m+n}^{2}} \\times \\frac{1}{4}+ \\frac{C_m^1C_n^1}{C_{k+m+n}^2} \\times \\frac{1}{2}+ \\frac{C_n^2}{C_{k+m+n}^2} \\times 1 \\\\\r&= \\frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2}\r\\end{aligned}\r$$最后，\n$$\r\\begin{aligned}\rP(A\\_) &= 1-P(aa) \\\\\r&= 1 - \\frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2}\r\\end{aligned}\r$$">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -394,20 +394,13 @@ $$<p>其中，</p>
 $$
 P(aa|AA,AA)=P(aa|AA,Aa)=P(aa|AA,aa)=0
 $$<p>因此，</p>
-<p>$$
+$$
 \begin{aligned}
-P(aa) &amp;= P(Aa,Aa)P(aa|Aa,Aa) +
-P(Aa,aa)P(aa|Aa,aa) +
-P(aa,aa)P(aa|aa,aa) \
-&amp;=\frac{C_m^2}{C_{k+m+n}^{2}} \times \frac{1}{4}</p>
-<ul>
-<li>\frac{C_m^1C_n^1}{C_{k+m+n}^2} \times \frac{1}{2}</li>
-<li>\frac{C_n^2}{C_{k+m+n}^2} \times 1 \
-&amp;= \frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2}
+P(aa) &= P(Aa,Aa)P(aa|Aa,Aa) + P(Aa,aa)P(aa|Aa,aa) + P(aa,aa)P(aa|aa,aa) \\
+&=\frac{C_m^2}{C_{k+m+n}^{2}} \times \frac{1}{4}+ \frac{C_m^1C_n^1}{C_{k+m+n}^2} \times \frac{1}{2}+ \frac{C_n^2}{C_{k+m+n}^2} \times 1 \\
+&= \frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2}
 \end{aligned}
-$$</li>
-</ul>
-<p>最后，</p>
+$$<p>最后，</p>
 $$
 \begin{aligned}
 P(A\_) &= 1-P(aa) \\
