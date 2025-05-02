@@ -20,9 +20,17 @@
 
 
 &lt;p&gt;&lt;strong&gt;​给定&lt;/strong&gt;​：三个正整数$k$、$m$、$n$，表示一个群体中有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
 &lt;p&gt;$k$个纯合显性个体（AA）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;$m$个杂合子个体（Aa）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;$n$个纯合隐性个体（aa）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;​要求​：计算随机选取两个个体交配时，后代携带至少一个显性等位基因（即表现为显性性状）的概率。假设任意两个个体均可交配。&lt;/p&gt;
 &lt;h2 id=&#34;推导过程&#34;&gt;推导过程
 
