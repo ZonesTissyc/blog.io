@@ -7,7 +7,75 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Tue, 29 Apr 2025 11:17:08 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 02 May 2025 19:13:02 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>群体显性后代问题</title>
+        <link>https://blog.ztcdream.top/p/%E7%BE%A4%E4%BD%93%E6%98%BE%E6%80%A7%E5%90%8E%E4%BB%A3%E9%97%AE%E9%A2%98/</link>
+        <pubDate>Fri, 02 May 2025 19:13:02 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.top/p/%E7%BE%A4%E4%BD%93%E6%98%BE%E6%80%A7%E5%90%8E%E4%BB%A3%E9%97%AE%E9%A2%98/</guid>
+        <description>&lt;h2 id=&#34;问题描述&#34;&gt;问题描述
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;&lt;strong&gt;​给定&lt;/strong&gt;​：三个正整数$k$、$m$、$n$，表示一个群体中有：&lt;/p&gt;
+&lt;p&gt;$k$个纯合显性个体（AA）&lt;/p&gt;
+&lt;p&gt;$m$个杂合子个体（Aa）&lt;/p&gt;
+&lt;p&gt;$n$个纯合隐性个体（aa）&lt;/p&gt;
+&lt;p&gt;​要求​：计算随机选取两个个体交配时，后代携带至少一个显性等位基因（即表现为显性性状）的概率。假设任意两个个体均可交配。&lt;/p&gt;
+&lt;h2 id=&#34;推导过程&#34;&gt;推导过程
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;这个随机事件可以分解为两步：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;第一步 随机选取两个个体&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第二步 统计所选取的个体交配的后代&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;第一步的结果会影响到第二步的结果，因此要用到&lt;strong&gt;全概率&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;并且，&lt;/p&gt;
+$$
+P(A\_)=P(AA)+P(Aa)=1-P(aa)
+$$&lt;p&gt;可以逆向先求出 $P(aa)$.&lt;/p&gt;
+$$
+\begin{aligned}
+P(aa) = P(AA,AA)P(aa|AA,AA) &amp;+ P(AA,Aa)P(aa|AA,Aa) +\\
+P(AA,aa)P(aa|AA,aa) &amp;+ P(Aa,Aa)P(aa|Aa,Aa) + \\
+P(Aa,aa)P(aa|Aa,aa) &amp;+ P(aa,aa)P(aa|aa,aa)
+\end{aligned}
+$$&lt;p&gt;其中，&lt;/p&gt;
+$$
+P(aa|AA,AA)=P(aa|AA,Aa)=P(aa|AA,aa)=0
+$$&lt;p&gt;因此，&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+P(aa) &amp;amp;= P(Aa,Aa)P(aa|Aa,Aa) +
+P(Aa,aa)P(aa|Aa,aa) +
+P(aa,aa)P(aa|aa,aa) \
+&amp;amp;=\frac{C_m^2}{C_{k+m+n}^{2}} \times \frac{1}{4}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;\frac{C_m^1C_n^1}{C_{k+m+n}^2} \times \frac{1}{2}&lt;/li&gt;
+&lt;li&gt;\frac{C_n^2}{C_{k+m+n}^2} \times 1 \
+&amp;amp;= \frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;最后，&lt;/p&gt;
+$$
+\begin{aligned}
+P(A\_) &amp;= 1-P(aa) \\
+&amp;= 1 - \frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2}
+\end{aligned}
+$$</description>
+        </item>
+        <item>
         <title>VSCode配置ssh密钥登陆</title>
         <link>https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/</link>
         <pubDate>Tue, 29 Apr 2025 10:35:43 +0800</pubDate>
