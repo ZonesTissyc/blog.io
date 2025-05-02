@@ -63,10 +63,10 @@ P(aa,aa)P(aa|aa,aa) \
 &lt;ul&gt;
 &lt;li&gt;\frac{C_m^1C_n^1}{C_{k+m+n}^2} \times \frac{1}{2}&lt;/li&gt;
 &lt;li&gt;\frac{C_n^2}{C_{k+m+n}^2} \times 1 \
-&amp;amp;= \frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2}&lt;/li&gt;
+&amp;amp;= \frac{2C_m^1C_n^1 + 4C_n^2 + C_m^2}{4C_{k+m+n}^2}
+\end{aligned}
+$$&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;\end{aligned}
-$$&lt;/p&gt;
 &lt;p&gt;最后，&lt;/p&gt;
 $$
 \begin{aligned}
