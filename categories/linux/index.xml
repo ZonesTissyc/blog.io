@@ -44,14 +44,18 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;连续按三次回车，看到 &lt;code&gt;The key&#39;s randomart image is:&lt;/code&gt; 表明成功生成ssh密钥。&lt;/p&gt;
 &lt;p&gt;如图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/04/29/hdv8kq.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq.png&#34;
+	width=&#34;1261&#34;
+	height=&#34;853&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq_hu2134800503513921767.png 480w, https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq_hu9620829789317796647.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;powershell 生成ssh密钥&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;147&#34;
+		data-flex-basis=&#34;354px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;将公钥复制到服务器&#34;&gt;将公钥复制到服务器
@@ -70,14 +74,18 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cat &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ssh&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id_rsa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;pub&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/04/29/i725ug.png&#34;
-	
-	
-	
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug.png&#34;
+	width=&#34;1294&#34;
+	height=&#34;407&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug_hu14337773189692562485.png 480w, https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug_hu2620534302694373421.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;查看公钥内容&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;317&#34;
+		data-flex-basis=&#34;763px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;复制后登陆远程服务器，粘贴到 &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt; 文件中并保存。&lt;/p&gt;

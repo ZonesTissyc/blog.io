@@ -39,14 +39,18 @@
 &lt;/div&gt;&lt;p&gt;提问：&lt;strong&gt;上面会输出什么？&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;你心想：这还用问，b=a=8，当然输出8了。&lt;/p&gt;
 &lt;p&gt;然而，结果却是&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/04/20/12dz8qw.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw.png&#34;
+	width=&#34;536&#34;
+	height=&#34;65&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw_hu10486427257122952950.png 480w, https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw_hu5385925776908398024.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;b未定义&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;824&#34;
+		data-flex-basis=&#34;1979px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;&#39;b&#39; was not declared in this scope&lt;/code&gt;&lt;/p&gt;
@@ -356,24 +360,32 @@
 
 
 &lt;p&gt;该问题源自我们 &lt;strong&gt;Linux&lt;/strong&gt; 课题小组选择的期末课程项目，原题来自浙江大学的陈宇璟教授。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/05/03/iq2nsc.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/iq2nsc.png&#34;
+	width=&#34;1264&#34;
+	height=&#34;964&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/iq2nsc_hu16459431944627486795.png 480w, https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/iq2nsc_hu14165584928709936090.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;光线传播问题&#34;
 	
 	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;131&#34;
+		data-flex-basis=&#34;314px&#34;
+	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/05/03/irelh4.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/irelh4.png&#34;
+	width=&#34;910&#34;
+	height=&#34;978&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/irelh4_hu5353994031652416711.png 480w, https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/irelh4_hu4104413764410786150.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;光线传播问题——输入输出样例&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;93&#34;
+		data-flex-basis=&#34;223px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;分析&#34;&gt;分析

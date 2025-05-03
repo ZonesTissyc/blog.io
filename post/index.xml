@@ -136,14 +136,18 @@ $$</description>
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;连续按三次回车，看到 &lt;code&gt;The key&#39;s randomart image is:&lt;/code&gt; 表明成功生成ssh密钥。&lt;/p&gt;
 &lt;p&gt;如图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/04/29/hdv8kq.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq.png&#34;
+	width=&#34;1261&#34;
+	height=&#34;853&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq_hu2134800503513921767.png 480w, https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq_hu9620829789317796647.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;powershell 生成ssh密钥&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;147&#34;
+		data-flex-basis=&#34;354px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;将公钥复制到服务器&#34;&gt;将公钥复制到服务器
@@ -162,14 +166,18 @@ $$</description>
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cat &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ssh&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id_rsa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;pub&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/04/29/i725ug.png&#34;
-	
-	
-	
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug.png&#34;
+	width=&#34;1294&#34;
+	height=&#34;407&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug_hu14337773189692562485.png 480w, https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug_hu2620534302694373421.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;查看公钥内容&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;317&#34;
+		data-flex-basis=&#34;763px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;复制后登陆远程服务器，粘贴到 &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt; 文件中并保存。&lt;/p&gt;
@@ -454,14 +462,18 @@ $$</description>
 &lt;/div&gt;&lt;p&gt;提问：&lt;strong&gt;上面会输出什么？&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;你心想：这还用问，b=a=8，当然输出8了。&lt;/p&gt;
 &lt;p&gt;然而，结果却是&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/04/20/12dz8qw.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw.png&#34;
+	width=&#34;536&#34;
+	height=&#34;65&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw_hu10486427257122952950.png 480w, https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw_hu5385925776908398024.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;b未定义&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;824&#34;
+		data-flex-basis=&#34;1979px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;&#39;b&#39; was not declared in this scope&lt;/code&gt;&lt;/p&gt;
@@ -826,24 +838,32 @@ $$</description>
 
 
 &lt;p&gt;该问题源自我们 &lt;strong&gt;Linux&lt;/strong&gt; 课题小组选择的期末课程项目，原题来自浙江大学的陈宇璟教授。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/05/03/iq2nsc.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/iq2nsc.png&#34;
+	width=&#34;1264&#34;
+	height=&#34;964&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/iq2nsc_hu16459431944627486795.png 480w, https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/iq2nsc_hu14165584928709936090.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;光线传播问题&#34;
 	
 	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;131&#34;
+		data-flex-basis=&#34;314px&#34;
+	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/05/03/irelh4.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/irelh4.png&#34;
+	width=&#34;910&#34;
+	height=&#34;978&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/irelh4_hu5353994031652416711.png 480w, https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/irelh4_hu4104413764410786150.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;光线传播问题——输入输出样例&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;93&#34;
+		data-flex-basis=&#34;223px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;分析&#34;&gt;分析
@@ -1189,14 +1209,18 @@ $$
 \frac{\partial^2z}{\partial xy} 
 = \frac{\partial (\frac{\partial x}{\partial y})}{\partial x} 
 = \frac{\partial(\frac{\partial z}{\partial x})}{\partial y} 
-$$&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/01/06/xvefg8.png&#34;
-	
-	
-	
+$$&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/xvefg8.png&#34;
+	width=&#34;2560&#34;
+	height=&#34;1440&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/xvefg8_hu7340328412331553038.png 480w, https://blog.ztcdream.top/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/xvefg8_hu15340699913192663849.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;注意到$f_1$和$f_2$均有$(xy),(x+y)$的变量&lt;/p&gt;
@@ -1237,14 +1261,18 @@ $$</description>
 &lt;/h2&gt;
 
 
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/01/04/vhv1vt.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/vhv1vt.png&#34;
+	width=&#34;1038&#34;
+	height=&#34;558&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/vhv1vt_hu150114894383946617.png 480w, https://blog.ztcdream.top/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/vhv1vt_hu13347024723943623057.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt 图片&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;186&#34;
+		data-flex-basis=&#34;446px&#34;
 	
 &gt;&lt;/p&gt;
 </description>
@@ -1277,25 +1305,33 @@ $$&lt;h2 id=&#34;短除法&#34;&gt;短除法
 
 &lt;p&gt;小学二年级时我们已经知道，可以使用&lt;strong&gt;短除法&lt;/strong&gt;来先找出所有的较小公因数，再把他们相乘。&lt;/p&gt;
 &lt;p&gt;例如求$(12,16)$，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2024/12/31/xcdccn.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn.png&#34;
+	width=&#34;553&#34;
+	height=&#34;459&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn_hu6833322164602977511.png 480w, https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn_hu997523722216718054.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;120&#34;
+		data-flex-basis=&#34;289px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;对于较小的整数，这个方法也蛮好用的，但对于稍大的数，我们很难看出除数是几。比如$(5423,3157)$，使用短除法，找第一个除数都要花不少时间。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2024/12/31/xcdbxv.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv.png&#34;
+	width=&#34;504&#34;
+	height=&#34;270&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv_hu5906583741661803457.png 480w, https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv_hu12550989089901036466.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;186&#34;
+		data-flex-basis=&#34;448px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;不难看出，短除法的思路是不断将两个数同时倍比缩小，直到无法继续同除一个数，在这个过程中也就找到了这个最大公因数的因式。但关键在于无法确定每一步的除数，实际情况可能是一个一个试，保险起见还可能是从小到大试。这样的复杂度无异于直接将两数都分解，但我们只需要最大公因数，而我们却多此一举，找出了这个数的因式。&lt;/p&gt;
@@ -1357,14 +1393,18 @@ $$&lt;h2 id=&#34;短除法&#34;&gt;短除法
 &lt;p&gt;&lt;em&gt;定理&lt;/em&gt;：设整数$a/b$的余数为$r$,则&lt;/p&gt;
 $$(a,b)=(b,r)$$&lt;p&gt;通过不断重复，直到$b_i/r_i=c$可以整除，那么$(a,b)=r_i$&lt;/p&gt;
 &lt;p&gt;以$(5423,3157)$为例，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2024/12/31/12x4m1n.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n.png&#34;
+	width=&#34;265&#34;
+	height=&#34;1155&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n_hu5017553582313072223.png 480w, https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n_hu13485192742638592563.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;22&#34;
+		data-flex-basis=&#34;55px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;最后$22/11=2$，最后的除数$11$就是最大公因数。&lt;/p&gt;
@@ -1470,14 +1510,18 @@ $$&lt;p&gt;已知最大公因数，即可求出最小公倍数&lt;/p&gt;
 &lt;/h2&gt;
 
 
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/01/01/m1ir2.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/m1ir2.png&#34;
+	width=&#34;694&#34;
+	height=&#34;461&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/m1ir2_hu16504847598438477834.png 480w, https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/m1ir2_hu11478295349462742028.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;150&#34;
+		data-flex-basis=&#34;361px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;公式&#34;&gt;公式
@@ -1568,14 +1612,18 @@ $$\int\tan xdx=-\ln |2\sec x|+C$$&lt;/li&gt;
 &lt;/h2&gt;
 
 
-&lt;p&gt;&lt;img src=&#34;https://image.ztcdream.top/i/2025/01/07/h1gvx4.jpg&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/h1gvx4.jpg&#34;
+	width=&#34;1654&#34;
+	height=&#34;2339&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/h1gvx4_hu14080238442483328327.jpg 480w, https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/h1gvx4_hu17359414229116777101.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
 	
 &gt;&lt;/p&gt;
 </description>
