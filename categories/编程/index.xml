@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Sat, 03 May 2025 18:12:42 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 03 May 2025 18:32:48 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>（易错）C&#43;&#43;的作用域概念</title>
         <link>https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/</link>
         <pubDate>Sun, 20 Apr 2025 17:09:00 +0800</pubDate>
@@ -439,7 +439,7 @@ $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。
 
 
 &lt;p&gt;&lt;code&gt;bash&lt;/code&gt; 中没有二维数组，只有一维数组。这样无法像 &lt;code&gt;C++&lt;/code&gt; 和 &lt;code&gt;Python&lt;/code&gt; 那样直接用一个数组表示。我们选择使用多个一维数组，组合成一个二维数组。&lt;/p&gt;
-&lt;p&gt;比如要表示题目输入的矩阵 $A$ ,&lt;/p&gt;
+&lt;p&gt;比如要表示题目输入的矩阵 $A$ , 则可以写成&lt;/p&gt;
 </description>
         </item>
         <item>
