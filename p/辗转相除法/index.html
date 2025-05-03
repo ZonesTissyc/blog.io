@@ -10,7 +10,7 @@
 <meta property='og:description' content="最大公因数问题\r任给两个不全为零的整数，必存在一个的数，它同时是两个数的因子，这个数称为公因数。\n不互质的两个数的公因数可以有多个，寻找最大的公因数就被称为最大公因数问题。\n设有两个非零整数$a,b$，其最大公因数可表示为\n$$\r(a,b) $$例如，\n$$\r(4,6) = 2\r$$短除法\r小学二年级时我们已经知道，可以使用短除法来先找出所有的较小公因数，再把他们相乘。\n例如求$(12,16)$，\n对于较小的整数，这个方法也蛮好用的，但对于稍大的数，我们很难看出除数是几。比如$(5423,3157)$，使用短除法，找第一个除数都要花不少时间。\n不难看出，短除法的思路是不断将两个数同时倍比缩小，直到无法继续同除一个数，在这个过程中也就找到了这个最大公因数的因式。但关键在于无法确定每一步的除数，实际情况可能是一个一个试，保险起见还可能是从小到大试。这样的复杂度无异于直接将两数都分解，但我们只需要最大公因数，而我们却多此一举，找出了这个数的因式。\n依据这个算法，可以写成\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 def gcd_short_division(a, b): if a &lt; b: a, b = b, a # 确保 a 是较大的数 divisor = 2 # 从最小的质数开始 gcd = 1 # 初始最大公约数为 1 while a &gt;= divisor and b &gt;= divisor: if a % divisor == 0 and b % divisor == 0: # 如果 divisor 是 a 和 b 的公因数 gcd *= divisor a //= divisor b //= divisor elif a % divisor == 0: a //= divisor # 只对 a 进行除法 elif b % divisor == 0: b //= divisor # 只对 b 进行除法 else: divisor += 1 # 尝试下一个更大的因数 return gcd 辗转相除法\r定理：设整数$a/b$的余数为$r$,则\n">
 <meta property='og:url' content='https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='算法' /><meta property='article:published_time' content='2024-12-31T16:19:08&#43;08:00'/><meta property='article:modified_time' content='2024-12-31T16:19:08&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='算法' /><meta property='article:tag' content='Python' /><meta property='article:published_time' content='2024-12-31T16:19:08&#43;08:00'/><meta property='article:modified_time' content='2024-12-31T16:19:08&#43;08:00'/>
 <meta name="twitter:title" content="辗转相除法">
 <meta name="twitter:description" content="最大公因数问题\r任给两个不全为零的整数，必存在一个的数，它同时是两个数的因子，这个数称为公因数。\n不互质的两个数的公因数可以有多个，寻找最大的公因数就被称为最大公因数问题。\n设有两个非零整数$a,b$，其最大公因数可表示为\n$$\r(a,b) $$例如，\n$$\r(4,6) = 2\r$$短除法\r小学二年级时我们已经知道，可以使用短除法来先找出所有的较小公因数，再把他们相乘。\n例如求$(12,16)$，\n对于较小的整数，这个方法也蛮好用的，但对于稍大的数，我们很难看出除数是几。比如$(5423,3157)$，使用短除法，找第一个除数都要花不少时间。\n不难看出，短除法的思路是不断将两个数同时倍比缩小，直到无法继续同除一个数，在这个过程中也就找到了这个最大公因数的因式。但关键在于无法确定每一步的除数，实际情况可能是一个一个试，保险起见还可能是从小到大试。这样的复杂度无异于直接将两数都分解，但我们只需要最大公因数，而我们却多此一举，找出了这个数的因式。\n依据这个算法，可以写成\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 def gcd_short_division(a, b): if a &lt; b: a, b = b, a # 确保 a 是较大的数 divisor = 2 # 从最小的质数开始 gcd = 1 # 初始最大公约数为 1 while a &gt;= divisor and b &gt;= divisor: if a % divisor == 0 and b % divisor == 0: # 如果 divisor 是 a 和 b 的公因数 gcd *= divisor a //= divisor b //= divisor elif a % divisor == 0: a //= divisor # 只对 a 进行除法 elif b % divisor == 0: b //= divisor # 只对 b 进行除法 else: divisor += 1 # 尝试下一个更大的因数 return gcd 辗转相除法\r定理：设整数$a/b$的余数为$r$,则\n">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -573,6 +573,8 @@ $$<p>已知最大公因数，即可求出最小公倍数</p>
     <section class="article-tags">
         
             <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+        
+            <a href="/tags/python/">Python</a>
         
     </section>
 
