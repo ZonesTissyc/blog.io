@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="问题描述\r该问题源自我们课题组选择的课程项目，原题来自浙江大学的陈宇璟教授。\n在 $n*m$ 的网格中，有一些位置可以往上下左右发射速度为 $x_{ij}$ 的光芒(这里速度为 $x_{ij}$ 的 意思表示到达下一个网格的时间为 $x_{ij}$ 秒钟)，每经过一个网格，速度就增加 $1$，直到遇到障 碍物或到网格边缘停止。现在假设每个有光芒发射器的位置都同时发射光线，问每个网格最 早收到光线的时间是多少?\n光芒发射器发射出的光线互不干扰，只考虑到达每个位置的时间，同时光线传播的过程 可以忽略光芒发射器的存在(即只有障碍物才会阻止光线的传播)，光芒发射器不影响经过的 光线。\n输入格式:\n第一行两个正整数 n，m(1&lt;=n，m&lt;=50)，表示网格大小。\n接下来为 n 行 m 列由空格分隔开的整数 xij(-1&lt;=xij&lt;=100)。\n如果 xij=-1，表示当前网格是障碍物；\n如果 xij=0，表示当前网格什么都没有，光线可通过；\n如果 xij&gt;0，表示这个位置是光芒发射器，同时他的初始速度为 xij。\n输出格式:\nn 行 m 列的整数，正整数表示相应位置光线最早到达的时间；光源的光线到达时间为 0；如果不能到达，则输出-1。\n输入样例 1:\n4 4\n0 0 0 0\n-1 -1 -1 -1\n0 0 2 0\n0 0 0 0\n输出样例 1:\n-1 -1 -1 -1\n-1 -1 -1 -1\n5 2 0 2\n-1 -1 2 -1\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="问题描述\r该问题源自我们 Linux 课题小组选择的期末课程项目，原题来自浙江大学的陈宇璟教授。\n分析\r这个问题如果正向思考，就显得很复杂。光源从四个方向发射出去，每经过一个格子，对于该格子要记录其光源到达的时间。但问题是格子事先不好确定，而且光源不只一个，是存在很多光源的。这还要比较最短的时间。\n经这样一分析，采取正向传播方案则必须选择某种算法，而下面介绍的反向查找光源就容易理解与实现很多。\n思路一：反向查找光源\r整体思路\r题目已经限定，光源所在网格和墙所在网格的最短到达时间时间为 $0$ 和 $-1$，因此我们只需关心为 $0$ 的网格。\n光源正向传播到该目标网格，知道光源的初始速度以及该方向上光源到该目标网格之间的网格数，即可累加算出到达该网格的总时间。\n以 $x$ 方向为例，设光源在 $x_1$ 处，且初始速度为 $m$ ,目标网格在 $x_2$ 处，($x_2&gt;x_1$)中间没有墙，则光源从 $x_1$ 传播到 $x_2$ 的时间 $t_x$ 为：\n$$\r\\begin{aligned}\rt_x &= (x_2-x_1)m + \\sum_{i=0}^{x_2-x_1}i \\\\\r&= (x_2-x_1)m + \\frac{(x_2-x_1)(x_2-x_1-1)}{2} \\\\\r\\end{aligned} $$令 $d_x=x_2-x_1$，则\n$$\rt_x=d_x(m+\\frac{d_x-1}{2})\r$$$y$ 方向的计算公式，同理可得,\n$$\rt_y = d_y(m+\\frac{d_y-1}{2})\r$$现在我们可以很轻松地计算光源到网格的传播时间。\n一个初始值为 $0$ 的网格，寻找光源传播到该网格的最短时间，可以分为四个方向，沿着每个方向查找光源，计算途径与途径的光源的传播时间，保留最小值，直至传播终止。四个方向的传播时间再一次选取最小值。\n依照这个思路，我们组设计的 $bash$ 脚本的程序流程图如下，\n待插入图片\n实现难点及解决方法\r二维数组的表示\rbash 中没有二维数组，只有一维数组。这样无法像 C++ 和 Python 那样直接用一个数组表示。我们选择使用多个一维数组，组合成一个二维数组。\n">
 <title>光线传播问题</title>
 
 <link rel='canonical' href='https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="光线传播问题">
-<meta property='og:description' content="问题描述\r该问题源自我们课题组选择的课程项目，原题来自浙江大学的陈宇璟教授。\n在 $n*m$ 的网格中，有一些位置可以往上下左右发射速度为 $x_{ij}$ 的光芒(这里速度为 $x_{ij}$ 的 意思表示到达下一个网格的时间为 $x_{ij}$ 秒钟)，每经过一个网格，速度就增加 $1$，直到遇到障 碍物或到网格边缘停止。现在假设每个有光芒发射器的位置都同时发射光线，问每个网格最 早收到光线的时间是多少?\n光芒发射器发射出的光线互不干扰，只考虑到达每个位置的时间，同时光线传播的过程 可以忽略光芒发射器的存在(即只有障碍物才会阻止光线的传播)，光芒发射器不影响经过的 光线。\n输入格式:\n第一行两个正整数 n，m(1&lt;=n，m&lt;=50)，表示网格大小。\n接下来为 n 行 m 列由空格分隔开的整数 xij(-1&lt;=xij&lt;=100)。\n如果 xij=-1，表示当前网格是障碍物；\n如果 xij=0，表示当前网格什么都没有，光线可通过；\n如果 xij&gt;0，表示这个位置是光芒发射器，同时他的初始速度为 xij。\n输出格式:\nn 行 m 列的整数，正整数表示相应位置光线最早到达的时间；光源的光线到达时间为 0；如果不能到达，则输出-1。\n输入样例 1:\n4 4\n0 0 0 0\n-1 -1 -1 -1\n0 0 2 0\n0 0 0 0\n输出样例 1:\n-1 -1 -1 -1\n-1 -1 -1 -1\n5 2 0 2\n-1 -1 2 -1\n">
+<meta property='og:description' content="问题描述\r该问题源自我们 Linux 课题小组选择的期末课程项目，原题来自浙江大学的陈宇璟教授。\n分析\r这个问题如果正向思考，就显得很复杂。光源从四个方向发射出去，每经过一个格子，对于该格子要记录其光源到达的时间。但问题是格子事先不好确定，而且光源不只一个，是存在很多光源的。这还要比较最短的时间。\n经这样一分析，采取正向传播方案则必须选择某种算法，而下面介绍的反向查找光源就容易理解与实现很多。\n思路一：反向查找光源\r整体思路\r题目已经限定，光源所在网格和墙所在网格的最短到达时间时间为 $0$ 和 $-1$，因此我们只需关心为 $0$ 的网格。\n光源正向传播到该目标网格，知道光源的初始速度以及该方向上光源到该目标网格之间的网格数，即可累加算出到达该网格的总时间。\n以 $x$ 方向为例，设光源在 $x_1$ 处，且初始速度为 $m$ ,目标网格在 $x_2$ 处，($x_2&gt;x_1$)中间没有墙，则光源从 $x_1$ 传播到 $x_2$ 的时间 $t_x$ 为：\n$$\r\\begin{aligned}\rt_x &= (x_2-x_1)m + \\sum_{i=0}^{x_2-x_1}i \\\\\r&= (x_2-x_1)m + \\frac{(x_2-x_1)(x_2-x_1-1)}{2} \\\\\r\\end{aligned} $$令 $d_x=x_2-x_1$，则\n$$\rt_x=d_x(m+\\frac{d_x-1}{2})\r$$$y$ 方向的计算公式，同理可得,\n$$\rt_y = d_y(m+\\frac{d_y-1}{2})\r$$现在我们可以很轻松地计算光源到网格的传播时间。\n一个初始值为 $0$ 的网格，寻找光源传播到该网格的最短时间，可以分为四个方向，沿着每个方向查找光源，计算途径与途径的光源的传播时间，保留最小值，直至传播终止。四个方向的传播时间再一次选取最小值。\n依照这个思路，我们组设计的 $bash$ 脚本的程序流程图如下，\n待插入图片\n实现难点及解决方法\r二维数组的表示\rbash 中没有二维数组，只有一维数组。这样无法像 C++ 和 Python 那样直接用一个数组表示。我们选择使用多个一维数组，组合成一个二维数组。\n">
 <meta property='og:url' content='https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-09T17:33:19&#43;08:00'/><meta property='article:modified_time' content='2025-04-16T20:38:05&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='算法' /><meta property='article:published_time' content='2025-04-09T17:33:19&#43;08:00'/><meta property='article:modified_time' content='2025-05-03T11:36:25&#43;08:00'/>
 <meta name="twitter:title" content="光线传播问题">
-<meta name="twitter:description" content="问题描述\r该问题源自我们课题组选择的课程项目，原题来自浙江大学的陈宇璟教授。\n在 $n*m$ 的网格中，有一些位置可以往上下左右发射速度为 $x_{ij}$ 的光芒(这里速度为 $x_{ij}$ 的 意思表示到达下一个网格的时间为 $x_{ij}$ 秒钟)，每经过一个网格，速度就增加 $1$，直到遇到障 碍物或到网格边缘停止。现在假设每个有光芒发射器的位置都同时发射光线，问每个网格最 早收到光线的时间是多少?\n光芒发射器发射出的光线互不干扰，只考虑到达每个位置的时间，同时光线传播的过程 可以忽略光芒发射器的存在(即只有障碍物才会阻止光线的传播)，光芒发射器不影响经过的 光线。\n输入格式:\n第一行两个正整数 n，m(1&lt;=n，m&lt;=50)，表示网格大小。\n接下来为 n 行 m 列由空格分隔开的整数 xij(-1&lt;=xij&lt;=100)。\n如果 xij=-1，表示当前网格是障碍物；\n如果 xij=0，表示当前网格什么都没有，光线可通过；\n如果 xij&gt;0，表示这个位置是光芒发射器，同时他的初始速度为 xij。\n输出格式:\nn 行 m 列的整数，正整数表示相应位置光线最早到达的时间；光源的光线到达时间为 0；如果不能到达，则输出-1。\n输入样例 1:\n4 4\n0 0 0 0\n-1 -1 -1 -1\n0 0 2 0\n0 0 0 0\n输出样例 1:\n-1 -1 -1 -1\n-1 -1 -1 -1\n5 2 0 2\n-1 -1 2 -1\n">
+<meta name="twitter:description" content="问题描述\r该问题源自我们 Linux 课题小组选择的期末课程项目，原题来自浙江大学的陈宇璟教授。\n分析\r这个问题如果正向思考，就显得很复杂。光源从四个方向发射出去，每经过一个格子，对于该格子要记录其光源到达的时间。但问题是格子事先不好确定，而且光源不只一个，是存在很多光源的。这还要比较最短的时间。\n经这样一分析，采取正向传播方案则必须选择某种算法，而下面介绍的反向查找光源就容易理解与实现很多。\n思路一：反向查找光源\r整体思路\r题目已经限定，光源所在网格和墙所在网格的最短到达时间时间为 $0$ 和 $-1$，因此我们只需关心为 $0$ 的网格。\n光源正向传播到该目标网格，知道光源的初始速度以及该方向上光源到该目标网格之间的网格数，即可累加算出到达该网格的总时间。\n以 $x$ 方向为例，设光源在 $x_1$ 处，且初始速度为 $m$ ,目标网格在 $x_2$ 处，($x_2&gt;x_1$)中间没有墙，则光源从 $x_1$ 传播到 $x_2$ 的时间 $t_x$ 为：\n$$\r\\begin{aligned}\rt_x &= (x_2-x_1)m + \\sum_{i=0}^{x_2-x_1}i \\\\\r&= (x_2-x_1)m + \\frac{(x_2-x_1)(x_2-x_1-1)}{2} \\\\\r\\end{aligned} $$令 $d_x=x_2-x_1$，则\n$$\rt_x=d_x(m+\\frac{d_x-1}{2})\r$$$y$ 方向的计算公式，同理可得,\n$$\rt_y = d_y(m+\\frac{d_y-1}{2})\r$$现在我们可以很轻松地计算光源到网格的传播时间。\n一个初始值为 $0$ 的网格，寻找光源传播到该网格的最短时间，可以分为四个方向，沿着每个方向查找光源，计算途径与途径的光源的传播时间，保留最小值，直至传播终止。四个方向的传播时间再一次选取最小值。\n依照这个思路，我们组设计的 $bash$ 脚本的程序流程图如下，\n待插入图片\n实现难点及解决方法\r二维数组的表示\rbash 中没有二维数组，只有一维数组。这样无法像 C++ 和 Python 那样直接用一个数组表示。我们选择使用多个一维数组，组合成一个二维数组。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -274,6 +274,16 @@
   <ol>
     <li><a href="#问题描述">问题描述</a></li>
     <li><a href="#分析">分析</a></li>
+    <li><a href="#思路一反向查找光源">思路一：反向查找光源</a>
+      <ol>
+        <li><a href="#整体思路">整体思路</a></li>
+        <li><a href="#实现难点及解决方法">实现难点及解决方法</a>
+          <ol>
+            <li><a href="#二维数组的表示">二维数组的表示</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -292,8 +302,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/def/" >
-                Def
+            <a href="/categories/%E7%BC%96%E7%A8%8B/" style="background-color: #2a9d8f; color: #fff;">
+                编程
             </a>
         
     </header>
@@ -338,7 +348,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 1 分钟
                 </time>
             </div>
         
@@ -354,69 +364,96 @@
     
     
     <h2 id="问题描述">问题描述
-</h2><p>该问题源自我们课题组选择的课程项目，原题来自浙江大学的陈宇璟教授。</p>
-<p>在 $n*m$ 的网格中，有一些位置可以往上下左右发射速度为 $x_{ij}$ 的光芒(这里速度为 $x_{ij}$ 的
-意思表示到达下一个网格的时间为 $x_{ij}$ 秒钟)，每经过一个网格，速度就增加 $1$，直到遇到障
-碍物或到网格边缘停止。现在假设每个有光芒发射器的位置都同时发射光线，问每个网格最
-早收到光线的时间是多少?</p>
-<p>光芒发射器发射出的光线互不干扰，只考虑到达每个位置的时间，同时光线传播的过程
-可以忽略光芒发射器的存在(即只有障碍物才会阻止光线的传播)，光芒发射器不影响经过的
-光线。</p>
-<p>输入格式:</p>
-<p>第一行两个正整数 n，m(1&lt;=n，m&lt;=50)，表示网格大小。</p>
-<p>接下来为 n 行 m 列由空格分隔开的整数 xij(-1&lt;=xij&lt;=100)。</p>
-<p>如果 xij=-1，表示当前网格是障碍物；</p>
-<p>如果 xij=0，表示当前网格什么都没有，光线可通过；</p>
-<p>如果 xij&gt;0，表示这个位置是光芒发射器，同时他的初始速度为 xij。</p>
-<p>输出格式:</p>
-<p>n 行 m 列的整数，正整数表示相应位置光线最早到达的时间；光源的光线到达时间为
-0；如果不能到达，则输出-1。</p>
-<p>输入样例 1:</p>
-<p>4 4</p>
-<p>0 0 0 0</p>
-<p>-1 -1 -1 -1</p>
-<p>0 0 2 0</p>
-<p>0 0 0 0</p>
-<p>输出样例 1:</p>
-<p>-1 -1 -1 -1</p>
-<p>-1 -1 -1 -1</p>
-<p>5 2 0 2</p>
-<p>-1 -1 2 -1</p>
-<p>输入样例 2:</p>
-<p>4 4</p>
-<p>0 0 0 0</p>
-<p>-1 1 1 -1</p>
-<p>0 0 2 0</p>
-<p>0 0 0 0</p>
-<p>输出样例 2:</p>
-<p>-1 1 1 -1</p>
-<p>-1 0 0 -1</p>
-<p>5 1 0 2</p>
-<p>-1 3 2 -1</p>
-<p>输入样例 3:</p>
-<p>7 14</p>
-<p>22 0 -1 0 -1 17 21 -1 0 0 -1 0 30 15</p>
-<p>11 -1 0 -1 0 0 -1 -1 -1 25 -1 1 -1 -1</p>
-<p>-1 6 0 29 -1 2 0 0 0 5 0 0 -1 11</p>
-<p>-1 9 11 10 -1 0 3 0 0 -1 11 -1 -1 -1</p>
-<p>5 23 26 0 -1 -1 0 17 0 27 25 0 -1 0</p>
-<p>-1 0 1 0 18 24 0 3 0 20 25 -1 0 0</p>
-<p>-1 0 -1 -1 -1 -1 0 8 0 -1 13 -1 24 -1</p>
-<p>输出样例 3:</p>
-<p>0 22 -1 -1 -1 0 0 -1 -1 11 -1 1 0 0</p>
-<p>0 -1 10 -1 -1 2 -1 -1 -1 0 -1 0 -1 -1</p>
-<p>-1 0 6 0 -1 0 2 5 5 0 5 1 -1 0</p>
-<p>-1 0 0 0 -1 2 0 3 7 -1 0 -1 -1 -1</p>
-<p>0 0 0 10 -1 -1 3 0 17 0 0 25 -1 -1</p>
-<p>-1 1 0 1 0 0 3 0 3 0 0 -1 24 -1</p>
-<p>-1 30 -1 -1 -1 -1 8 0 8 -1 0 -1 0 -1</p>
-<h2 id="分析">分析
+
+
 </h2>
+
+
+<p>该问题源自我们 <strong>Linux</strong> 课题小组选择的期末课程项目，原题来自浙江大学的陈宇璟教授。</p>
+<p><img src="https://image.ztcdream.top/i/2025/05/03/iq2nsc.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="光线传播问题"
+	
+	
+></p>
+<p><img src="https://image.ztcdream.top/i/2025/05/03/irelh4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="光线传播问题——输入输出样例"
+	
+	
+></p>
+<h2 id="分析">分析
+
+
+</h2>
+
+
+<p>这个问题如果正向思考，就显得很复杂。光源从四个方向发射出去，每经过一个格子，对于该格子要记录其光源到达的时间。但问题是格子事先不好确定，而且光源不只一个，是存在很多光源的。这还要比较最短的时间。</p>
+<p>经这样一分析，采取正向传播方案则必须选择某种算法，而下面介绍的反向查找光源就容易理解与实现很多。</p>
+<h2 id="思路一反向查找光源">思路一：反向查找光源
+
+
+</h2>
+
+
+<h3 id="整体思路">整体思路
+
+
+</h3>
+
+
+<p>题目已经限定，光源所在网格和墙所在网格的最短到达时间时间为 $0$ 和 $-1$，因此我们只需关心为 $0$ 的网格。</p>
+<p>光源正向传播到该目标网格，知道光源的初始速度以及该方向上光源到该目标网格之间的网格数，即可累加算出到达该网格的总时间。</p>
+<p>以 $x$ 方向为例，设光源在 $x_1$ 处，且初始速度为 $m$ ,目标网格在 $x_2$ 处，($x_2&gt;x_1$)中间没有墙，则光源从 $x_1$ 传播到 $x_2$ 的时间 $t_x$ 为：</p>
+$$
+\begin{aligned}
+t_x &= (x_2-x_1)m + \sum_{i=0}^{x_2-x_1}i \\
+&= (x_2-x_1)m + \frac{(x_2-x_1)(x_2-x_1-1)}{2} \\
+\end{aligned} 
+$$<p>令 $d_x=x_2-x_1$，则</p>
+$$
+t_x=d_x(m+\frac{d_x-1}{2})
+$$<p>$y$ 方向的计算公式，同理可得,</p>
+$$
+t_y = d_y(m+\frac{d_y-1}{2})
+$$<p>现在我们可以很轻松地计算光源到网格的传播时间。</p>
+<p>一个初始值为 $0$ 的网格，寻找光源传播到该网格的最短时间，可以分为四个方向，沿着每个方向查找光源，计算途径与途径的光源的传播时间，保留最小值，直至传播终止。四个方向的传播时间再一次选取最小值。</p>
+<p>依照这个思路，我们组设计的 $bash$ 脚本的程序流程图如下，</p>
+<p><code>待插入图片</code></p>
+<h3 id="实现难点及解决方法">实现难点及解决方法
+
+
+</h3>
+
+
+<h4 id="二维数组的表示">二维数组的表示
+
+
+</h4>
+
+
+<p><code>bash</code> 中没有二维数组，只有一维数组。这样无法像 <code>C++</code> 和 <code>Python</code> 那样直接用一个数组表示。我们选择使用多个一维数组，组合成一个二维数组。</p>
+<p>比如要表示题目输入的矩阵 $A$ ,</p>
+
 </section>
 
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+        
+    </section>
+
 
     
     <section class="article-copyright">
@@ -440,7 +477,7 @@
 
 
         <span>
-            最后更新于 2025年4月16日 20:38
+            最后更新于 2025年5月3日 11:36
         </span>
     </section></footer>
 
@@ -448,13 +485,13 @@
     
         <link 
                 rel="stylesheet" 
-                href="https://css.ztcdream.top/css/katex.min.css"crossorigin="anonymous"
+                href="https://css.ztcdream.top/css/katex/katex.min.css"crossorigin="anonymous"
             ><script 
-                src="https://css.ztcdream.top/css/katex.min.js"crossorigin="anonymous"
+                src="https://css.ztcdream.top/css/katex/katex.min.js"crossorigin="anonymous"
                 defer
                 >
             </script><script 
-                src="https://css.ztcdream.top/css/auto-render.min.js"crossorigin="anonymous"
+                src="https://css.ztcdream.top/css/katex/auto-render.min.js"crossorigin="anonymous"
                 defer
                 >
             </script><script>
@@ -485,19 +522,6 @@
             
                 
 <article class="">
-    <a href="/p/test_lasttime/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Test_lasttime</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
     <a href="/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/">
         
         
@@ -511,25 +535,12 @@
             
                 
 <article class="">
-    <a href="/p/datetime/">
+    <a href="/p/c%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%86%B3%E6%95%B4%E6%95%B0%E5%89%8D%E6%9C%890%E7%9A%84%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Datetime</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/test/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Test</h2>
+            <h2 class="article-title">C语言解决整数前有0的输入问题</h2>
         </div>
     </a>
 </article>
@@ -542,48 +553,6 @@
      
     
         
-    <div class="disqus-container">
-    <div id="disqus_thread"></div>
-<script>
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
-
-<style>
-    .disqus-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
-    }
-</style>
-
-<script>
-    window.addEventListener('onColorSchemeChange', (e) => {
-        if (typeof DISQUS == 'object') {
-            DISQUS.reset({
-                reload: true
-            });
-        }
-    })
-</script>
-
     
 
     <footer class="site-footer">
@@ -665,25 +634,25 @@
     </div>
 
 </div><script 
-                src="https://css.ztcdream.top/css/photoswipe.min.js"crossorigin="anonymous"
+                src="https://css.ztcdream.top/css/photoswipe/photoswipe.min.js"crossorigin="anonymous"
                 defer
                 >
             </script><script 
-                src="https://css.ztcdream.top/css/photoswipe-ui-default.min.js"crossorigin="anonymous"
+                src="https://css.ztcdream.top/css/photoswipe/photoswipe-ui-default.min.js"crossorigin="anonymous"
                 defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="https://css.ztcdream.top/css/default-skin.min.css"crossorigin="anonymous"
+                href="https://css.ztcdream.top/css/photoswipe/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="https://css.ztcdream.top/css/photoswipe.min.css"crossorigin="anonymous"
+                href="https://css.ztcdream.top/css/photoswipe/photoswipe.min.css"crossorigin="anonymous"
             >
 
             </main>
         </div>
         <script 
-                src="https://css.ztcdream.top/css/vibrant.min.js"crossorigin="anonymous"
+                src="https://css.ztcdream.top/css/vibrant/vibrant.min.js"crossorigin="anonymous"
                 
                 >
             </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
