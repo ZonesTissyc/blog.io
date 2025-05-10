@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Sat, 03 May 2025 23:59:31 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 03 May 2025 18:12:42 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>群体显性后代问题</title>
         <link>https://blog.ztcdream.top/p/%E7%BE%A4%E4%BD%93%E6%98%BE%E6%80%A7%E5%90%8E%E4%BB%A3%E9%97%AE%E9%A2%98/</link>
         <pubDate>Fri, 02 May 2025 19:13:02 +0800</pubDate>
@@ -802,101 +802,6 @@ $$
     |A^*|=|A|^{n-1}
 \end{aligned}
 $$</description>
-        </item>
-        <item>
-        <title>光线传播问题</title>
-        <link>https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/</link>
-        <pubDate>Wed, 09 Apr 2025 17:33:19 +0800</pubDate>
-        
-        <guid>https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/</guid>
-        <description>&lt;h2 id=&#34;问题描述&#34;&gt;问题描述
-
-
-&lt;/h2&gt;
-
-
-&lt;p&gt;该问题源自我们 &lt;strong&gt;Linux&lt;/strong&gt; 课题小组选择的期末课程项目，原题来自浙江大学的陈宇璟教授。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/iq2nsc.png&#34;
-	width=&#34;1264&#34;
-	height=&#34;964&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/iq2nsc_hu16459431944627486795.png 480w, https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/iq2nsc_hu14165584928709936090.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;光线传播问题&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;131&#34;
-		data-flex-basis=&#34;314px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/irelh4.png&#34;
-	width=&#34;910&#34;
-	height=&#34;978&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/irelh4_hu5353994031652416711.png 480w, https://blog.ztcdream.top/p/%E5%85%89%E7%BA%BF%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98/irelh4_hu4104413764410786150.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;光线传播问题——输入输出样例&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;93&#34;
-		data-flex-basis=&#34;223px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;h2 id=&#34;分析&#34;&gt;分析
-
-
-&lt;/h2&gt;
-
-
-&lt;p&gt;这个问题如果正向思考，就显得很复杂。光源从四个方向发射出去，每经过一个格子，对于该格子要记录其光源到达的时间。但问题是格子事先不好确定，而且光源不只一个，是存在很多光源的。这还要比较最短的时间。&lt;/p&gt;
-&lt;p&gt;经这样一分析，采取正向传播方案则必须选择某种算法，而下面介绍的反向查找光源就容易理解与实现很多。&lt;/p&gt;
-&lt;h2 id=&#34;思路一反向查找光源&#34;&gt;思路一：反向查找光源
-
-
-&lt;/h2&gt;
-
-
-&lt;h3 id=&#34;整体思路&#34;&gt;整体思路
-
-
-&lt;/h3&gt;
-
-
-&lt;p&gt;题目已经限定，光源所在网格和墙所在网格的最短到达时间时间为 $0$ 和 $-1$，因此我们只需关心为 $0$ 的网格。&lt;/p&gt;
-&lt;p&gt;光源正向传播到该目标网格，知道光源的初始速度以及该方向上光源到该目标网格之间的网格数，即可累加算出到达该网格的总时间。&lt;/p&gt;
-&lt;p&gt;以 $x$ 方向为例，设光源在 $x_1$ 处，且初始速度为 $m$ ,目标网格在 $x_2$ 处，($x_2&amp;gt;x_1$)中间没有墙，则光源从 $x_1$ 传播到 $x_2$ 的时间 $t_x$ 为：&lt;/p&gt;
-$$
-\begin{aligned}
-t_x &amp;= (x_2-x_1)m + \sum_{i=0}^{x_2-x_1}i \\
-&amp;= (x_2-x_1)m + \frac{(x_2-x_1)(x_2-x_1-1)}{2} \\
-\end{aligned} 
-$$&lt;p&gt;令 $d_x=x_2-x_1$，则&lt;/p&gt;
-$$
-t_x=d_x(m+\frac{d_x-1}{2})
-$$&lt;p&gt;同理可得, $y$ 方向的计算公式，&lt;/p&gt;
-$$
-t_y = d_y(m+\frac{d_y-1}{2})
-$$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。&lt;/p&gt;
-&lt;p&gt;一个初始值为 $0$ 的网格，寻找光源传播到该网格的最短时间，可以分为四个方向，沿着每个方向查找光源，计算途径与途径的光源的传播时间，保留最小值，直至传播终止。四个方向的传播时间再一次选取最小值。&lt;/p&gt;
-&lt;p&gt;依照这个思路，我们组设计的 $bash$ 脚本的程序流程图如下，&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;待插入图片&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;实现难点及解决方法&#34;&gt;实现难点及解决方法
-
-
-&lt;/h3&gt;
-
-
-&lt;h4 id=&#34;二维数组的表示&#34;&gt;二维数组的表示
-
-
-&lt;/h4&gt;
-
-
-&lt;p&gt;&lt;code&gt;bash&lt;/code&gt; 中没有二维数组，只有一维数组。这样无法像 &lt;code&gt;C++&lt;/code&gt; 和 &lt;code&gt;Python&lt;/code&gt; 那样直接用一个数组表示。我们选择使用多个一维数组，组合成一个二维数组。&lt;/p&gt;
-&lt;p&gt;比如要表示题目输入的矩阵 $A$ , 则可以写成&lt;/p&gt;
-</description>
         </item>
         <item>
         <title>C语言解决整数前有0的输入问题</title>
