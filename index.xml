@@ -1257,7 +1257,41 @@ $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;例如，对于一个有向带权图，利用Dijkstra算法的流程如下：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;待插入图片&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98.jpg&#34;
+	width=&#34;2911&#34;
+	height=&#34;1313&#34;
+	srcset=&#34;https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98_hu15919519063508922805.jpg 480w, https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98_hu8047489384402841642.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Dijkstra算法例题&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;221&#34;
+		data-flex-basis=&#34;532px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3.jpg&#34;
+	width=&#34;2910&#34;
+	height=&#34;1744&#34;
+	srcset=&#34;https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3_hu295793877873331234.jpg 480w, https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3_hu1800598431047432404.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Dijkstra算法例题解&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;166&#34;
+		data-flex-basis=&#34;400px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;算法应用&#34;&gt;算法应用
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;在知道了Dijkstra算法后，我们就可以将它应用到正向传播的方案中。&lt;/p&gt;
 &lt;h2 id=&#34;参考文献&#34;&gt;参考文献
 
 
