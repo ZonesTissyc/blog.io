@@ -10,7 +10,7 @@
 <meta property='og:description' content="问题重述\r该问题源自我们 Linux 课题小组选择的期末课程项目，原题来自浙江大学的陈宇璟教授。\n问题分析\r这个问题如果正向思考，就显得很复杂。光源从四个方向发射出去，每经过一个格子，对于该格子要记录其光源到达的时间。但问题是格子事先不好确定，而且光源不只一个，是存在很多光源的。这还要比较最短的时间。\n经这样一分析，采取正向传播方案则必须选择某种算法，而下面介绍的反向查找光源就容易理解与实现很多。\n思路一：反向查找光源\r整体思路\r题目已经限定，光源所在网格和墙所在网格的最短到达时间时间为 $0$ 和 $-1$，因此我们只需关心为 $0$ 的网格。\n光源正向传播到该目标网格，知道光源的初始速度以及该方向上光源到该目标网格之间的网格数，即可累加算出到达该网格的总时间。\n以 $x$ 方向为例，设光源在 $x_1$ 处，且初始速度为 $m$ ,目标网格在 $x_2$ 处，($x_2&gt;x_1$)中间没有墙，则光源从 $x_1$ 传播到 $x_2$ 的时间 $t_x$ 为：\n$$\r\\begin{aligned}\rt_x &= (x_2-x_1)m + \\sum_{i=0}^{x_2-x_1}i \\\\\r&= (x_2-x_1)m + \\frac{(x_2-x_1)(x_2-x_1-1)}{2} \\\\\r\\end{aligned} $$令 $d_x=x_2-x_1$，则\n$$\rt_x=d_x(m+\\frac{d_x-1}{2})\r$$同理可得, $y$ 方向的计算公式，\n$$\rt_y = d_y(m+\\frac{d_y-1}{2})\r$$现在我们可以很轻松地计算光源到网格的传播时间。\n">
 <meta property='og:url' content='https://blog.ztcdream.top/private/ray/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Private' /><meta property='article:tag' content='算法' /><meta property='article:published_time' content='2025-04-09T17:33:19&#43;08:00'/><meta property='article:modified_time' content='2025-05-11T11:11:55&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Private' /><meta property='article:tag' content='算法' /><meta property='article:published_time' content='2025-04-09T17:33:19&#43;08:00'/><meta property='article:modified_time' content='2025-05-11T12:42:36&#43;08:00'/>
 <meta name="twitter:title" content="光线传播问题">
 <meta name="twitter:description" content="问题重述\r该问题源自我们 Linux 课题小组选择的期末课程项目，原题来自浙江大学的陈宇璟教授。\n问题分析\r这个问题如果正向思考，就显得很复杂。光源从四个方向发射出去，每经过一个格子，对于该格子要记录其光源到达的时间。但问题是格子事先不好确定，而且光源不只一个，是存在很多光源的。这还要比较最短的时间。\n经这样一分析，采取正向传播方案则必须选择某种算法，而下面介绍的反向查找光源就容易理解与实现很多。\n思路一：反向查找光源\r整体思路\r题目已经限定，光源所在网格和墙所在网格的最短到达时间时间为 $0$ 和 $-1$，因此我们只需关心为 $0$ 的网格。\n光源正向传播到该目标网格，知道光源的初始速度以及该方向上光源到该目标网格之间的网格数，即可累加算出到达该网格的总时间。\n以 $x$ 方向为例，设光源在 $x_1$ 处，且初始速度为 $m$ ,目标网格在 $x_2$ 处，($x_2&gt;x_1$)中间没有墙，则光源从 $x_1$ 传播到 $x_2$ 的时间 $t_x$ 为：\n$$\r\\begin{aligned}\rt_x &= (x_2-x_1)m + \\sum_{i=0}^{x_2-x_1}i \\\\\r&= (x_2-x_1)m + \\frac{(x_2-x_1)(x_2-x_1-1)}{2} \\\\\r\\end{aligned} $$令 $d_x=x_2-x_1$，则\n$$\rt_x=d_x(m+\\frac{d_x-1}{2})\r$$同理可得, $y$ 方向的计算公式，\n$$\rt_y = d_y(m+\\frac{d_y-1}{2})\r$$现在我们可以很轻松地计算光源到网格的传播时间。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -289,9 +289,17 @@
       <ol>
         <li><a href="#特例下的分析">特例下的分析</a></li>
         <li><a href="#dijkstra算法">Dijkstra算法</a></li>
+        <li><a href="#算法应用">算法应用</a></li>
+        <li><a href="#实现难点及解决方案">实现难点及解决方案</a>
+          <ol>
+            <li><a href="#定义无穷大量">定义无穷大量</a></li>
+            <li><a href="#实现动态更新最短时间">实现动态更新最短时间</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
-    <li><a href="#算法应用">算法应用</a></li>
+    <li><a href="#方法总结与讨论">方法总结与讨论</a></li>
+    <li><a href="#项目收获与感悟">项目收获与感悟</a></li>
     <li><a href="#参考文献">参考文献</a></li>
   </ol>
 </nav>
@@ -357,7 +365,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 4 分钟
+                    阅读时长: 6 分钟
                 </time>
             </div>
         
@@ -833,13 +841,241 @@ $$<p>现在我们可以很轻松地计算光源到网格的传播时间。</p>
 		data-flex-basis="400px"
 	
 ></p>
-<h2 id="算法应用">算法应用
+<h3 id="算法应用">算法应用
+
+
+</h3>
+
+
+<p>在知道了Dijkstra算法后，我们就可以将它应用到正向传播的方案中。</p>
+<p>我们选择用关联数组来保存一个网格的位置(x,y)，传播方向(d)，以及到达的最短时间(t)。</p>
+<p>即 <code>declare -A best</code> 这里 <code>best</code> 的键为 <code>&quot;x,y,d&quot;</code> 。通过光源传播到网格，不断更新网格的到达最短时间，最后得到的就是所有光源到达该网格的最短时间，光源不可达的网格就为 $-1$ 。</p>
+<p>这个算法的程序流程图如下：</p>
+<p><code>插入图片</code></p>
+<h3 id="实现难点及解决方案">实现难点及解决方案
+
+
+</h3>
+
+
+<h4 id="定义无穷大量">定义无穷大量
+
+
+</h4>
+
+
+<p>在Dijkstra算法的具体实现中，是要使用无穷大来表示暂时不可达的。在 <code>Python</code> 里，无穷大常量可以用 <code>float('inf')</code> 表示。但在 <code>bash</code> 里没有这么高级的语法。</p>
+<p>因此我们定义了一个尽可能大的量 <code>INF=1000000000</code> 。这个数字已经足够大了，一般来说输入的数字应该是不会太大的，因此这不失为一个解决方案。</p>
+<h4 id="实现动态更新最短时间">实现动态更新最短时间
+
+
+</h4>
+
+
+<p>正向传播的特点就是要从每个光源网格出发，向四个方向传播光线，光线沿途的格子的最短时间。</p>
+<p>代码实现如下（变量的定义详见附件中的代码）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 将光源位置的 ans 置为 0，并向四个方向生成初始状态</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span>0<span class="p">;</span> i&lt;m<span class="p">;</span> i++<span class="o">))</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="o">((</span><span class="nv">j</span><span class="o">=</span>0<span class="p">;</span> j&lt;n<span class="p">;</span> j++<span class="o">))</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">key</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$i</span><span class="s2">,</span><span class="nv">$j</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">cell</span><span class="o">=</span><span class="si">${</span><span class="nv">grid</span><span class="p">[</span><span class="s2">&#34;</span><span class="nv">$key</span><span class="s2">&#34;</span><span class="p">]</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">((</span> cell &gt; <span class="m">0</span> <span class="o">))</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 光源位置到达时间固定为 0</span>
+</span></span><span class="line"><span class="cl">            ans<span class="o">[</span><span class="s2">&#34;</span><span class="nv">$key</span><span class="s2">&#34;</span><span class="o">]=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">v</span><span class="o">=</span><span class="nv">$cell</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 对四个方向</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> d in <span class="o">{</span>0..3<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">ni</span><span class="o">=</span><span class="k">$((</span>i <span class="o">+</span> dx<span class="o">[</span>d<span class="o">]</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">nj</span><span class="o">=</span><span class="k">$((</span>j <span class="o">+</span> dy<span class="o">[</span>d<span class="o">]</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># 判断邻居是否在边界并且不为障碍</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">((</span> ni &lt; <span class="m">0</span> <span class="o">||</span> ni &gt;<span class="o">=</span> m <span class="o">||</span> nj &lt; <span class="m">0</span> <span class="o">||</span> nj &gt;<span class="o">=</span> n <span class="o">))</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">                <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">nkey</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$ni</span><span class="s2">,</span><span class="nv">$nj</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">grid</span><span class="p">[</span><span class="s2">&#34;</span><span class="nv">$nkey</span><span class="s2">&#34;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;-1&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">                <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># 到达第一个邻居的累计时间为 v，下一步耗时为 v+1</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">t_new</span><span class="o">=</span><span class="nv">$v</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">s_new</span><span class="o">=</span><span class="k">$((</span>v <span class="o">+</span> <span class="m">1</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">state</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$ni</span><span class="s2">,</span><span class="nv">$nj</span><span class="s2">,</span><span class="nv">$t_new</span><span class="s2">,</span><span class="nv">$s_new</span><span class="s2">,</span><span class="nv">$d</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">key_state</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$ni</span><span class="s2">,</span><span class="nv">$nj</span><span class="s2">,</span><span class="nv">$d</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">                best<span class="o">[</span><span class="s2">&#34;</span><span class="nv">$key_state</span><span class="s2">&#34;</span><span class="o">]=</span><span class="nv">$t_new</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">states</span><span class="o">+=(</span><span class="s2">&#34;</span><span class="nv">$state</span><span class="s2">&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># 更新 ans：取更小的累计时间</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">((</span> t_new &lt; ans<span class="o">[</span><span class="s2">&#34;</span><span class="nv">$nkey</span><span class="s2">&#34;</span><span class="o">]</span> <span class="o">))</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">                    ans<span class="o">[</span><span class="s2">&#34;</span><span class="nv">$nkey</span><span class="s2">&#34;</span><span class="o">]=</span><span class="nv">$t_new</span>
+</span></span><span class="line"><span class="cl">                <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">            <span class="k">done</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="k">done</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Dijkstra 过程：每次在 states 数组中选择 t 最小的状态扩展</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="o">((</span><span class="si">${#</span><span class="nv">states</span><span class="p">[@]</span><span class="si">}</span> &gt; 0<span class="o">))</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 找到数组中 t 最小的状态</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">min_index</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">IFS</span><span class="o">=</span><span class="s1">&#39;,&#39;</span> <span class="nb">read</span> x_min y_min t_min s_min d_min <span class="o">&lt;&lt;&lt;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">states</span><span class="p">[0]</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> idx in <span class="s2">&#34;</span><span class="si">${</span><span class="p">!states[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">IFS</span><span class="o">=</span><span class="s1">&#39;,&#39;</span> <span class="nb">read</span> x y t s d <span class="o">&lt;&lt;&lt;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">states</span><span class="p">[</span><span class="nv">$idx</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">((</span> t &lt; t_min <span class="o">))</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">min_index</span><span class="o">=</span><span class="nv">$idx</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">x_min</span><span class="o">=</span><span class="nv">$x</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">y_min</span><span class="o">=</span><span class="nv">$y</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">t_min</span><span class="o">=</span><span class="nv">$t</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">s_min</span><span class="o">=</span><span class="nv">$s</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">d_min</span><span class="o">=</span><span class="nv">$d</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 取出最小状态并删除</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">state</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">states</span><span class="p">[</span><span class="nv">$min_index</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">unset</span> <span class="s1">&#39;states[min_index]&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 重新构造 states 数组（去除中间空位置）</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">states</span><span class="o">=(</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">states</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">IFS</span><span class="o">=</span><span class="s1">&#39;,&#39;</span> <span class="nb">read</span> x y t s d <span class="o">&lt;&lt;&lt;</span> <span class="s2">&#34;</span><span class="nv">$state</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 继续沿 d 方向扩展</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">nx</span><span class="o">=</span><span class="k">$((</span>x <span class="o">+</span> dx<span class="o">[</span>d<span class="o">]</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">ny</span><span class="o">=</span><span class="k">$((</span>y <span class="o">+</span> dy<span class="o">[</span>d<span class="o">]</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 检查边界</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">((</span> nx &lt; <span class="m">0</span> <span class="o">||</span> nx &gt;<span class="o">=</span> m <span class="o">||</span> ny &lt; <span class="m">0</span> <span class="o">||</span> ny &gt;<span class="o">=</span> n <span class="o">))</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">nkey</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$nx</span><span class="s2">,</span><span class="nv">$ny</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 遇到障碍停止</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">grid</span><span class="p">[</span><span class="s2">&#34;</span><span class="nv">$nkey</span><span class="s2">&#34;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;-1&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">new_t</span><span class="o">=</span><span class="k">$((</span>t <span class="o">+</span> s<span class="k">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">new_s</span><span class="o">=</span><span class="k">$((</span>s <span class="o">+</span> <span class="m">1</span><span class="k">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">state_key</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$nx</span><span class="s2">,</span><span class="nv">$ny</span><span class="s2">,</span><span class="nv">$d</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 更新状态：如果未记录或更优，则更新</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">prev</span><span class="o">=</span><span class="si">${</span><span class="nv">best</span><span class="p">[</span><span class="s2">&#34;</span><span class="nv">$state_key</span><span class="s2">&#34;</span><span class="p">]</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[[</span> -z <span class="s2">&#34;</span><span class="nv">$prev</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="nv">$new_t</span> -lt <span class="nv">$prev</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        best<span class="o">[</span><span class="s2">&#34;</span><span class="nv">$state_key</span><span class="s2">&#34;</span><span class="o">]=</span><span class="nv">$new_t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">new_state</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$nx</span><span class="s2">,</span><span class="nv">$ny</span><span class="s2">,</span><span class="nv">$new_t</span><span class="s2">,</span><span class="nv">$new_s</span><span class="s2">,</span><span class="nv">$d</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">states</span><span class="o">+=(</span><span class="s2">&#34;</span><span class="nv">$new_state</span><span class="s2">&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 更新 ans 记录，取最小累计时间</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">((</span> new_t &lt; ans<span class="o">[</span><span class="s2">&#34;</span><span class="nv">$nkey</span><span class="s2">&#34;</span><span class="o">]</span> <span class="o">))</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">            ans<span class="o">[</span><span class="s2">&#34;</span><span class="nv">$nkey</span><span class="s2">&#34;</span><span class="o">]=</span><span class="nv">$new_t</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面这部分是Dijkstra算法的精髓所在。</p>
+<h2 id="方法总结与讨论">方法总结与讨论
 
 
 </h2>
 
 
-<p>在知道了Dijkstra算法后，我们就可以将它应用到正向传播的方案中。</p>
+<p>我们组用了两个方案来完成这个题目。两个方案都有各自的优缺点及适应情景。</p>
+<p>第一个方案就是反向查找光源的算法，光源的正向传播到一个零网格，可以反向看作这个零网格沿着传播方向的反方向查找光源。每个零网格有四个方向，只要向四个方向查找光源，取到达时间的最小值即是光线传播到该位置的最短时间。这个方案的优点是，容易想到且代码好写，没有用到复杂的算法，在光源较多时，反向查找光源的方案是最快的。但当输入的网格数变多，但光源网格很少的情况下，反向查找光源的方案会浪费在遍历很多其实是光线不可达的网格，而且每个网格还是遍历它的四个方向，这样效率就很低下。</p>
+<p>第二个方案，也就是Dijkstra算法就适合于网格多、光源少的情况。我们只需要关注光源网格，从光源网格的四个方向出发，更新沿途经过网格的最短时间。这个方案虽然是正向的，但在具体实现上比较复杂，如这里我们就用到Dijkstra算法。但它的优点就是效率高，减少了许多无用的遍历。不过当网格数较少，但光源较多时，这个算法遍历的光源数目就多，这时候程序的运行效率是比不上方案一的。</p>
+<h2 id="项目收获与感悟">项目收获与感悟
+
+
+</h2>
+
+
+<p>在参与本项目的过程中，我们实战写 <code>bash</code> 脚本，期间遇到了许多问题。如代码运行报错，陷入死循环，不会处理数据的输入等。在这些问题的驱使下，我们又再次翻开课本，复习学过的 <code>LinuxShell</code> 知识点。在这个过程中，进一步巩固了我们的 <code>Linux</code> 操作与应用技能。我们思考问题的解决方案，我们不仅只满足于反向查找光源的简单算法，还了解、学习并应用了Dijkstra算法。在学习算法的过程中，如同开启了一门新的课程，尝试去学习图论基础，去理解什么是有向图，去掌握大名鼎鼎的Dijkstra算法。这同时又增强了我们的编程能力和学习算法的信心。在查找资料的时候，我们阅读各大论坛的帖子、博客，观看视频网站的教学视频，这又增强了我们的资料检索能力。</p>
+<p>编程的过程不是一帆风顺的，需要的是不断地调试与修改。编程圈一直流传着一句话：“到现在为止，所有的代码，所有的算法，都是人写出来的，别人能想到的，你也一定可以！”虽然以后生信专业用 <code>bash</code> 来编程的情况会很少，大多用 <code>Python</code> 和 <code>R</code> 等语言，但所有编程语言的本质无非只是我们思想表达的一个工具。我们不要过于在意编程语言的语法，重要的是，我们也没有解决问题的思路，有没有失败后再来的决心。</p>
 <h2 id="参考文献">参考文献
 
 
@@ -847,6 +1083,7 @@ $$<p>现在我们可以很轻松地计算光源到网格的传播时间。</p>
 
 
 <p>[1] 蓝不过海.图-最短路径-Dijkstra(迪杰斯特拉)算法.哔哩哔哩.https://www.bilibili.com/video/BV1uT4y1p7Jy/</p>
+<p>[2]</p>
 
 </section>
 
@@ -882,7 +1119,7 @@ $$<p>现在我们可以很轻松地计算光源到网格的传播时间。</p>
 
 
         <span>
-            最后更新于 2025年5月11日 11:11
+            最后更新于 2025年5月11日 12:42
         </span>
     </section></footer>
 
