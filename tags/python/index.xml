@@ -8,11 +8,11 @@
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
         <lastBuildDate>Tue, 13 May 2025 22:45:17 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/tags/python/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>（实验）证明字典索引操作的时间复杂度为常数阶</title>
-        <link>https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%AD%97%E5%85%B8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</link>
+        <title>（实验）证明列表索引操作的时间复杂度为常数阶</title>
+        <link>https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</link>
         <pubDate>Tue, 13 May 2025 22:45:17 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%AD%97%E5%85%B8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</guid>
+        <guid>https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</guid>
         <description>&lt;h2 id=&#34;实验背景&#34;&gt;实验背景
 
 
@@ -269,10 +269,10 @@ $$&lt;p&gt;因此记该算法的大$O$记法为 $O(n^3)$。&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;生成的图如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%AD%97%E5%85%B8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot.png&#34;
 	width=&#34;640&#34;
 	height=&#34;480&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%AD%97%E5%85%B8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu16719364411022916672.png 480w, https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%AD%97%E5%85%B8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu17976320647513155453.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu16719364411022916672.png 480w, https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu17976320647513155453.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;y-n散点图&#34;
@@ -285,10 +285,10 @@ $$&lt;p&gt;因此记该算法的大$O$记法为 $O(n^3)$。&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;p&gt;可以看到，随着 $n$ 增大，运行时间 $y$ 均在某个常数附近，只有极少数点偏离了常数。&lt;/p&gt;
 &lt;p&gt;控制台输出：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%AD%97%E5%85%B8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image.png&#34;
 	width=&#34;661&#34;
 	height=&#34;116&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%AD%97%E5%85%B8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu10457515959949624127.png 480w, https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%AD%97%E5%85%B8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu11565431011352655123.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu10457515959949624127.png 480w, https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu11565431011352655123.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;控制台输出&#34;

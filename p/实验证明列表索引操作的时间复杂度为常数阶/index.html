@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="实验背景\r时间复杂度 是为了计量算法的运行效率而提出的概念。\n估测一个代码运行效率最简单的办法是记录程序的运行时间，运行时间短则效率高。但程序的运行时间往往受到计算机硬件、操作系统、编程语言和编译器等的影响。对于同一个程序，在14代Intel CPU上运行，普遍比12代 Intel CPU快；同样的代码，在Linux上可能比Windows平台快；同样的算法，用c语言实现的可能比Python实现的快；同一个c语言代码，经过clang编译可能比g++编译的更快。\n因此需要一个定量的计量方法，把算法的实际运行时间抽象为理论执行步数。计算时间复杂度，最广泛使用的是 大O记法。用 $T(n)$ 来表示程序的执行步数，参数 $n$ 为问题规模。$T(n)$是关于 $n$ 函数，当 $n$ 很大时，$T(n)$ 中的很多项可以忽略不记，如\n$$ T(n) = 5n^3 + 3n^2 + 2log_2n + 10000 $$当 $n \\to \\infty$ 时，$3n^2$，$2log_2n$，$10000$ 在 $5n^3$ 面前显得很小，可以舍去。$n$ 的三次项的系数 $5$ 也影响不大，也可以舍去。最后就有\n$$ T(n) \\sim n^3 $$因此记该算法的大$O$记法为 $O(n^3)$。\n常见的大 $O$ 函数 $f(n)$ ：\n$f(n)$ 名称 $1$ 常数 $logn$ 对数 $n$ 线性 $nlogn$ 线性对数 $n^2$ 平方 $n^3$ 立方 $2^n$ 指数 对于为 $O(1)$ 的程序，时间复杂度不会随问题规模 $n$ 的增大而增大，即 $T(n)=k$ 。\n">
+<title>（实验）证明列表索引操作的时间复杂度为常数阶</title>
+
+<link rel='canonical' href='https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/'>
+
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="（实验）证明列表索引操作的时间复杂度为常数阶">
+<meta property='og:description' content="实验背景\r时间复杂度 是为了计量算法的运行效率而提出的概念。\n估测一个代码运行效率最简单的办法是记录程序的运行时间，运行时间短则效率高。但程序的运行时间往往受到计算机硬件、操作系统、编程语言和编译器等的影响。对于同一个程序，在14代Intel CPU上运行，普遍比12代 Intel CPU快；同样的代码，在Linux上可能比Windows平台快；同样的算法，用c语言实现的可能比Python实现的快；同一个c语言代码，经过clang编译可能比g++编译的更快。\n因此需要一个定量的计量方法，把算法的实际运行时间抽象为理论执行步数。计算时间复杂度，最广泛使用的是 大O记法。用 $T(n)$ 来表示程序的执行步数，参数 $n$ 为问题规模。$T(n)$是关于 $n$ 函数，当 $n$ 很大时，$T(n)$ 中的很多项可以忽略不记，如\n$$ T(n) = 5n^3 + 3n^2 + 2log_2n + 10000 $$当 $n \\to \\infty$ 时，$3n^2$，$2log_2n$，$10000$ 在 $5n^3$ 面前显得很小，可以舍去。$n$ 的三次项的系数 $5$ 也影响不大，也可以舍去。最后就有\n$$ T(n) \\sim n^3 $$因此记该算法的大$O$记法为 $O(n^3)$。\n常见的大 $O$ 函数 $f(n)$ ：\n$f(n)$ 名称 $1$ 常数 $logn$ 对数 $n$ 线性 $nlogn$ 线性对数 $n^2$ 平方 $n^3$ 立方 $2^n$ 指数 对于为 $O(1)$ 的程序，时间复杂度不会随问题规模 $n$ 的增大而增大，即 $T(n)=k$ 。\n">
+<meta property='og:url' content='https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/'>
+<meta property='og:site_name' content='ZTC&#39;Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='统计' /><meta property='article:tag' content='Python' /><meta property='article:tag' content='数学建模' /><meta property='article:published_time' content='2025-05-13T22:45:17&#43;08:00'/><meta property='article:modified_time' content='2025-05-13T22:45:17&#43;08:00'/>
+<meta name="twitter:title" content="（实验）证明列表索引操作的时间复杂度为常数阶">
+<meta name="twitter:description" content="实验背景\r时间复杂度 是为了计量算法的运行效率而提出的概念。\n估测一个代码运行效率最简单的办法是记录程序的运行时间，运行时间短则效率高。但程序的运行时间往往受到计算机硬件、操作系统、编程语言和编译器等的影响。对于同一个程序，在14代Intel CPU上运行，普遍比12代 Intel CPU快；同样的代码，在Linux上可能比Windows平台快；同样的算法，用c语言实现的可能比Python实现的快；同一个c语言代码，经过clang编译可能比g++编译的更快。\n因此需要一个定量的计量方法，把算法的实际运行时间抽象为理论执行步数。计算时间复杂度，最广泛使用的是 大O记法。用 $T(n)$ 来表示程序的执行步数，参数 $n$ 为问题规模。$T(n)$是关于 $n$ 函数，当 $n$ 很大时，$T(n)$ 中的很多项可以忽略不记，如\n$$ T(n) = 5n^3 + 3n^2 + 2log_2n + 10000 $$当 $n \\to \\infty$ 时，$3n^2$，$2log_2n$，$10000$ 在 $5n^3$ 面前显得很小，可以舍去。$n$ 的三次项的系数 $5$ 也影响不大，也可以舍去。最后就有\n$$ T(n) \\sim n^3 $$因此记该算法的大$O$记法为 $O(n^3)$。\n常见的大 $O$ 函数 $f(n)$ ：\n$f(n)$ 名称 $1$ 常数 $logn$ 对数 $n$ 线性 $nlogn$ 线性对数 $n^2$ 平方 $n^3$ 立方 $2^n$ 指数 对于为 $O(1)$ 的程序，时间复杂度不会随问题规模 $n$ 的增大而增大，即 $T(n)=k$ 。\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu16127783335970910457.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">ZTC&#39;Blog</a></h1>
+            <h2 class="site-description">一位摆烂的生物信息大学牲</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/ZonesTissyc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>文章归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://blog.ztcdream.top/en/" >English</option>
+                                
+                                    <option value="https://blog.ztcdream.top/" selected>中文</option>
+                                
+                                    <option value="https://blog.ztcdream.top/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#实验背景">实验背景</a></li>
+    <li><a href="#实验原理">实验原理</a></li>
+    <li><a href="#实验代码">实验代码</a>
+      <ol>
+        <li><a href="#导入库">导入库</a></li>
+        <li><a href="#实验主体">实验主体</a></li>
+        <li><a href="#数据可视化">数据可视化</a></li>
+        <li><a href="#回归分析">回归分析</a></li>
+        <li><a href="#主函数及运行结果">主函数及运行结果</a></li>
+      </ol>
+    </li>
+    <li><a href="#实验结论">实验结论</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%B0%E5%AD%A6/" style="background-color: #2a9d8f; color: #fff;">
+                数学
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/">（实验）证明列表索引操作的时间复杂度为常数阶</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025年5月13日</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="实验背景">实验背景
+
+
+</h2>
+
+
+<p><strong>时间复杂度</strong> 是为了计量算法的运行效率而提出的概念。</p>
+<p>估测一个代码运行效率最简单的办法是记录程序的运行时间，运行时间短则效率高。但程序的运行时间往往受到计算机硬件、操作系统、编程语言和编译器等的影响。对于同一个程序，在14代Intel CPU上运行，普遍比12代 Intel CPU快；同样的代码，在Linux上可能比Windows平台快；同样的算法，用c语言实现的可能比Python实现的快；同一个c语言代码，经过clang编译可能比g++编译的更快。</p>
+<p>因此需要一个定量的计量方法，把算法的实际运行时间抽象为理论执行步数。计算时间复杂度，最广泛使用的是 <strong>大O记法</strong>。用 $T(n)$ 来表示程序的执行步数，参数 $n$ 为问题规模。$T(n)$是关于 $n$ 函数，当 $n$ 很大时，$T(n)$ 中的很多项可以忽略不记，如</p>
+$$
+T(n) = 5n^3 + 3n^2 + 2log_2n + 10000
+$$<p>当 $n \to \infty$ 时，$3n^2$，$2log_2n$，$10000$ 在 $5n^3$ 面前显得很小，可以舍去。$n$ 的三次项的系数 $5$ 也影响不大，也可以舍去。最后就有</p>
+$$
+T(n) \sim n^3
+$$<p>因此记该算法的大$O$记法为 $O(n^3)$。</p>
+<p>常见的大 $O$ 函数 $f(n)$ ：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center">$f(n)$</th>
+          <th style="text-align: center">名称</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">$1$</td>
+          <td style="text-align: center">常数</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">$logn$</td>
+          <td style="text-align: center">对数</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">$n$</td>
+          <td style="text-align: center">线性</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">$nlogn$</td>
+          <td style="text-align: center">线性对数</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">$n^2$</td>
+          <td style="text-align: center">平方</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">$n^3$</td>
+          <td style="text-align: center">立方</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">$2^n$</td>
+          <td style="text-align: center">指数</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>对于为 $O(1)$ 的程序，时间复杂度不会随问题规模 $n$ 的增大而增大，即 $T(n)=k$ 。</p>
+<p>Python 中有一个特别的数据结构：列表。列表不同于数组，允许列表内元素有不同的数据类型。列表内的元素可以通过索引来访问，和数组的下标一样，但是从 $0$ 开始编号的。</p>
+<p>那么Python中列表索引的具体实现算法的时间复杂度如何，索引所需要的运行时间会不会随列表的长度 $n$ 的变化而变化。答案是不变的。Python列表的索引并不依赖于列表的长度，列表的长度发生变化，对一次索引的时间没有影响。</p>
+<p>我们可以通过实验来验证： <em>Python中列表索引的时间复杂度为常数阶</em> 。</p>
+<h2 id="实验原理">实验原理
+
+
+</h2>
+
+
+<p><strong>timeit</strong> 是Python中的一个程序运行计时模块。通过 <strong>timeit</strong> 创建一个 <strong>Timer</strong> 对象，设置要执行的语句，在通过 Timer.timeit()方法来运行，返回这条语句的运行时间。</p>
+<h2 id="实验代码">实验代码
+
+
+</h2>
+
+
+<h3 id="导入库">导入库
+
+
+</h3>
+
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">csv</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">Timer</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="实验主体">实验主体
+
+
+</h3>
+
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">labmain</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span> <span class="c1"># 实验主体，生成实验数据</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ls</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
+</span></span><span class="line"><span class="cl">    <span class="n">endtimes</span> <span class="o">=</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fnew</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s2">&#34;w&#34;</span><span class="p">,</span><span class="n">newline</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">csv_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">fnew</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">endtimes</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">t1</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;ls[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">]&#34;</span><span class="p">,</span><span class="nb">globals</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ls&#39;</span><span class="p">:</span> <span class="n">ls</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">        <span class="n">writerow</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">t1</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span><span class="si">:</span><span class="s2">.8f</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">writerow</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fnew</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>t1.timeit(number=100000)</code> 中的 <code>number</code> 设置执行的总次数。</p>
+<h3 id="数据可视化">数据可视化
+
+
+</h3>
+
+
+<p>实验主体函数将每次的运行结果写入 csv 文件，每行两个数据，一个是执行的次数序号 $n$ ，一个是程序运行时间 $y$ 。</p>
+<p>通过 <code>matplotlib.pyplot</code> 可以把对应的 $x-y$ 散点图绘制出来，直观的感受 $y$ 与 $x$ 的关系。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 数据可视化</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">plot_func</span><span class="p">(</span><span class="n">csvfile</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span><span class="s2">&#34;r&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">fo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x_list</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y_list</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">y_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_list</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_list</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="回归分析">回归分析
+
+
+</h3>
+
+
+<p>检查 $x_i$ , $y_i$ 是否满足方程 $y=k$.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">reg_func</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s2">&#34;r&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">fo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x_list</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y_list</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">y_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 计算 sum_(x/y)i, sum_(x/y)i^2, sum_xi*yi</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sum_xi</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x_list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sum_yi</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">y_list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sum_xi2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x_list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sum_yi2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">j</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">y_list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sum_xiyi</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_list</span><span class="p">,</span> <span class="n">y_list</span><span class="p">)])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">l_xx</span> <span class="o">=</span> <span class="n">sum_xi</span> <span class="o">-</span> <span class="n">sum_xi2</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">x_list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">l_yy</span> <span class="o">=</span> <span class="n">sum_yi</span> <span class="o">-</span> <span class="n">sum_yi2</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">y_list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">l_xy</span> <span class="o">=</span> <span class="n">sum_xi</span> <span class="o">-</span> <span class="n">sum_xi</span><span class="o">*</span><span class="n">sum_yi</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">x_list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b</span> <span class="o">=</span> <span class="n">l_xy</span> <span class="o">/</span> <span class="n">l_xx</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="n">sum_yi</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">y_list</span><span class="p">)</span> <span class="o">-</span> <span class="n">b</span><span class="o">*</span><span class="n">sum_xi</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">x_list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">## 计算相关系数</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rate_r</span> <span class="o">=</span> <span class="n">l_xy</span> <span class="o">/</span> <span class="nb">pow</span><span class="p">(</span><span class="n">l_xx</span><span class="o">*</span><span class="n">l_yy</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">rate_r</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="主函数及运行结果">主函数及运行结果
+
+
+</h3>
+
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">filename</span> <span class="o">=</span> <span class="s2">&#34;索引实验数据.csv&#34;</span>
+</span></span><span class="line"><span class="cl">   <span class="c1"># abmain(filename)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">plot_func</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">reg_func</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;线性回归方程为 y= </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">x + </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> 相关系数r = </span><span class="si">{</span><span class="n">r</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>生成的图如下：</p>
+<p><img src="/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot.png"
+	width="640"
+	height="480"
+	srcset="/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu16719364411022916672.png 480w, /p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu17976320647513155453.png 1024w"
+	loading="lazy"
+	
+		alt="y-n散点图"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="133"
+		data-flex-basis="320px"
+	
+></p>
+<p>可以看到，随着 $n$ 增大，运行时间 $y$ 均在某个常数附近，只有极少数点偏离了常数。</p>
+<p>控制台输出：</p>
+<p><img src="/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image.png"
+	width="661"
+	height="116"
+	srcset="/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu10457515959949624127.png 480w, /p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu11565431011352655123.png 1024w"
+	loading="lazy"
+	
+		alt="控制台输出"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="569"
+		data-flex-basis="1367px"
+	
+></p>
+<p>可以看到 $x$ 的系数为 $0$ ，且相关系数也为 $0$ ，证明 $y$ 与 $x$ 的函数为常数函数。</p>
+<h2 id="实验结论">实验结论
+
+
+</h2>
+
+
+<p>通过对实验数据的分析，证明了Python索引操作的时间复杂度为常数阶，</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+        
+            <a href="/tags/%E7%BB%9F%E8%AE%A1/">统计</a>
+        
+            <a href="/tags/python/">Python</a>
+        
+            <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">数学建模</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://css.ztcdream.top/css/katex/katex.min.css"crossorigin="anonymous"
+            ><script 
+                src="https://css.ztcdream.top/css/katex/katex.min.js"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://css.ztcdream.top/css/katex/auto-render.min.js"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">辗转相除法</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E7%BE%A4%E4%BD%93%E6%98%BE%E6%80%A7%E5%90%8E%E4%BB%A3%E9%97%AE%E9%A2%98/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">群体显性后代问题</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">（易错）求伴随矩阵的行列式</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">多元函数二阶偏导</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">二元函数偏微商与连续的关系</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2025 ZTC@
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://css.ztcdream.top/css/photoswipe/photoswipe.min.js"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://css.ztcdream.top/css/photoswipe/photoswipe-ui-default.min.js"crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://css.ztcdream.top/css/photoswipe/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://css.ztcdream.top/css/photoswipe/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://css.ztcdream.top/css/vibrant/vibrant.min.js"crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
