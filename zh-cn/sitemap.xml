@@ -2,11 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</loc>
-    <lastmod>2025-05-13T22:45:17+08:00</lastmod>
-  </url><url>
     <loc>https://blog.ztcdream.top/categories/</loc>
-    <lastmod>2025-05-13T22:45:17+08:00</lastmod>
+    <lastmod>2025-05-14T17:53:22+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -23,14 +20,17 @@
                 href="https://blog.ztcdream.top/categories/"
                 />
   </url><url>
-    <loc>https://blog.ztcdream.top/post/</loc>
-    <lastmod>2025-05-13T22:45:17+08:00</lastmod>
+    <loc>https://blog.ztcdream.top/tags/latex/</loc>
+    <lastmod>2025-05-14T17:53:22+08:00</lastmod>
   </url><url>
-    <loc>https://blog.ztcdream.top/tags/python/</loc>
-    <lastmod>2025-05-13T22:45:17+08:00</lastmod>
+    <loc>https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <lastmod>2025-05-14T17:53:22+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ztcdream.top/post/</loc>
+    <lastmod>2025-05-14T17:53:22+08:00</lastmod>
   </url><url>
     <loc>https://blog.ztcdream.top/tags/</loc>
-    <lastmod>2025-05-13T22:45:17+08:00</lastmod>
+    <lastmod>2025-05-14T17:53:22+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -48,7 +48,7 @@
                 />
   </url><url>
     <loc>https://blog.ztcdream.top/</loc>
-    <lastmod>2025-05-13T22:45:17+08:00</lastmod>
+    <lastmod>2025-05-14T18:09:48+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -65,13 +65,22 @@
                 href="https://blog.ztcdream.top/"
                 />
   </url><url>
-    <loc>https://blog.ztcdream.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2025-05-13T22:45:17+08:00</lastmod>
-  </url><url>
     <loc>https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2025-05-13T22:45:17+08:00</lastmod>
+    <lastmod>2025-05-14T17:53:22+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ztcdream.top/tags/%E6%95%B0%E5%AD%A6%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <lastmod>2025-05-14T17:53:22+08:00</lastmod>
   </url><url>
     <loc>https://blog.ztcdream.top/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</loc>
+    <lastmod>2025-05-14T17:53:22+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</loc>
+    <lastmod>2025-05-13T22:45:17+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ztcdream.top/tags/python/</loc>
+    <lastmod>2025-05-13T22:45:17+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ztcdream.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2025-05-13T22:45:17+08:00</lastmod>
   </url><url>
     <loc>https://blog.ztcdream.top/tags/%E7%BB%9F%E8%AE%A1/</loc>
@@ -141,7 +150,7 @@
     <lastmod>2025-05-03T18:12:42+08:00</lastmod>
   </url><url>
     <loc>https://blog.ztcdream.top/page/</loc>
-    <lastmod>2025-04-24T22:52:25+08:00</lastmod>
+    <lastmod>2025-05-14T18:09:48+08:00</lastmod>
   </url><url>
     <loc>https://blog.ztcdream.top/archives/</loc>
     <lastmod>2024-12-30T19:45:57+08:00</lastmod>
@@ -153,7 +162,7 @@
     <lastmod>2024-12-29T22:04:43+08:00</lastmod>
   </url><url>
     <loc>https://blog.ztcdream.top/%E5%85%B3%E4%BA%8E/</loc>
-    <lastmod>2024-12-30T19:45:57+08:00</lastmod>
+    <lastmod>2025-05-14T18:09:48+08:00</lastmod>
   </url><url>
     <loc>https://blog.ztcdream.top/categories/%E5%8C%96%E5%AD%A6/</loc>
   </url><url>
