@@ -19,7 +19,8 @@
 &lt;/h2&gt;
 
 
-&lt;p&gt;时间复杂度是为了计量算法的运行效率而提出的概念。估测一个代码运行效率最简单的办法是记录程序的运行时间，运行时间短则效率高。但程序的运行时间往往受到计算机硬件、操作系统、编程语言和编译器等的影响。对于同一个程序，在14代Intel CPU上运行，普遍比12代 Intel CPU快；同样的代码，在Linux上可能比Windows平台快；同样的算法，用c语言实现的可能比Python实现的快；同一个c语言代码，经过clang编译可能比g++编译的更快。&lt;/p&gt;
+&lt;p&gt;时间复杂度是为了计量算法的运行效率而提出的概念。&lt;/p&gt;
+&lt;p&gt;估测一个代码运行效率最简单的办法是记录程序的运行时间，运行时间短则效率高。但程序的运行时间往往受到计算机硬件、操作系统、编程语言和编译器等的影响。对于同一个程序，在14代Intel CPU上运行，普遍比12代 Intel CPU快；同样的代码，在Linux上可能比Windows平台快；同样的算法，用c语言实现的可能比Python实现的快；同一个c语言代码，经过clang编译可能比g++编译的更快。&lt;/p&gt;
 &lt;p&gt;因此需要一个定量的计量方法，把算法的实际运行时间抽象为理论执行步数。计算时间复杂度，最广泛使用的是 &lt;strong&gt;大O记法&lt;/strong&gt;。用 $T(n)$ 来表示程序的执行步数，参数 $n$ 为问题规模。$T(n)$是关于 $n$ 函数，当 $n$ 很大时，$T(n)$ 中的很多项可以忽略不记，如&lt;/p&gt;
 $$
 T(n) = 5n^3 + 3n^2 + 2log_2n + 10000
@@ -237,7 +238,7 @@ $$&lt;p&gt;因此记该算法的大$O$记法为 $O(n^3)$。&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rate_r&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;主函数即运行结果&#34;&gt;主函数即运行结果
+&lt;/div&gt;&lt;h3 id=&#34;主函数及运行结果&#34;&gt;主函数及运行结果
 
 
 &lt;/h3&gt;
