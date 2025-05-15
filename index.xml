@@ -7,7 +7,183 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Wed, 14 May 2025 18:14:16 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 15 May 2025 20:10:52 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Debian服务器初始化及搭建docker环境</title>
+        <link>https://blog.ztcdream.top/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</link>
+        <pubDate>Thu, 15 May 2025 20:10:52 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.top/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</guid>
+        <description>&lt;h2 id=&#34;安装iso镜像&#34;&gt;安装iso镜像
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;镜像可在 &lt;a class=&#34;link&#34; href=&#34;https://www.debian.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;debian.org&lt;/a&gt; 上下载。&lt;/p&gt;
+&lt;p&gt;中国大陆可用的镜像站：&lt;/p&gt;
+&lt;p&gt;中国大陆: &lt;a class=&#34;link&#34; href=&#34;mirror.lzu.edu.cn&#34; &gt;兰州大学debian镜像站&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;中国大陆: &lt;a class=&#34;link&#34; href=&#34;mirrors.163.com&#34; &gt;网易debian镜像站&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一般选 &lt;code&gt;iso/dvd&lt;/code&gt; 下的 &lt;strong&gt;iso&lt;/strong&gt; 镜像&lt;/p&gt;
+&lt;p&gt;下面均以 &lt;strong&gt;debian 12&lt;/strong&gt; 为例。&lt;/p&gt;
+&lt;p&gt;分配磁盘：至少两个分区（建议），一个 efi 分区（Fat32），选作 &lt;strong&gt;保留的boot引导分区&lt;/strong&gt;。另外一个ext4分区，用作系统根目录。&lt;/p&gt;
+&lt;p&gt;不要选择使用网络镜像。软件选择那里不勾选桌面，勾选ssh服务端（建议）。&lt;/p&gt;
+&lt;h2 id=&#34;apt换源&#34;&gt;apt换源
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;切换到&lt;code&gt;root&lt;/code&gt;用户，执行&lt;code&gt;nano /etc/apt/sources.list&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;换成清华源（北京市）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb https://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# deb-src https://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;或者是中科大源（安徽省）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 默认注释了源码仓库，如有需要可自行取消注释
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb http://mirrors.ustc.edu.cn/debian bookworm main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# deb-src http://mirrors.ustc.edu.cn/debian bookworm main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deb http://mirrors.ustc.edu.cn/debian bookworm-updates main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# deb-src http://mirrors.ustc.edu.cn/debian bookworm-updates main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# backports 软件源，请按需启用
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# deb http://mirrors.ustc.edu.cn/debian bookworm-backports main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# deb-src http://mirrors.ustc.edu.cn/debian bookworm-backports main contrib non-free non-free-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;系统更新与软件安装&#34;&gt;系统更新与软件安装
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;&lt;code&gt;apt update &amp;amp;&amp;amp; apt upgrade&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;首次配置一定要大更新一下系统软件，在配置好服务之后，就不要轻易执行 &lt;code&gt;apt upgrade&lt;/code&gt; 了。&lt;/p&gt;
+&lt;p&gt;再安装一些常用软件：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;apt install sudo&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;apt install git openssl gh&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;apt install build-essential&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;apt install screen&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;配置sshd&#34;&gt;配置sshd
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;&lt;code&gt;apt-get install openssh-server&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;配置sudo&#34;&gt;配置sudo
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;添加用户至sudo文件：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nano \etc\sudoer&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;添加一行：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ztc ALL=(ALL:ALL) NOPASSWD:ALL&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装python127&#34;&gt;安装Python12.7
+
+
+&lt;/h2&gt;
+
+
+&lt;h2 id=&#34;安装docker&#34;&gt;安装Docker
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;参考： &lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/docker/debian-docker-install.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Docker安装教程&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;docker换源&#34;&gt;Docker换源
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;修改配置文件，没有则新增这个文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nano /etc/docker/daemon.json&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &amp;#34;registry-mirrors&amp;#34;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://hub.xdark.top&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://hub.littlediary.cn&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://dockerpull.org&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://hub.crdz.gq&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.1panel.live&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;#34;https://docker.unsee.tech&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;保存后执行：&lt;code&gt;sudo systemctl daemon-reload &amp;amp;&amp;amp; sudo systemctl restart docker&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;查看是否生效：&lt;code&gt;sudo docker info&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装docker管理界面portainer&#34;&gt;安装Docker管理界面Portainer
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;参考： &lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/JerryMouseLi/p/15571897.html#2docker%E5%9F%BA%E4%BA%8E%E7%95%8C%E9%9D%A2%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7portainer&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Portainer安装&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>LaTex核心出装——数学表达式</title>
         <link>https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
         <pubDate>Wed, 14 May 2025 17:53:22 +0800</pubDate>
