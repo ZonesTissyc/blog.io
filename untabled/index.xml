@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Untableds on ZTC&#39;Blog</title>
+        <link>https://blog.ztcdream.top/untabled/</link>
+        <description>Recent content in Untableds on ZTC&#39;Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>ZTC@</copyright>
+        <lastBuildDate>Fri, 16 May 2025 21:01:10 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/untabled/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>专业英语词汇-计算机篇</title>
+        <link>https://blog.ztcdream.top/untabled/specializedenglish/</link>
+        <pubDate>Fri, 16 May 2025 21:01:10 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.top/untabled/specializedenglish/</guid>
+        <description>&lt;h2 id=&#34;基础词汇&#34;&gt;基础词汇
+
+
+&lt;/h2&gt;
+
+
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;English&lt;/th&gt;
+          &lt;th&gt;中文&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Algorithms &amp;amp; Data Structures&lt;/td&gt;
+          &lt;td&gt;数据结构与算法&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;abstraction&lt;/td&gt;
+          &lt;td&gt;抽象&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;execute&lt;/td&gt;
+          &lt;td&gt;执行&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Syntax&lt;/td&gt;
+          &lt;td&gt;语法&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Control constructs&lt;/td&gt;
+          &lt;td&gt;控制结构&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;pattern recognition&lt;/td&gt;
+          &lt;td&gt;模式识别&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Parameter&lt;/td&gt;
+          &lt;td&gt;参数&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Constructor&lt;/td&gt;
+          &lt;td&gt;构造函数&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;object-oriented&lt;/td&gt;
+          &lt;td&gt;面向对象的&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;implement&lt;/td&gt;
+          &lt;td&gt;实现&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;override&lt;/td&gt;
+          &lt;td&gt;重写&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;approximation&lt;/td&gt;
+          &lt;td&gt;近似、逼近&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Linear&lt;/td&gt;
+          &lt;td&gt;线性的&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
