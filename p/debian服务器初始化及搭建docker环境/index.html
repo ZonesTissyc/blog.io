@@ -460,6 +460,13 @@
 
 
 <p><code>apt-get install openssh-server</code></p>
+<p>配置端口转发:</p>
+<p>编辑 <code>/etc/ssh/sshd_config</code></p>
+<p>增加或修改:</p>
+<p><code>GatewayPorts yes</code></p>
+<p><code>TCPKeepAlive yes</code></p>
+<p>重启sshd:</p>
+<p><code>sudo systemctl restart sshd</code></p>
 <h2 id="配置sudo">配置sudo
 
 
