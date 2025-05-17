@@ -25,7 +25,7 @@
     &gt;兰州大学debian镜像站&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;中国大陆: &lt;a class=&#34;link&#34; href=&#34;http://mirrors.163.com/debian-cd/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;网易debian镜像站&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;一般选 &lt;code&gt;iso-dvd&lt;/code&gt; 下的 &lt;strong&gt;iso&lt;/strong&gt; 镜像&lt;/p&gt;
+&lt;p&gt;一般选 &lt;code&gt;iso-dvd&lt;/code&gt; 下的 &lt;strong&gt;iso&lt;/strong&gt; 镜像。&lt;/p&gt;
 &lt;p&gt;下面均以 &lt;strong&gt;debian 12&lt;/strong&gt; 为例。&lt;/p&gt;
 &lt;p&gt;分配磁盘：至少两个分区（建议），一个 efi 分区（Fat32），选作 &lt;strong&gt;保留的boot引导分区&lt;/strong&gt;。另外一个ext4分区，用作系统根目录。&lt;/p&gt;
 &lt;p&gt;不要选择使用网络镜像。软件选择那里不勾选桌面，勾选ssh服务端（建议）。&lt;/p&gt;
