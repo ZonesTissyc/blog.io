@@ -583,7 +583,7 @@ $$<p>因此记该算法的大$O$记法为 $O(n^3)$。</p>
 </span></span><span class="line"><span class="cl">    <span class="n">l_xy</span> <span class="o">=</span> <span class="n">sum_xi</span> <span class="o">-</span> <span class="n">sum_xi</span><span class="o">*</span><span class="n">sum_yi</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">x_list</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">b</span> <span class="o">=</span> <span class="n">l_xy</span> <span class="o">/</span> <span class="n">l_xx</span>
 </span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="n">sum_yi</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">y_list</span><span class="p">)</span> <span class="o">-</span> <span class="n">b</span><span class="o">*</span><span class="n">sum_xi</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">x_list</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">## 计算相关系数</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 计算相关系数</span>
 </span></span><span class="line"><span class="cl">    <span class="n">rate_r</span> <span class="o">=</span> <span class="n">l_xy</span> <span class="o">/</span> <span class="nb">pow</span><span class="p">(</span><span class="n">l_xx</span><span class="o">*</span><span class="n">l_yy</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">rate_r</span>
 </span></span></code></pre></td></tr></table>
@@ -609,7 +609,7 @@ $$<p>因此记该算法的大$O$记法为 $O(n^3)$。</p>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">    <span class="n">filename</span> <span class="o">=</span> <span class="s2">&#34;索引实验数据.csv&#34;</span>
-</span></span><span class="line"><span class="cl">   <span class="c1"># abmain(filename)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">labmain</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">plot_func</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">reg_func</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;线性回归方程为 y= </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">x + </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> 相关系数r = </span><span class="si">{</span><span class="n">r</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
@@ -662,7 +662,7 @@ $$<p>可以看到 $x$ 的系数为 $0$ ，且相关系数也为 $0$ ，证明 $y
 </h2>
 
 
-<p>通过对实验数据的分析，证明了Python索引操作的时间复杂度为常数阶，</p>
+<p>通过对实验数据的分析，证明了Python索引操作的时间复杂度为常数阶。</p>
 
 </section>
 
