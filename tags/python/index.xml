@@ -536,6 +536,138 @@ $$&lt;p&gt;已知最大公因数，即可求出最小公倍数&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
         </item>
+        <item>
+        <title>Linux编译安装Python</title>
+        <link>https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/</link>
+        <pubDate>Sun, 27 Oct 2024 13:39:38 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/</guid>
+        <description>&lt;p&gt;Linux系统下安装软件的方式可以通过  &lt;strong&gt;apt install&lt;/strong&gt;  类似的包管理命令在线安装。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt install packagename
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;若软件源中没有对应软件，或者离线环境，需要从源码编译安装。&lt;/p&gt;
+&lt;h2 id=&#34;准备工作&#34;&gt;准备工作
+
+
+&lt;/h2&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3 id=&#34;下载源码包&#34;&gt;下载源码包
+
+
+&lt;/h3&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;首先准备好要安装软件的源码&lt;/p&gt;
+&lt;p&gt;以python3.12为例，去官网找到对应源码包的链接&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.python.org/downloads/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.python.org/downloads/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17.png&#34;
+	width=&#34;1522&#34;
+	height=&#34;639&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17_hu13440576555318707249.png 480w, https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17_hu228977950063332832.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;python官网&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;238&#34;
+		data-flex-basis=&#34;571px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;用 &lt;strong&gt;wget&lt;/strong&gt; 下载到本地&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget &amp;quot;https://www.python.org/ftp/python/3.12.7/Python-3.12.7.tgz&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3 id=&#34;解压源码包&#34;&gt;解压源码包
+
+
+&lt;/h3&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;使用内置的tar解压&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tar -xvf Python-3.12.7.tgz
+cd Python-3.12.7/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3 id=&#34;安装编译工具&#34;&gt;安装编译工具
+
+
+&lt;/h3&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;源码中有许多.c的文件，由c语言编写。因此编译前需要安装c语言库和环境。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt update
+apt install build-essential
+apt install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
+apt install gcc openssl
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;编译预配置&#34;&gt;编译预配置
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;源码根目录下存在一个configure文件，运行该文件，开始检查当前的运行环境，配置生成 &lt;strong&gt;MakeFile&lt;/strong&gt; 文件，用于make编译。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;./configure --with-openssl=/usr/bin --prefix=/opt/python3.12.7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里的 &amp;ndash;prefix=/path 是指定你要安装软件的目录，可以mkdir创建。&lt;/p&gt;
+&lt;p&gt;通常，我们都将软件安装在 &lt;strong&gt;/opt&lt;/strong&gt; 下。&lt;/p&gt;
+&lt;p&gt;configure的过程并不都是顺利的，要学会看报错信息，把没装的包用apt装上&lt;/p&gt;
+&lt;h2 id=&#34;编译&#34;&gt;编译
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;(
+如果之前预编译过，先
+make clean
+来清除缓存
+)&lt;/p&gt;
+&lt;p&gt;首先告诉 make 配置文件MakeFile位于何处&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;make MakeFile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;执行make，开始编译&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;make
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;等待编译结束&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装
+
+
+&lt;/h2&gt;
+
+
+&lt;pre&gt;&lt;code&gt;make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;执行安装命令&lt;/p&gt;
+&lt;h2 id=&#34;配置软连接&#34;&gt;配置软连接
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;这时cd到opt的目录，可以看到python已经安装好了。&lt;/p&gt;
+&lt;p&gt;如果直接执行 python ，会报错 not found.&lt;/p&gt;
+&lt;p&gt;因为linux执行某条命令，主要先访问 &lt;strong&gt;/bin&lt;/strong&gt; 或 &lt;strong&gt;/usr/bin&lt;/strong&gt; 等&lt;strong&gt;PATH&lt;/strong&gt;是否有对应的二进制文件&lt;/p&gt;
+&lt;p&gt;因此需要将python的二进制文件复制&lt;/p&gt;
+&lt;p&gt;创建软连接&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ln -s /opt/Python-3.12.7/bin/python3 /usr/bin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;再执行python3，可以正常启动&lt;/p&gt;
+</description>
+        </item>
         
     </channel>
 </rss>
