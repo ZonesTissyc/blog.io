@@ -116,6 +116,7 @@
 
 &lt;p&gt;&lt;code&gt;apt-get install openssh-server&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;配置端口转发:&lt;/p&gt;
+&lt;p&gt;（可选，便于vscode远程插件连接）&lt;/p&gt;
 &lt;p&gt;编辑 &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;增加或修改:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;GatewayPorts yes&lt;/code&gt;&lt;/p&gt;
