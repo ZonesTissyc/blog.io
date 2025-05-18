@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="安装iso镜像\r镜像可在 debian.org 上下载。\n中国大陆可用的镜像站：\n中国大陆: 兰州大学debian镜像站\n中国大陆: 网易debian镜像站\n一般选 iso-dvd 下的 iso 镜像。\n下面均以 debian 12 为例。\n分配磁盘：至少两个分区（建议），一个 efi 分区（Fat32），选作 保留的boot引导分区。另外一个ext4分区，用作系统根目录。\n不要选择使用网络镜像。软件选择那里不勾选桌面，勾选ssh服务端（建议）。\n安装完成后重启即可。\napt换源\r切换到root用户，执行nano /etc/apt/sources.list。\n换成清华源（北京市）：\n1 2 3 4 5 6 7 8 9 10 11 12 13 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware # 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换 deb https://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware # deb-src https://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware 或者是中科大源（安徽省）：\n">
-<title>Debian服务器初始化及搭建docker环境</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="下面是用 node.js 搭建一个简单的网页服务，并构建成 Docker 镜像，并运行容器，使外部能访问这个网页。\n简单写个网页\r首先安装一下 npm：\n1 sudo apt install npm 初始化 npm 项目：\n1 npm init -y npm 安装 express 框架：\n1 npm install express 简单写一个 js 文件:\n1 2 3 4 5 6 7 8 9 const express = require(&#34;express&#34;); const app = express(); const PORT = 3000; app.get(&#34;/&#34;, (req, res) =&gt; { res.send(&#34;&lt;p&gt;智能感知——服务调度&lt;/p&gt;&#34;); }); app.listen(PORT,() =&gt; console.log(&#34;端口号3000走起&#34;)); 上面会在 3000 端口运行一个 html 服务。\n">
+<title>Docker实战：构建镜像</title>
 
-<link rel='canonical' href='https://blog.ztcdream.top/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/'>
+<link rel='canonical' href='https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/'>
 
-<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="Debian服务器初始化及搭建docker环境">
-<meta property='og:description' content="安装iso镜像\r镜像可在 debian.org 上下载。\n中国大陆可用的镜像站：\n中国大陆: 兰州大学debian镜像站\n中国大陆: 网易debian镜像站\n一般选 iso-dvd 下的 iso 镜像。\n下面均以 debian 12 为例。\n分配磁盘：至少两个分区（建议），一个 efi 分区（Fat32），选作 保留的boot引导分区。另外一个ext4分区，用作系统根目录。\n不要选择使用网络镜像。软件选择那里不勾选桌面，勾选ssh服务端（建议）。\n安装完成后重启即可。\napt换源\r切换到root用户，执行nano /etc/apt/sources.list。\n换成清华源（北京市）：\n1 2 3 4 5 6 7 8 9 10 11 12 13 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware # 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换 deb https://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware # deb-src https://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware 或者是中科大源（安徽省）：\n">
-<meta property='og:url' content='https://blog.ztcdream.top/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/'>
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="Docker实战：构建镜像">
+<meta property='og:description' content="下面是用 node.js 搭建一个简单的网页服务，并构建成 Docker 镜像，并运行容器，使外部能访问这个网页。\n简单写个网页\r首先安装一下 npm：\n1 sudo apt install npm 初始化 npm 项目：\n1 npm init -y npm 安装 express 框架：\n1 npm install express 简单写一个 js 文件:\n1 2 3 4 5 6 7 8 9 const express = require(&#34;express&#34;); const app = express(); const PORT = 3000; app.get(&#34;/&#34;, (req, res) =&gt; { res.send(&#34;&lt;p&gt;智能感知——服务调度&lt;/p&gt;&#34;); }); app.listen(PORT,() =&gt; console.log(&#34;端口号3000走起&#34;)); 上面会在 3000 端口运行一个 html 服务。\n">
+<meta property='og:url' content='https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-15T20:10:52&#43;08:00'/><meta property='article:modified_time' content='2025-05-15T20:10:52&#43;08:00'/>
-<meta name="twitter:title" content="Debian服务器初始化及搭建docker环境">
-<meta name="twitter:description" content="安装iso镜像\r镜像可在 debian.org 上下载。\n中国大陆可用的镜像站：\n中国大陆: 兰州大学debian镜像站\n中国大陆: 网易debian镜像站\n一般选 iso-dvd 下的 iso 镜像。\n下面均以 debian 12 为例。\n分配磁盘：至少两个分区（建议），一个 efi 分区（Fat32），选作 保留的boot引导分区。另外一个ext4分区，用作系统根目录。\n不要选择使用网络镜像。软件选择那里不勾选桌面，勾选ssh服务端（建议）。\n安装完成后重启即可。\napt换源\r切换到root用户，执行nano /etc/apt/sources.list。\n换成清华源（北京市）：\n1 2 3 4 5 6 7 8 9 10 11 12 13 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware # 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换 deb https://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware # deb-src https://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware 或者是中科大源（安徽省）：\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-18T16:07:17&#43;08:00'/><meta property='article:modified_time' content='2025-05-18T20:06:00&#43;08:00'/>
+<meta name="twitter:title" content="Docker实战：构建镜像">
+<meta name="twitter:description" content="下面是用 node.js 搭建一个简单的网页服务，并构建成 Docker 镜像，并运行容器，使外部能访问这个网页。\n简单写个网页\r首先安装一下 npm：\n1 sudo apt install npm 初始化 npm 项目：\n1 npm init -y npm 安装 express 框架：\n1 npm install express 简单写一个 js 文件:\n1 2 3 4 5 6 7 8 9 const express = require(&#34;express&#34;); const app = express(); const PORT = 3000; app.get(&#34;/&#34;, (req, res) =&gt; { res.send(&#34;&lt;p&gt;智能感知——服务调度&lt;/p&gt;&#34;); }); app.listen(PORT,() =&gt; console.log(&#34;端口号3000走起&#34;)); 上面会在 3000 端口运行一个 html 服务。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -272,15 +272,11 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#安装iso镜像">安装iso镜像</a></li>
-    <li><a href="#apt换源">apt换源</a></li>
-    <li><a href="#系统更新与软件安装">系统更新与软件安装</a></li>
-    <li><a href="#配置sshd">配置sshd</a></li>
-    <li><a href="#配置sudo">配置sudo</a></li>
-    <li><a href="#安装python127">安装Python12.7</a></li>
-    <li><a href="#安装docker">安装Docker</a></li>
-    <li><a href="#docker换源">Docker换源</a></li>
-    <li><a href="#安装docker管理界面portainer">安装Docker管理界面Portainer</a></li>
+    <li><a href="#简单写个网页">简单写个网页</a></li>
+    <li><a href="#编辑dockerfile">编辑Dockerfile</a></li>
+    <li><a href="#配置忽略文件">配置忽略文件</a></li>
+    <li><a href="#构建镜像">构建镜像</a></li>
+    <li><a href="#运行容器">运行容器</a></li>
   </ol>
 </nav>
         </div>
@@ -308,7 +304,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/">Debian服务器初始化及搭建docker环境</a>
+            <a href="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/">Docker实战：构建镜像</a>
         </h2>
     
         
@@ -330,7 +326,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025年5月15日</time>
+                <time class="article-time--published">2025年5月18日</time>
             </div>
         
 
@@ -345,7 +341,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 1 分钟
                 </time>
             </div>
         
@@ -360,65 +356,69 @@
     <section class="article-content">
     
     
-    <h2 id="安装iso镜像">安装iso镜像
+    <p>下面是用 node.js 搭建一个简单的网页服务，并构建成 Docker 镜像，并运行容器，使外部能访问这个网页。</p>
+<h2 id="简单写个网页">简单写个网页
 
 
 </h2>
 
 
-<p>镜像可在 <a class="link" href="https://www.debian.org"  target="_blank" rel="noopener"
-    >debian.org</a> 上下载。</p>
-<p>中国大陆可用的镜像站：</p>
-<p>中国大陆: <a class="link" href="https://mirror.lzu.edu.cn/debian-cd/"  target="_blank" rel="noopener"
-    >兰州大学debian镜像站</a></p>
-<p>中国大陆: <a class="link" href="http://mirrors.163.com/debian-cd/"  target="_blank" rel="noopener"
-    >网易debian镜像站</a></p>
-<p>一般选 <code>iso-dvd</code> 下的 <strong>iso</strong> 镜像。</p>
-<p>下面均以 <strong>debian 12</strong> 为例。</p>
-<p>分配磁盘：至少两个分区（建议），一个 efi 分区（Fat32），选作 <strong>保留的boot引导分区</strong>。另外一个ext4分区，用作系统根目录。</p>
-<p>不要选择使用网络镜像。软件选择那里不勾选桌面，勾选ssh服务端（建议）。</p>
-<p>安装完成后重启即可。</p>
-<h2 id="apt换源">apt换源
-
-
-</h2>
-
-
-<p>切换到<code>root</code>用户，执行<code>nano /etc/apt/sources.list</code>。</p>
-<p>换成清华源（北京市）：</p>
+<p>首先安装一下 npm：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span>
-</span></span><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
-</span></span><span class="line"><span class="cl"><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
-</span></span><span class="line"><span class="cl"><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware
-</span></span><span class="line"><span class="cl"><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换</span>
-</span></span><span class="line"><span class="cl">deb https://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
-</span></span><span class="line"><span class="cl"><span class="c1"># deb-src https://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install npm
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>或者是中科大源（安徽省）：</p>
+</div><p><img src="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1.png"
+	width="1011"
+	height="784"
+	srcset="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1_hu7962955611841002930.png 480w, /p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1_hu10344160251116701163.png 1024w"
+	loading="lazy"
+	
+		alt="安装npm"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="128"
+		data-flex-basis="309px"
+	
+></p>
+<p>初始化 npm 项目：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm init -y
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>npm 安装  express 框架：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install express
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2.png"
+	width="830"
+	height="260"
+	srcset="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2_hu3761520844843435717.png 480w, /p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2_hu9139059513392296672.png 1024w"
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="319"
+		data-flex-basis="766px"
+	
+></p>
+<p>简单写一个 js 文件:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -432,125 +432,180 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 默认注释了源码仓库，如有需要可自行取消注释</span>
-</span></span><span class="line"><span class="cl">deb http://mirrors.ustc.edu.cn/debian bookworm main contrib non-free non-free-firmware
-</span></span><span class="line"><span class="cl"><span class="c1"># deb-src http://mirrors.ustc.edu.cn/debian bookworm main contrib non-free non-free-firmware</span>
-</span></span><span class="line"><span class="cl">deb http://mirrors.ustc.edu.cn/debian bookworm-updates main contrib non-free non-free-firmware
-</span></span><span class="line"><span class="cl"><span class="c1"># deb-src http://mirrors.ustc.edu.cn/debian bookworm-updates main contrib non-free non-free-firmware</span>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;express&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="mi">3000</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># backports 软件源，请按需启用</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># deb http://mirrors.ustc.edu.cn/debian bookworm-backports main contrib non-free non-free-firmware</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># deb-src http://mirrors.ustc.edu.cn/debian bookworm-backports main contrib non-free non-free-firmware</span>
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&#34;&lt;p&gt;智能感知——服务调度&lt;/p&gt;&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;端口号3000走起&#34;</span><span class="p">));</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="系统更新与软件安装">系统更新与软件安装
+</div><p>上面会在 3000 端口运行一个 html 服务。</p>
+<h2 id="编辑dockerfile">编辑Dockerfile
 
 
 </h2>
 
 
-<p><code>apt update &amp;&amp; apt upgrade</code></p>
-<p>首次配置一定要大更新一下系统软件，在配置好服务之后，就不要轻易执行 <code>apt upgrade</code> 了。</p>
-<p>再安装一些常用软件：</p>
-<p><code>apt install sudo</code></p>
-<p><code>apt install git openssl gh</code></p>
-<p><code>apt install build-essential</code></p>
-<p><code>apt install screen</code></p>
-<h2 id="配置sshd">配置sshd
+<p><code>nano Dockerfile</code></p>
+<p>写入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> node:18-alpine3.15</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /ztc</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> package.json .<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> npm install<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> . .<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 3000</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;node&#34;</span><span class="p">,</span><span class="s2">&#34;app.js&#34;</span><span class="p">]</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="配置忽略文件">配置忽略文件
 
 
 </h2>
 
 
-<p><code>apt-get install openssh-server</code></p>
-<p>配置端口转发:</p>
-<p>（可选，便于vscode远程插件连接）</p>
-<p>编辑 <code>/etc/ssh/sshd_config</code></p>
-<p>增加或修改:</p>
-<p><code>GatewayPorts yes</code></p>
-<p><code>TCPKeepAlive yes</code></p>
-<p>重启sshd:</p>
-<p><code>sudo systemctl restart sshd</code></p>
-<h2 id="配置sudo">配置sudo
+<p>这个文件同 <code>git</code> 的 <code>.gitignore</code> ，可以在构建时忽略掉文件及文件夹。</p>
+<p><code>nano .dockerignore</code></p>
+<p>写入:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">node_modules
+</span></span><span class="line"><span class="cl">Dockerfile
+</span></span><span class="line"><span class="cl">.dockerignore
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="构建镜像">构建镜像
 
 
 </h2>
 
 
-<p>添加用户至sudo文件：</p>
-<p><code>nano \etc\sudoer</code></p>
-<p>添加一行：</p>
-<p><code>ztc ALL=(ALL:ALL) NOPASSWD:ALL</code></p>
-<p>或者将用户加入到 <code>sudo</code> 用户组中（推荐）：</p>
+<p>把配置文件写好，就可以构建镜像了：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">usermod -a -G sudo ztc
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build .
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="安装python127">安装Python12.7
-
-
-</h2>
-
-
-<p>参考：<a class="link" href="https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/"  target="_blank" rel="noopener"
-    >Linux编译Python</a></p>
-<h2 id="安装docker">安装Docker
-
-
-</h2>
-
-
-<p>参考： <a class="link" href="https://www.runoob.com/docker/debian-docker-install.html"  target="_blank" rel="noopener"
-    >Docker安装教程</a></p>
-<h2 id="docker换源">Docker换源
-
-
-</h2>
-
-
-<p>修改配置文件，没有则新增这个文件</p>
-<p><code>nano /etc/docker/daemon.json</code></p>
+</div><p>初次构建的时候是比较慢的。</p>
+<p><img src="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3.png"
+	width="1420"
+	height="498"
+	srcset="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3_hu18408290578179626332.png 480w, /p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3_hu1025205534792097217.png 1024w"
+	loading="lazy"
+	
+		alt="构建镜像"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="285"
+		data-flex-basis="684px"
+	
+></p>
+<p>查看镜像：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">  &#34;registry-mirrors&#34;: [
-</span></span><span class="line"><span class="cl">    &#34;https://hub.xdark.top&#34;,
-</span></span><span class="line"><span class="cl">    &#34;https://hub.littlediary.cn&#34;,
-</span></span><span class="line"><span class="cl">    &#34;https://dockerpull.org&#34;,
-</span></span><span class="line"><span class="cl">    &#34;https://hub.crdz.gq&#34;,
-</span></span><span class="line"><span class="cl">    &#34;https://docker.1panel.live&#34;,
-</span></span><span class="line"><span class="cl">    &#34;https://docker.unsee.tech&#34;
-</span></span><span class="line"><span class="cl">  ]
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker images
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>保存后重启一下Docker：<code>sudo systemctl daemon-reload &amp;&amp; sudo systemctl restart docker</code></p>
-<p>查看是否生效：<code>sudo docker info</code></p>
-<p>末尾如果显示了替换的Hub源，说明换源成功了。</p>
-<h2 id="安装docker管理界面portainer">安装Docker管理界面Portainer
+</div><p><img src="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4.png"
+	width="949"
+	height="182"
+	srcset="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4_hu18104325224083274406.png 480w, /p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4_hu17732034483123919492.png 1024w"
+	loading="lazy"
+	
+		alt="镜像查看"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="521"
+		data-flex-basis="1251px"
+	
+></p>
+<p>新创建的镜像还没有名字，所以显示为 <code>&lt;none&gt;</code>。</p>
+<p>可以为镜像添加名字：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker tag c5e zonestissyc/nodejs:v1.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再看一下，发现改名成功了：</p>
+<p><img src="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5.png"
+	width="924"
+	height="176"
+	srcset="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5_hu14927373379245951812.png 480w, /p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5_hu1378711553163471533.png 1024w"
+	loading="lazy"
+	
+		alt="镜像命名"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="525"
+		data-flex-basis="1260px"
+	
+></p>
+<h2 id="运行容器">运行容器
 
 
 </h2>
 
 
-<p>参考： <a class="link" href="https://www.cnblogs.com/JerryMouseLi/p/15571897.html#2docker%E5%9F%BA%E4%BA%8E%E7%95%8C%E9%9D%A2%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7portainer"  target="_blank" rel="noopener"
-    >Portainer安装</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> docker run -d -p 3000:3000 --name hello-container zonestissyc/nodejs:v1.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>-d</code> : 后台运行</li>
+<li><code>-p 3000:3000</code>: 端口转发，宿主机端口 $:$ 容器端口</li>
+<li><code>--name hello-container</code> : 给容器起个名</li>
+</ul>
+<p>在浏览器访问一下：</p>
+<p><img src="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6.png"
+	width="642"
+	height="414"
+	srcset="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6_hu9333714914423142000.png 480w, /p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6_hu10153937962945044318.png 1024w"
+	loading="lazy"
+	
+		alt="访问端口"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="155"
+		data-flex-basis="372px"
+	
+></p>
+<p>服务可以在外部访问了！！！</p>
 
 </section>
 
@@ -570,7 +625,19 @@
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    </footer>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2025年5月18日 20:06
+        </span>
+    </section></footer>
 
 
     
@@ -613,12 +680,12 @@
             
                 
 <article class="">
-    <a href="/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/">
+    <a href="/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Docker实战：构建镜像</h2>
+            <h2 class="article-title">Docker实战：运行一个容器</h2>
         </div>
     </a>
 </article>
@@ -626,12 +693,12 @@
             
                 
 <article class="">
-    <a href="/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/">
+    <a href="/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Docker实战：运行一个容器</h2>
+            <h2 class="article-title">Debian服务器初始化及搭建docker环境</h2>
         </div>
     </a>
 </article>
