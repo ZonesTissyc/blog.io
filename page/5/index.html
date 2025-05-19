@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="错误呈现\r给出$3$阶矩阵$|A|=\\frac{1}{2}$，求$|A^*|$.\n一看有$|A|$和$|A^*|$，很容易联想到伴随矩阵的性质：\n$$\rAA^*=A*A=|A|E\r$$则\n$$\r\\begin{aligned}\r|AA^*| =|A||A^*|&=||A|E| \\\\\r&= |A||E| \\\\\r&= |A|\r\\end{aligned}\r$$两边约去$|A|$，得\n$$\r|A^*|=1\r$$似乎题目给出的$|A|=\\frac{1}{2}$是多余的。\n错误分析\r但是，这对吗？\n这不对！\n问题就出在将$||A|E|$最外层的 $||$去掉这一步\n$$\r\\begin{aligned}\r||A|E| & \\ne |A||E| \\\\\r||A|E| &= |A|^3|E| \\\\\r&= |A|^3\r\\end{aligned}\r$$总结\r因此对于一个$n$阶矩阵$A$，$A$可逆，那么伴随矩阵：\n$$\r\\begin{aligned}\r|A^*|=|A|^{n-1}\r\\end{aligned}\r$$">
-<title>（易错）求伴随矩阵的行列式</title>
+    <head>
+	<meta name="generator" content="Hugo 0.136.0"><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一位摆烂的生物信息大学牲">
+<title>Pager 5 - ZTC&#39;Blog</title>
 
-<link rel='canonical' href='https://blog.ztcdream.top/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/'>
+<link rel='canonical' href='https://blog.ztcdream.top/'>
 
-<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="（易错）求伴随矩阵的行列式">
-<meta property='og:description' content="错误呈现\r给出$3$阶矩阵$|A|=\\frac{1}{2}$，求$|A^*|$.\n一看有$|A|$和$|A^*|$，很容易联想到伴随矩阵的性质：\n$$\rAA^*=A*A=|A|E\r$$则\n$$\r\\begin{aligned}\r|AA^*| =|A||A^*|&=||A|E| \\\\\r&= |A||E| \\\\\r&= |A|\r\\end{aligned}\r$$两边约去$|A|$，得\n$$\r|A^*|=1\r$$似乎题目给出的$|A|=\\frac{1}{2}$是多余的。\n错误分析\r但是，这对吗？\n这不对！\n问题就出在将$||A|E|$最外层的 $||$去掉这一步\n$$\r\\begin{aligned}\r||A|E| & \\ne |A||E| \\\\\r||A|E| &= |A|^3|E| \\\\\r&= |A|^3\r\\end{aligned}\r$$总结\r因此对于一个$n$阶矩阵$A$，$A$可逆，那么伴随矩阵：\n$$\r\\begin{aligned}\r|A^*|=|A|^{n-1}\r\\end{aligned}\r$$">
-<meta property='og:url' content='https://blog.ztcdream.top/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/'>
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="ZTC'Blog">
+<meta property='og:description' content="一位摆烂的生物信息大学牲">
+<meta property='og:url' content='https://blog.ztcdream.top/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-16T20:39:48&#43;08:00'/><meta property='article:modified_time' content='2025-04-16T20:39:48&#43;08:00'/>
-<meta name="twitter:title" content="（易错）求伴随矩阵的行列式">
-<meta name="twitter:description" content="错误呈现\r给出$3$阶矩阵$|A|=\\frac{1}{2}$，求$|A^*|$.\n一看有$|A|$和$|A^*|$，很容易联想到伴随矩阵的性质：\n$$\rAA^*=A*A=|A|E\r$$则\n$$\r\\begin{aligned}\r|AA^*| =|A||A^*|&=||A|E| \\\\\r&= |A||E| \\\\\r&= |A|\r\\end{aligned}\r$$两边约去$|A|$，得\n$$\r|A^*|=1\r$$似乎题目给出的$|A|=\\frac{1}{2}$是多余的。\n错误分析\r但是，这对吗？\n这不对！\n问题就出在将$||A|E|$最外层的 $||$去掉这一步\n$$\r\\begin{aligned}\r||A|E| & \\ne |A||E| \\\\\r||A|E| &= |A|^3|E| \\\\\r&= |A|^3\r\\end{aligned}\r$$总结\r因此对于一个$n$阶矩阵$A$，$A$可逆，那么伴随矩阵：\n$$\r\\begin{aligned}\r|A^*|=|A|^{n-1}\r\\end{aligned}\r$$">
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-05-18T20:22:33&#43;08:00 '/>
+<meta name="twitter:title" content="ZTC'Blog">
+<meta name="twitter:description" content="一位摆烂的生物信息大学牲"><link rel="alternate" type="application/rss&#43;xml" href="https://blog.ztcdream.top/index.xml">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
-    <body class="
-    article-page
-    ">
+    <body class="">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -253,10 +252,69 @@
     <aside class="sidebar right-sidebar sticky">
         
             
-                
-    <section class="widget archives">
+                <form action="/search/" class="search-form widget" >
+        <p>
+            <label>搜索</label>
+            <input name="keyword" required placeholder="输入关键词..." />
+        
+            <button title="搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+            
+        
+            
+                <section class="widget archives">
         <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">归档</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2025">
+                        
+                            <span class="year">2025</span>
+                            <span class="count">14</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2024">
+                        
+                            <span class="year">2024</span>
+                            <span class="count">7</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+            
+        
+            
+                <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <line x1="5" y1="9" x2="19" y2="9" />
   <line x1="5" y1="15" x2="19" y2="15" />
@@ -266,35 +324,105 @@
 
 
 
-        </div>
-        <h2 class="widget-title section-title">目录</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li><a href="#错误呈现">错误呈现</a></li>
-    <li><a href="#错误分析">错误分析</a></li>
-    <li><a href="#总结">总结</a></li>
-  </ol>
-</nav>
-        </div>
-    </section>
+    </div>
+    <h2 class="widget-title section-title">分类</h2>
 
+    <div class="tagCloud-tags">
+        
+            <a href="/categories/%E6%95%B0%E5%AD%A6/" class="font_size_12">
+                数学
+            </a>
+        
+            <a href="/categories/linux/" class="font_size_6">
+                Linux
+            </a>
+        
+            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="font_size_2">
+                编程
+            </a>
+        
+    </div>
+</section>
+
+            
+        
+            
+                <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">标签云</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/python/" class="font_size_3">
+                Python
+            </a>
+        
+            <a href="/tags/c&#43;&#43;/" class="font_size_2">
+                C&#43;&#43;
+            </a>
+        
+            <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" class="font_size_2">
+                数学建模
+            </a>
+        
+            <a href="/tags/latex/" class="font_size_1">
+                LaTex
+            </a>
+        
+            <a href="/tags/%E6%95%B0%E5%AD%A6%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="font_size_1">
+                数学表达式
+            </a>
+        
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="font_size_1">
+                数据结构
+            </a>
+        
+            <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" class="font_size_1">
+                概率论
+            </a>
+        
+            <a href="/tags/%E7%AE%97%E6%B3%95/" class="font_size_1">
+                算法
+            </a>
+        
+            <a href="/tags/%E7%BB%9F%E8%AE%A1/" class="font_size_1">
+                统计
+            </a>
+        
+    </div>
+</section>
             
         
     </aside>
 
 
             <main class="main full-width">
-    <article class="main-article">
+    
+    
+    
+    
+
+    <section class="article-list">
+        
+            
+<article class="">
     <header class="article-header">
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/%E6%95%B0%E5%AD%A6/" style="background-color: #2a9d8f; color: #fff;">
-                数学
+            <a href="/categories/linux/" style="background-color: #121212; color: #00FF00;">
+                Linux
             </a>
         
     </header>
@@ -302,7 +430,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/">（易错）求伴随矩阵的行列式</a>
+            <a href="/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/">Linux编译安装Python</a>
         </h2>
     
         
@@ -324,7 +452,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025年4月16日</time>
+                <time class="article-time--published">2024年10月27日</time>
             </div>
         
 
@@ -350,192 +478,40 @@
 </div>
 
 </header>
-
-    <section class="article-content">
-    
-    
-    <h2 id="错误呈现">错误呈现
-
-
-</h2>
-
-
-<p>给出$3$阶矩阵$|A|=\frac{1}{2}$，求$|A^*|$.</p>
-<p>一看有$|A|$和$|A^*|$，很容易联想到伴随矩阵的性质：</p>
-$$
-AA^*=A*A=|A|E
-$$<p>则</p>
-$$
-\begin{aligned}
-   |AA^*| =|A||A^*|&=||A|E| \\
-    &= |A||E| \\
-    &= |A|
-\end{aligned}
-$$<p>两边约去$|A|$，得</p>
-$$
-|A^*|=1
-$$<p>似乎题目给出的$|A|=\frac{1}{2}$是多余的。</p>
-<h2 id="错误分析">错误分析
-
-
-</h2>
-
-
-<p>但是，这对吗？</p>
-<p>这不对！</p>
-<p>问题就出在将$||A|E|$最外层的 $||$去掉这一步</p>
-$$
-\begin{aligned}
-||A|E| & \ne |A||E| \\
-||A|E| &= |A|^3|E| \\
-&= |A|^3
-\end{aligned}
-$$<h2 id="总结">总结
-
-
-</h2>
-
-
-<p>因此对于一个$n$阶矩阵$A$，$A$可逆，那么伴随矩阵：</p>
-$$
-\begin{aligned}
-    |A^*|=|A|^{n-1}
-\end{aligned}
-$$
-</section>
-
-
-    <footer class="article-footer">
-    
-
-    
-    <section class="article-copyright">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
-</svg>
-
-
-
-        <span>Licensed under CC BY-NC-SA 4.0</span>
+</article>
+        
     </section>
-    </footer>
+    <nav class='pagination'>
+        
+        
 
-
-    
-        <link 
-                rel="stylesheet" 
-                href="https://css.ztcdream.top/css/katex/katex.min.css"crossorigin="anonymous"
-            ><script 
-                src="https://css.ztcdream.top/css/katex/katex.min.js"crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://css.ztcdream.top/css/katex/auto-render.min.js"crossorigin="anonymous"
-                defer
-                >
-            </script><script>
-    window.addEventListener("DOMContentLoaded", () => {
-	const mainArticleElement = document.querySelector(".main-article");
-        renderMathInElement(mainArticleElement, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ],
-            ignoredClasses: ["gist"]
-        });})
-</script>
-
-    
-</article>
-
-    
-
-    
-
-<aside class="related-content--wrapper">
-    <h2 class="section-title">相关文章</h2>
-    <div class="related-content">
-        <div class="flex article-list--tile">
+        
             
+                    <a class='page-link' href='/'>1</a>
                 
-<article class="">
-    <a href="/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">LaTex核心出装——数学公式</h2>
-        </div>
-    </a>
-</article>
-
             
+            
+                    
+                        
+                        <span class='page-link dots'>&hellip;</span>
+                    
                 
-<article class="">
-    <a href="/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">（实验）证明列表索引操作的时间复杂度为常数阶</h2>
-        </div>
-    </a>
-</article>
-
             
+            
+                    
                 
-<article class="">
-    <a href="/p/%E7%BE%A4%E4%BD%93%E6%98%BE%E6%80%A7%E5%90%8E%E4%BB%A3%E9%97%AE%E9%A2%98/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">群体显性后代问题</h2>
-        </div>
-    </a>
-</article>
-
             
+            
+                    <a class='page-link' href='/page/4/'>4</a>
                 
-<article class="">
-    <a href="/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">多元函数二阶偏导</h2>
-        </div>
-    </a>
-</article>
-
             
+            
+                <span class='page-link current'>5</span>
                 
-<article class="">
-    <a href="/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">二元函数偏微商与连续的关系</h2>
-        </div>
-    </a>
-</article>
-
             
-        </div>
-    </div>
-</aside>
+    </nav>
 
-     
-    
-        
-    
-
-    <footer class="site-footer">
+<footer class="site-footer">
     <section class="copyright">
         &copy; 
         
@@ -549,85 +525,6 @@ $$
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
 </footer>
-
-
-    
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    
-    <div class="pswp__bg"></div>
-
-    
-    <div class="pswp__scroll-wrap">
-
-        
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                
-                
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div><script 
-                src="https://css.ztcdream.top/css/photoswipe/photoswipe.min.js"crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://css.ztcdream.top/css/photoswipe/photoswipe-ui-default.min.js"crossorigin="anonymous"
-                defer
-                >
-            </script><link 
-                rel="stylesheet" 
-                href="https://css.ztcdream.top/css/photoswipe/default-skin.min.css"crossorigin="anonymous"
-            ><link 
-                rel="stylesheet" 
-                href="https://css.ztcdream.top/css/photoswipe/photoswipe.min.css"crossorigin="anonymous"
-            >
 
             </main>
         </div>
