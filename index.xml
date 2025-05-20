@@ -801,8 +801,8 @@ $$&lt;p&gt;这是一个相当复杂的公式：包含了分数、根号、指数
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;$$&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;LaTex数学公式是有着一定的结构的。${ }$内的代码将会是一个整体，&lt;strong&gt;^{ }&lt;/strong&gt; 表示上标，&lt;strong&gt;_{ }&lt;/strong&gt; 表示下标。当一个元素既有上标又要下标时，先写下标再写上标。&lt;/p&gt;
-&lt;p&gt;如表示一个全全排列数：&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;LaTex数学公式是有着一定的结构的。&lt;strong&gt;{ }&lt;/strong&gt; 内的代码将会是一个整体，&lt;strong&gt;^{ }&lt;/strong&gt; 表示上标，&lt;strong&gt;_{ }&lt;/strong&gt; 表示下标。当一个元素既有上标又要下标时，先写下标再写上标。&lt;/p&gt;
+&lt;p&gt;如表示一个全排列数：&lt;/p&gt;
 $$
 A_5^3
 $$&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -847,7 +847,7 @@ $$
     $$&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;矩阵&lt;/p&gt;
-&lt;p&gt;表示矩阵&lt;/p&gt;
+&lt;p&gt;表示中括号矩阵：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -860,19 +860,179 @@ $$
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-LaTex&#34; data-lang=&#34;LaTex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{bmatrix}
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;  &amp;amp; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &amp;amp;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &amp;amp; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &amp;amp;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;  &amp;amp; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &amp;amp; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;  &amp;amp; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &amp;amp; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{bmatrix}
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;$$&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;$$
     \begin{bmatrix}
-    1  &amp; 2 &amp;3 \\
-    4 &amp; 5 &amp;6
+    1  &amp; 2 &amp; 3 \\
+    4  &amp; 5 &amp; 6
     \end{bmatrix}
-    $$&lt;/li&gt;
+    $$&lt;p&gt;表示大括号矩阵：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-LaTex&#34; data-lang=&#34;LaTex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{pmatrix}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;  &amp;amp; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &amp;amp; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;  &amp;amp; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt; &amp;amp; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{pmatrix}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;$$&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;$$
+    \begin{pmatrix}
+    1  &amp; 2 &amp; 3 \\
+    4  &amp; 5 &amp; 6
+    \end{pmatrix}
+    $$&lt;p&gt;表示行列式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-LaTex&#34; data-lang=&#34;LaTex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;vmatrix&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1  &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 2 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 3 &lt;span class=&#34;k&#34;&gt;\\&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4  &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 5 &lt;span class=&#34;nb&#34;&gt;&amp;amp;&lt;/span&gt; 6
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;vmatrix&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;$$
+    \begin{vmatrix}
+    1  &amp; 2 &amp; 3 \\
+    4  &amp; 5 &amp; 6
+    \end{vmatrix}
+    $$&lt;p&gt;这其实不是一个行列式，但仍然可以被“正确”地表示。LaTex只关注公式的形式，而非真正的数学意义。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;latex的练习环境&#34;&gt;LaTex的练习环境
+
+
+&lt;/h2&gt;
+
+
+&lt;h3 id=&#34;ctex&#34;&gt;CTex
+
+
+&lt;/h3&gt;
+
+
+&lt;p&gt;&lt;strong&gt;CTex&lt;/strong&gt; 是LeTex的中国版，提供完整的 &lt;strong&gt;LaTex&lt;/strong&gt; 环境和针对中文的调教。&lt;/p&gt;
+&lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://ctex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CTex官网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1.png&#34;
+	width=&#34;2500&#34;
+	height=&#34;1245&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1_hu7622275712856060269.png 480w, https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1_hu4322827598380581836.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CTex官网&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;200&#34;
+		data-flex-basis=&#34;481px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;wps&#34;&gt;WPS
+
+
+&lt;/h3&gt;
+
+
+&lt;p&gt;从2025年开始，WPS新增了LaTex公式的支持。在文档里点击插入 -&amp;gt; 公式 -&amp;gt; 插入LaTex公式&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2.png&#34;
+	width=&#34;1204&#34;
+	height=&#34;306&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2_hu10793823313666080271.png 480w, https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2_hu15768457423045720071.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;WPS使用LaTex公式&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;393&#34;
+		data-flex-basis=&#34;944px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;katexjs&#34;&gt;KaTex.js
+
+
+&lt;/h3&gt;
+
+
+&lt;p&gt;如果你懂前端，可以将KaTex.js包导入到网站中，在网页中使用数学公式，例如本站就是。&lt;/p&gt;
+&lt;p&gt;js包官网：&lt;a class=&#34;link&#34; href=&#34;https://github.com/KaTeX/KaTeX&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;KeTex.js&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3.png&#34;
+	width=&#34;1214&#34;
+	height=&#34;713&#34;
+	srcset=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3_hu6454335134044025345.png 480w, https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3_hu18148369173915231284.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Katex.js&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;170&#34;
+		data-flex-basis=&#34;408px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;小测&#34;&gt;小测
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;请用 LaTex 格式书写下面题目的解题过程（很简单）：&lt;/p&gt;
+&lt;h3 id=&#34;1&#34;&gt;1
+
+
+&lt;/h3&gt;
+
+
+&lt;p&gt;（微积分）求定积分：&lt;/p&gt;
+$$
+\int_0^1 \frac{1}{(x+1)(x^2-2x+2)}dx.
+$$&lt;h3 id=&#34;2&#34;&gt;2
+
+
+&lt;/h3&gt;
+
+
+&lt;p&gt;（物理）$10g$ 氢气吸收 $1000J$ 的热量时，压强未发生改变，它原来的温度是 $300K$ ，最后的温度是多少？&lt;/p&gt;
+&lt;h3 id=&#34;3&#34;&gt;3
+
+
+&lt;/h3&gt;
+
+
+&lt;p&gt;（概率论）一个群体中有一下个体：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;$k$个纯合显性个体（AA）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$m$个杂合子个体（Aa）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$n$个纯合隐性个体（aa）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​要求​：计算随机选取两个个体交配时，后代携带至少一个显性等位基因（即表现为显性性状）的概率。假设任意两个个体均可交配。&lt;/p&gt;
 </description>
         </item>
         <item>
