@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Sun, 18 May 2025 20:22:33 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 02 Jun 2025 21:05:13 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Docker实战：构建镜像</title>
         <link>https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/</link>
         <pubDate>Sun, 18 May 2025 16:07:17 +0800</pubDate>
@@ -263,7 +263,49 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;服务可以在外部访问了！！！&lt;/p&gt;
-</description>
+&lt;h2 id=&#34;文件同步&#34;&gt;文件同步
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;为了实现镜像内文件的实时更新，需要在创建容器前加入 &lt;code&gt;-v&lt;/code&gt; 选项，后跟 &lt;code&gt;主机绝对路径:容器绝对路径&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker -d -v /.../hello/:/ztc -p 3000:3000 hello-container
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;文件同步是双向的，容器内文件的改变，主机也会改变。&lt;/p&gt;
+&lt;p&gt;如果想让主机只读，即容器改变后主机不变，可在 &lt;code&gt;.../ztc&lt;/code&gt; 后加&lt;code&gt;ro&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker -d -v /.../hello/:/ztc:ro -p 3000:3000 hello-container
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;第二个 &lt;code&gt;-v&lt;/code&gt; 可以设置不想同步的文件夹，
+如 &lt;code&gt;-v /ztc/node_modules&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;容器删除&#34;&gt;容器删除
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;删除时最好对应把 &lt;code&gt;volume&lt;/code&gt; 删除掉。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker rm -fv hello-container
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>Docker实战：运行一个容器</title>

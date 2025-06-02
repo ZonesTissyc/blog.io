@@ -10,7 +10,7 @@
 <meta property='og:description' content="下面是用 node.js 搭建一个简单的网页服务，并构建成 Docker 镜像，并运行容器，使外部能访问这个网页。\n简单写个网页\r首先安装一下 npm：\n1 sudo apt install npm 初始化 npm 项目：\n1 npm init -y npm 安装 express 框架：\n1 npm install express 简单写一个 js 文件:\n1 2 3 4 5 6 7 8 9 const express = require(&#34;express&#34;); const app = express(); const PORT = 3000; app.get(&#34;/&#34;, (req, res) =&gt; { res.send(&#34;&lt;p&gt;智能感知——服务调度&lt;/p&gt;&#34;); }); app.listen(PORT,() =&gt; console.log(&#34;端口号3000走起&#34;)); 上面会在 3000 端口运行一个 html 服务。\n">
 <meta property='og:url' content='https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-18T16:07:17&#43;08:00'/><meta property='article:modified_time' content='2025-05-18T20:22:33&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-18T16:07:17&#43;08:00'/><meta property='article:modified_time' content='2025-06-02T21:05:13&#43;08:00'/>
 <meta name="twitter:title" content="Docker实战：构建镜像">
 <meta name="twitter:description" content="下面是用 node.js 搭建一个简单的网页服务，并构建成 Docker 镜像，并运行容器，使外部能访问这个网页。\n简单写个网页\r首先安装一下 npm：\n1 sudo apt install npm 初始化 npm 项目：\n1 npm init -y npm 安装 express 框架：\n1 npm install express 简单写一个 js 文件:\n1 2 3 4 5 6 7 8 9 const express = require(&#34;express&#34;); const app = express(); const PORT = 3000; app.get(&#34;/&#34;, (req, res) =&gt; { res.send(&#34;&lt;p&gt;智能感知——服务调度&lt;/p&gt;&#34;); }); app.listen(PORT,() =&gt; console.log(&#34;端口号3000走起&#34;)); 上面会在 3000 端口运行一个 html 服务。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -277,6 +277,8 @@
     <li><a href="#配置忽略文件">配置忽略文件</a></li>
     <li><a href="#构建镜像">构建镜像</a></li>
     <li><a href="#运行容器">运行容器</a></li>
+    <li><a href="#文件同步">文件同步</a></li>
+    <li><a href="#容器删除">容器删除</a></li>
   </ol>
 </nav>
         </div>
@@ -607,7 +609,49 @@
 	
 ></p>
 <p>服务可以在外部访问了！！！</p>
+<h2 id="文件同步">文件同步
 
+
+</h2>
+
+
+<p>为了实现镜像内文件的实时更新，需要在创建容器前加入 <code>-v</code> 选项，后跟 <code>主机绝对路径:容器绝对路径</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker -d -v /.../hello/:/ztc -p 3000:3000 hello-container
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>文件同步是双向的，容器内文件的改变，主机也会改变。</p>
+<p>如果想让主机只读，即容器改变后主机不变，可在 <code>.../ztc</code> 后加<code>ro</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker -d -v /.../hello/:/ztc:ro -p 3000:3000 hello-container
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>第二个 <code>-v</code> 可以设置不想同步的文件夹，
+如 <code>-v /ztc/node_modules</code>。</p>
+<h2 id="容器删除">容器删除
+
+
+</h2>
+
+
+<p>删除时最好对应把 <code>volume</code> 删除掉。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker rm -fv hello-container
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -636,7 +680,7 @@
 
 
         <span>
-            最后更新于 2025年5月18日 20:22
+            最后更新于 2025年6月2日 21:05
         </span>
     </section></footer>
 
