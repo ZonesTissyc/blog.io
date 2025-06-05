@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.ztcdream.top/en/categories/</loc>
+    <loc>https://blog.ztcdream.com/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.ztcdream.top/categories/"
+                href="https://blog.ztcdream.com/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://blog.ztcdream.top/ar/categories/"
+                href="https://blog.ztcdream.com/ar/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.ztcdream.top/en/categories/"
+                href="https://blog.ztcdream.com/en/categories/"
                 />
   </url><url>
-    <loc>https://blog.ztcdream.top/en/</loc>
+    <loc>https://blog.ztcdream.com/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.ztcdream.top/"
+                href="https://blog.ztcdream.com/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://blog.ztcdream.top/ar/"
+                href="https://blog.ztcdream.com/ar/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.ztcdream.top/en/"
+                href="https://blog.ztcdream.com/en/"
                 />
   </url><url>
-    <loc>https://blog.ztcdream.top/en/tags/</loc>
+    <loc>https://blog.ztcdream.com/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://blog.ztcdream.top/tags/"
+                href="https://blog.ztcdream.com/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://blog.ztcdream.top/ar/tags/"
+                href="https://blog.ztcdream.com/ar/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.ztcdream.top/en/tags/"
+                href="https://blog.ztcdream.com/en/tags/"
                 />
   </url>
 </urlset>

@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="初识LaTex数学公式\r我们已经知道，计算机能够显示文字，大致要经历下面的过程：将文字 编码 ，利于计算机的识别与存储；显示文字时 解码 ，依据编码系统将文字进行翻译；最后是 渲染，将文字以可见的形式显示，通常是显示文字对应的矢量图。\n对于每一个文字，可以设计好一套编解码系统，对应编码设计对应的文字矢量图。这样就可以实现 文字 -&gt; 编码 -&gt; 矢量图 的 映射。\n那么，复杂的数学公式是否可以像文字一样简单地表示呢？\n在概率论中，正太分布的分布函数为：\n$$ F(x) = \\frac{1}{\\sqrt{2 \\pi} \\sigma} \\int_{- \\infty}^{x} e^{-\\frac{(x- \\mu)^2}{2 \\sigma^2}} dx. $$这是一个相当复杂的公式：包含了分数、根号、指数、积分符号和特殊常数（圆周率和自然对数底）。\n用 LaTex 可以很简单地表示：\n1 F(x) = \\frac{1}{\\sqrt{2 \\pi} \\sigma} \\int_{- \\infty}^{x} e^{-\\frac{(x- \\mu)^2}{2 \\sigma^2}} dx. LaTex 本质上与 HTML 一样，都是 标记语言，用于代码化地组织和构建文本、图像等 元素，并将 元素 可视化。在数学公式方面， LaTex 几乎是所有前端的首选项。\nLaTex数学公式\r在LaTex中，数学公式要包含在 $$，\\[ \\]等声明符号内，表明内部是数学公式的代码。最常见的是使用 $ $。\n如表示刚才的正太分布函数，可以写成：\n1 2 3 $$ F(x) = \\frac{1}{\\sqrt{2 \\pi} \\sigma} \\int_{- \\infty}^{x} e^{-\\frac{(x- \\mu)^2}{2 \\sigma^2}} dx. $$ LaTex数学公式是有着一定的结构的。{ } 内的代码将会是一个整体，^{ } 表示上标，_{ } 表示下标。当一个元素既有上标又要下标时，先写下标再写上标。\n">
 <title>LaTex核心出装——数学公式</title>
 
-<link rel='canonical' href='https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/'>
+<link rel='canonical' href='https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="LaTex核心出装——数学公式">
 <meta property='og:description' content="初识LaTex数学公式\r我们已经知道，计算机能够显示文字，大致要经历下面的过程：将文字 编码 ，利于计算机的识别与存储；显示文字时 解码 ，依据编码系统将文字进行翻译；最后是 渲染，将文字以可见的形式显示，通常是显示文字对应的矢量图。\n对于每一个文字，可以设计好一套编解码系统，对应编码设计对应的文字矢量图。这样就可以实现 文字 -&gt; 编码 -&gt; 矢量图 的 映射。\n那么，复杂的数学公式是否可以像文字一样简单地表示呢？\n在概率论中，正太分布的分布函数为：\n$$ F(x) = \\frac{1}{\\sqrt{2 \\pi} \\sigma} \\int_{- \\infty}^{x} e^{-\\frac{(x- \\mu)^2}{2 \\sigma^2}} dx. $$这是一个相当复杂的公式：包含了分数、根号、指数、积分符号和特殊常数（圆周率和自然对数底）。\n用 LaTex 可以很简单地表示：\n1 F(x) = \\frac{1}{\\sqrt{2 \\pi} \\sigma} \\int_{- \\infty}^{x} e^{-\\frac{(x- \\mu)^2}{2 \\sigma^2}} dx. LaTex 本质上与 HTML 一样，都是 标记语言，用于代码化地组织和构建文本、图像等 元素，并将 元素 可视化。在数学公式方面， LaTex 几乎是所有前端的首选项。\nLaTex数学公式\r在LaTex中，数学公式要包含在 $$，\\[ \\]等声明符号内，表明内部是数学公式的代码。最常见的是使用 $ $。\n如表示刚才的正太分布函数，可以写成：\n1 2 3 $$ F(x) = \\frac{1}{\\sqrt{2 \\pi} \\sigma} \\int_{- \\infty}^{x} e^{-\\frac{(x- \\mu)^2}{2 \\sigma^2}} dx. $$ LaTex数学公式是有着一定的结构的。{ } 内的代码将会是一个整体，^{ } 表示上标，_{ } 表示下标。当一个元素既有上标又要下标时，先写下标再写上标。\n">
-<meta property='og:url' content='https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/'>
+<meta property='og:url' content='https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='LaTex' /><meta property='article:tag' content='数学表达式' /><meta property='article:tag' content='数学建模' /><meta property='article:published_time' content='2025-05-14T17:53:22&#43;08:00'/><meta property='article:modified_time' content='2025-05-14T17:53:22&#43;08:00'/>
 <meta name="twitter:title" content="LaTex核心出装——数学公式">
@@ -213,11 +213,11 @@
 
                             <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
                                 
-                                    <option value="https://blog.ztcdream.top/en/" >English</option>
+                                    <option value="https://blog.ztcdream.com/en/" >English</option>
                                 
-                                    <option value="https://blog.ztcdream.top/" selected>中文</option>
+                                    <option value="https://blog.ztcdream.com/" selected>中文</option>
                                 
-                                    <option value="https://blog.ztcdream.top/ar/" >عربي</option>
+                                    <option value="https://blog.ztcdream.com/ar/" >عربي</option>
                                 
                             </select>
                         </li>

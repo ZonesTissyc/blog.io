@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="错误呈现\r给出$3$阶矩阵$|A|=\\frac{1}{2}$，求$|A^*|$.\n一看有$|A|$和$|A^*|$，很容易联想到伴随矩阵的性质：\n$$\rAA^*=A*A=|A|E\r$$则\n$$\r\\begin{aligned}\r|AA^*| =|A||A^*|&=||A|E| \\\\\r&= |A||E| \\\\\r&= |A|\r\\end{aligned}\r$$两边约去$|A|$，得\n$$\r|A^*|=1\r$$似乎题目给出的$|A|=\\frac{1}{2}$是多余的。\n错误分析\r但是，这对吗？\n这不对！\n问题就出在将$||A|E|$最外层的 $||$去掉这一步\n$$\r\\begin{aligned}\r||A|E| & \\ne |A||E| \\\\\r||A|E| &= |A|^3|E| \\\\\r&= |A|^3\r\\end{aligned}\r$$总结\r因此对于一个$n$阶矩阵$A$，$A$可逆，那么伴随矩阵：\n$$\r\\begin{aligned}\r|A^*|=|A|^{n-1}\r\\end{aligned}\r$$">
 <title>（易错）求伴随矩阵的行列式</title>
 
-<link rel='canonical' href='https://blog.ztcdream.top/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/'>
+<link rel='canonical' href='https://blog.ztcdream.com/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="（易错）求伴随矩阵的行列式">
 <meta property='og:description' content="错误呈现\r给出$3$阶矩阵$|A|=\\frac{1}{2}$，求$|A^*|$.\n一看有$|A|$和$|A^*|$，很容易联想到伴随矩阵的性质：\n$$\rAA^*=A*A=|A|E\r$$则\n$$\r\\begin{aligned}\r|AA^*| =|A||A^*|&=||A|E| \\\\\r&= |A||E| \\\\\r&= |A|\r\\end{aligned}\r$$两边约去$|A|$，得\n$$\r|A^*|=1\r$$似乎题目给出的$|A|=\\frac{1}{2}$是多余的。\n错误分析\r但是，这对吗？\n这不对！\n问题就出在将$||A|E|$最外层的 $||$去掉这一步\n$$\r\\begin{aligned}\r||A|E| & \\ne |A||E| \\\\\r||A|E| &= |A|^3|E| \\\\\r&= |A|^3\r\\end{aligned}\r$$总结\r因此对于一个$n$阶矩阵$A$，$A$可逆，那么伴随矩阵：\n$$\r\\begin{aligned}\r|A^*|=|A|^{n-1}\r\\end{aligned}\r$$">
-<meta property='og:url' content='https://blog.ztcdream.top/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/'>
+<meta property='og:url' content='https://blog.ztcdream.com/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-16T20:39:48&#43;08:00'/><meta property='article:modified_time' content='2025-04-16T20:39:48&#43;08:00'/>
 <meta name="twitter:title" content="（易错）求伴随矩阵的行列式">
@@ -213,11 +213,11 @@
 
                             <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
                                 
-                                    <option value="https://blog.ztcdream.top/en/" >English</option>
+                                    <option value="https://blog.ztcdream.com/en/" >English</option>
                                 
-                                    <option value="https://blog.ztcdream.top/" selected>中文</option>
+                                    <option value="https://blog.ztcdream.com/" selected>中文</option>
                                 
-                                    <option value="https://blog.ztcdream.top/ar/" >عربي</option>
+                                    <option value="https://blog.ztcdream.com/ar/" >عربي</option>
                                 
                             </select>
                         </li>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Privates on ZTC&#39;Blog</title>
-        <link>https://blog.ztcdream.top/private/</link>
+        <link>https://blog.ztcdream.com/private/</link>
         <description>Recent content in Privates on ZTC&#39;Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Fri, 16 May 2025 20:57:01 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/private/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 16 May 2025 20:57:01 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/private/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>调度-学习周报-13周</title>
-        <link>https://blog.ztcdream.top/private/%E5%91%A8%E6%8A%A51/</link>
+        <link>https://blog.ztcdream.com/private/%E5%91%A8%E6%8A%A51/</link>
         <pubDate>Fri, 16 May 2025 19:19:01 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/private/%E5%91%A8%E6%8A%A51/</guid>
+        <guid>https://blog.ztcdream.com/private/%E5%91%A8%E6%8A%A51/</guid>
         <description>&lt;h2 id=&#34;学习内容&#34;&gt;学习内容
 
 
@@ -50,10 +50,10 @@
         </item>
         <item>
         <title>光线传播问题</title>
-        <link>https://blog.ztcdream.top/private/ray/</link>
+        <link>https://blog.ztcdream.com/private/ray/</link>
         <pubDate>Wed, 09 Apr 2025 17:33:19 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/private/ray/</guid>
+        <guid>https://blog.ztcdream.com/private/ray/</guid>
         <description>&lt;h2 id=&#34;问题重述&#34;&gt;问题重述
 
 
@@ -61,10 +61,10 @@
 
 
 &lt;p&gt;该问题源自我们 &lt;strong&gt;Linux&lt;/strong&gt; 课题小组选择的期末课程项目，原题来自浙江大学的陈宇璟教授。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/iq2nsc.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/iq2nsc.png&#34;
 	width=&#34;1264&#34;
 	height=&#34;964&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/iq2nsc_hu16459431944627486795.png 480w, https://blog.ztcdream.top/private/ray/iq2nsc_hu14165584928709936090.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/iq2nsc_hu16459431944627486795.png 480w, https://blog.ztcdream.com/private/ray/iq2nsc_hu14165584928709936090.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;光线传播问题&#34;
@@ -75,10 +75,10 @@
 		data-flex-basis=&#34;314px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/irelh4.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/irelh4.png&#34;
 	width=&#34;910&#34;
 	height=&#34;978&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/irelh4_hu5353994031652416711.png 480w, https://blog.ztcdream.top/private/ray/irelh4_hu4104413764410786150.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/irelh4_hu5353994031652416711.png 480w, https://blog.ztcdream.com/private/ray/irelh4_hu4104413764410786150.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;光线传播问题——输入输出样例&#34;
@@ -126,10 +126,10 @@ t_y = d_y(m+\frac{d_y-1}{2})
 $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。&lt;/p&gt;
 &lt;p&gt;一个初始值为 $0$ 的网格，寻找光源传播到该网格的最短时间，可以分为四个方向，沿着每个方向查找光源，计算途径与途径的光源的传播时间，保留最小值，直至传播终止。四个方向的传播时间再一次选取最小值。&lt;/p&gt;
 &lt;p&gt;依照这个思路，我们组设计的 $bash$ 脚本的程序流程图如下，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/mmexport1746928093860.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/mmexport1746928093860.png&#34;
 	width=&#34;271&#34;
 	height=&#34;858&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/mmexport1746928093860_hu2331413157487899223.png 480w, https://blog.ztcdream.top/private/ray/mmexport1746928093860_hu12400624065675144797.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/mmexport1746928093860_hu2331413157487899223.png 480w, https://blog.ztcdream.com/private/ray/mmexport1746928093860_hu12400624065675144797.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;反向查找法-流程图&#34;
@@ -423,10 +423,10 @@ $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。
 
 &lt;p&gt;之前有提到，这个题目正向做确实不太好想，而反向查找的思路是容易想到，并且实现起来也是简单的。&lt;/p&gt;
 &lt;p&gt;但方法一反向查找光源的算法，在某些情况下效率并不高，特别是当网格较大，但光源较少时，如下图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/image1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/image1.png&#34;
 	width=&#34;976&#34;
 	height=&#34;666&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/image1_hu10773499664684810440.png 480w, https://blog.ztcdream.top/private/ray/image1_hu16648666198357395478.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/image1_hu10773499664684810440.png 480w, https://blog.ztcdream.com/private/ray/image1_hu16648666198357395478.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;网格大，光源少&#34;
@@ -447,10 +447,10 @@ $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。
 
 
 &lt;p&gt;上个世纪50年代，荷兰科学家迪杰斯特拉（&lt;em&gt;Dijkstra&lt;/em&gt;）在咖啡馆喝咖啡时，无意间想出了有向带权图中寻找最短路径的问题。由于该算法对编程界的突出贡献，Dijkstra获得了1972年的图灵奖。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/Dijkstra.webp&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/Dijkstra.webp&#34;
 	width=&#34;429&#34;
 	height=&#34;655&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/Dijkstra_hu2056605823401281306.webp 480w, https://blog.ztcdream.top/private/ray/Dijkstra_hu16339569547014817987.webp 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/Dijkstra_hu2056605823401281306.webp 480w, https://blog.ztcdream.com/private/ray/Dijkstra_hu16339569547014817987.webp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;迪杰斯特拉-年轻时&#34;
@@ -487,10 +487,10 @@ $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;例如，对于一个有向带权图，利用Dijkstra算法的流程如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98.jpg&#34;
 	width=&#34;2911&#34;
 	height=&#34;1313&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98_hu15919519063508922805.jpg 480w, https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98_hu8047489384402841642.jpg 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98_hu15919519063508922805.jpg 480w, https://blog.ztcdream.com/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98_hu8047489384402841642.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Dijkstra算法例题&#34;
@@ -501,10 +501,10 @@ $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。
 		data-flex-basis=&#34;532px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3.jpg&#34;
 	width=&#34;2910&#34;
 	height=&#34;1744&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3_hu295793877873331234.jpg 480w, https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3_hu1800598431047432404.jpg 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3_hu295793877873331234.jpg 480w, https://blog.ztcdream.com/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3_hu1800598431047432404.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Dijkstra算法例题解&#34;

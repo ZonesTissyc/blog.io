@@ -2,50 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on ZTC&#39;Blog</title>
-        <link>https://blog.ztcdream.top/categories/</link>
+        <link>https://blog.ztcdream.com/categories/</link>
         <description>Recent content in Categories on ZTC&#39;Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Wed, 14 May 2025 17:53:22 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 14 May 2025 17:53:22 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>数学</title>
-        <link>https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/</link>
+        <link>https://blog.ztcdream.com/categories/%E6%95%B0%E5%AD%A6/</link>
         <pubDate>Wed, 14 May 2025 17:53:22 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/</guid>
-        <description>&lt;img src="https://blog.ztcdream.top/categories/%E6%95%B0%E5%AD%A6/math.jpg" alt="Featured image of post 数学" /&gt;</description>
+        <guid>https://blog.ztcdream.com/categories/%E6%95%B0%E5%AD%A6/</guid>
+        <description>&lt;img src="https://blog.ztcdream.com/categories/%E6%95%B0%E5%AD%A6/math.jpg" alt="Featured image of post 数学" /&gt;</description>
         </item>
         <item>
         <title>编程</title>
-        <link>https://blog.ztcdream.top/categories/%E7%BC%96%E7%A8%8B/</link>
+        <link>https://blog.ztcdream.com/categories/%E7%BC%96%E7%A8%8B/</link>
         <pubDate>Sun, 20 Apr 2025 17:09:00 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/categories/%E7%BC%96%E7%A8%8B/</guid>
-        <description>&lt;img src="https://blog.ztcdream.top/categories/%E7%BC%96%E7%A8%8B/Prog-languages.png" alt="Featured image of post 编程" /&gt;</description>
+        <guid>https://blog.ztcdream.com/categories/%E7%BC%96%E7%A8%8B/</guid>
+        <description>&lt;img src="https://blog.ztcdream.com/categories/%E7%BC%96%E7%A8%8B/Prog-languages.png" alt="Featured image of post 编程" /&gt;</description>
         </item>
         <item>
         <title>Linux</title>
-        <link>https://blog.ztcdream.top/categories/linux/</link>
+        <link>https://blog.ztcdream.com/categories/linux/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.ztcdream.top/categories/linux/</guid>
-        <description>&lt;img src="https://blog.ztcdream.top/categories/linux/Tux.svg.png" alt="Featured image of post Linux" /&gt;</description>
+        <guid>https://blog.ztcdream.com/categories/linux/</guid>
+        <description>&lt;img src="https://blog.ztcdream.com/categories/linux/Tux.svg.png" alt="Featured image of post Linux" /&gt;</description>
         </item>
         <item>
         <title>Test</title>
-        <link>https://blog.ztcdream.top/categories/test/</link>
+        <link>https://blog.ztcdream.com/categories/test/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.ztcdream.top/categories/test/</guid>
-        <description>&lt;img src="https://blog.ztcdream.top/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
+        <guid>https://blog.ztcdream.com/categories/test/</guid>
+        <description>&lt;img src="https://blog.ztcdream.com/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
         </item>
         <item>
         <title>化学</title>
-        <link>https://blog.ztcdream.top/categories/%E5%8C%96%E5%AD%A6/</link>
+        <link>https://blog.ztcdream.com/categories/%E5%8C%96%E5%AD%A6/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.ztcdream.top/categories/%E5%8C%96%E5%AD%A6/</guid>
-        <description>&lt;img src="https://blog.ztcdream.top/categories/%E5%8C%96%E5%AD%A6/csm_Website_16zu9_94_Chemicals_RGB_g_ca08d41db7.webp" alt="Featured image of post 化学" /&gt;</description>
+        <guid>https://blog.ztcdream.com/categories/%E5%8C%96%E5%AD%A6/</guid>
+        <description>&lt;img src="https://blog.ztcdream.com/categories/%E5%8C%96%E5%AD%A6/csm_Website_16zu9_94_Chemicals_RGB_g_ca08d41db7.webp" alt="Featured image of post 化学" /&gt;</description>
         </item>
         
     </channel>

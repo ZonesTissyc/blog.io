@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="实验背景\r时间复杂度 是为了计量算法的运行效率而提出的概念。\n估测一个代码运行效率最简单的办法是记录程序的运行时间，运行时间短则效率高。但程序的运行时间往往受到计算机硬件、操作系统、编程语言和编译器等的影响。对于同一个程序，在14代Intel CPU上运行，普遍比12代 Intel CPU快；同样的代码，在Linux上可能比Windows平台快；同样的算法，用c语言实现的可能比Python实现的快；同一个c语言代码，经过clang编译可能比g++编译的更快。\n因此需要一个定量的计量方法，把算法的实际运行时间抽象为理论执行步数。计算时间复杂度，最广泛使用的是 大O记法。用 $T(n)$ 来表示程序的执行步数，参数 $n$ 为问题规模。$T(n)$是关于 $n$ 函数，当 $n$ 很大时，$T(n)$ 中的很多项可以忽略不记，如\n$$\rT(n) = 5n^3 + 3n^2 + 2log_2n + 10000\r$$当 $n \\to \\infty$ 时，$3n^2$，$2log_2n$，$10000$ 在 $5n^3$ 面前显得很小，可以舍去。$n$ 的三次项的系数 $5$ 也影响不大，也可以舍去。最后就有\n$$\rT(n) \\sim n^3\r$$因此记该算法的大$O$记法为 $O(n^3)$。\n常见的大 $O$ 函数 $f(n)$ ：\n$f(n)$ 名称 $1$ 常数 $logn$ 对数 $n$ 线性 $nlogn$ 线性对数 $n^2$ 平方 $n^3$ 立方 $2^n$ 指数 对于为 $O(1)$ 的程序，时间复杂度不会随问题规模 $n$ 的增大而增大，即 $T(n)=k$ 。\n">
 <title>（实验）证明列表索引操作的时间复杂度为常数阶</title>
 
-<link rel='canonical' href='https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/'>
+<link rel='canonical' href='https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="（实验）证明列表索引操作的时间复杂度为常数阶">
 <meta property='og:description' content="实验背景\r时间复杂度 是为了计量算法的运行效率而提出的概念。\n估测一个代码运行效率最简单的办法是记录程序的运行时间，运行时间短则效率高。但程序的运行时间往往受到计算机硬件、操作系统、编程语言和编译器等的影响。对于同一个程序，在14代Intel CPU上运行，普遍比12代 Intel CPU快；同样的代码，在Linux上可能比Windows平台快；同样的算法，用c语言实现的可能比Python实现的快；同一个c语言代码，经过clang编译可能比g++编译的更快。\n因此需要一个定量的计量方法，把算法的实际运行时间抽象为理论执行步数。计算时间复杂度，最广泛使用的是 大O记法。用 $T(n)$ 来表示程序的执行步数，参数 $n$ 为问题规模。$T(n)$是关于 $n$ 函数，当 $n$ 很大时，$T(n)$ 中的很多项可以忽略不记，如\n$$\rT(n) = 5n^3 + 3n^2 + 2log_2n + 10000\r$$当 $n \\to \\infty$ 时，$3n^2$，$2log_2n$，$10000$ 在 $5n^3$ 面前显得很小，可以舍去。$n$ 的三次项的系数 $5$ 也影响不大，也可以舍去。最后就有\n$$\rT(n) \\sim n^3\r$$因此记该算法的大$O$记法为 $O(n^3)$。\n常见的大 $O$ 函数 $f(n)$ ：\n$f(n)$ 名称 $1$ 常数 $logn$ 对数 $n$ 线性 $nlogn$ 线性对数 $n^2$ 平方 $n^3$ 立方 $2^n$ 指数 对于为 $O(1)$ 的程序，时间复杂度不会随问题规模 $n$ 的增大而增大，即 $T(n)=k$ 。\n">
-<meta property='og:url' content='https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/'>
+<meta property='og:url' content='https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:tag' content='统计' /><meta property='article:tag' content='Python' /><meta property='article:tag' content='数学建模' /><meta property='article:published_time' content='2025-05-13T22:45:17&#43;08:00'/><meta property='article:modified_time' content='2025-05-13T22:45:17&#43;08:00'/>
 <meta name="twitter:title" content="（实验）证明列表索引操作的时间复杂度为常数阶">
@@ -213,11 +213,11 @@
 
                             <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
                                 
-                                    <option value="https://blog.ztcdream.top/en/" >English</option>
+                                    <option value="https://blog.ztcdream.com/en/" >English</option>
                                 
-                                    <option value="https://blog.ztcdream.top/" selected>中文</option>
+                                    <option value="https://blog.ztcdream.com/" selected>中文</option>
                                 
-                                    <option value="https://blog.ztcdream.top/ar/" >عربي</option>
+                                    <option value="https://blog.ztcdream.com/ar/" >عربي</option>
                                 
                             </select>
                         </li>

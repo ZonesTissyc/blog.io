@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>ZTC&#39;Blog</title>
-        <link>https://blog.ztcdream.top/</link>
+        <link>https://blog.ztcdream.com/</link>
         <description>Recent content on ZTC&#39;Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Mon, 02 Jun 2025 21:05:13 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 02 Jun 2025 21:05:13 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Docker实战：构建镜像</title>
-        <link>https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/</link>
+        <link>https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/</link>
         <pubDate>Sun, 18 May 2025 16:07:17 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/</guid>
+        <guid>https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/</guid>
         <description>&lt;p&gt;下面是用 node.js 搭建一个简单的网页服务，并构建成 Docker 镜像，并运行容器，使外部能访问这个网页。&lt;/p&gt;
 &lt;h2 id=&#34;简单写个网页&#34;&gt;简单写个网页
 
@@ -29,10 +29,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install npm
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1.png&#34;
 	width=&#34;1011&#34;
 	height=&#34;784&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1_hu7962955611841002930.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1_hu10344160251116701163.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1_hu7962955611841002930.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1_hu10344160251116701163.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;安装npm&#34;
@@ -61,10 +61,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install express
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2.png&#34;
 	width=&#34;830&#34;
 	height=&#34;260&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2_hu3761520844843435717.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2_hu9139059513392296672.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2_hu3761520844843435717.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2_hu9139059513392296672.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
@@ -166,10 +166,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;初次构建的时候是比较慢的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3.png&#34;
 	width=&#34;1420&#34;
 	height=&#34;498&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3_hu18408290578179626332.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3_hu1025205534792097217.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3_hu18408290578179626332.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3_hu1025205534792097217.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;构建镜像&#34;
@@ -189,10 +189,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker images
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4.png&#34;
 	width=&#34;949&#34;
 	height=&#34;182&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4_hu18104325224083274406.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4_hu17732034483123919492.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4_hu18104325224083274406.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4_hu17732034483123919492.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;镜像查看&#34;
@@ -214,10 +214,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;再看一下，发现改名成功了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5.png&#34;
 	width=&#34;924&#34;
 	height=&#34;176&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5_hu14927373379245951812.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5_hu1378711553163471533.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5_hu14927373379245951812.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5_hu1378711553163471533.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;镜像命名&#34;
@@ -248,10 +248,10 @@
 &lt;li&gt;&lt;code&gt;--name hello-container&lt;/code&gt; : 给容器起个名&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;在浏览器访问一下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6.png&#34;
 	width=&#34;642&#34;
 	height=&#34;414&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6_hu9333714914423142000.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6_hu10153937962945044318.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6_hu9333714914423142000.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6_hu10153937962945044318.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;访问端口&#34;
@@ -309,10 +309,10 @@
         </item>
         <item>
         <title>Docker实战：运行一个容器</title>
-        <link>https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/</link>
+        <link>https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/</link>
         <pubDate>Sun, 18 May 2025 14:46:10 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/</guid>
+        <guid>https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/</guid>
         <description>&lt;h2 id=&#34;运行helloworld&#34;&gt;运行hello,world
 
 
@@ -329,10 +329,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;run&lt;/code&gt; 表示要运行容器，后面跟的 &lt;code&gt;ubuntu:15.10&lt;/code&gt; 是镜像，本地不存在将从 Docker Hub 中拉取。 &lt;code&gt;/bin/echo &amp;quot;Hello world&amp;quot;&lt;/code&gt; 是启动镜像后执行的命令。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image1.png&#34;
 	width=&#34;895&#34;
 	height=&#34;228&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image1_hu3493998025205837134.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image1_hu17819426467697481577.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image1_hu3493998025205837134.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image1_hu17819426467697481577.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;执行docker run&#34;
@@ -343,10 +343,10 @@
 		data-flex-basis=&#34;942px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image2.png&#34;
 	width=&#34;926&#34;
 	height=&#34;272&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image2_hu2939640268755027008.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image2_hu523165122873099004.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image2_hu2939640268755027008.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image2_hu523165122873099004.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;docker运行结果&#34;
@@ -359,10 +359,10 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;直接 &lt;code&gt;dorcker run&lt;/code&gt; 后，不加其他参数，执行完 &lt;code&gt;shell&lt;/code&gt; 命令后容器就退出了。&lt;/p&gt;
 &lt;p&gt;这一点可以在 Protainer 中验证：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image3.png&#34;
 	width=&#34;957&#34;
 	height=&#34;274&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image3_hu5877279917796181566.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image3_hu13898183820035104901.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image3_hu5877279917796181566.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image3_hu13898183820035104901.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;执行后退出&#34;
@@ -381,10 +381,10 @@
 
 &lt;p&gt;想让容器后台运行，要在启动时加上 &lt;code&gt;-d&lt;/code&gt; 参数。这样，容器的标准输出就不会出现在主Shell上。&lt;/p&gt;
 &lt;p&gt;docker run -d ubuntu:15.10 /bin/sh -c &amp;ldquo;while true; do echo hello world; sleep 1; done&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image4.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image4.png&#34;
 	width=&#34;961&#34;
 	height=&#34;102&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image4_hu12799455406448289630.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image4_hu14560685922181489283.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image4_hu12799455406448289630.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image4_hu14560685922181489283.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;后台运行&#34;
@@ -405,10 +405,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker ps
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image5.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image5.png&#34;
 	width=&#34;977&#34;
 	height=&#34;206&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image5_hu8187311127736906468.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image5_hu12295061654320267861.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image5_hu8187311127736906468.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image5_hu12295061654320267861.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;docker ps&#34;
@@ -429,10 +429,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker logs fa9878
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image6.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image6.png&#34;
 	width=&#34;661&#34;
 	height=&#34;545&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image6_hu3926272597900205682.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image6_hu2425960583706217606.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image6_hu3926272597900205682.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image6_hu2425960583706217606.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;docker ps&#34;
@@ -454,10 +454,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;从面板中可以看到容器退出运行了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image7.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image7.png&#34;
 	width=&#34;1268&#34;
 	height=&#34;169&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image7_hu3339457471664246221.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image7_hu12658135927823480497.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image7_hu3339457471664246221.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image7_hu12658135927823480497.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;停止容器&#34;
@@ -480,10 +480,10 @@
         </item>
         <item>
         <title>专业英语词汇-计算机篇</title>
-        <link>https://blog.ztcdream.top/untabled/specializedenglish/</link>
+        <link>https://blog.ztcdream.com/untabled/specializedenglish/</link>
         <pubDate>Fri, 16 May 2025 21:01:10 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/untabled/specializedenglish/</guid>
+        <guid>https://blog.ztcdream.com/untabled/specializedenglish/</guid>
         <description>&lt;h2 id=&#34;基础词汇&#34;&gt;基础词汇
 
 
@@ -556,10 +556,10 @@
         </item>
         <item>
         <title>调度-学习周报-13周</title>
-        <link>https://blog.ztcdream.top/private/%E5%91%A8%E6%8A%A51/</link>
+        <link>https://blog.ztcdream.com/private/%E5%91%A8%E6%8A%A51/</link>
         <pubDate>Fri, 16 May 2025 19:19:01 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/private/%E5%91%A8%E6%8A%A51/</guid>
+        <guid>https://blog.ztcdream.com/private/%E5%91%A8%E6%8A%A51/</guid>
         <description>&lt;h2 id=&#34;学习内容&#34;&gt;学习内容
 
 
@@ -597,10 +597,10 @@
         </item>
         <item>
         <title>Debian服务器初始化及搭建docker环境</title>
-        <link>https://blog.ztcdream.top/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</link>
+        <link>https://blog.ztcdream.com/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</link>
         <pubDate>Thu, 15 May 2025 20:10:52 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</guid>
+        <guid>https://blog.ztcdream.com/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</guid>
         <description>&lt;h2 id=&#34;安装iso镜像&#34;&gt;安装iso镜像
 
 
@@ -796,10 +796,10 @@
         </item>
         <item>
         <title>LaTex核心出装——数学公式</title>
-        <link>https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link>
+        <link>https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link>
         <pubDate>Wed, 14 May 2025 17:53:22 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid>
+        <guid>https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid>
         <description>&lt;h2 id=&#34;初识latex数学公式&#34;&gt;初识LaTex数学公式
 
 
@@ -975,10 +975,10 @@ $$
 &lt;p&gt;&lt;strong&gt;CTex&lt;/strong&gt; 是LeTex的中国版，提供完整的 &lt;strong&gt;LaTex&lt;/strong&gt; 环境和针对中文的调教。&lt;/p&gt;
 &lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://ctex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;CTex官网&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1.png&#34;
 	width=&#34;2500&#34;
 	height=&#34;1245&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1_hu7622275712856060269.png 480w, https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1_hu4322827598380581836.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1_hu7622275712856060269.png 480w, https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1_hu4322827598380581836.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;CTex官网&#34;
@@ -996,10 +996,10 @@ $$
 
 
 &lt;p&gt;从2025年开始，WPS新增了LaTex公式的支持。在文档里点击插入 -&amp;gt; 公式 -&amp;gt; 插入LaTex公式&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2.png&#34;
 	width=&#34;1204&#34;
 	height=&#34;306&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2_hu10793823313666080271.png 480w, https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2_hu15768457423045720071.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2_hu10793823313666080271.png 480w, https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2_hu15768457423045720071.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;WPS使用LaTex公式&#34;
@@ -1019,10 +1019,10 @@ $$
 &lt;p&gt;如果你懂前端，可以将KaTex.js包导入到网站中，在网页中使用数学公式，例如本站就是。&lt;/p&gt;
 &lt;p&gt;js包官网：&lt;a class=&#34;link&#34; href=&#34;https://github.com/KaTeX/KaTeX&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;KeTex.js&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3.png&#34;
 	width=&#34;1214&#34;
 	height=&#34;713&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3_hu6454335134044025345.png 480w, https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3_hu18148369173915231284.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3_hu6454335134044025345.png 480w, https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3_hu18148369173915231284.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Katex.js&#34;
@@ -1079,10 +1079,10 @@ $$&lt;h3 id=&#34;2&#34;&gt;2
         </item>
         <item>
         <title>（实验）证明列表索引操作的时间复杂度为常数阶</title>
-        <link>https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</link>
+        <link>https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</link>
         <pubDate>Tue, 13 May 2025 22:45:17 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</guid>
+        <guid>https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</guid>
         <description>&lt;h2 id=&#34;实验背景&#34;&gt;实验背景
 
 
@@ -1339,10 +1339,10 @@ $$&lt;p&gt;因此记该算法的大$O$记法为 $O(n^3)$。&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;生成的图如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot.png&#34;
 	width=&#34;640&#34;
 	height=&#34;480&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu16719364411022916672.png 480w, https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu17976320647513155453.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu16719364411022916672.png 480w, https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu17976320647513155453.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;y-n散点图&#34;
@@ -1355,10 +1355,10 @@ $$&lt;p&gt;因此记该算法的大$O$记法为 $O(n^3)$。&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;p&gt;可以看到，随着 $n$ 增大，运行时间 $y$ 均在某个常数附近，只有极少数点偏离了常数。&lt;/p&gt;
 &lt;p&gt;控制台输出：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image.png&#34;
 	width=&#34;661&#34;
 	height=&#34;116&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu10457515959949624127.png 480w, https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu11565431011352655123.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu10457515959949624127.png 480w, https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu11565431011352655123.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;控制台输出&#34;
@@ -1387,10 +1387,10 @@ $$&lt;p&gt;可以看到 $x$ 的系数为 $0$ ，且相关系数也为 $0$ ，证
         </item>
         <item>
         <title>群体显性后代问题</title>
-        <link>https://blog.ztcdream.top/p/%E7%BE%A4%E4%BD%93%E6%98%BE%E6%80%A7%E5%90%8E%E4%BB%A3%E9%97%AE%E9%A2%98/</link>
+        <link>https://blog.ztcdream.com/p/%E7%BE%A4%E4%BD%93%E6%98%BE%E6%80%A7%E5%90%8E%E4%BB%A3%E9%97%AE%E9%A2%98/</link>
         <pubDate>Fri, 02 May 2025 19:13:02 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E7%BE%A4%E4%BD%93%E6%98%BE%E6%80%A7%E5%90%8E%E4%BB%A3%E9%97%AE%E9%A2%98/</guid>
+        <guid>https://blog.ztcdream.com/p/%E7%BE%A4%E4%BD%93%E6%98%BE%E6%80%A7%E5%90%8E%E4%BB%A3%E9%97%AE%E9%A2%98/</guid>
         <description>&lt;h2 id=&#34;问题描述&#34;&gt;问题描述
 
 
@@ -1456,10 +1456,10 @@ $$</description>
         </item>
         <item>
         <title>VSCode配置ssh密钥登陆</title>
-        <link>https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/</link>
+        <link>https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/</link>
         <pubDate>Tue, 29 Apr 2025 10:35:43 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/</guid>
+        <guid>https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/</guid>
         <description>&lt;h2 id=&#34;需求&#34;&gt;需求
 
 
@@ -1492,10 +1492,10 @@ $$</description>
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;连续按三次回车，看到 &lt;code&gt;The key&#39;s randomart image is:&lt;/code&gt; 表明成功生成ssh密钥。&lt;/p&gt;
 &lt;p&gt;如图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq.png&#34;
 	width=&#34;1261&#34;
 	height=&#34;853&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq_hu2134800503513921767.png 480w, https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq_hu9620829789317796647.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq_hu2134800503513921767.png 480w, https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq_hu9620829789317796647.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;powershell 生成ssh密钥&#34;
@@ -1522,10 +1522,10 @@ $$</description>
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cat &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ssh&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id_rsa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;pub&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug.png&#34;
 	width=&#34;1294&#34;
 	height=&#34;407&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug_hu14337773189692562485.png 480w, https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug_hu2620534302694373421.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug_hu14337773189692562485.png 480w, https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug_hu2620534302694373421.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;查看公钥内容&#34;
@@ -1549,10 +1549,10 @@ $$</description>
         </item>
         <item>
         <title>服务器自动拉取仓库</title>
-        <link>https://blog.ztcdream.top/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/</link>
+        <link>https://blog.ztcdream.com/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/</link>
         <pubDate>Sun, 20 Apr 2025 17:15:09 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/</guid>
+        <guid>https://blog.ztcdream.com/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/</guid>
         <description>&lt;h2 id=&#34;问题引入&#34;&gt;问题引入
 
 
@@ -1788,10 +1788,10 @@ $$</description>
         </item>
         <item>
         <title>（易错）C&#43;&#43;的作用域概念</title>
-        <link>https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/</link>
+        <link>https://blog.ztcdream.com/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/</link>
         <pubDate>Sun, 20 Apr 2025 17:09:00 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/</guid>
+        <guid>https://blog.ztcdream.com/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/</guid>
         <description>&lt;h2 id=&#34;这不对吧从一个例子讲起&#34;&gt;这不对吧？从一个例子讲起
 
 
@@ -1818,10 +1818,10 @@ $$</description>
 &lt;/div&gt;&lt;p&gt;提问：&lt;strong&gt;上面会输出什么？&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;你心想：这还用问，b=a=8，当然输出8了。&lt;/p&gt;
 &lt;p&gt;然而，结果却是&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw.png&#34;
 	width=&#34;536&#34;
 	height=&#34;65&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw_hu10486427257122952950.png 480w, https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw_hu5385925776908398024.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw_hu10486427257122952950.png 480w, https://blog.ztcdream.com/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw_hu5385925776908398024.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;b未定义&#34;
@@ -2128,10 +2128,10 @@ $$</description>
         </item>
         <item>
         <title>（易错）求伴随矩阵的行列式</title>
-        <link>https://blog.ztcdream.top/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/</link>
+        <link>https://blog.ztcdream.com/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/</link>
         <pubDate>Wed, 16 Apr 2025 20:39:48 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/</guid>
+        <guid>https://blog.ztcdream.com/p/%E6%98%93%E9%94%99%E6%B1%82%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/</guid>
         <description>&lt;h2 id=&#34;错误呈现&#34;&gt;错误呈现
 
 
@@ -2183,10 +2183,10 @@ $$</description>
         </item>
         <item>
         <title>光线传播问题</title>
-        <link>https://blog.ztcdream.top/private/ray/</link>
+        <link>https://blog.ztcdream.com/private/ray/</link>
         <pubDate>Wed, 09 Apr 2025 17:33:19 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/private/ray/</guid>
+        <guid>https://blog.ztcdream.com/private/ray/</guid>
         <description>&lt;h2 id=&#34;问题重述&#34;&gt;问题重述
 
 
@@ -2194,10 +2194,10 @@ $$</description>
 
 
 &lt;p&gt;该问题源自我们 &lt;strong&gt;Linux&lt;/strong&gt; 课题小组选择的期末课程项目，原题来自浙江大学的陈宇璟教授。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/iq2nsc.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/iq2nsc.png&#34;
 	width=&#34;1264&#34;
 	height=&#34;964&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/iq2nsc_hu16459431944627486795.png 480w, https://blog.ztcdream.top/private/ray/iq2nsc_hu14165584928709936090.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/iq2nsc_hu16459431944627486795.png 480w, https://blog.ztcdream.com/private/ray/iq2nsc_hu14165584928709936090.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;光线传播问题&#34;
@@ -2208,10 +2208,10 @@ $$</description>
 		data-flex-basis=&#34;314px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/irelh4.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/irelh4.png&#34;
 	width=&#34;910&#34;
 	height=&#34;978&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/irelh4_hu5353994031652416711.png 480w, https://blog.ztcdream.top/private/ray/irelh4_hu4104413764410786150.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/irelh4_hu5353994031652416711.png 480w, https://blog.ztcdream.com/private/ray/irelh4_hu4104413764410786150.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;光线传播问题——输入输出样例&#34;
@@ -2259,10 +2259,10 @@ t_y = d_y(m+\frac{d_y-1}{2})
 $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。&lt;/p&gt;
 &lt;p&gt;一个初始值为 $0$ 的网格，寻找光源传播到该网格的最短时间，可以分为四个方向，沿着每个方向查找光源，计算途径与途径的光源的传播时间，保留最小值，直至传播终止。四个方向的传播时间再一次选取最小值。&lt;/p&gt;
 &lt;p&gt;依照这个思路，我们组设计的 $bash$ 脚本的程序流程图如下，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/mmexport1746928093860.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/mmexport1746928093860.png&#34;
 	width=&#34;271&#34;
 	height=&#34;858&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/mmexport1746928093860_hu2331413157487899223.png 480w, https://blog.ztcdream.top/private/ray/mmexport1746928093860_hu12400624065675144797.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/mmexport1746928093860_hu2331413157487899223.png 480w, https://blog.ztcdream.com/private/ray/mmexport1746928093860_hu12400624065675144797.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;反向查找法-流程图&#34;
@@ -2556,10 +2556,10 @@ $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。
 
 &lt;p&gt;之前有提到，这个题目正向做确实不太好想，而反向查找的思路是容易想到，并且实现起来也是简单的。&lt;/p&gt;
 &lt;p&gt;但方法一反向查找光源的算法，在某些情况下效率并不高，特别是当网格较大，但光源较少时，如下图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/image1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/image1.png&#34;
 	width=&#34;976&#34;
 	height=&#34;666&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/image1_hu10773499664684810440.png 480w, https://blog.ztcdream.top/private/ray/image1_hu16648666198357395478.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/image1_hu10773499664684810440.png 480w, https://blog.ztcdream.com/private/ray/image1_hu16648666198357395478.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;网格大，光源少&#34;
@@ -2580,10 +2580,10 @@ $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。
 
 
 &lt;p&gt;上个世纪50年代，荷兰科学家迪杰斯特拉（&lt;em&gt;Dijkstra&lt;/em&gt;）在咖啡馆喝咖啡时，无意间想出了有向带权图中寻找最短路径的问题。由于该算法对编程界的突出贡献，Dijkstra获得了1972年的图灵奖。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/Dijkstra.webp&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/Dijkstra.webp&#34;
 	width=&#34;429&#34;
 	height=&#34;655&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/Dijkstra_hu2056605823401281306.webp 480w, https://blog.ztcdream.top/private/ray/Dijkstra_hu16339569547014817987.webp 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/Dijkstra_hu2056605823401281306.webp 480w, https://blog.ztcdream.com/private/ray/Dijkstra_hu16339569547014817987.webp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;迪杰斯特拉-年轻时&#34;
@@ -2620,10 +2620,10 @@ $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;例如，对于一个有向带权图，利用Dijkstra算法的流程如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98.jpg&#34;
 	width=&#34;2911&#34;
 	height=&#34;1313&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98_hu15919519063508922805.jpg 480w, https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98_hu8047489384402841642.jpg 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98_hu15919519063508922805.jpg 480w, https://blog.ztcdream.com/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98_hu8047489384402841642.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Dijkstra算法例题&#34;
@@ -2634,10 +2634,10 @@ $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。
 		data-flex-basis=&#34;532px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3.jpg&#34;
 	width=&#34;2910&#34;
 	height=&#34;1744&#34;
-	srcset=&#34;https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3_hu295793877873331234.jpg 480w, https://blog.ztcdream.top/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3_hu1800598431047432404.jpg 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3_hu295793877873331234.jpg 480w, https://blog.ztcdream.com/private/ray/Dijkstra%E7%AE%97%E6%B3%95%E4%BE%8B%E9%A2%98%E8%A7%A3_hu1800598431047432404.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Dijkstra算法例题解&#34;
@@ -2895,10 +2895,10 @@ $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。
         </item>
         <item>
         <title>C语言解决整数前有0的输入问题</title>
-        <link>https://blog.ztcdream.top/p/c%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%86%B3%E6%95%B4%E6%95%B0%E5%89%8D%E6%9C%890%E7%9A%84%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98/</link>
+        <link>https://blog.ztcdream.com/p/c%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%86%B3%E6%95%B4%E6%95%B0%E5%89%8D%E6%9C%890%E7%9A%84%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98/</link>
         <pubDate>Fri, 28 Mar 2025 23:33:29 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/c%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%86%B3%E6%95%B4%E6%95%B0%E5%89%8D%E6%9C%890%E7%9A%84%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98/</guid>
+        <guid>https://blog.ztcdream.com/p/c%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%86%B3%E6%95%B4%E6%95%B0%E5%89%8D%E6%9C%890%E7%9A%84%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98/</guid>
         <description>&lt;h2 id=&#34;问题&#34;&gt;问题
 
 
@@ -2991,10 +2991,10 @@ $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。
         </item>
         <item>
         <title>Win系统工具</title>
-        <link>https://blog.ztcdream.top/p/win%E7%B3%BB%E7%BB%9F%E5%B7%A5%E5%85%B7/</link>
+        <link>https://blog.ztcdream.com/p/win%E7%B3%BB%E7%BB%9F%E5%B7%A5%E5%85%B7/</link>
         <pubDate>Fri, 17 Jan 2025 23:01:01 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/win%E7%B3%BB%E7%BB%9F%E5%B7%A5%E5%85%B7/</guid>
+        <guid>https://blog.ztcdream.com/p/win%E7%B3%BB%E7%BB%9F%E5%B7%A5%E5%85%B7/</guid>
         <description>&lt;h2 id=&#34;激活工具&#34;&gt;激活工具
 
 
@@ -3156,10 +3156,10 @@ $$&lt;p&gt;现在我们可以很轻松地计算光源到网格的传播时间。
         </item>
         <item>
         <title>多元函数二阶偏导</title>
-        <link>https://blog.ztcdream.top/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/</link>
+        <link>https://blog.ztcdream.com/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/</link>
         <pubDate>Mon, 06 Jan 2025 18:22:38 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/</guid>
+        <guid>https://blog.ztcdream.com/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/</guid>
         <description>&lt;h2 id=&#34;先上例题&#34;&gt;先上例题
 
 
@@ -3182,10 +3182,10 @@ $$
 \frac{\partial^2z}{\partial xy} 
 = \frac{\partial (\frac{\partial x}{\partial y})}{\partial x} 
 = \frac{\partial(\frac{\partial z}{\partial x})}{\partial y} 
-$$&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/xvefg8.png&#34;
+$$&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/xvefg8.png&#34;
 	width=&#34;2560&#34;
 	height=&#34;1440&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/xvefg8_hu7340328412331553038.png 480w, https://blog.ztcdream.top/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/xvefg8_hu15340699913192663849.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/xvefg8_hu7340328412331553038.png 480w, https://blog.ztcdream.com/p/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E4%BA%8C%E9%98%B6%E5%81%8F%E5%AF%BC/xvefg8_hu15340699913192663849.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
@@ -3224,20 +3224,20 @@ $$</description>
         </item>
         <item>
         <title>二元函数偏微商与连续的关系</title>
-        <link>https://blog.ztcdream.top/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
+        <link>https://blog.ztcdream.com/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
         <pubDate>Sat, 04 Jan 2025 19:01:40 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
+        <guid>https://blog.ztcdream.com/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
         <description>&lt;h2 id=&#34;图&#34;&gt;图
 
 
 &lt;/h2&gt;
 
 
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/vhv1vt.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/vhv1vt.png&#34;
 	width=&#34;1038&#34;
 	height=&#34;558&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/vhv1vt_hu150114894383946617.png 480w, https://blog.ztcdream.top/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/vhv1vt_hu13347024723943623057.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/vhv1vt_hu150114894383946617.png 480w, https://blog.ztcdream.com/p/%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0%E5%81%8F%E5%BE%AE%E5%95%86%E4%B8%8E%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%85%B3%E7%B3%BB/vhv1vt_hu13347024723943623057.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt 图片&#34;
@@ -3252,10 +3252,10 @@ $$</description>
         </item>
         <item>
         <title>辗转相除法</title>
-        <link>https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</link>
+        <link>https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</link>
         <pubDate>Tue, 31 Dec 2024 16:19:08 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</guid>
+        <guid>https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</guid>
         <description>&lt;h2 id=&#34;最大公因数问题&#34;&gt;最大公因数问题
 
 
@@ -3278,10 +3278,10 @@ $$&lt;h2 id=&#34;短除法&#34;&gt;短除法
 
 &lt;p&gt;小学二年级时我们已经知道，可以使用&lt;strong&gt;短除法&lt;/strong&gt;来先找出所有的较小公因数，再把他们相乘。&lt;/p&gt;
 &lt;p&gt;例如求$(12,16)$，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn.png&#34;
 	width=&#34;553&#34;
 	height=&#34;459&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn_hu6833322164602977511.png 480w, https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn_hu997523722216718054.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn_hu6833322164602977511.png 480w, https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn_hu997523722216718054.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
@@ -3293,10 +3293,10 @@ $$&lt;h2 id=&#34;短除法&#34;&gt;短除法
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;对于较小的整数，这个方法也蛮好用的，但对于稍大的数，我们很难看出除数是几。比如$(5423,3157)$，使用短除法，找第一个除数都要花不少时间。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv.png&#34;
 	width=&#34;504&#34;
 	height=&#34;270&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv_hu5906583741661803457.png 480w, https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv_hu12550989089901036466.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv_hu5906583741661803457.png 480w, https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv_hu12550989089901036466.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
@@ -3366,10 +3366,10 @@ $$&lt;h2 id=&#34;短除法&#34;&gt;短除法
 &lt;p&gt;&lt;em&gt;定理&lt;/em&gt;：设整数$a/b$的余数为$r$,则&lt;/p&gt;
 $$(a,b)=(b,r)$$&lt;p&gt;通过不断重复，直到$b_i/r_i=c$可以整除，那么$(a,b)=r_i$&lt;/p&gt;
 &lt;p&gt;以$(5423,3157)$为例，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n.png&#34;
 	width=&#34;265&#34;
 	height=&#34;1155&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n_hu5017553582313072223.png 480w, https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n_hu13485192742638592563.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n_hu5017553582313072223.png 480w, https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n_hu13485192742638592563.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
@@ -3473,20 +3473,20 @@ $$&lt;p&gt;已知最大公因数，即可求出最小公倍数&lt;/p&gt;
         </item>
         <item>
         <title>一张图巧计三角求导积分公式</title>
-        <link>https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/</link>
+        <link>https://blog.ztcdream.com/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/</link>
         <pubDate>Mon, 30 Dec 2024 19:54:39 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/</guid>
+        <guid>https://blog.ztcdream.com/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/</guid>
         <description>&lt;h2 id=&#34;先上图&#34;&gt;先上图
 
 
 &lt;/h2&gt;
 
 
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/m1ir2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/m1ir2.png&#34;
 	width=&#34;694&#34;
 	height=&#34;461&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/m1ir2_hu16504847598438477834.png 480w, https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/m1ir2_hu11478295349462742028.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/m1ir2_hu16504847598438477834.png 480w, https://blog.ztcdream.com/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/m1ir2_hu11478295349462742028.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
@@ -3585,10 +3585,10 @@ $$\int\tan xdx=-\ln |2\sec x|+C$$&lt;/li&gt;
 &lt;/h2&gt;
 
 
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/h1gvx4.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/h1gvx4.jpg&#34;
 	width=&#34;1654&#34;
 	height=&#34;2339&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/h1gvx4_hu14080238442483328327.jpg 480w, https://blog.ztcdream.top/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/h1gvx4_hu17359414229116777101.jpg 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/h1gvx4_hu14080238442483328327.jpg 480w, https://blog.ztcdream.com/p/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%B7%A7%E8%AE%A1%E4%B8%89%E8%A7%92%E6%B1%82%E5%AF%BC%E7%A7%AF%E5%88%86%E5%85%AC%E5%BC%8F/h1gvx4_hu17359414229116777101.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
@@ -3603,10 +3603,10 @@ $$\int\tan xdx=-\ln |2\sec x|+C$$&lt;/li&gt;
         </item>
         <item>
         <title>考研题-不定积分</title>
-        <link>https://blog.ztcdream.top/p/%E8%80%83%E7%A0%94%E9%A2%98-%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</link>
+        <link>https://blog.ztcdream.com/p/%E8%80%83%E7%A0%94%E9%A2%98-%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</link>
         <pubDate>Mon, 30 Dec 2024 11:23:47 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E8%80%83%E7%A0%94%E9%A2%98-%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</guid>
+        <guid>https://blog.ztcdream.com/p/%E8%80%83%E7%A0%94%E9%A2%98-%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</guid>
         <description>&lt;h2 id=&#34;题干&#34;&gt;题干
 
 
@@ -3668,15 +3668,15 @@ $$&lt;h3 id=&#34;代入&#34;&gt;代入
 
 $$
 \frac{1}{(x+1)(x^2-2x+2)}=\frac{1}{5(x+1)}+\frac{-x+3}{5(x^2-2x+2)}
-$$&lt;p&gt;剩下的就是&lt;a class=&#34;link&#34; href=&#34;https://blog.ztcdream.top/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/&#34; &gt;有理函数的积分&lt;/a&gt;的内容了&lt;/p&gt;
+$$&lt;p&gt;剩下的就是&lt;a class=&#34;link&#34; href=&#34;https://blog.ztcdream.com/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/&#34; &gt;有理函数的积分&lt;/a&gt;的内容了&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>分母低次幂积型的不定积分</title>
-        <link>https://blog.ztcdream.top/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</link>
+        <link>https://blog.ztcdream.com/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</link>
         <pubDate>Wed, 25 Dec 2024 18:05:10 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</guid>
+        <guid>https://blog.ztcdream.com/p/%E5%88%86%E6%AF%8D%E4%BD%8E%E6%AC%A1%E5%B9%82%E7%A7%AF%E5%9E%8B%E7%9A%84%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/</guid>
         <description>&lt;h2 id=&#34;定义&#34;&gt;定义
 
 
@@ -3845,10 +3845,10 @@ $$</description>
         </item>
         <item>
         <title>三角函数的积分</title>
-        <link>https://blog.ztcdream.top/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
+        <link>https://blog.ztcdream.com/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
         <pubDate>Sat, 14 Dec 2024 16:10:48 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
+        <guid>https://blog.ztcdream.com/p/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
         <description>&lt;h2 id=&#34;基本三角函数的积分&#34;&gt;基本三角函数的积分
 
 
@@ -3893,10 +3893,10 @@ $$
         </item>
         <item>
         <title>有理函数的积分</title>
-        <link>https://blog.ztcdream.top/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
+        <link>https://blog.ztcdream.com/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</link>
         <pubDate>Fri, 06 Dec 2024 20:51:30 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
+        <guid>https://blog.ztcdream.com/p/%E6%9C%89%E7%90%86%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</guid>
         <description>&lt;h2 id=&#34;什么是有理函数&#34;&gt;什么是有理函数
 
 
@@ -4111,10 +4111,10 @@ $$&lt;p&gt;相信聪明的你一定可以求出。&lt;/p&gt;
         </item>
         <item>
         <title>Linux编译安装Python</title>
-        <link>https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/</link>
+        <link>https://blog.ztcdream.com/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/</link>
         <pubDate>Sun, 27 Oct 2024 13:39:38 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/</guid>
+        <guid>https://blog.ztcdream.com/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/</guid>
         <description>&lt;p&gt;Linux系统下安装软件的方式可以通过  &lt;strong&gt;apt install&lt;/strong&gt;  类似的包管理命令在线安装。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -4145,10 +4145,10 @@ $$&lt;p&gt;相信聪明的你一定可以求出。&lt;/p&gt;
 &lt;p&gt;以python3.12为例，去官网找到对应源码包的链接&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.python.org/downloads/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.python.org/downloads/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17.png&#34;
 	width=&#34;1522&#34;
 	height=&#34;639&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17_hu13440576555318707249.png 480w, https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17_hu228977950063332832.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17_hu13440576555318707249.png 480w, https://blog.ztcdream.com/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17_hu228977950063332832.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;python官网&#34;
@@ -4271,18 +4271,18 @@ make clean
         </item>
         <item>
         <title>文章归档</title>
-        <link>https://blog.ztcdream.top/archives/</link>
+        <link>https://blog.ztcdream.com/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.ztcdream.top/archives/</guid>
+        <guid>https://blog.ztcdream.com/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>关于</title>
-        <link>https://blog.ztcdream.top/%E5%85%B3%E4%BA%8E/</link>
+        <link>https://blog.ztcdream.com/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.ztcdream.top/%E5%85%B3%E4%BA%8E/</guid>
+        <guid>https://blog.ztcdream.com/%E5%85%B3%E4%BA%8E/</guid>
         <description>&lt;h2 id=&#34;ztcs-blog&#34;&gt;ZTC&amp;rsquo;s Blog
 
 
@@ -4304,10 +4304,10 @@ make clean
         </item>
         <item>
         <title>链接</title>
-        <link>https://blog.ztcdream.top/%E9%93%BE%E6%8E%A5/</link>
+        <link>https://blog.ztcdream.com/%E9%93%BE%E6%8E%A5/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.ztcdream.top/%E9%93%BE%E6%8E%A5/</guid>
+        <guid>https://blog.ztcdream.com/%E9%93%BE%E6%8E%A5/</guid>
         <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
 &lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -4339,10 +4339,10 @@ make clean
         </item>
         <item>
         <title>搜索</title>
-        <link>https://blog.ztcdream.top/search/</link>
+        <link>https://blog.ztcdream.com/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.ztcdream.top/search/</guid>
+        <guid>https://blog.ztcdream.com/search/</guid>
         <description></description>
         </item>
         

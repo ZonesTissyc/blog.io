@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>数学建模 on ZTC&#39;Blog</title>
-        <link>https://blog.ztcdream.top/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</link>
+        <link>https://blog.ztcdream.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</link>
         <description>Recent content in 数学建模 on ZTC&#39;Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Wed, 14 May 2025 17:53:22 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 14 May 2025 17:53:22 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>LaTex核心出装——数学公式</title>
-        <link>https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link>
+        <link>https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</link>
         <pubDate>Wed, 14 May 2025 17:53:22 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid>
+        <guid>https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</guid>
         <description>&lt;h2 id=&#34;初识latex数学公式&#34;&gt;初识LaTex数学公式
 
 
@@ -188,10 +188,10 @@ $$
 &lt;p&gt;&lt;strong&gt;CTex&lt;/strong&gt; 是LeTex的中国版，提供完整的 &lt;strong&gt;LaTex&lt;/strong&gt; 环境和针对中文的调教。&lt;/p&gt;
 &lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://ctex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;CTex官网&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1.png&#34;
 	width=&#34;2500&#34;
 	height=&#34;1245&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1_hu7622275712856060269.png 480w, https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1_hu4322827598380581836.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1_hu7622275712856060269.png 480w, https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image1_hu4322827598380581836.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;CTex官网&#34;
@@ -209,10 +209,10 @@ $$
 
 
 &lt;p&gt;从2025年开始，WPS新增了LaTex公式的支持。在文档里点击插入 -&amp;gt; 公式 -&amp;gt; 插入LaTex公式&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2.png&#34;
 	width=&#34;1204&#34;
 	height=&#34;306&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2_hu10793823313666080271.png 480w, https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2_hu15768457423045720071.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2_hu10793823313666080271.png 480w, https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image2_hu15768457423045720071.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;WPS使用LaTex公式&#34;
@@ -232,10 +232,10 @@ $$
 &lt;p&gt;如果你懂前端，可以将KaTex.js包导入到网站中，在网页中使用数学公式，例如本站就是。&lt;/p&gt;
 &lt;p&gt;js包官网：&lt;a class=&#34;link&#34; href=&#34;https://github.com/KaTeX/KaTeX&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;KeTex.js&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3.png&#34;
 	width=&#34;1214&#34;
 	height=&#34;713&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3_hu6454335134044025345.png 480w, https://blog.ztcdream.top/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3_hu18148369173915231284.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3_hu6454335134044025345.png 480w, https://blog.ztcdream.com/p/latex%E6%A0%B8%E5%BF%83%E5%87%BA%E8%A3%85%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/image3_hu18148369173915231284.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Katex.js&#34;
@@ -292,10 +292,10 @@ $$&lt;h3 id=&#34;2&#34;&gt;2
         </item>
         <item>
         <title>（实验）证明列表索引操作的时间复杂度为常数阶</title>
-        <link>https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</link>
+        <link>https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</link>
         <pubDate>Tue, 13 May 2025 22:45:17 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</guid>
+        <guid>https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/</guid>
         <description>&lt;h2 id=&#34;实验背景&#34;&gt;实验背景
 
 
@@ -552,10 +552,10 @@ $$&lt;p&gt;因此记该算法的大$O$记法为 $O(n^3)$。&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;生成的图如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot.png&#34;
 	width=&#34;640&#34;
 	height=&#34;480&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu16719364411022916672.png 480w, https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu17976320647513155453.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu16719364411022916672.png 480w, https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/myplot_hu17976320647513155453.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;y-n散点图&#34;
@@ -568,10 +568,10 @@ $$&lt;p&gt;因此记该算法的大$O$记法为 $O(n^3)$。&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;p&gt;可以看到，随着 $n$ 增大，运行时间 $y$ 均在某个常数附近，只有极少数点偏离了常数。&lt;/p&gt;
 &lt;p&gt;控制台输出：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image.png&#34;
 	width=&#34;661&#34;
 	height=&#34;116&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu10457515959949624127.png 480w, https://blog.ztcdream.top/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu11565431011352655123.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu10457515959949624127.png 480w, https://blog.ztcdream.com/p/%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%98%8E%E5%88%97%E8%A1%A8%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BA%E5%B8%B8%E6%95%B0%E9%98%B6/image_hu11565431011352655123.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;控制台输出&#34;

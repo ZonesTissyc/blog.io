@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Linux on ZTC&#39;Blog</title>
-        <link>https://blog.ztcdream.top/categories/linux/</link>
+        <link>https://blog.ztcdream.com/categories/linux/</link>
         <description>Recent content in Linux on ZTC&#39;Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>ZTC@</copyright><atom:link href="https://blog.ztcdream.top/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>ZTC@</copyright><atom:link href="https://blog.ztcdream.com/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Docker实战：构建镜像</title>
-        <link>https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/</link>
+        <link>https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/</link>
         <pubDate>Sun, 18 May 2025 16:07:17 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/</guid>
+        <guid>https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/</guid>
         <description>&lt;p&gt;下面是用 node.js 搭建一个简单的网页服务，并构建成 Docker 镜像，并运行容器，使外部能访问这个网页。&lt;/p&gt;
 &lt;h2 id=&#34;简单写个网页&#34;&gt;简单写个网页
 
@@ -28,10 +28,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install npm
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1.png&#34;
 	width=&#34;1011&#34;
 	height=&#34;784&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1_hu7962955611841002930.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1_hu10344160251116701163.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1_hu7962955611841002930.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image1_hu10344160251116701163.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;安装npm&#34;
@@ -60,10 +60,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install express
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2.png&#34;
 	width=&#34;830&#34;
 	height=&#34;260&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2_hu3761520844843435717.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2_hu9139059513392296672.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2_hu3761520844843435717.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image2_hu9139059513392296672.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
@@ -165,10 +165,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;初次构建的时候是比较慢的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3.png&#34;
 	width=&#34;1420&#34;
 	height=&#34;498&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3_hu18408290578179626332.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3_hu1025205534792097217.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3_hu18408290578179626332.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image3_hu1025205534792097217.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;构建镜像&#34;
@@ -188,10 +188,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker images
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4.png&#34;
 	width=&#34;949&#34;
 	height=&#34;182&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4_hu18104325224083274406.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4_hu17732034483123919492.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4_hu18104325224083274406.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image4_hu17732034483123919492.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;镜像查看&#34;
@@ -213,10 +213,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;再看一下，发现改名成功了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5.png&#34;
 	width=&#34;924&#34;
 	height=&#34;176&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5_hu14927373379245951812.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5_hu1378711553163471533.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5_hu14927373379245951812.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image5_hu1378711553163471533.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;镜像命名&#34;
@@ -247,10 +247,10 @@
 &lt;li&gt;&lt;code&gt;--name hello-container&lt;/code&gt; : 给容器起个名&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;在浏览器访问一下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6.png&#34;
 	width=&#34;642&#34;
 	height=&#34;414&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6_hu9333714914423142000.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6_hu10153937962945044318.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6_hu9333714914423142000.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/image6_hu10153937962945044318.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;访问端口&#34;
@@ -308,10 +308,10 @@
         </item>
         <item>
         <title>Docker实战：运行一个容器</title>
-        <link>https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/</link>
+        <link>https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/</link>
         <pubDate>Sun, 18 May 2025 14:46:10 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/</guid>
+        <guid>https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/</guid>
         <description>&lt;h2 id=&#34;运行helloworld&#34;&gt;运行hello,world
 
 
@@ -328,10 +328,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;run&lt;/code&gt; 表示要运行容器，后面跟的 &lt;code&gt;ubuntu:15.10&lt;/code&gt; 是镜像，本地不存在将从 Docker Hub 中拉取。 &lt;code&gt;/bin/echo &amp;quot;Hello world&amp;quot;&lt;/code&gt; 是启动镜像后执行的命令。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image1.png&#34;
 	width=&#34;895&#34;
 	height=&#34;228&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image1_hu3493998025205837134.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image1_hu17819426467697481577.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image1_hu3493998025205837134.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image1_hu17819426467697481577.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;执行docker run&#34;
@@ -342,10 +342,10 @@
 		data-flex-basis=&#34;942px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image2.png&#34;
 	width=&#34;926&#34;
 	height=&#34;272&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image2_hu2939640268755027008.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image2_hu523165122873099004.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image2_hu2939640268755027008.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image2_hu523165122873099004.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;docker运行结果&#34;
@@ -358,10 +358,10 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;直接 &lt;code&gt;dorcker run&lt;/code&gt; 后，不加其他参数，执行完 &lt;code&gt;shell&lt;/code&gt; 命令后容器就退出了。&lt;/p&gt;
 &lt;p&gt;这一点可以在 Protainer 中验证：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image3.png&#34;
 	width=&#34;957&#34;
 	height=&#34;274&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image3_hu5877279917796181566.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image3_hu13898183820035104901.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image3_hu5877279917796181566.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image3_hu13898183820035104901.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;执行后退出&#34;
@@ -380,10 +380,10 @@
 
 &lt;p&gt;想让容器后台运行，要在启动时加上 &lt;code&gt;-d&lt;/code&gt; 参数。这样，容器的标准输出就不会出现在主Shell上。&lt;/p&gt;
 &lt;p&gt;docker run -d ubuntu:15.10 /bin/sh -c &amp;ldquo;while true; do echo hello world; sleep 1; done&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image4.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image4.png&#34;
 	width=&#34;961&#34;
 	height=&#34;102&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image4_hu12799455406448289630.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image4_hu14560685922181489283.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image4_hu12799455406448289630.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image4_hu14560685922181489283.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;后台运行&#34;
@@ -404,10 +404,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker ps
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image5.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image5.png&#34;
 	width=&#34;977&#34;
 	height=&#34;206&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image5_hu8187311127736906468.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image5_hu12295061654320267861.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image5_hu8187311127736906468.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image5_hu12295061654320267861.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;docker ps&#34;
@@ -428,10 +428,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker logs fa9878
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image6.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image6.png&#34;
 	width=&#34;661&#34;
 	height=&#34;545&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image6_hu3926272597900205682.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image6_hu2425960583706217606.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image6_hu3926272597900205682.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image6_hu2425960583706217606.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;docker ps&#34;
@@ -453,10 +453,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;从面板中可以看到容器退出运行了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image7.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image7.png&#34;
 	width=&#34;1268&#34;
 	height=&#34;169&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image7_hu3339457471664246221.png 480w, https://blog.ztcdream.top/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image7_hu12658135927823480497.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image7_hu3339457471664246221.png 480w, https://blog.ztcdream.com/p/docker%E5%AE%9E%E6%88%98%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8/image7_hu12658135927823480497.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;停止容器&#34;
@@ -479,10 +479,10 @@
         </item>
         <item>
         <title>Debian服务器初始化及搭建docker环境</title>
-        <link>https://blog.ztcdream.top/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</link>
+        <link>https://blog.ztcdream.com/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</link>
         <pubDate>Thu, 15 May 2025 20:10:52 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</guid>
+        <guid>https://blog.ztcdream.com/p/debian%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E6%90%AD%E5%BB%BAdocker%E7%8E%AF%E5%A2%83/</guid>
         <description>&lt;h2 id=&#34;安装iso镜像&#34;&gt;安装iso镜像
 
 
@@ -678,10 +678,10 @@
         </item>
         <item>
         <title>VSCode配置ssh密钥登陆</title>
-        <link>https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/</link>
+        <link>https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/</link>
         <pubDate>Tue, 29 Apr 2025 10:35:43 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/</guid>
+        <guid>https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/</guid>
         <description>&lt;h2 id=&#34;需求&#34;&gt;需求
 
 
@@ -714,10 +714,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;连续按三次回车，看到 &lt;code&gt;The key&#39;s randomart image is:&lt;/code&gt; 表明成功生成ssh密钥。&lt;/p&gt;
 &lt;p&gt;如图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq.png&#34;
 	width=&#34;1261&#34;
 	height=&#34;853&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq_hu2134800503513921767.png 480w, https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq_hu9620829789317796647.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq_hu2134800503513921767.png 480w, https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/hdv8kq_hu9620829789317796647.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;powershell 生成ssh密钥&#34;
@@ -744,10 +744,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cat &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ssh&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id_rsa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;pub&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug.png&#34;
 	width=&#34;1294&#34;
 	height=&#34;407&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug_hu14337773189692562485.png 480w, https://blog.ztcdream.top/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug_hu2620534302694373421.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug_hu14337773189692562485.png 480w, https://blog.ztcdream.com/p/vscode%E9%85%8D%E7%BD%AEssh%E5%AF%86%E9%92%A5%E7%99%BB%E9%99%86/i725ug_hu2620534302694373421.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;查看公钥内容&#34;
@@ -771,10 +771,10 @@
         </item>
         <item>
         <title>服务器自动拉取仓库</title>
-        <link>https://blog.ztcdream.top/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/</link>
+        <link>https://blog.ztcdream.com/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/</link>
         <pubDate>Sun, 20 Apr 2025 17:15:09 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/</guid>
+        <guid>https://blog.ztcdream.com/p/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%87%AA%E5%8A%A8%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93/</guid>
         <description>&lt;h2 id=&#34;问题引入&#34;&gt;问题引入
 
 
@@ -1010,10 +1010,10 @@
         </item>
         <item>
         <title>Linux编译安装Python</title>
-        <link>https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/</link>
+        <link>https://blog.ztcdream.com/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/</link>
         <pubDate>Sun, 27 Oct 2024 13:39:38 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/</guid>
+        <guid>https://blog.ztcdream.com/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/</guid>
         <description>&lt;p&gt;Linux系统下安装软件的方式可以通过  &lt;strong&gt;apt install&lt;/strong&gt;  类似的包管理命令在线安装。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1044,10 +1044,10 @@
 &lt;p&gt;以python3.12为例，去官网找到对应源码包的链接&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.python.org/downloads/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.python.org/downloads/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17.png&#34;
 	width=&#34;1522&#34;
 	height=&#34;639&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17_hu13440576555318707249.png 480w, https://blog.ztcdream.top/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17_hu228977950063332832.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17_hu13440576555318707249.png 480w, https://blog.ztcdream.com/p/linux%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python/Snipaste_2024-10-27_13-39-17_hu228977950063332832.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;python官网&#34;

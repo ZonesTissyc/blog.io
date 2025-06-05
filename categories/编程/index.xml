@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>编程 on ZTC&#39;Blog</title>
-        <link>https://blog.ztcdream.top/categories/%E7%BC%96%E7%A8%8B/</link>
+        <link>https://blog.ztcdream.com/categories/%E7%BC%96%E7%A8%8B/</link>
         <description>Recent content in 编程 on ZTC&#39;Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Sun, 20 Apr 2025 17:09:00 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 20 Apr 2025 17:09:00 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>（易错）C&#43;&#43;的作用域概念</title>
-        <link>https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/</link>
+        <link>https://blog.ztcdream.com/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/</link>
         <pubDate>Sun, 20 Apr 2025 17:09:00 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/</guid>
+        <guid>https://blog.ztcdream.com/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/</guid>
         <description>&lt;h2 id=&#34;这不对吧从一个例子讲起&#34;&gt;这不对吧？从一个例子讲起
 
 
@@ -39,10 +39,10 @@
 &lt;/div&gt;&lt;p&gt;提问：&lt;strong&gt;上面会输出什么？&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;你心想：这还用问，b=a=8，当然输出8了。&lt;/p&gt;
 &lt;p&gt;然而，结果却是&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw.png&#34;
 	width=&#34;536&#34;
 	height=&#34;65&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw_hu10486427257122952950.png 480w, https://blog.ztcdream.top/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw_hu5385925776908398024.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw_hu10486427257122952950.png 480w, https://blog.ztcdream.com/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/12dz8qw_hu5385925776908398024.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;b未定义&#34;
@@ -349,10 +349,10 @@
         </item>
         <item>
         <title>C语言解决整数前有0的输入问题</title>
-        <link>https://blog.ztcdream.top/p/c%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%86%B3%E6%95%B4%E6%95%B0%E5%89%8D%E6%9C%890%E7%9A%84%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98/</link>
+        <link>https://blog.ztcdream.com/p/c%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%86%B3%E6%95%B4%E6%95%B0%E5%89%8D%E6%9C%890%E7%9A%84%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98/</link>
         <pubDate>Fri, 28 Mar 2025 23:33:29 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/c%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%86%B3%E6%95%B4%E6%95%B0%E5%89%8D%E6%9C%890%E7%9A%84%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98/</guid>
+        <guid>https://blog.ztcdream.com/p/c%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%86%B3%E6%95%B4%E6%95%B0%E5%89%8D%E6%9C%890%E7%9A%84%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98/</guid>
         <description>&lt;h2 id=&#34;问题&#34;&gt;问题
 
 

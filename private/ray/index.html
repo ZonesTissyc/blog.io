@@ -4,11 +4,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="问题重述\r该问题源自我们 Linux 课题小组选择的期末课程项目，原题来自浙江大学的陈宇璟教授。\n问题分析\r这个问题如果正向思考，就显得很复杂。光源从四个方向发射出去，每经过一个格子，对于该格子要记录其光源到达的时间。但问题是格子事先不好确定，而且光源不只一个，是存在很多光源的。这还要比较最短的时间。\n经这样一分析，采取正向传播方案则必须选择某种算法，而下面介绍的反向查找光源就容易理解与实现很多。\n思路一：反向查找光源\r整体思路\r题目已经限定，光源所在网格和墙所在网格的最短到达时间时间为 $0$ 和 $-1$，因此我们只需关心为 $0$ 的网格。\n光源正向传播到该目标网格，知道光源的初始速度以及该方向上光源到该目标网格之间的网格数，即可累加算出到达该网格的总时间。\n以 $x$ 方向为例，设光源在 $x_1$ 处，且初始速度为 $m$ ,目标网格在 $x_2$ 处，($x_2&gt;x_1$)中间没有墙，则光源从 $x_1$ 传播到 $x_2$ 的时间 $t_x$ 为：\n$$\r\\begin{aligned}\rt_x &= (x_2-x_1)m + \\sum_{i=0}^{x_2-x_1}i \\\\\r&= (x_2-x_1)m + \\frac{(x_2-x_1)(x_2-x_1-1)}{2} \\\\\r\\end{aligned} $$令 $d_x=x_2-x_1$，则\n$$\rt_x=d_x(m+\\frac{d_x-1}{2})\r$$同理可得, $y$ 方向的计算公式，\n$$\rt_y = d_y(m+\\frac{d_y-1}{2})\r$$现在我们可以很轻松地计算光源到网格的传播时间。\n">
 <title>光线传播问题</title>
 
-<link rel='canonical' href='https://blog.ztcdream.top/private/ray/'>
+<link rel='canonical' href='https://blog.ztcdream.com/private/ray/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="光线传播问题">
 <meta property='og:description' content="问题重述\r该问题源自我们 Linux 课题小组选择的期末课程项目，原题来自浙江大学的陈宇璟教授。\n问题分析\r这个问题如果正向思考，就显得很复杂。光源从四个方向发射出去，每经过一个格子，对于该格子要记录其光源到达的时间。但问题是格子事先不好确定，而且光源不只一个，是存在很多光源的。这还要比较最短的时间。\n经这样一分析，采取正向传播方案则必须选择某种算法，而下面介绍的反向查找光源就容易理解与实现很多。\n思路一：反向查找光源\r整体思路\r题目已经限定，光源所在网格和墙所在网格的最短到达时间时间为 $0$ 和 $-1$，因此我们只需关心为 $0$ 的网格。\n光源正向传播到该目标网格，知道光源的初始速度以及该方向上光源到该目标网格之间的网格数，即可累加算出到达该网格的总时间。\n以 $x$ 方向为例，设光源在 $x_1$ 处，且初始速度为 $m$ ,目标网格在 $x_2$ 处，($x_2&gt;x_1$)中间没有墙，则光源从 $x_1$ 传播到 $x_2$ 的时间 $t_x$ 为：\n$$\r\\begin{aligned}\rt_x &= (x_2-x_1)m + \\sum_{i=0}^{x_2-x_1}i \\\\\r&= (x_2-x_1)m + \\frac{(x_2-x_1)(x_2-x_1-1)}{2} \\\\\r\\end{aligned} $$令 $d_x=x_2-x_1$，则\n$$\rt_x=d_x(m+\\frac{d_x-1}{2})\r$$同理可得, $y$ 方向的计算公式，\n$$\rt_y = d_y(m+\\frac{d_y-1}{2})\r$$现在我们可以很轻松地计算光源到网格的传播时间。\n">
-<meta property='og:url' content='https://blog.ztcdream.top/private/ray/'>
+<meta property='og:url' content='https://blog.ztcdream.com/private/ray/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Private' /><meta property='article:published_time' content='2025-04-09T17:33:19&#43;08:00'/><meta property='article:modified_time' content='2025-05-16T20:57:01&#43;08:00'/>
 <meta name="twitter:title" content="光线传播问题">
@@ -213,11 +213,11 @@
 
                             <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
                                 
-                                    <option value="https://blog.ztcdream.top/en/" >English</option>
+                                    <option value="https://blog.ztcdream.com/en/" >English</option>
                                 
-                                    <option value="https://blog.ztcdream.top/" selected>中文</option>
+                                    <option value="https://blog.ztcdream.com/" selected>中文</option>
                                 
-                                    <option value="https://blog.ztcdream.top/ar/" >عربي</option>
+                                    <option value="https://blog.ztcdream.com/ar/" >عربي</option>
                                 
                             </select>
                         </li>

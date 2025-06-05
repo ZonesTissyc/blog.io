@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>算法 on ZTC&#39;Blog</title>
-        <link>https://blog.ztcdream.top/tags/%E7%AE%97%E6%B3%95/</link>
+        <link>https://blog.ztcdream.com/tags/%E7%AE%97%E6%B3%95/</link>
         <description>Recent content in 算法 on ZTC&#39;Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Tue, 31 Dec 2024 16:19:08 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.top/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 31 Dec 2024 16:19:08 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>辗转相除法</title>
-        <link>https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</link>
+        <link>https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</link>
         <pubDate>Tue, 31 Dec 2024 16:19:08 +0800</pubDate>
         
-        <guid>https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</guid>
+        <guid>https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</guid>
         <description>&lt;h2 id=&#34;最大公因数问题&#34;&gt;最大公因数问题
 
 
@@ -35,10 +35,10 @@ $$&lt;h2 id=&#34;短除法&#34;&gt;短除法
 
 &lt;p&gt;小学二年级时我们已经知道，可以使用&lt;strong&gt;短除法&lt;/strong&gt;来先找出所有的较小公因数，再把他们相乘。&lt;/p&gt;
 &lt;p&gt;例如求$(12,16)$，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn.png&#34;
 	width=&#34;553&#34;
 	height=&#34;459&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn_hu6833322164602977511.png 480w, https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn_hu997523722216718054.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn_hu6833322164602977511.png 480w, https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdccn_hu997523722216718054.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
@@ -50,10 +50,10 @@ $$&lt;h2 id=&#34;短除法&#34;&gt;短除法
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;对于较小的整数，这个方法也蛮好用的，但对于稍大的数，我们很难看出除数是几。比如$(5423,3157)$，使用短除法，找第一个除数都要花不少时间。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv.png&#34;
 	width=&#34;504&#34;
 	height=&#34;270&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv_hu5906583741661803457.png 480w, https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv_hu12550989089901036466.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv_hu5906583741661803457.png 480w, https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/xcdbxv_hu12550989089901036466.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
@@ -123,10 +123,10 @@ $$&lt;h2 id=&#34;短除法&#34;&gt;短除法
 &lt;p&gt;&lt;em&gt;定理&lt;/em&gt;：设整数$a/b$的余数为$r$,则&lt;/p&gt;
 $$(a,b)=(b,r)$$&lt;p&gt;通过不断重复，直到$b_i/r_i=c$可以整除，那么$(a,b)=r_i$&lt;/p&gt;
 &lt;p&gt;以$(5423,3157)$为例，&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n.png&#34;
 	width=&#34;265&#34;
 	height=&#34;1155&#34;
-	srcset=&#34;https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n_hu5017553582313072223.png 480w, https://blog.ztcdream.top/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n_hu13485192742638592563.png 1024w&#34;
+	srcset=&#34;https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n_hu5017553582313072223.png 480w, https://blog.ztcdream.com/p/%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/12x4m1n_hu13485192742638592563.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;alt text&#34;
