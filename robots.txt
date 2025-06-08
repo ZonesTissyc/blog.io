@@ -1,1 +1,3 @@
-User-agent: *
+User-Agent: *
+Disallow: /tags/
+Disallow: /private/
