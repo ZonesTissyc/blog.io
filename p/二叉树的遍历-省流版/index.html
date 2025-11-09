@@ -10,7 +10,7 @@
 <meta property='og:description' content=" 递归本质上做的事\r递归遍历其实就做了三件事：\n访问当前节点（打印或处理数据）； 递归左子树； 递归右子树。 递归函数靠系统调用栈来记住“走到哪一步、该返回哪里”。 而非递归遍历，就是自己用栈（Stack）来模拟系统调用栈。\n非递归（模拟栈）的基本逻辑\r一个栈记录“接下来要访问的节点”。\n入栈（push）：表示“以后还要回来访问这个节点”； 出栈（pop）：表示“当前节点访问完成”； 栈顶代表当前递归层正在处理的节点。 三种遍历的思维区别\r遍历顺序 操作顺序（递归形式） 非递归实现的核心思路 前序遍历 根 → 左 → 右 出栈时访问 → 先压右再压左 中序遍历 左 → 根 → 右 一直向左入栈 → 遇空回退并访问，再右转 后序遍历 左 → 右 → 根 两次入栈 or 记录上次访问的节点 非递归遍历的具体思路\r1. 前序遍历（Preorder：根→左→右）\r思路：\r根节点先访问； 用栈保存节点； 先压右子树，再压左子树，这样出栈顺序正好是“左→右”。 步骤：\r根节点入栈；\n当栈不空：\n弹出栈顶并访问； 若有右子树 → 压入； 若有左子树 → 压入。 1 2 3 4 5 6 7 8 栈操作顺序： push(A) pop A → print(A) push(C) push(B) pop B → print(B) ... C++实现（简洁版）\r1 2 3 4 5 6 7 8 9 10 11 void preorder(Tree root) { if (!root) return; stack&lt;Tree&gt; s; s.push(root); while (!s.empty()) { Tree node = s.top(); s.pop(); cout &lt;&lt; node-&gt;data &lt;&lt; &#39; &#39;; if (node-&gt;RChild) s.push(node-&gt;RChild); if (node-&gt;LChild) s.push(node-&gt;LChild); } } 2. 中序遍历（Inorder：左→根→右）\r思路：\r一直往左下走，把沿途节点入栈； 遇到空时，弹出一个节点访问； 再转向它的右子树，继续。 步骤：\r初始化指针 p = root；\n">
 <meta property='og:url' content='https://blog.ztcdream.com/p/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86-%E7%9C%81%E6%B5%81%E7%89%88/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:published_time' content='2025-11-09T19:47:58&#43;08:00'/><meta property='article:modified_time' content='2025-11-09T19:47:58&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:published_time' content='2025-11-09T19:47:58&#43;08:00'/><meta property='article:modified_time' content='2025-11-09T19:55:49&#43;08:00'/>
 <meta name="twitter:title" content="二叉树的遍历-省流版">
 <meta name="twitter:description" content=" 递归本质上做的事\r递归遍历其实就做了三件事：\n访问当前节点（打印或处理数据）； 递归左子树； 递归右子树。 递归函数靠系统调用栈来记住“走到哪一步、该返回哪里”。 而非递归遍历，就是自己用栈（Stack）来模拟系统调用栈。\n非递归（模拟栈）的基本逻辑\r一个栈记录“接下来要访问的节点”。\n入栈（push）：表示“以后还要回来访问这个节点”； 出栈（pop）：表示“当前节点访问完成”； 栈顶代表当前递归层正在处理的节点。 三种遍历的思维区别\r遍历顺序 操作顺序（递归形式） 非递归实现的核心思路 前序遍历 根 → 左 → 右 出栈时访问 → 先压右再压左 中序遍历 左 → 根 → 右 一直向左入栈 → 遇空回退并访问，再右转 后序遍历 左 → 右 → 根 两次入栈 or 记录上次访问的节点 非递归遍历的具体思路\r1. 前序遍历（Preorder：根→左→右）\r思路：\r根节点先访问； 用栈保存节点； 先压右子树，再压左子树，这样出栈顺序正好是“左→右”。 步骤：\r根节点入栈；\n当栈不空：\n弹出栈顶并访问； 若有右子树 → 压入； 若有左子树 → 压入。 1 2 3 4 5 6 7 8 栈操作顺序： push(A) pop A → print(A) push(C) push(B) pop B → print(B) ... C++实现（简洁版）\r1 2 3 4 5 6 7 8 9 10 11 void preorder(Tree root) { if (!root) return; stack&lt;Tree&gt; s; s.push(root); while (!s.empty()) { Tree node = s.top(); s.pop(); cout &lt;&lt; node-&gt;data &lt;&lt; &#39; &#39;; if (node-&gt;RChild) s.push(node-&gt;RChild); if (node-&gt;LChild) s.push(node-&gt;LChild); } } 2. 中序遍历（Inorder：左→根→右）\r思路：\r一直往左下走，把沿途节点入栈； 遇到空时，弹出一个节点访问； 再转向它的右子树，继续。 步骤：\r初始化指针 p = root；\n">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -805,7 +805,19 @@
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    </footer>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2025年11月9日 19:55
+        </span>
+    </section></footer>
 
 
     
@@ -854,6 +866,19 @@
 
         <div class="article-details">
             <h2 class="article-title">找出唯一字符</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E7%AE%97%E6%B3%95%E6%84%9F%E6%82%9F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">算法感悟</h2>
         </div>
     </a>
 </article>

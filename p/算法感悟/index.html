@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="题目\r某单位需要加工制作 100 套钢架，每套用长为 2.9m、2.1m 和 1m 的圆钢各一根。已知原料长 6.9m。\n（1）如何下料，使用的原材料最省。\n（2）若下料方式不超过 3 种，应如何下料，使用的原材料最省。\n分析\r题目隐含的条件是：每套中3个长度的钢管只能从比它更长的钢管切割而来，不能通过拼接其他小钢管合成。这意味着不同的下料切料方式，会产生不同数量的边角料，消耗不同的原料数。题目要求的就是让消耗的原料数最小。\n选取决策变量\r设3种钢管为 $A,B,C$ 号，长度分别为:\n$a=2.9,b=2.1,c=1.0$\n$a+b+c=6.0 &lt;6.9$\n对于一根原料，它可以：\n1.不切割，获得长$6.9$的钢管\n2.切割一次，获得下面几种钢管\n(1) $2.9,4.0$\n(2) $2.1,4.8$\n(3) $1.0,5.9$\n3.切割两次\n(1) $2.9,2.9,1.1$\n(2) $2.9,2.1,1.9$\n(2) $$\n">
-<title>整数线性规划题</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 「程序教会我们的，往往比代码本身更深刻。」\n—— 记一次关于算法与人生的思考\n🧠 前言\r在算法的世界里，每一种计算方式都有它存在的意义。\n有人用它们解决问题，有人从中读出人生。\n或许，我们写下的每一行代码，\n都在模拟自己与世界相处的方式。\n🔹 KMP算法\r一个人能走多远，不在于他在顺境时能走多快，\n而在于他在逆境时多久能找到曾经的自己。\n—— 失配时不重头来过，而是回到部分匹配的起点，这正是人生的韧性。\n🔹 二分查找（Binary Search）\r真理常藏于中点，极端的道路很少通向答案。\n—— 在喧嚣与偏执之间，学会在理性中试探最优解。\n🔹 动态规划（Dynamic Programming）\r成长从不是一蹴而就，而是把过去的积累化为当下的最优。\n—— 人生的每一步，都是在复用昨日的努力。\n🔹 贪心算法（Greedy Algorithm）\r每次都做当下最好的选择，也许走得慢，但至少方向不会错。\n—— 人生中有时“局部最优”，就是幸福的全局解。\n🔹 深度优先搜索（DFS）\r有时你要深入黑暗，直到找到那条通往光明的路径。\n—— 探索的意义，不在于速度，而在于不放弃回溯的勇气。\n🔹 广度优先搜索（BFS）\r别急着往深处钻，先看清身边的路。\n—— 学会广度优先，才能少走弯路。\n🔹 快速排序（Quick Sort）\r先分清轻重缓急，再逐一理清杂乱。\n—— 面对混乱，分割、整理、再融合，是清醒者的秩序。\n🔹 并查集（Union-Find）\r我们不断相遇、联合，又在分离中找到归属。\n—— 关系的本质，是不断“合并集合”的过程。\n🔹 最短路径（Dijkstra）\r每一步都算数，每一步都离目标更近。\n—— 坚持走代价最小的路，也是一种长期的理智。\n🔹 栈（Stack）\r后来的事，总得后来再处理。\n">
+<title>算法感悟</title>
 
-<link rel='canonical' href='https://blog.ztcdream.com/p/%E6%95%B4%E6%95%B0%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92%E9%A2%98/'>
+<link rel='canonical' href='https://blog.ztcdream.com/p/%E7%AE%97%E6%B3%95%E6%84%9F%E6%82%9F/'>
 
-<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="整数线性规划题">
-<meta property='og:description' content="题目\r某单位需要加工制作 100 套钢架，每套用长为 2.9m、2.1m 和 1m 的圆钢各一根。已知原料长 6.9m。\n（1）如何下料，使用的原材料最省。\n（2）若下料方式不超过 3 种，应如何下料，使用的原材料最省。\n分析\r题目隐含的条件是：每套中3个长度的钢管只能从比它更长的钢管切割而来，不能通过拼接其他小钢管合成。这意味着不同的下料切料方式，会产生不同数量的边角料，消耗不同的原料数。题目要求的就是让消耗的原料数最小。\n选取决策变量\r设3种钢管为 $A,B,C$ 号，长度分别为:\n$a=2.9,b=2.1,c=1.0$\n$a+b+c=6.0 &lt;6.9$\n对于一根原料，它可以：\n1.不切割，获得长$6.9$的钢管\n2.切割一次，获得下面几种钢管\n(1) $2.9,4.0$\n(2) $2.1,4.8$\n(3) $1.0,5.9$\n3.切割两次\n(1) $2.9,2.9,1.1$\n(2) $2.9,2.1,1.9$\n(2) $$\n">
-<meta property='og:url' content='https://blog.ztcdream.com/p/%E6%95%B4%E6%95%B0%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92%E9%A2%98/'>
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="算法感悟">
+<meta property='og:description' content=" 「程序教会我们的，往往比代码本身更深刻。」\n—— 记一次关于算法与人生的思考\n🧠 前言\r在算法的世界里，每一种计算方式都有它存在的意义。\n有人用它们解决问题，有人从中读出人生。\n或许，我们写下的每一行代码，\n都在模拟自己与世界相处的方式。\n🔹 KMP算法\r一个人能走多远，不在于他在顺境时能走多快，\n而在于他在逆境时多久能找到曾经的自己。\n—— 失配时不重头来过，而是回到部分匹配的起点，这正是人生的韧性。\n🔹 二分查找（Binary Search）\r真理常藏于中点，极端的道路很少通向答案。\n—— 在喧嚣与偏执之间，学会在理性中试探最优解。\n🔹 动态规划（Dynamic Programming）\r成长从不是一蹴而就，而是把过去的积累化为当下的最优。\n—— 人生的每一步，都是在复用昨日的努力。\n🔹 贪心算法（Greedy Algorithm）\r每次都做当下最好的选择，也许走得慢，但至少方向不会错。\n—— 人生中有时“局部最优”，就是幸福的全局解。\n🔹 深度优先搜索（DFS）\r有时你要深入黑暗，直到找到那条通往光明的路径。\n—— 探索的意义，不在于速度，而在于不放弃回溯的勇气。\n🔹 广度优先搜索（BFS）\r别急着往深处钻，先看清身边的路。\n—— 学会广度优先，才能少走弯路。\n🔹 快速排序（Quick Sort）\r先分清轻重缓急，再逐一理清杂乱。\n—— 面对混乱，分割、整理、再融合，是清醒者的秩序。\n🔹 并查集（Union-Find）\r我们不断相遇、联合，又在分离中找到归属。\n—— 关系的本质，是不断“合并集合”的过程。\n🔹 最短路径（Dijkstra）\r每一步都算数，每一步都离目标更近。\n—— 坚持走代价最小的路，也是一种长期的理智。\n🔹 栈（Stack）\r后来的事，总得后来再处理。\n">
+<meta property='og:url' content='https://blog.ztcdream.com/p/%E7%AE%97%E6%B3%95%E6%84%9F%E6%82%9F/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-11-04T22:39:10&#43;08:00'/><meta property='article:modified_time' content='2025-11-09T19:55:49&#43;08:00'/>
-<meta name="twitter:title" content="整数线性规划题">
-<meta name="twitter:description" content="题目\r某单位需要加工制作 100 套钢架，每套用长为 2.9m、2.1m 和 1m 的圆钢各一根。已知原料长 6.9m。\n（1）如何下料，使用的原材料最省。\n（2）若下料方式不超过 3 种，应如何下料，使用的原材料最省。\n分析\r题目隐含的条件是：每套中3个长度的钢管只能从比它更长的钢管切割而来，不能通过拼接其他小钢管合成。这意味着不同的下料切料方式，会产生不同数量的边角料，消耗不同的原料数。题目要求的就是让消耗的原料数最小。\n选取决策变量\r设3种钢管为 $A,B,C$ 号，长度分别为:\n$a=2.9,b=2.1,c=1.0$\n$a+b+c=6.0 &lt;6.9$\n对于一根原料，它可以：\n1.不切割，获得长$6.9$的钢管\n2.切割一次，获得下面几种钢管\n(1) $2.9,4.0$\n(2) $2.1,4.8$\n(3) $1.0,5.9$\n3.切割两次\n(1) $2.9,2.9,1.1$\n(2) $2.9,2.1,1.9$\n(2) $$\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-11-09T21:12:37&#43;08:00'/><meta property='article:modified_time' content='2025-11-09T21:12:37&#43;08:00'/>
+<meta name="twitter:title" content="算法感悟">
+<meta name="twitter:description" content=" 「程序教会我们的，往往比代码本身更深刻。」\n—— 记一次关于算法与人生的思考\n🧠 前言\r在算法的世界里，每一种计算方式都有它存在的意义。\n有人用它们解决问题，有人从中读出人生。\n或许，我们写下的每一行代码，\n都在模拟自己与世界相处的方式。\n🔹 KMP算法\r一个人能走多远，不在于他在顺境时能走多快，\n而在于他在逆境时多久能找到曾经的自己。\n—— 失配时不重头来过，而是回到部分匹配的起点，这正是人生的韧性。\n🔹 二分查找（Binary Search）\r真理常藏于中点，极端的道路很少通向答案。\n—— 在喧嚣与偏执之间，学会在理性中试探最优解。\n🔹 动态规划（Dynamic Programming）\r成长从不是一蹴而就，而是把过去的积累化为当下的最优。\n—— 人生的每一步，都是在复用昨日的努力。\n🔹 贪心算法（Greedy Algorithm）\r每次都做当下最好的选择，也许走得慢，但至少方向不会错。\n—— 人生中有时“局部最优”，就是幸福的全局解。\n🔹 深度优先搜索（DFS）\r有时你要深入黑暗，直到找到那条通往光明的路径。\n—— 探索的意义，不在于速度，而在于不放弃回溯的勇气。\n🔹 广度优先搜索（BFS）\r别急着往深处钻，先看清身边的路。\n—— 学会广度优先，才能少走弯路。\n🔹 快速排序（Quick Sort）\r先分清轻重缓急，再逐一理清杂乱。\n—— 面对混乱，分割、整理、再融合，是清醒者的秩序。\n🔹 并查集（Union-Find）\r我们不断相遇、联合，又在分离中找到归属。\n—— 关系的本质，是不断“合并集合”的过程。\n🔹 最短路径（Dijkstra）\r每一步都算数，每一步都离目标更近。\n—— 坚持走代价最小的路，也是一种长期的理智。\n🔹 栈（Stack）\r后来的事，总得后来再处理。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -272,12 +272,28 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#题目">题目</a></li>
-    <li><a href="#分析">分析</a>
-      <ol>
-        <li><a href="#选取决策变量">选取决策变量</a></li>
-      </ol>
-    </li>
+    <li><a href="#-前言">🧠 前言</a></li>
+    <li><a href="#-kmp算法">🔹 KMP算法</a></li>
+    <li><a href="#-二分查找binary-search">🔹 二分查找（Binary Search）</a></li>
+    <li><a href="#-动态规划dynamic-programming">🔹 动态规划（Dynamic Programming）</a></li>
+    <li><a href="#-贪心算法greedy-algorithm">🔹 贪心算法（Greedy Algorithm）</a></li>
+    <li><a href="#-深度优先搜索dfs">🔹 深度优先搜索（DFS）</a></li>
+    <li><a href="#-广度优先搜索bfs">🔹 广度优先搜索（BFS）</a></li>
+    <li><a href="#-快速排序quick-sort">🔹 快速排序（Quick Sort）</a></li>
+    <li><a href="#-并查集union-find">🔹 并查集（Union-Find）</a></li>
+    <li><a href="#-最短路径dijkstra">🔹 最短路径（Dijkstra）</a></li>
+    <li><a href="#-栈stack">🔹 栈（Stack）</a></li>
+    <li><a href="#-队列queue">🔹 队列（Queue）</a></li>
+    <li><a href="#-哈希表hash-table">🔹 哈希表（Hash Table）</a></li>
+    <li><a href="#-拓扑排序topological-sort">🔹 拓扑排序（Topological Sort）</a></li>
+    <li><a href="#-a搜索">🔹 A*搜索</a></li>
+    <li><a href="#-回溯backtracking">🔹 回溯（Backtracking）</a></li>
+    <li><a href="#-分治法divide-and-conquer">🔹 分治法（Divide and Conquer）</a></li>
+    <li><a href="#-递归recursion">🔹 递归（Recursion）</a></li>
+    <li><a href="#-floyd算法">🔹 Floyd算法</a></li>
+    <li><a href="#-堆heap">🔹 堆（Heap）</a></li>
+    <li><a href="#-蒙特卡洛算法monte-carlo">🔹 蒙特卡洛算法（Monte Carlo）</a></li>
+    <li><a href="#-尾声">🪞 尾声</a></li>
   </ol>
 </nav>
         </div>
@@ -296,8 +312,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" style="background-color: #2a9d8f; color: #fff;">
-                数学建模
+            <a href="/categories/%E7%BC%96%E7%A8%8B/" style="background-color: #2a9d8f; color: #fff;">
+                编程
             </a>
         
     </header>
@@ -305,7 +321,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E6%95%B4%E6%95%B0%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92%E9%A2%98/">整数线性规划题</a>
+            <a href="/p/%E7%AE%97%E6%B3%95%E6%84%9F%E6%82%9F/">算法感悟</a>
         </h2>
     
         
@@ -327,7 +343,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025年11月4日</time>
+                <time class="article-time--published">2025年11月9日</time>
             </div>
         
 
@@ -358,41 +374,257 @@
     <section class="article-content">
     
     
-    <h2 id="题目">题目
+    <blockquote>
+<p>「程序教会我们的，往往比代码本身更深刻。」<br>
+—— 记一次关于算法与人生的思考</p>
+</blockquote>
+<hr>
+<h2 id="-前言">🧠 前言
 
 
 </h2>
 
 
-<p>某单位需要加工制作 100 套钢架，每套用长为 2.9m、2.1m 和 1m 的圆钢各一根。已知原料长 6.9m。</p>
-<p>（1）如何下料，使用的原材料最省。</p>
-<p>（2）若下料方式不超过 3 种，应如何下料，使用的原材料最省。</p>
-<h2 id="分析">分析
+<p>在算法的世界里，每一种计算方式都有它存在的意义。<br>
+有人用它们解决问题，有人从中读出人生。<br>
+或许，我们写下的每一行代码，<br>
+都在模拟自己与世界相处的方式。</p>
+<hr>
+<h2 id="-kmp算法">🔹 KMP算法
 
 
 </h2>
 
 
-<p>题目隐含的条件是：每套中3个长度的钢管只能从比它更长的钢管切割而来，不能通过拼接其他小钢管合成。这意味着不同的下料切料方式，会产生不同数量的边角料，消耗不同的原料数。题目要求的就是让消耗的原料数最小。</p>
-<h3 id="选取决策变量">选取决策变量
+<blockquote>
+<p>一个人能走多远，不在于他在顺境时能走多快，<br>
+而在于他在逆境时多久能找到曾经的自己。</p>
+<p>—— 失配时不重头来过，而是回到部分匹配的起点，这正是人生的韧性。</p>
+</blockquote>
+<hr>
+<h2 id="-二分查找binary-search">🔹 二分查找（Binary Search）
 
 
-</h3>
+</h2>
 
 
-<p>设3种钢管为 $A,B,C$ 号，长度分别为:</p>
-<p>$a=2.9,b=2.1,c=1.0$</p>
-<p>$a+b+c=6.0 &lt;6.9$</p>
-<p>对于一根原料，它可以：</p>
-<p>1.不切割，获得长$6.9$的钢管</p>
-<p>2.切割一次，获得下面几种钢管</p>
-<p>(1) $2.9,4.0$</p>
-<p>(2) $2.1,4.8$</p>
-<p>(3) $1.0,5.9$</p>
-<p>3.切割两次</p>
-<p>(1) $2.9,2.9,1.1$</p>
-<p>(2) $2.9,2.1,1.9$</p>
-<p>(2) $$</p>
+<blockquote>
+<p>真理常藏于中点，极端的道路很少通向答案。</p>
+<p>—— 在喧嚣与偏执之间，学会在理性中试探最优解。</p>
+</blockquote>
+<hr>
+<h2 id="-动态规划dynamic-programming">🔹 动态规划（Dynamic Programming）
+
+
+</h2>
+
+
+<blockquote>
+<p>成长从不是一蹴而就，而是把过去的积累化为当下的最优。</p>
+<p>—— 人生的每一步，都是在复用昨日的努力。</p>
+</blockquote>
+<hr>
+<h2 id="-贪心算法greedy-algorithm">🔹 贪心算法（Greedy Algorithm）
+
+
+</h2>
+
+
+<blockquote>
+<p>每次都做当下最好的选择，也许走得慢，但至少方向不会错。</p>
+<p>—— 人生中有时“局部最优”，就是幸福的全局解。</p>
+</blockquote>
+<hr>
+<h2 id="-深度优先搜索dfs">🔹 深度优先搜索（DFS）
+
+
+</h2>
+
+
+<blockquote>
+<p>有时你要深入黑暗，直到找到那条通往光明的路径。</p>
+<p>—— 探索的意义，不在于速度，而在于不放弃回溯的勇气。</p>
+</blockquote>
+<hr>
+<h2 id="-广度优先搜索bfs">🔹 广度优先搜索（BFS）
+
+
+</h2>
+
+
+<blockquote>
+<p>别急着往深处钻，先看清身边的路。</p>
+<p>—— 学会广度优先，才能少走弯路。</p>
+</blockquote>
+<hr>
+<h2 id="-快速排序quick-sort">🔹 快速排序（Quick Sort）
+
+
+</h2>
+
+
+<blockquote>
+<p>先分清轻重缓急，再逐一理清杂乱。</p>
+<p>—— 面对混乱，分割、整理、再融合，是清醒者的秩序。</p>
+</blockquote>
+<hr>
+<h2 id="-并查集union-find">🔹 并查集（Union-Find）
+
+
+</h2>
+
+
+<blockquote>
+<p>我们不断相遇、联合，又在分离中找到归属。</p>
+<p>—— 关系的本质，是不断“合并集合”的过程。</p>
+</blockquote>
+<hr>
+<h2 id="-最短路径dijkstra">🔹 最短路径（Dijkstra）
+
+
+</h2>
+
+
+<blockquote>
+<p>每一步都算数，每一步都离目标更近。</p>
+<p>—— 坚持走代价最小的路，也是一种长期的理智。</p>
+</blockquote>
+<hr>
+<h2 id="-栈stack">🔹 栈（Stack）
+
+
+</h2>
+
+
+<blockquote>
+<p>后来的事，总得后来再处理。</p>
+<p>—— 生活的优雅在于“先进后出”的秩序感。</p>
+</blockquote>
+<hr>
+<h2 id="-队列queue">🔹 队列（Queue）
+
+
+</h2>
+
+
+<blockquote>
+<p>每个现在都在等待未来，每个未来都来自过去。</p>
+<p>—— 人生的进程，也是一个温柔的排队系统。</p>
+</blockquote>
+<hr>
+<h2 id="-哈希表hash-table">🔹 哈希表（Hash Table）
+
+
+</h2>
+
+
+<blockquote>
+<p>真正的高效，不在于记得所有，而在于找到关键。</p>
+<p>—— 在纷乱的世界中，保持精准的映射关系。</p>
+</blockquote>
+<hr>
+<h2 id="-拓扑排序topological-sort">🔹 拓扑排序（Topological Sort）
+
+
+</h2>
+
+
+<blockquote>
+<p>有些事必须先完成，有些人必须先放下。</p>
+<p>—— 人生的顺序，才是混乱与秩序的分界线。</p>
+</blockquote>
+<hr>
+<h2 id="-a搜索">🔹 A*搜索
+
+
+</h2>
+
+
+<blockquote>
+<p>不盲目前行，也不止步不前，心有目标，路有启发。</p>
+<p>—— 最优的生活，是理性与直觉的平衡。</p>
+</blockquote>
+<hr>
+<h2 id="-回溯backtracking">🔹 回溯（Backtracking）
+
+
+</h2>
+
+
+<blockquote>
+<p>当你走错路时，不要害怕退回去。</p>
+<p>—— 重新选择，也是一种智慧的算法。</p>
+</blockquote>
+<hr>
+<h2 id="-分治法divide-and-conquer">🔹 分治法（Divide and Conquer）
+
+
+</h2>
+
+
+<blockquote>
+<p>面对复杂时，别硬扛，先拆解，再征服。</p>
+<p>—— 所有的大事，都是由无数小事拼成的胜利。</p>
+</blockquote>
+<hr>
+<h2 id="-递归recursion">🔹 递归（Recursion）
+
+
+</h2>
+
+
+<blockquote>
+<p>我们一生都在重复问题，只是参数不同。</p>
+<p>—— 人生的答案，往往藏在上一层的自己。</p>
+</blockquote>
+<hr>
+<h2 id="-floyd算法">🔹 Floyd算法
+
+
+</h2>
+
+
+<blockquote>
+<p>你以为的最短路，其实是别人帮你连起来的。</p>
+<p>—— 人与人之间，也在互相更新彼此的距离。</p>
+</blockquote>
+<hr>
+<h2 id="-堆heap">🔹 堆（Heap）
+
+
+</h2>
+
+
+<blockquote>
+<p>要想站得高，必须学会自我调整。</p>
+<p>—— 稳定的优先级，是成长的根基。</p>
+</blockquote>
+<hr>
+<h2 id="-蒙特卡洛算法monte-carlo">🔹 蒙特卡洛算法（Monte Carlo）
+
+
+</h2>
+
+
+<blockquote>
+<p>有时候，随机也是一种智慧。</p>
+<p>—— 并非所有的不确定，都意味着失控。</p>
+</blockquote>
+<hr>
+<h2 id="-尾声">🪞 尾声
+
+
+</h2>
+
+
+<p>算法让我们学会解决问题，<br>
+但更重要的，是它让我们理解：<br>
+<strong>每一次失败、回溯、分治与合并，<br>
+都是生活本身的递归调用。</strong></p>
+<blockquote>
+<p>“计算机科学的浪漫，不在于机器，而在于人类思想的映射。”</p>
+</blockquote>
+<hr>
 
 </section>
 
@@ -412,19 +644,7 @@
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    <section class="article-lastmod">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-        <span>
-            最后更新于 2025年11月9日 19:55
-        </span>
-    </section></footer>
+    </footer>
 
 
     
@@ -459,6 +679,67 @@
     
 
     
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86-%E7%9C%81%E6%B5%81%E7%89%88/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">二叉树的遍历-省流版</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E6%89%BE%E5%87%BA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">找出唯一字符</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E6%98%93%E9%94%99c-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">（易错）C&#43;&#43;的作用域概念</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/c%E8%AF%AD%E8%A8%80%E8%A7%A3%E5%86%B3%E6%95%B4%E6%95%B0%E5%89%8D%E6%9C%890%E7%9A%84%E8%BE%93%E5%85%A5%E9%97%AE%E9%A2%98/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">C语言解决整数前有0的输入问题</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
 
      
     
