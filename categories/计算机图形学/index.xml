@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Fri, 05 Dec 2025 12:39:40 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 05 Dec 2025 13:05:08 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>opengl的大致流程</title>
         <link>https://blog.ztcdream.com/p/opengl%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%81%E7%A8%8B/</link>
         <pubDate>Fri, 05 Dec 2025 10:00:31 +0800</pubDate>
@@ -177,7 +177,13 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;glfwSwapBuffers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;h2 id=&#34;顶点&#34;&gt;顶点
+
+
+&lt;/h2&gt;
+
+
+</description>
         </item>
         
     </channel>
