@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Fri, 05 Dec 2025 12:34:32 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 05 Dec 2025 12:37:22 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>opengl的大致流程</title>
         <link>https://blog.ztcdream.com/p/opengl%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%81%E7%A8%8B/</link>
         <pubDate>Fri, 05 Dec 2025 10:00:31 +0800</pubDate>
@@ -132,7 +132,7 @@
 &lt;li&gt;Blue：蓝&lt;/li&gt;
 &lt;li&gt;Alpha：透明度&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;传值可以用RGB，取值范围： $\text{0-255}$ ；也可以是将其归一化后的浮点数，取整范围 $ \text{0.0-1.0} $&lt;/p&gt;
+&lt;p&gt;传值可以用RGB，取值范围： $[0,255]$ ；也可以是将其归一化后的浮点数，取整范围 $[0.0,1.0]$&lt;/p&gt;
 &lt;p&gt;旧版本一些函数不支持整数类型，因此必须使用归一化后的浮点数。可自定义归一化函数，方便传入RGB常规色值。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
