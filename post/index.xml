@@ -167,6 +167,7 @@
 &lt;/h2&gt;
 
 
+&lt;p&gt;opengl使用双缓冲方案，在每生成下一帧时实际操作的是后缓冲区，要把后缓冲区交换成当前缓冲区。&lt;/p&gt;
 </description>
         </item>
         <item>
