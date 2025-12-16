@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.ztcdream.com/categories/</loc>
-    <lastmod>2025-12-05T18:22:03+08:00</lastmod>
+    <lastmod>2025-12-16T21:18:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -20,35 +20,11 @@
                 href="https://blog.ztcdream.com/categories/"
                 />
   </url><url>
-    <loc>https://blog.ztcdream.com/tags/opengl/</loc>
-    <lastmod>2025-12-05T18:22:03+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.ztcdream.com/p/opengl%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%81%E7%A8%8B/</loc>
-    <lastmod>2025-12-05T18:22:03+08:00</lastmod>
-  </url><url>
     <loc>https://blog.ztcdream.com/post/</loc>
-    <lastmod>2025-12-05T18:22:03+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.ztcdream.com/tags/</loc>
-    <lastmod>2025-12-05T18:22:03+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.ztcdream.com/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://blog.ztcdream.com/ar/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://blog.ztcdream.com/tags/"
-                />
+    <lastmod>2025-12-16T21:18:27+08:00</lastmod>
   </url><url>
     <loc>https://blog.ztcdream.com/</loc>
-    <lastmod>2025-12-05T18:22:03+08:00</lastmod>
+    <lastmod>2025-12-16T21:18:27+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -65,8 +41,35 @@
                 href="https://blog.ztcdream.com/"
                 />
   </url><url>
+    <loc>https://blog.ztcdream.com/p/%E8%A7%82%E5%AF%9F%E5%8F%98%E6%8D%A2/</loc>
+    <lastmod>2025-12-16T21:18:27+08:00</lastmod>
+  </url><url>
     <loc>https://blog.ztcdream.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/</loc>
-    <lastmod>2025-12-05T18:22:03+08:00</lastmod>
+    <lastmod>2025-12-16T21:18:27+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ztcdream.com/tags/opengl/</loc>
+    <lastmod>2025-12-14T20:13:36+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ztcdream.com/p/opengl%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%81%E7%A8%8B/</loc>
+    <lastmod>2025-12-14T20:13:36+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.ztcdream.com/tags/</loc>
+    <lastmod>2025-12-14T20:13:36+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.ztcdream.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://blog.ztcdream.com/ar/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://blog.ztcdream.com/tags/"
+                />
   </url><url>
     <loc>https://blog.ztcdream.com/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2025-11-09T19:55:49+08:00</lastmod>
