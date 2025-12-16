@@ -10,7 +10,7 @@
 <meta property='og:description' content="观察变换\r观察变换作用是决定摄像机从哪看，看向哪里，以及怎么看，也就是模拟一个眼睛在三维坐标里的位置和朝向。\n实现：使用 观察矩阵 ，把世界中的所有物体的坐标，从世界坐标系变换到局部坐标系。\n代码实现\r实践中无需手动求出观察矩阵，只需指定3个重要的参数：\n摄像机位置\ncameraPos:摄像机在世界坐标系里的位置\n观察目标点\ncameraTarget:摄像机看向哪个点\n上方向\nupVector:摄像机头顶的方向\n将3个参数传入 glm::lookAt() 函数，即求解出观察矩阵。\n示例：\n1 2 3 4 5 6 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f); // 摄像机在世界坐标系的位置：Z轴正方向3单位 glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f); // 摄像机看向原点 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f); // 摄像机的上方向是世界Y轴正方向 // 观察矩阵（View Matrix）的计算 glm::mat4 view = glm::lookAt(cameraPos, cameraTarget, cameraUp); OpenGL 的历史和设计遵循 Y 轴向上的约定。\n自由视角\r之前生成观察矩阵使用的三个参数中，决定看向哪的参数是一个点。这就导致移动摄像机的位置后，要保持“朝前看”的效果，就要同时更新目标点。\n因此可以将第二个参数 cameraTarget 改成 cameraFront ,原生成矩阵的参数更改为：\n1 view = lookAt (camearaPos, cameraPos + cameraFront, cameraUp) 这样改变摄像机位置后，视角仍然朝前。\n">
 <meta property='og:url' content='https://blog.ztcdream.com/p/%E8%A7%82%E5%AF%9F%E5%8F%98%E6%8D%A2/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-12-16T21:18:27&#43;08:00'/><meta property='article:modified_time' content='2025-12-16T21:18:27&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-12-16T21:18:27&#43;08:00'/><meta property='article:modified_time' content='2025-12-16T23:20:39&#43;08:00'/>
 <meta name="twitter:title" content="观察变换">
 <meta name="twitter:description" content="观察变换\r观察变换作用是决定摄像机从哪看，看向哪里，以及怎么看，也就是模拟一个眼睛在三维坐标里的位置和朝向。\n实现：使用 观察矩阵 ，把世界中的所有物体的坐标，从世界坐标系变换到局部坐标系。\n代码实现\r实践中无需手动求出观察矩阵，只需指定3个重要的参数：\n摄像机位置\ncameraPos:摄像机在世界坐标系里的位置\n观察目标点\ncameraTarget:摄像机看向哪个点\n上方向\nupVector:摄像机头顶的方向\n将3个参数传入 glm::lookAt() 函数，即求解出观察矩阵。\n示例：\n1 2 3 4 5 6 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f); // 摄像机在世界坐标系的位置：Z轴正方向3单位 glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f); // 摄像机看向原点 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f); // 摄像机的上方向是世界Y轴正方向 // 观察矩阵（View Matrix）的计算 glm::mat4 view = glm::lookAt(cameraPos, cameraTarget, cameraUp); OpenGL 的历史和设计遵循 Y 轴向上的约定。\n自由视角\r之前生成观察矩阵使用的三个参数中，决定看向哪的参数是一个点。这就导致移动摄像机的位置后，要保持“朝前看”的效果，就要同时更新目标点。\n因此可以将第二个参数 cameraTarget 改成 cameraFront ,原生成矩阵的参数更改为：\n1 view = lookAt (camearaPos, cameraPos + cameraFront, cameraUp) 这样改变摄像机位置后，视角仍然朝前。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -396,7 +396,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span> <span class="n">cameraPos</span>   <span class="o">=</span> <span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">,</span> <span class="mf">3.0f</span><span class="p">);</span>   <span class="c1">// 摄像机在世界坐标系的位置：Z轴正方向3单位
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span> <span class="n">cameraPos</span>   <span class="o">=</span> <span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">,</span> <span class="mf">3.0f</span><span class="p">);</span>   <span class="c1">// 摄像机在世界坐标系的位置：Z轴正方向3单位
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span> <span class="n">cameraTarget</span> <span class="o">=</span> <span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">);</span>  <span class="c1">// 摄像机看向原点
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span> <span class="n">cameraUp</span>    <span class="o">=</span> <span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">,</span> <span class="mf">1.0f</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">);</span>   <span class="c1">// 摄像机的上方向是世界Y轴正方向
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
@@ -441,7 +441,19 @@
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    </footer>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2025年12月16日 23:20
+        </span>
+    </section></footer>
 
 
     
