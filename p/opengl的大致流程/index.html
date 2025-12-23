@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="头文件\ropengl一般用到的头文件:\n1 2 3 4 5 6 7 #include &lt;glm/glm.hpp&gt; #include &lt;glm/gtc/matrix_transform.hpp&gt; #include &lt;glm/gtc/type_ptr.hpp&gt; #include &lt;glad/glad.h&gt; #include &lt;GLFW/glfw3.h&gt; #include &lt;iostream&gt; #include &lt;string&gt; 其中，glm 为转为opengl设计的矩阵运算库, glad 用于加载函数指针, GLFW 用于获得窗口。\n[!NOTE] 这是一个注意框\n第二行内容 注意：头文件的引用的先后顺序是很讲究的，glad 必须 先于 glfw 导入！\n工程上不使用 using namespace std; 命名空间，输出日志使用 std::cout\n创建窗口\r需要头文件 glfw3.h\n1 #include &lt;GLFW/glfw3.h&gt; 初始化 glfw\nglfwInit()：初始化，返回0表示正常\n创建窗口\nglfwCreateWindow()：创建窗口，接收窗口的长和宽，返回指向窗口对象的 指针。\n1 GLFWwindow *window = glfwCreateWindow(1280, 720, &#34;GED&#34;, nullptr, nullptr); 设置窗口位置\nglfwSetWindowPos()：设置窗口出现在电脑屏幕的何处，视具体电脑而异。\n1 glfwSetWindowPos(window, 1000, 150) 这一步最重要的是获得窗口对象的指针。之后要设置和操作这个窗口，就要传入指针。\n初始化OPENGL\rOPENGL的驱动一般包含在各个显卡的驱动中，不用额外下载。除非你电脑刚买或者完全不联网不玩游戏\n需要一个库来获得OPENGL的函数指针，常用glad。\n包含头文件 glad.h\n1 #include &lt;glad/glad.h&gt; 确定opengl版本\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="头文件\ropengl一般用到的头文件:\n1 2 3 4 5 6 7 #include &lt;glm/glm.hpp&gt; #include &lt;glm/gtc/matrix_transform.hpp&gt; #include &lt;glm/gtc/type_ptr.hpp&gt; #include &lt;glad/glad.h&gt; #include &lt;GLFW/glfw3.h&gt; #include &lt;iostream&gt; #include &lt;string&gt; 其中，glm 为转为opengl设计的矩阵运算库, glad 用于加载函数指针, GLFW 用于获得窗口。\n头文件的引用的先后顺序是很讲究的，`glad` 必须 先于 `glfw` 导入！ 工程上不使用 using namespace std; 命名空间，输出日志使用 std::cout\n创建窗口\r需要头文件 glfw3.h\n1 #include &lt;GLFW/glfw3.h&gt; 初始化 glfw\nglfwInit()：初始化，返回0表示正常\n创建窗口\nglfwCreateWindow()：创建窗口，接收窗口的长和宽，返回指向窗口对象的 指针。\n1 GLFWwindow *window = glfwCreateWindow(1280, 720, &#34;GED&#34;, nullptr, nullptr); 设置窗口位置\nglfwSetWindowPos()：设置窗口出现在电脑屏幕的何处，视具体电脑而异。\n1 glfwSetWindowPos(window, 1000, 150) 这一步最重要的是获得窗口对象的指针。之后要设置和操作这个窗口，就要传入指针。\n初始化OPENGL\rOPENGL的驱动一般包含在各个显卡的驱动中，不用额外下载。除非你电脑刚买或者完全不联网不玩游戏\n需要一个库来获得OPENGL的函数指针，常用glad。\n包含头文件 glad.h\n1 #include &lt;glad/glad.h&gt; 确定opengl版本\n">
 <title>opengl的大致流程</title>
 
 <link rel='canonical' href='https://blog.ztcdream.com/p/opengl%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%81%E7%A8%8B/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="opengl的大致流程">
-<meta property='og:description' content="头文件\ropengl一般用到的头文件:\n1 2 3 4 5 6 7 #include &lt;glm/glm.hpp&gt; #include &lt;glm/gtc/matrix_transform.hpp&gt; #include &lt;glm/gtc/type_ptr.hpp&gt; #include &lt;glad/glad.h&gt; #include &lt;GLFW/glfw3.h&gt; #include &lt;iostream&gt; #include &lt;string&gt; 其中，glm 为转为opengl设计的矩阵运算库, glad 用于加载函数指针, GLFW 用于获得窗口。\n[!NOTE] 这是一个注意框\n第二行内容 注意：头文件的引用的先后顺序是很讲究的，glad 必须 先于 glfw 导入！\n工程上不使用 using namespace std; 命名空间，输出日志使用 std::cout\n创建窗口\r需要头文件 glfw3.h\n1 #include &lt;GLFW/glfw3.h&gt; 初始化 glfw\nglfwInit()：初始化，返回0表示正常\n创建窗口\nglfwCreateWindow()：创建窗口，接收窗口的长和宽，返回指向窗口对象的 指针。\n1 GLFWwindow *window = glfwCreateWindow(1280, 720, &#34;GED&#34;, nullptr, nullptr); 设置窗口位置\nglfwSetWindowPos()：设置窗口出现在电脑屏幕的何处，视具体电脑而异。\n1 glfwSetWindowPos(window, 1000, 150) 这一步最重要的是获得窗口对象的指针。之后要设置和操作这个窗口，就要传入指针。\n初始化OPENGL\rOPENGL的驱动一般包含在各个显卡的驱动中，不用额外下载。除非你电脑刚买或者完全不联网不玩游戏\n需要一个库来获得OPENGL的函数指针，常用glad。\n包含头文件 glad.h\n1 #include &lt;glad/glad.h&gt; 确定opengl版本\n">
+<meta property='og:description' content="头文件\ropengl一般用到的头文件:\n1 2 3 4 5 6 7 #include &lt;glm/glm.hpp&gt; #include &lt;glm/gtc/matrix_transform.hpp&gt; #include &lt;glm/gtc/type_ptr.hpp&gt; #include &lt;glad/glad.h&gt; #include &lt;GLFW/glfw3.h&gt; #include &lt;iostream&gt; #include &lt;string&gt; 其中，glm 为转为opengl设计的矩阵运算库, glad 用于加载函数指针, GLFW 用于获得窗口。\n头文件的引用的先后顺序是很讲究的，`glad` 必须 先于 `glfw` 导入！ 工程上不使用 using namespace std; 命名空间，输出日志使用 std::cout\n创建窗口\r需要头文件 glfw3.h\n1 #include &lt;GLFW/glfw3.h&gt; 初始化 glfw\nglfwInit()：初始化，返回0表示正常\n创建窗口\nglfwCreateWindow()：创建窗口，接收窗口的长和宽，返回指向窗口对象的 指针。\n1 GLFWwindow *window = glfwCreateWindow(1280, 720, &#34;GED&#34;, nullptr, nullptr); 设置窗口位置\nglfwSetWindowPos()：设置窗口出现在电脑屏幕的何处，视具体电脑而异。\n1 glfwSetWindowPos(window, 1000, 150) 这一步最重要的是获得窗口对象的指针。之后要设置和操作这个窗口，就要传入指针。\n初始化OPENGL\rOPENGL的驱动一般包含在各个显卡的驱动中，不用额外下载。除非你电脑刚买或者完全不联网不玩游戏\n需要一个库来获得OPENGL的函数指针，常用glad。\n包含头文件 glad.h\n1 #include &lt;glad/glad.h&gt; 确定opengl版本\n">
 <meta property='og:url' content='https://blog.ztcdream.com/p/opengl%E7%9A%84%E5%A4%A7%E8%87%B4%E6%B5%81%E7%A8%8B/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='opengl' /><meta property='article:published_time' content='2025-12-05T10:00:31&#43;08:00'/><meta property='article:modified_time' content='2025-12-18T23:55:44&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='opengl' /><meta property='article:published_time' content='2025-12-05T10:00:31&#43;08:00'/><meta property='article:modified_time' content='2025-12-18T23:58:39&#43;08:00'/>
 <meta name="twitter:title" content="opengl的大致流程">
-<meta name="twitter:description" content="头文件\ropengl一般用到的头文件:\n1 2 3 4 5 6 7 #include &lt;glm/glm.hpp&gt; #include &lt;glm/gtc/matrix_transform.hpp&gt; #include &lt;glm/gtc/type_ptr.hpp&gt; #include &lt;glad/glad.h&gt; #include &lt;GLFW/glfw3.h&gt; #include &lt;iostream&gt; #include &lt;string&gt; 其中，glm 为转为opengl设计的矩阵运算库, glad 用于加载函数指针, GLFW 用于获得窗口。\n[!NOTE] 这是一个注意框\n第二行内容 注意：头文件的引用的先后顺序是很讲究的，glad 必须 先于 glfw 导入！\n工程上不使用 using namespace std; 命名空间，输出日志使用 std::cout\n创建窗口\r需要头文件 glfw3.h\n1 #include &lt;GLFW/glfw3.h&gt; 初始化 glfw\nglfwInit()：初始化，返回0表示正常\n创建窗口\nglfwCreateWindow()：创建窗口，接收窗口的长和宽，返回指向窗口对象的 指针。\n1 GLFWwindow *window = glfwCreateWindow(1280, 720, &#34;GED&#34;, nullptr, nullptr); 设置窗口位置\nglfwSetWindowPos()：设置窗口出现在电脑屏幕的何处，视具体电脑而异。\n1 glfwSetWindowPos(window, 1000, 150) 这一步最重要的是获得窗口对象的指针。之后要设置和操作这个窗口，就要传入指针。\n初始化OPENGL\rOPENGL的驱动一般包含在各个显卡的驱动中，不用额外下载。除非你电脑刚买或者完全不联网不玩游戏\n需要一个库来获得OPENGL的函数指针，常用glad。\n包含头文件 glad.h\n1 #include &lt;glad/glad.h&gt; 确定opengl版本\n">
+<meta name="twitter:description" content="头文件\ropengl一般用到的头文件:\n1 2 3 4 5 6 7 #include &lt;glm/glm.hpp&gt; #include &lt;glm/gtc/matrix_transform.hpp&gt; #include &lt;glm/gtc/type_ptr.hpp&gt; #include &lt;glad/glad.h&gt; #include &lt;GLFW/glfw3.h&gt; #include &lt;iostream&gt; #include &lt;string&gt; 其中，glm 为转为opengl设计的矩阵运算库, glad 用于加载函数指针, GLFW 用于获得窗口。\n头文件的引用的先后顺序是很讲究的，`glad` 必须 先于 `glfw` 导入！ 工程上不使用 using namespace std; 命名空间，输出日志使用 std::cout\n创建窗口\r需要头文件 glfw3.h\n1 #include &lt;GLFW/glfw3.h&gt; 初始化 glfw\nglfwInit()：初始化，返回0表示正常\n创建窗口\nglfwCreateWindow()：创建窗口，接收窗口的长和宽，返回指向窗口对象的 指针。\n1 GLFWwindow *window = glfwCreateWindow(1280, 720, &#34;GED&#34;, nullptr, nullptr); 设置窗口位置\nglfwSetWindowPos()：设置窗口出现在电脑屏幕的何处，视具体电脑而异。\n1 glfwSetWindowPos(window, 1000, 150) 这一步最重要的是获得窗口对象的指针。之后要设置和操作这个窗口，就要传入指针。\n初始化OPENGL\rOPENGL的驱动一般包含在各个显卡的驱动中，不用额外下载。除非你电脑刚买或者完全不联网不玩游戏\n需要一个库来获得OPENGL的函数指针，常用glad。\n包含头文件 glad.h\n1 #include &lt;glad/glad.h&gt; 确定opengl版本\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -282,6 +282,7 @@
     <li><a href="#顶点着色器">顶点着色器</a></li>
     <li><a href="#片段着色器">片段着色器</a></li>
     <li><a href="#着色器程序">着色器程序</a></li>
+    <li><a href="#帧循环">帧循环</a></li>
   </ol>
 </nav>
         </div>
@@ -390,12 +391,8 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中，<code>glm</code> 为转为opengl设计的矩阵运算库, <code>glad</code> 用于加载函数指针, <code>GLFW</code> 用于获得窗口。</p>
-<blockquote>
-<p>[!NOTE]
-这是一个注意框<br>
-第二行内容
-注意：头文件的引用的先后顺序是很讲究的，<code>glad</code> 必须 先于 <code>glfw</code> 导入！</p>
-</blockquote>
+<pre><code>头文件的引用的先后顺序是很讲究的，`glad` 必须 先于 `glfw` 导入！
+</code></pre>
 <p>工程上不使用 <code>using namespace std;</code> 命名空间，输出日志使用 <code>std::cout</code></p>
 <h2 id="创建窗口">创建窗口
 
@@ -845,7 +842,37 @@ glBindVertexArray(0);       // 绑定结束</li>
 </span></span><span class="line"><span class="cl"><span class="n">glDeleteShader</span><span class="p">(</span><span class="n">fragmentShader</span><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div>
+</div><h2 id="帧循环">帧循环
+
+
+</h2>
+
+
+<p>要在 while 循环里生成 <strong>每一帧</strong> 画面。基本步骤是：</p>
+<ul>
+<li>
+<p>接收键盘等输入，执行逻辑</p>
+</li>
+<li>
+<p>清除颜色缓冲、深度缓冲</p>
+</li>
+<li>
+<p>激活着色器程序</p>
+</li>
+<li>
+<p>绑定对应VAO</p>
+</li>
+<li>
+<p>确定 uniform 变量</p>
+</li>
+<li>
+<p>绘制</p>
+</li>
+<li>
+<p>交换缓冲区</p>
+</li>
+</ul>
+
 </section>
 
 
@@ -880,7 +907,7 @@ glBindVertexArray(0);       // 绑定结束</li>
 
 
         <span>
-            最后更新于 2025年12月18日 23:55
+            最后更新于 2025年12月18日 23:58
         </span>
     </section></footer>
 

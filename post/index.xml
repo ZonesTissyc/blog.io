@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Thu, 18 Dec 2025 23:55:44 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 18 Dec 2025 23:58:39 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>OPENGL编程规范</title>
         <link>https://blog.ztcdream.com/p/opengl%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83/</link>
         <pubDate>Thu, 18 Dec 2025 22:16:40 +0800</pubDate>
@@ -146,12 +146,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;其中，&lt;code&gt;glm&lt;/code&gt; 为转为opengl设计的矩阵运算库, &lt;code&gt;glad&lt;/code&gt; 用于加载函数指针, &lt;code&gt;GLFW&lt;/code&gt; 用于获得窗口。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!NOTE]
-这是一个注意框&lt;br&gt;
-第二行内容
-注意：头文件的引用的先后顺序是很讲究的，&lt;code&gt;glad&lt;/code&gt; 必须 先于 &lt;code&gt;glfw&lt;/code&gt; 导入！&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;头文件的引用的先后顺序是很讲究的，`glad` 必须 先于 `glfw` 导入！
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;工程上不使用 &lt;code&gt;using namespace std;&lt;/code&gt; 命名空间，输出日志使用 &lt;code&gt;std::cout&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;创建窗口&#34;&gt;创建窗口
 
@@ -601,7 +597,37 @@ glBindVertexArray(0);       // 绑定结束&lt;/li&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;glDeleteShader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fragmentShader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;h2 id=&#34;帧循环&#34;&gt;帧循环
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;要在 while 循环里生成 &lt;strong&gt;每一帧&lt;/strong&gt; 画面。基本步骤是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;接收键盘等输入，执行逻辑&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;清除颜色缓冲、深度缓冲&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;激活着色器程序&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;绑定对应VAO&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;确定 uniform 变量&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;绘制&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;交换缓冲区&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         </item>
         <item>
         <title>二叉树的遍历-省流版</title>
