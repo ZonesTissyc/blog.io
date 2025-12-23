@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="观察变换\r观察变换作用是决定摄像机从哪看，看向哪里，以及怎么看，也就是模拟一个眼睛在三维坐标里的位置和朝向。\n实现：使用 观察矩阵 ，把世界中的所有物体的坐标，从世界坐标系变换到局部坐标系。\n代码实现\r实践中无需手动求出观察矩阵，只需指定3个重要的参数：\n摄像机位置\ncameraPos:摄像机在世界坐标系里的位置\n观察目标点\ncameraTarget:摄像机看向哪个点\n上方向\nupVector:摄像机头顶的方向\n将3个参数传入 glm::lookAt() 函数，即求解出观察矩阵。\n示例：\n1 2 3 4 5 6 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f); // 摄像机在世界坐标系的位置：Z轴正方向3单位 glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f); // 摄像机看向原点 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f); // 摄像机的上方向是世界Y轴正方向 // 观察矩阵（View Matrix）的计算 glm::mat4 view = glm::lookAt(cameraPos, cameraTarget, cameraUp); OpenGL 的历史和设计遵循 Y 轴向上的约定。\n自由视角\r之前生成观察矩阵使用的三个参数中，决定看向哪的参数是一个点。这就导致移动摄像机的位置后，要保持“朝前看”的效果，就要同时更新目标点。\n因此可以将第二个参数 cameraTarget 改成 cameraFront ,原生成矩阵的参数更改为：\n1 view = lookAt (camearaPos, cameraPos + cameraFront, cameraUp) 这样改变摄像机位置后，视角仍然朝前。\n">
-<title>观察变换</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="git\rgit是什么？维基百科上的解释是这样的：\ngit是分布式版本控制软件，最初由Linus创作。 通俗来说它是一个 &ldquo;月光宝盒&rdquo;，有版本回溯和创建平行时空的能力：\n每次修改代码都有记录，可以方便地回退\n可以从主干中创建分支，修改分支后与主干合并\n本地修改可以推送到云端，这样方便保存和拉取代码\n总而言之，git方便了程序员去管理代码和团队协作。\n最小化使用git\rgit这个软件是开源的，但需要一个存储代码的云端，知名的代码托管平台是 github, gitlab 和 gitee。\ngitee 网址：https://markdown.com.cn\n注册之后，需要在&quot;设置-&gt;邮箱管理&quot;里绑定一个邮箱，系统会发送一个验证的邮件，点击链接验证。\n为了保护隐私，务必把下面的选项勾上：\n点击右上角+号，可以新建一个仓库。请记住，一个仓库下载到本地就是的一个文件夹，文件夹名称就是你设置的仓库名。因此第一次取名时要慎重。\n远端新建好了一个仓库，那怎么往上面传代码？\ngit的基础工作流是这样：\n选一个文件夹初始化git\n添加和修改代码，add,commit保存记录\npush推送到远端\n一些git命令:\n初始化git文件夹\ngit init：在当前文件夹下新键.git文件夹，git开始追踪文件夹下的文件。首次配置时使用。\n添加一次修改记录\ngit add .：添加文件夹下所有文件至暂存区。\ngit commit -m &quot;First commit&quot;：生成一次修改记录,记录add的文件。\n推送至远端\ngit push：把commit的修改同步至远端。\n从远端同步\ngit pull：从远端拉取。\n创建分支\ngit checkout -b branchname：创建并切换至一个新的分支。\n查看当前分支\ngit branch\n项目有一个默认的主干，为master或main，修改这个branch时要慎重。一般的做法是，checkout签出一个新分支，在这个新分支上修改代码,测试后再合并到主干。\n用git管理OpenGL项目\r个人认为，即便是完成计算机图形学的课程作业，使用git来管理 opengl 的代码是有必要的。\n特别是对于小组多人协作，你永远无法想象别人会把头文件放在什么位置。这就导致代码发给别人，无法直接运行。\n">
+<title>从git到opengl项目管理</title>
 
-<link rel='canonical' href='https://blog.ztcdream.com/p/%E8%A7%82%E5%AF%9F%E5%8F%98%E6%8D%A2/'>
+<link rel='canonical' href='https://blog.ztcdream.com/p/%E4%BB%8Egit%E5%88%B0opengl%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/'>
 
-<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="观察变换">
-<meta property='og:description' content="观察变换\r观察变换作用是决定摄像机从哪看，看向哪里，以及怎么看，也就是模拟一个眼睛在三维坐标里的位置和朝向。\n实现：使用 观察矩阵 ，把世界中的所有物体的坐标，从世界坐标系变换到局部坐标系。\n代码实现\r实践中无需手动求出观察矩阵，只需指定3个重要的参数：\n摄像机位置\ncameraPos:摄像机在世界坐标系里的位置\n观察目标点\ncameraTarget:摄像机看向哪个点\n上方向\nupVector:摄像机头顶的方向\n将3个参数传入 glm::lookAt() 函数，即求解出观察矩阵。\n示例：\n1 2 3 4 5 6 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f); // 摄像机在世界坐标系的位置：Z轴正方向3单位 glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f); // 摄像机看向原点 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f); // 摄像机的上方向是世界Y轴正方向 // 观察矩阵（View Matrix）的计算 glm::mat4 view = glm::lookAt(cameraPos, cameraTarget, cameraUp); OpenGL 的历史和设计遵循 Y 轴向上的约定。\n自由视角\r之前生成观察矩阵使用的三个参数中，决定看向哪的参数是一个点。这就导致移动摄像机的位置后，要保持“朝前看”的效果，就要同时更新目标点。\n因此可以将第二个参数 cameraTarget 改成 cameraFront ,原生成矩阵的参数更改为：\n1 view = lookAt (camearaPos, cameraPos + cameraFront, cameraUp) 这样改变摄像机位置后，视角仍然朝前。\n">
-<meta property='og:url' content='https://blog.ztcdream.com/p/%E8%A7%82%E5%AF%9F%E5%8F%98%E6%8D%A2/'>
+<link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="从git到opengl项目管理">
+<meta property='og:description' content="git\rgit是什么？维基百科上的解释是这样的：\ngit是分布式版本控制软件，最初由Linus创作。 通俗来说它是一个 &ldquo;月光宝盒&rdquo;，有版本回溯和创建平行时空的能力：\n每次修改代码都有记录，可以方便地回退\n可以从主干中创建分支，修改分支后与主干合并\n本地修改可以推送到云端，这样方便保存和拉取代码\n总而言之，git方便了程序员去管理代码和团队协作。\n最小化使用git\rgit这个软件是开源的，但需要一个存储代码的云端，知名的代码托管平台是 github, gitlab 和 gitee。\ngitee 网址：https://markdown.com.cn\n注册之后，需要在&quot;设置-&gt;邮箱管理&quot;里绑定一个邮箱，系统会发送一个验证的邮件，点击链接验证。\n为了保护隐私，务必把下面的选项勾上：\n点击右上角+号，可以新建一个仓库。请记住，一个仓库下载到本地就是的一个文件夹，文件夹名称就是你设置的仓库名。因此第一次取名时要慎重。\n远端新建好了一个仓库，那怎么往上面传代码？\ngit的基础工作流是这样：\n选一个文件夹初始化git\n添加和修改代码，add,commit保存记录\npush推送到远端\n一些git命令:\n初始化git文件夹\ngit init：在当前文件夹下新键.git文件夹，git开始追踪文件夹下的文件。首次配置时使用。\n添加一次修改记录\ngit add .：添加文件夹下所有文件至暂存区。\ngit commit -m &quot;First commit&quot;：生成一次修改记录,记录add的文件。\n推送至远端\ngit push：把commit的修改同步至远端。\n从远端同步\ngit pull：从远端拉取。\n创建分支\ngit checkout -b branchname：创建并切换至一个新的分支。\n查看当前分支\ngit branch\n项目有一个默认的主干，为master或main，修改这个branch时要慎重。一般的做法是，checkout签出一个新分支，在这个新分支上修改代码,测试后再合并到主干。\n用git管理OpenGL项目\r个人认为，即便是完成计算机图形学的课程作业，使用git来管理 opengl 的代码是有必要的。\n特别是对于小组多人协作，你永远无法想象别人会把头文件放在什么位置。这就导致代码发给别人，无法直接运行。\n">
+<meta property='og:url' content='https://blog.ztcdream.com/p/%E4%BB%8Egit%E5%88%B0opengl%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-12-16T21:18:27&#43;08:00'/><meta property='article:modified_time' content='2025-12-16T23:23:01&#43;08:00'/>
-<meta name="twitter:title" content="观察变换">
-<meta name="twitter:description" content="观察变换\r观察变换作用是决定摄像机从哪看，看向哪里，以及怎么看，也就是模拟一个眼睛在三维坐标里的位置和朝向。\n实现：使用 观察矩阵 ，把世界中的所有物体的坐标，从世界坐标系变换到局部坐标系。\n代码实现\r实践中无需手动求出观察矩阵，只需指定3个重要的参数：\n摄像机位置\ncameraPos:摄像机在世界坐标系里的位置\n观察目标点\ncameraTarget:摄像机看向哪个点\n上方向\nupVector:摄像机头顶的方向\n将3个参数传入 glm::lookAt() 函数，即求解出观察矩阵。\n示例：\n1 2 3 4 5 6 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f); // 摄像机在世界坐标系的位置：Z轴正方向3单位 glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f); // 摄像机看向原点 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f); // 摄像机的上方向是世界Y轴正方向 // 观察矩阵（View Matrix）的计算 glm::mat4 view = glm::lookAt(cameraPos, cameraTarget, cameraUp); OpenGL 的历史和设计遵循 Y 轴向上的约定。\n自由视角\r之前生成观察矩阵使用的三个参数中，决定看向哪的参数是一个点。这就导致移动摄像机的位置后，要保持“朝前看”的效果，就要同时更新目标点。\n因此可以将第二个参数 cameraTarget 改成 cameraFront ,原生成矩阵的参数更改为：\n1 view = lookAt (camearaPos, cameraPos + cameraFront, cameraUp) 这样改变摄像机位置后，视角仍然朝前。\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-12-23T20:18:16&#43;08:00'/><meta property='article:modified_time' content='2025-12-23T20:18:16&#43;08:00'/>
+<meta name="twitter:title" content="从git到opengl项目管理">
+<meta name="twitter:description" content="git\rgit是什么？维基百科上的解释是这样的：\ngit是分布式版本控制软件，最初由Linus创作。 通俗来说它是一个 &ldquo;月光宝盒&rdquo;，有版本回溯和创建平行时空的能力：\n每次修改代码都有记录，可以方便地回退\n可以从主干中创建分支，修改分支后与主干合并\n本地修改可以推送到云端，这样方便保存和拉取代码\n总而言之，git方便了程序员去管理代码和团队协作。\n最小化使用git\rgit这个软件是开源的，但需要一个存储代码的云端，知名的代码托管平台是 github, gitlab 和 gitee。\ngitee 网址：https://markdown.com.cn\n注册之后，需要在&quot;设置-&gt;邮箱管理&quot;里绑定一个邮箱，系统会发送一个验证的邮件，点击链接验证。\n为了保护隐私，务必把下面的选项勾上：\n点击右上角+号，可以新建一个仓库。请记住，一个仓库下载到本地就是的一个文件夹，文件夹名称就是你设置的仓库名。因此第一次取名时要慎重。\n远端新建好了一个仓库，那怎么往上面传代码？\ngit的基础工作流是这样：\n选一个文件夹初始化git\n添加和修改代码，add,commit保存记录\npush推送到远端\n一些git命令:\n初始化git文件夹\ngit init：在当前文件夹下新键.git文件夹，git开始追踪文件夹下的文件。首次配置时使用。\n添加一次修改记录\ngit add .：添加文件夹下所有文件至暂存区。\ngit commit -m &quot;First commit&quot;：生成一次修改记录,记录add的文件。\n推送至远端\ngit push：把commit的修改同步至远端。\n从远端同步\ngit pull：从远端拉取。\n创建分支\ngit checkout -b branchname：创建并切换至一个新的分支。\n查看当前分支\ngit branch\n项目有一个默认的主干，为master或main，修改这个branch时要慎重。一般的做法是，checkout签出一个新分支，在这个新分支上修改代码,测试后再合并到主干。\n用git管理OpenGL项目\r个人认为，即便是完成计算机图形学的课程作业，使用git来管理 opengl 的代码是有必要的。\n特别是对于小组多人协作，你永远无法想象别人会把头文件放在什么位置。这就导致代码发给别人，无法直接运行。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -272,9 +272,10 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#观察变换">观察变换</a></li>
-    <li><a href="#代码实现">代码实现</a></li>
-    <li><a href="#自由视角">自由视角</a></li>
+    <li><a href="#git">git</a></li>
+    <li><a href="#最小化使用git">最小化使用git</a></li>
+    <li><a href="#用git管理opengl项目">用git管理OpenGL项目</a></li>
+    <li><a href="#项目结构">项目结构</a></li>
   </ol>
 </nav>
         </div>
@@ -302,7 +303,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E8%A7%82%E5%AF%9F%E5%8F%98%E6%8D%A2/">观察变换</a>
+            <a href="/p/%E4%BB%8Egit%E5%88%B0opengl%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">从git到opengl项目管理</a>
         </h2>
     
         
@@ -324,7 +325,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025年12月16日</time>
+                <time class="article-time--published">2025年12月23日</time>
             </div>
         
 
@@ -355,74 +356,156 @@
     <section class="article-content">
     
     
-    <h2 id="观察变换">观察变换
+    <h2 id="git">git
 
 
 </h2>
 
 
-<p>观察变换作用是决定摄像机从哪看，看向哪里，以及怎么看，也就是模拟一个眼睛在三维坐标里的位置和朝向。</p>
-<p>实现：使用 <strong>观察矩阵</strong> ，把世界中的所有物体的坐标，从世界坐标系变换到局部坐标系。</p>
-<h2 id="代码实现">代码实现
-
-
-</h2>
-
-
-<p>实践中无需手动求出观察矩阵，只需指定3个重要的参数：</p>
+<p>git是什么？维基百科上的解释是这样的：</p>
+<pre><code>git是分布式版本控制软件，最初由Linus创作。
+</code></pre>
+<p>通俗来说它是一个 &ldquo;月光宝盒&rdquo;，有版本回溯和创建平行时空的能力：</p>
 <ul>
 <li>
-<p>摄像机位置</p>
-<p><code>cameraPos</code>:摄像机在世界坐标系里的位置</p>
+<p>每次修改代码都有记录，可以方便地回退</p>
 </li>
 <li>
-<p>观察目标点</p>
-<p><code>cameraTarget</code>:摄像机看向哪个点</p>
+<p>可以从主干中创建分支，修改分支后与主干合并</p>
 </li>
 <li>
-<p>上方向</p>
-<p><code>upVector</code>:摄像机头顶的方向</p>
+<p>本地修改可以推送到云端，这样方便保存和拉取代码</p>
 </li>
 </ul>
-<p>将3个参数传入 <code>glm::lookAt()</code> 函数，即求解出观察矩阵。</p>
-<p>示例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span> <span class="n">cameraPos</span>   <span class="o">=</span> <span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">,</span> <span class="mf">3.0f</span><span class="p">);</span>   <span class="c1">// 摄像机在世界坐标系的位置：Z轴正方向3单位
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span> <span class="n">cameraTarget</span> <span class="o">=</span> <span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">);</span>  <span class="c1">// 摄像机看向原点
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span> <span class="n">cameraUp</span>    <span class="o">=</span> <span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">,</span> <span class="mf">1.0f</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">);</span>   <span class="c1">// 摄像机的上方向是世界Y轴正方向
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 观察矩阵（View Matrix）的计算
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span> <span class="n">view</span> <span class="o">=</span> <span class="n">glm</span><span class="o">::</span><span class="n">lookAt</span><span class="p">(</span><span class="n">cameraPos</span><span class="p">,</span> <span class="n">cameraTarget</span><span class="p">,</span> <span class="n">cameraUp</span><span class="p">);</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>OpenGL 的历史和设计遵循 Y 轴向上的约定。</p>
-<h2 id="自由视角">自由视角
+<p>总而言之，git方便了程序员去管理代码和团队协作。</p>
+<h2 id="最小化使用git">最小化使用git
 
 
 </h2>
 
 
-<p>之前生成观察矩阵使用的三个参数中，决定看向哪的参数是一个点。这就导致移动摄像机的位置后，要保持“朝前看”的效果，就要同时更新目标点。</p>
-<p>因此可以将第二个参数 <code>cameraTarget</code> 改成 <code>cameraFront</code> ,原生成矩阵的参数更改为：</p>
+<p>git这个软件是开源的，但需要一个存储代码的<strong>云端</strong>，知名的代码托管平台是 github, gitlab 和 <strong>gitee</strong>。</p>
+<p>gitee 网址：<a class="link" href="https://markdown.com.cn"  target="_blank" rel="noopener"
+    >https://markdown.com.cn</a></p>
+<p>注册之后，需要在&quot;设置-&gt;邮箱管理&quot;里绑定一个<strong>邮箱</strong>，系统会发送一个验证的邮件，点击链接验证。</p>
+<p>为了保护隐私，务必把下面的选项勾上：</p>
+<p><img src="/p/%E4%BB%8Egit%E5%88%B0opengl%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/image1.png"
+	width="638"
+	height="224"
+	srcset="/p/%E4%BB%8Egit%E5%88%B0opengl%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/image1_hu2434845168434744961.png 480w, /p/%E4%BB%8Egit%E5%88%B0opengl%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/image1_hu17559341051716028683.png 1024w"
+	loading="lazy"
+	
+		alt="alt text"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="284"
+		data-flex-basis="683px"
+	
+></p>
+<p>点击右上角+号，可以新建一个仓库。请记住，一个仓库下载到本地就是的一个文件夹，文件夹名称就是你设置的仓库名。因此第一次取名时要慎重。</p>
+<p>远端新建好了一个仓库，那怎么往上面传代码？</p>
+<p>git的基础工作流是这样：</p>
+<ul>
+<li>
+<p>选一个文件夹初始化git</p>
+</li>
+<li>
+<p>添加和修改代码，add,commit保存记录</p>
+</li>
+<li>
+<p>push推送到远端</p>
+</li>
+</ul>
+<p>一些git命令:</p>
+<ol>
+<li>
+<p>初始化git文件夹</p>
+<p><code>git init</code>：在当前文件夹下新键<code>.git</code>文件夹，git开始追踪文件夹下的文件。首次配置时使用。</p>
+</li>
+<li>
+<p>添加一次修改记录</p>
+<p><code>git add .</code>：添加文件夹下所有文件至暂存区。</p>
+<p><code>git commit -m &quot;First commit&quot;</code>：生成一次修改记录,记录add的文件。</p>
+</li>
+<li>
+<p>推送至远端</p>
+<p><code>git push</code>：把<code>commit</code>的修改同步至远端。</p>
+</li>
+<li>
+<p>从远端同步</p>
+<p><code>git pull</code>：从远端拉取。</p>
+</li>
+<li>
+<p>创建分支</p>
+<p><code>git checkout -b branchname</code>：创建并切换至一个新的分支。</p>
+</li>
+<li>
+<p>查看当前分支</p>
+<p><code>git branch</code></p>
+<p>项目有一个默认的主干，为<code>master</code>或<code>main</code>，修改这个<code>branch</code>时要慎重。一般的做法是，<code>checkout</code>签出一个新分支，在这个新分支上修改代码,测试后再合并到主干。</p>
+</li>
+</ol>
+<h2 id="用git管理opengl项目">用git管理OpenGL项目
+
+
+</h2>
+
+
+<p>个人认为，即便是完成<strong>计算机图形学</strong>的课程作业，使用git来管理 opengl 的代码是有必要的。</p>
+<p>特别是对于小组多人协作，你永远无法想象别人会把头文件放在什么位置。这就导致代码发给别人，无法直接运行。</p>
+<p>VS2022可以点卡<code>.sln</code>文件，自动载入解决方案，是很方便的，使用git可以很好地运行别人的代码。</p>
+<p>使用git来管理opengl项目，应该要做到以下几点：</p>
+<ul>
+<li>
+<p>大家共用相同的头文件和类，并且在源代码的导入路径一致。</p>
+</li>
+<li>
+<p>第三方lib每个人不一样，但也应当放在相同的文件夹。</p>
+</li>
+<li>
+<p>每个人有自己的解决方案的文件夹，别人打开<code>.sln</code>，稍加设置后即可运行。</p>
+</li>
+</ul>
+<h2 id="项目结构">项目结构
+
+
+</h2>
+
+
+<p>opengl最难管理的就是各种库，包括头文件<code>include</code>，和<code>lib</code>等，以及自己写的类。</p>
+<p>项目结构如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">view</span> <span class="o">=</span> <span class="n">lookAt</span> <span class="p">(</span><span class="n">camearaPos</span><span class="p">,</span> <span class="n">cameraPos</span> <span class="o">+</span> <span class="n">cameraFront</span><span class="p">,</span> <span class="n">cameraUp</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">📂 项目根目录
+</span></span><span class="line"><span class="cl">  📂 src
+</span></span><span class="line"><span class="cl">    📄 main.cpp
+</span></span><span class="line"><span class="cl">    📄 utils.cpp
+</span></span><span class="line"><span class="cl">  📂 include
+</span></span><span class="line"><span class="cl">    📄 unils.h
+</span></span><span class="line"><span class="cl">  📂 shaders
+</span></span><span class="line"><span class="cl">  📂 Projects
+</span></span><span class="line"><span class="cl">    📂 Dingzhen
+</span></span><span class="line"><span class="cl">        📄 
+</span></span><span class="line"><span class="cl">  📄 README.md
+</span></span><span class="line"><span class="cl">  📄 .gitignore
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>这样改变摄像机位置后，视角仍然朝前。</p>
-
+</div>
 </section>
 
 
@@ -441,19 +524,7 @@
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    <section class="article-lastmod">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-        <span>
-            最后更新于 2025年12月16日 23:23
-        </span>
-    </section></footer>
+    </footer>
 
 
     
@@ -496,12 +567,12 @@
             
                 
 <article class="">
-    <a href="/p/%E4%BB%8Egit%E5%88%B0opengl%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/">
+    <a href="/p/%E8%A7%82%E5%AF%9F%E5%8F%98%E6%8D%A2/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">从git到opengl项目管理</h2>
+            <h2 class="article-title">观察变换</h2>
         </div>
     </a>
 </article>
