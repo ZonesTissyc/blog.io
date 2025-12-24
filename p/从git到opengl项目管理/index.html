@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="git\rgit是什么？维基百科上的解释是这样的：\ngit是分布式版本控制软件，最初由Linus创作。 通俗来说它是一个 &ldquo;月光宝盒&rdquo;，有版本回溯和创建平行时空的能力：\n每次修改代码都有记录，可以方便地回退\n可以从主干中创建分支，修改分支后与主干合并\n本地修改可以推送到云端，这样方便保存和拉取代码\n总而言之，git方便了程序员去管理代码和团队协作。\n最小化使用git\rgit这个软件是开源的，但需要一个存储代码的云端，知名的代码托管平台是 github, gitlab 和 gitee。\ngitee 网址：https://markdown.com.cn\n注册之后，需要在&quot;设置-&gt;邮箱管理&quot;里绑定一个邮箱，系统会发送一个验证的邮件，点击链接验证。\n为了保护隐私，务必把下面的选项勾上：\n点击右上角+号，可以新建一个仓库。请记住，一个仓库下载到本地就是的一个文件夹，文件夹名称就是你设置的仓库名。因此第一次取名时要慎重。\n远端新建好了一个仓库，那怎么往上面传代码？\ngit的基础工作流是这样：\n选一个文件夹初始化git\n添加和修改代码，add,commit保存记录\npush推送到远端\n一些git命令:\n初始化git文件夹\ngit init：在当前文件夹下新键.git文件夹，git开始追踪文件夹下的文件。首次配置时使用。\n添加一次修改记录\ngit add .：添加文件夹下所有文件至暂存区。\ngit commit -m &quot;First commit&quot;：生成一次修改记录,记录add的文件。\n推送至远端\ngit push：把commit的修改同步至远端。\n从远端同步\ngit pull：从远端拉取。\n创建分支\ngit checkout -b branchname：创建并切换至一个新的分支。\n查看当前分支\ngit branch\n项目有一个默认的主干，为master或main，修改这个branch时要慎重。一般的做法是，checkout签出一个新分支，在这个新分支上修改代码,测试后再合并到主干。\n用git管理OpenGL项目\r个人认为，即便是完成计算机图形学的课程作业，使用git来管理 opengl 的代码是有必要的。\n特别是对于小组多人协作，你永远无法想象别人会把头文件放在什么位置。这就导致代码发给别人，无法直接运行。\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="git\rgit是什么？维基百科上的解释是这样的：\ngit是分布式版本控制软件，最初由Linus创作。 通俗来说它是一个 &ldquo;月光宝盒&rdquo;，有版本回溯和创建平行时空的能力：\n每次修改代码都有记录，可以方便地回退\n可以从主干中创建分支，修改分支后与主干合并\n本地修改可以推送到云端，这样方便保存和拉取代码\n总而言之，git方便了程序员去管理代码和团队协作。\n最小化使用git\rgit这个软件是开源的，但需要一个存储代码的云端，知名的代码托管平台是 github, gitlab 和 gitee。\ngitee 网址：https://markdown.com.cn\n注册之后，需要在&quot;设置-&gt;邮箱管理&quot;里绑定一个邮箱，系统会发送一个验证的邮件，点击链接验证。\n为了保护隐私，务必把下面的选项勾上：\n点击右上角+号，可以新建一个仓库。请记住，一个仓库下载到本地就是的一个文件夹，文件夹名称就是你设置的仓库名。因此第一次取名时要慎重。\n远端新建好了一个仓库，那怎么往上面传代码？\ngit的基础工作流是这样：\n选一个文件夹初始化git\n添加和修改代码，add,commit保存记录\npush推送到远端\n一些git命令:\n初始化git文件夹\ngit init：在当前文件夹下新键.git文件夹，git开始追踪文件夹下的文件。首次配置时使用。\n添加一次修改记录\ngit add .：添加文件夹下所有文件至暂存区。\ngit commit -m &quot;First commit&quot;：生成一次修改记录,记录add的文件。\n推送至远端\ngit push：把commit的修改同步至远端。\n从远端同步\ngit pull：从远端拉取。\n切换分支\ngit checkout -b branchname：创建并切换至一个新的分支。\n查看当前分支\ngit branch\n项目有一个默认的主干，为master或main，修改这个branch时要慎重。一般的做法是，checkout签出一个新分支，在这个新分支上修改代码,测试后再合并到主干。\n首次推送新分支\ngit push -u origin 分支名:新创建的分支无法直接 git push，需首次在远端指定\n">
 <title>从git到opengl项目管理</title>
 
 <link rel='canonical' href='https://blog.ztcdream.com/p/%E4%BB%8Egit%E5%88%B0opengl%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/'>
 
 <link rel="stylesheet" href="/scss/style.min.b9c8156d464c343bdacaf14a871581fb94cbbdb9dd5cbce4ba017361187cc930.css"><meta property='og:title' content="从git到opengl项目管理">
-<meta property='og:description' content="git\rgit是什么？维基百科上的解释是这样的：\ngit是分布式版本控制软件，最初由Linus创作。 通俗来说它是一个 &ldquo;月光宝盒&rdquo;，有版本回溯和创建平行时空的能力：\n每次修改代码都有记录，可以方便地回退\n可以从主干中创建分支，修改分支后与主干合并\n本地修改可以推送到云端，这样方便保存和拉取代码\n总而言之，git方便了程序员去管理代码和团队协作。\n最小化使用git\rgit这个软件是开源的，但需要一个存储代码的云端，知名的代码托管平台是 github, gitlab 和 gitee。\ngitee 网址：https://markdown.com.cn\n注册之后，需要在&quot;设置-&gt;邮箱管理&quot;里绑定一个邮箱，系统会发送一个验证的邮件，点击链接验证。\n为了保护隐私，务必把下面的选项勾上：\n点击右上角+号，可以新建一个仓库。请记住，一个仓库下载到本地就是的一个文件夹，文件夹名称就是你设置的仓库名。因此第一次取名时要慎重。\n远端新建好了一个仓库，那怎么往上面传代码？\ngit的基础工作流是这样：\n选一个文件夹初始化git\n添加和修改代码，add,commit保存记录\npush推送到远端\n一些git命令:\n初始化git文件夹\ngit init：在当前文件夹下新键.git文件夹，git开始追踪文件夹下的文件。首次配置时使用。\n添加一次修改记录\ngit add .：添加文件夹下所有文件至暂存区。\ngit commit -m &quot;First commit&quot;：生成一次修改记录,记录add的文件。\n推送至远端\ngit push：把commit的修改同步至远端。\n从远端同步\ngit pull：从远端拉取。\n创建分支\ngit checkout -b branchname：创建并切换至一个新的分支。\n查看当前分支\ngit branch\n项目有一个默认的主干，为master或main，修改这个branch时要慎重。一般的做法是，checkout签出一个新分支，在这个新分支上修改代码,测试后再合并到主干。\n用git管理OpenGL项目\r个人认为，即便是完成计算机图形学的课程作业，使用git来管理 opengl 的代码是有必要的。\n特别是对于小组多人协作，你永远无法想象别人会把头文件放在什么位置。这就导致代码发给别人，无法直接运行。\n">
+<meta property='og:description' content="git\rgit是什么？维基百科上的解释是这样的：\ngit是分布式版本控制软件，最初由Linus创作。 通俗来说它是一个 &ldquo;月光宝盒&rdquo;，有版本回溯和创建平行时空的能力：\n每次修改代码都有记录，可以方便地回退\n可以从主干中创建分支，修改分支后与主干合并\n本地修改可以推送到云端，这样方便保存和拉取代码\n总而言之，git方便了程序员去管理代码和团队协作。\n最小化使用git\rgit这个软件是开源的，但需要一个存储代码的云端，知名的代码托管平台是 github, gitlab 和 gitee。\ngitee 网址：https://markdown.com.cn\n注册之后，需要在&quot;设置-&gt;邮箱管理&quot;里绑定一个邮箱，系统会发送一个验证的邮件，点击链接验证。\n为了保护隐私，务必把下面的选项勾上：\n点击右上角+号，可以新建一个仓库。请记住，一个仓库下载到本地就是的一个文件夹，文件夹名称就是你设置的仓库名。因此第一次取名时要慎重。\n远端新建好了一个仓库，那怎么往上面传代码？\ngit的基础工作流是这样：\n选一个文件夹初始化git\n添加和修改代码，add,commit保存记录\npush推送到远端\n一些git命令:\n初始化git文件夹\ngit init：在当前文件夹下新键.git文件夹，git开始追踪文件夹下的文件。首次配置时使用。\n添加一次修改记录\ngit add .：添加文件夹下所有文件至暂存区。\ngit commit -m &quot;First commit&quot;：生成一次修改记录,记录add的文件。\n推送至远端\ngit push：把commit的修改同步至远端。\n从远端同步\ngit pull：从远端拉取。\n切换分支\ngit checkout -b branchname：创建并切换至一个新的分支。\n查看当前分支\ngit branch\n项目有一个默认的主干，为master或main，修改这个branch时要慎重。一般的做法是，checkout签出一个新分支，在这个新分支上修改代码,测试后再合并到主干。\n首次推送新分支\ngit push -u origin 分支名:新创建的分支无法直接 git push，需首次在远端指定\n">
 <meta property='og:url' content='https://blog.ztcdream.com/p/%E4%BB%8Egit%E5%88%B0opengl%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-12-23T20:18:16&#43;08:00'/><meta property='article:modified_time' content='2025-12-23T21:25:36&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-12-23T20:18:16&#43;08:00'/><meta property='article:modified_time' content='2025-12-23T21:48:01&#43;08:00'/>
 <meta name="twitter:title" content="从git到opengl项目管理">
-<meta name="twitter:description" content="git\rgit是什么？维基百科上的解释是这样的：\ngit是分布式版本控制软件，最初由Linus创作。 通俗来说它是一个 &ldquo;月光宝盒&rdquo;，有版本回溯和创建平行时空的能力：\n每次修改代码都有记录，可以方便地回退\n可以从主干中创建分支，修改分支后与主干合并\n本地修改可以推送到云端，这样方便保存和拉取代码\n总而言之，git方便了程序员去管理代码和团队协作。\n最小化使用git\rgit这个软件是开源的，但需要一个存储代码的云端，知名的代码托管平台是 github, gitlab 和 gitee。\ngitee 网址：https://markdown.com.cn\n注册之后，需要在&quot;设置-&gt;邮箱管理&quot;里绑定一个邮箱，系统会发送一个验证的邮件，点击链接验证。\n为了保护隐私，务必把下面的选项勾上：\n点击右上角+号，可以新建一个仓库。请记住，一个仓库下载到本地就是的一个文件夹，文件夹名称就是你设置的仓库名。因此第一次取名时要慎重。\n远端新建好了一个仓库，那怎么往上面传代码？\ngit的基础工作流是这样：\n选一个文件夹初始化git\n添加和修改代码，add,commit保存记录\npush推送到远端\n一些git命令:\n初始化git文件夹\ngit init：在当前文件夹下新键.git文件夹，git开始追踪文件夹下的文件。首次配置时使用。\n添加一次修改记录\ngit add .：添加文件夹下所有文件至暂存区。\ngit commit -m &quot;First commit&quot;：生成一次修改记录,记录add的文件。\n推送至远端\ngit push：把commit的修改同步至远端。\n从远端同步\ngit pull：从远端拉取。\n创建分支\ngit checkout -b branchname：创建并切换至一个新的分支。\n查看当前分支\ngit branch\n项目有一个默认的主干，为master或main，修改这个branch时要慎重。一般的做法是，checkout签出一个新分支，在这个新分支上修改代码,测试后再合并到主干。\n用git管理OpenGL项目\r个人认为，即便是完成计算机图形学的课程作业，使用git来管理 opengl 的代码是有必要的。\n特别是对于小组多人协作，你永远无法想象别人会把头文件放在什么位置。这就导致代码发给别人，无法直接运行。\n">
+<meta name="twitter:description" content="git\rgit是什么？维基百科上的解释是这样的：\ngit是分布式版本控制软件，最初由Linus创作。 通俗来说它是一个 &ldquo;月光宝盒&rdquo;，有版本回溯和创建平行时空的能力：\n每次修改代码都有记录，可以方便地回退\n可以从主干中创建分支，修改分支后与主干合并\n本地修改可以推送到云端，这样方便保存和拉取代码\n总而言之，git方便了程序员去管理代码和团队协作。\n最小化使用git\rgit这个软件是开源的，但需要一个存储代码的云端，知名的代码托管平台是 github, gitlab 和 gitee。\ngitee 网址：https://markdown.com.cn\n注册之后，需要在&quot;设置-&gt;邮箱管理&quot;里绑定一个邮箱，系统会发送一个验证的邮件，点击链接验证。\n为了保护隐私，务必把下面的选项勾上：\n点击右上角+号，可以新建一个仓库。请记住，一个仓库下载到本地就是的一个文件夹，文件夹名称就是你设置的仓库名。因此第一次取名时要慎重。\n远端新建好了一个仓库，那怎么往上面传代码？\ngit的基础工作流是这样：\n选一个文件夹初始化git\n添加和修改代码，add,commit保存记录\npush推送到远端\n一些git命令:\n初始化git文件夹\ngit init：在当前文件夹下新键.git文件夹，git开始追踪文件夹下的文件。首次配置时使用。\n添加一次修改记录\ngit add .：添加文件夹下所有文件至暂存区。\ngit commit -m &quot;First commit&quot;：生成一次修改记录,记录add的文件。\n推送至远端\ngit push：把commit的修改同步至远端。\n从远端同步\ngit pull：从远端拉取。\n切换分支\ngit checkout -b branchname：创建并切换至一个新的分支。\n查看当前分支\ngit branch\n项目有一个默认的主干，为master或main，修改这个branch时要慎重。一般的做法是，checkout签出一个新分支，在这个新分支上修改代码,测试后再合并到主干。\n首次推送新分支\ngit push -u origin 分支名:新创建的分支无法直接 git push，需首次在远端指定\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -278,6 +278,7 @@
     <li><a href="#项目结构">项目结构</a></li>
     <li><a href="#工作流程">工作流程</a></li>
     <li><a href="#类的实现文件">类的实现文件</a></li>
+    <li><a href="#大体积资源文件">大体积资源文件</a></li>
   </ol>
 </nav>
         </div>
@@ -342,7 +343,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -439,7 +440,7 @@
 <p><code>git pull</code>：从远端拉取。</p>
 </li>
 <li>
-<p>创建分支</p>
+<p>切换分支</p>
 <p><code>git checkout -b branchname</code>：创建并切换至一个新的分支。</p>
 </li>
 <li>
@@ -447,7 +448,49 @@
 <p><code>git branch</code></p>
 <p>项目有一个默认的主干，为<code>master</code>或<code>main</code>，修改这个<code>branch</code>时要慎重。一般的做法是，<code>checkout</code>签出一个新分支，在这个新分支上修改代码,测试后再合并到主干。</p>
 </li>
+<li>
+<p>首次推送新分支</p>
+<p><code>git push -u origin 分支名</code>:新创建的分支无法直接 <code>git push</code>，需首次在远端指定</p>
+</li>
+<li>
+<p>删除分支</p>
+<p><code>git branch -d 分支名</code>：分支合并后，不需要了可以在本地删除。</p>
+<p><code>git push origin --delete 分支名</code> ：上面的命令只是删除本地分支，这个命令删除远程分支。</p>
+</li>
 </ol>
+<p>其他：</p>
+<ul>
+<li>
+<p>配置用户名和邮箱</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git config user.name <span class="s2">&#34;你的用户名&#34;</span>
+</span></span><span class="line"><span class="cl">git config user.email <span class="s2">&#34;你的邮箱&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查看git状态</p>
+<p><code>git status</code></p>
+</li>
+<li>
+<p>删除远程文件，本地不删除</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git rm --cached 文件名
+</span></span><span class="line"><span class="cl">git rm -r --cached 文件夹
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
 <h2 id="用git管理opengl项目">用git管理OpenGL项目
 
 
@@ -456,17 +499,17 @@
 
 <p>个人认为，即便是完成<strong>计算机图形学</strong>的课程作业，使用git来管理 opengl 的代码是有必要的。</p>
 <p>特别是对于小组多人协作，你永远无法想象别人会把头文件放在什么位置。这就导致代码发给别人，无法直接运行。</p>
-<p>VS2022可以点卡<code>.sln</code>文件，自动载入解决方案，是很方便的，使用git可以很好地运行别人的代码。</p>
+<p>相比于VSCode,VS2022最方便的点在于，可以直接点开 <code>.sln</code> 文件，就会自动加载整个解决方案，里面的多个项目可以直接运行。git可以充分利用这个优势，让小组成员开发代码的效率堪比火箭。</p>
 <p>使用git来管理opengl项目，应该要做到以下几点：</p>
 <ul>
 <li>
 <p>大家共用相同的头文件和类，并且在源代码的导入路径一致。</p>
 </li>
 <li>
-<p>第三方lib每个人不一样，但也应当放在相同的文件夹。</p>
+<p>第三方lib每个人不一样，但也应当放在相同的文件夹。这样在项目里指定的文件夹保持一致。</p>
 </li>
 <li>
-<p>每个人有自己的解决方案的文件夹，别人打开<code>.sln</code>，稍加设置后即可运行。</p>
+<p>每个人有自己的解决方案的文件夹，自己的项目全放在下面。别人打开自己的 <code>.sln</code>，稍加设置后也能运行。</p>
 </li>
 </ul>
 <h2 id="项目结构">项目结构
@@ -566,6 +609,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>最好是所有人共用一个<code>props</code>，某个项目有特殊配置，单独写一个<code>props</code>。</p>
+<pre><code>VS的许多导入机制不是简单的复制文件，而是引用。原文件一旦修改，引用这个文件的部分也会生效。
+</code></pre>
 <h2 id="工作流程">工作流程
 
 
@@ -573,6 +618,21 @@
 
 
 <ul>
+<li>
+<p>签出分支</p>
+<p>所有人一定要保证主分支的干净，不要让多余的文件提交到仓库! 下面几种情形，一定要创建并切换到新的分支进行：</p>
+<ul>
+<li>
+<p>我要运行和调试代码（无论别人的还是自己的），并加入新的依赖。</p>
+</li>
+<li>
+<p>我要写新的类，需要新增 <code>.h</code> 和 <code>.cpp</code> 文件</p>
+</li>
+<li>
+<p>我要使用新的模型文件</p>
+</li>
+</ul>
+</li>
 <li>
 <p>新增项目</p>
 <p>在自己的解决方案文件夹里新建项目，每个项目导入<code>props</code>文件，一键配置好依赖。新写的类在自己的项目里测试，完成后放到公共的<code>include</code>文件夹。</p>
@@ -585,6 +645,10 @@
 <p>增加依赖库</p>
 <p>不用编译的头文件直接放<code>include</code>文件夹，根据自己电脑编译出来的产物放 <code>thirdLibrary</code>。</p>
 </li>
+<li>
+<p>推送分支</p>
+<p>把分支提交到远程，发起 pull request</p>
+</li>
 </ul>
 <h2 id="类的实现文件">类的实现文件
 
@@ -592,7 +656,32 @@
 </h2>
 
 
-<p>类的实现文件 <code>.cpp</code>,<code>.c</code>文件放在<code>src</code>文件夹下，在每个项目的<code>解决方案视图</code>里的<code>头文件</code>里添加现有项</p>
+<p>类的实现文件 <code>.cpp</code>,<code>.c</code>文件放在<code>src</code>文件夹下，在每个项目的<code>解决方案视图</code>里的<code>头文件</code>里添加现有项。</p>
+<pre><code>`.cpp`文件不能向头文件那样直接指定目录，需要在VS里导入，在编译期才会参加编译。
+</code></pre>
+<h2 id="大体积资源文件">大体积资源文件
+
+
+</h2>
+
+
+<p>opengl项目涉及的纹理、贴图、模型的文件体积都较大，<code>glb</code> 文件更是动辄几种兆。<strong>大文件</strong> 不适宜使用git管理，不要把它们提交到仓库。幸运的是，这些文件整理好能使用之后，不会再次修改(<del>没有建模的实力</del>)。</p>
+<p>在和gpt一番智斗后，有了下面的思路：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">   仓库里保存下载链接的文本文件
+</span></span><span class="line"><span class="cl">==&gt; 从网盘下载
+</span></span><span class="line"><span class="cl">==&gt; 解压到指定位置
+</span></span><span class="line"><span class="cl">==&gt; 源代码里使用相同的导入路径
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以用一个<code>json</code>文件保存文件信息，包含文件名，类型，最重要的下载链接。脚本读取到json文件后，按url索取模型文件，放在同级目录里。又一番跟AI智斗后，它给了一个自动遍历json文件，自动下载的python脚本。</p>
 
 </section>
 
@@ -622,7 +711,7 @@
 
 
         <span>
-            最后更新于 2025年12月23日 21:25
+            最后更新于 2025年12月23日 21:48
         </span>
     </section></footer>
 
