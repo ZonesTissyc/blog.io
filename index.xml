@@ -7,7 +7,113 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZTC@</copyright>
-        <lastBuildDate>Tue, 23 Dec 2025 21:48:01 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 03 Jan 2026 22:48:47 +0800</lastBuildDate><atom:link href="https://blog.ztcdream.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>面向对象-简单游戏项目</title>
+        <link>https://blog.ztcdream.com/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%AE%80%E5%8D%95%E6%B8%B8%E6%88%8F%E9%A1%B9%E7%9B%AE/</link>
+        <pubDate>Sat, 03 Jan 2026 22:48:47 +0800</pubDate>
+        
+        <guid>https://blog.ztcdream.com/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%AE%80%E5%8D%95%E6%B8%B8%E6%88%8F%E9%A1%B9%E7%9B%AE/</guid>
+        <description>&lt;h2 id=&#34;抽象化的代码架构&#34;&gt;抽象化的代码架构
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;面向对象可是C++区别于C的核心优势，最核心的好处是能提高代码复用。LearnOpenGL在每个单元后面都有一个类。&lt;/p&gt;
+&lt;p&gt;一个基于OpenGL的C++游戏项目，最开始肯定是把所有的代码全放在一个main.cpp里。到后面知道了要将一些重复出现的代码分离，定义成一个函数。在了解了面向对象之后，终于不走弯路，把所有函数都写在类里面。&lt;/p&gt;
+&lt;p&gt;最开始写的OpenGL项目是main+函数+部分类的形式。类化的代码多为导入的第三方库和高度封装这些库的类，main函数里面要搞定帧循环。而面向对象的终极目标，应该是main里相当简洁，只有一个类的初始化和结束，就像下面：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;application.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;Application&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;exit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;main.cpp&lt;/code&gt; 里没有帧循环，程序全放在 &lt;code&gt;application&lt;/code&gt; 类里。&lt;/p&gt;
+&lt;h2 id=&#34;很容易写的类&#34;&gt;很容易写的类
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;OpenGL项目，特别是游戏项目，一些类在早期就能写出来。&lt;/p&gt;
+&lt;h3 id=&#34;camerah&#34;&gt;camera.h
+
+
+&lt;/h3&gt;
+
+
+&lt;p&gt;摄像机的类当然相当简单：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;记录&lt;/strong&gt; 自身的世界坐标系位置Pos，上方向向量 Front，右方向向量以及欧拉角。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设置一些函数可以 接收参数来 &lt;strong&gt;改变&lt;/strong&gt; 这些值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设置一个函数，最终 &lt;strong&gt;返回&lt;/strong&gt; 我们最想要的观察矩阵。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这个类的目标是很明确的，最终是返回一个矩阵。有了这个目标，设置 &lt;code&gt;private&lt;/code&gt; 和 &lt;code&gt;methods&lt;/code&gt; 就很自然了。&lt;/p&gt;
+&lt;h3 id=&#34;inputcontrollerh&#34;&gt;InputController.h
+
+
+&lt;/h3&gt;
+
+
+&lt;p&gt;这个类是与输入设备交互的类，要处理玩家的输入。如果有做过后端项目的话，就知道java web里有一个 &lt;code&gt;Interceptor&lt;/code&gt; 类可以拦截所有的 Http 请求，由请求的内容跳转不同的逻辑。&lt;/p&gt;
+&lt;p&gt;仿照这个java web的思路， InputController类应当处理所有的输入，并且在帧循环一开始就拦截，有且仅有一个拦截器，这样才不会乱套。&lt;/p&gt;
+&lt;p&gt;controller控制谁呢？我觉得控制摄像机也行，控制玩家也可以。不用切换人称视角的话，直接控制摄像机更好些。&lt;/p&gt;
+&lt;h3 id=&#34;windowh&#34;&gt;window.h
+
+
+&lt;/h3&gt;
+
+
+&lt;p&gt;这个类的功能就很单一了：初始化glfw、glad，保存window指针。我们的项目里还记录了window的大小，以及设置调整窗口的函数。&lt;/p&gt;
+&lt;h2 id=&#34;渲染逻辑&#34;&gt;渲染逻辑
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;在渲染画面的相关代码上，我们也走过不少弯路。一开始所有的VAO/VBO，shader全写在main里，导致main函数相当臃肿。后面还有各种模型model，网格mesh，动画animation，必须使用面向对象的思想。&lt;/p&gt;
+&lt;p&gt;渲染画面部分的类要写好，就必须对渲染的流程十分了解。&lt;/p&gt;
+&lt;p&gt;1.画面是一帧一帧生成的，因此有了帧循环。&lt;/p&gt;
+&lt;p&gt;2.渲染初期要指定shaderPragram，而shaderPragram要提前编译好，编译时至少要指定vertexShader、framShader，于是就有了 &lt;code&gt;shader.h&lt;/code&gt; 类。&lt;/p&gt;
+&lt;p&gt;3.模型的加载需要处理多个mesh,加载模型文件遍历读取节点，构造mesh，于是有了 &lt;code&gt;model.h&lt;/code&gt; ，用来导入模型。这个model对象是一次加载，可多次复用的。&lt;/p&gt;
+&lt;p&gt;4.一个场景包含了多个模型对象，这些模型对象保存了自身的属性（大小，位置，朝向，其他状态），游戏逻辑可以直接增删改查这些对象。于是有了 &lt;code&gt;scene.h&lt;/code&gt;，它保存了一帧里要绘制的模型对象，自身不渲染画面。&lt;/p&gt;
+&lt;p&gt;5.&lt;code&gt;scene&lt;/code&gt;对象需要在帧循环里渲染出来。遍历scene里所有的模型对象，分别查看对象是否要绘制，绘制时用的 &lt;code&gt;model&lt;/code&gt;对象，用哪个 &lt;code&gt;shader&lt;/code&gt; 对象，传入shader相关参数。这个过程就可以写成 &lt;code&gt;Renderer&lt;/code&gt; 类。Render类只接收scene等对象，只管渲染画面，不改变其他对象。&lt;/p&gt;
+&lt;p&gt;6.既然 &lt;code&gt;scene&lt;/code&gt;类存的是模型对象，那么需要一个类来保存这个模型。&lt;code&gt;model&lt;/code&gt; 类确切来说是模型加载类，只是加载模型的数据，这个数据是复用的。那么一个实例化的人物，他当然对应一个 model对象，同时还有位置，朝向，血量等，这些可以封装进一个类，&lt;code&gt;Object.h&lt;/code&gt;。这个类应当记录用哪个 model，对应的shader，大小、位置、朝向，可见性等。这样，scenne里保存的就不是model对象，而是object。游戏逻辑里影响object对象，scene里保存object的引用，并在renderer里渲染出来。&lt;/p&gt;
+&lt;h2 id=&#34;游戏逻辑&#34;&gt;游戏逻辑
+
+
+&lt;/h2&gt;
+
+
+&lt;p&gt;这部分的代码结构，我确实想了好久，一直犹豫不决。因为我不知道从哪开始，输入什么，改变什么，最后输出什么。&lt;/p&gt;
+&lt;p&gt;之前的类都比较简单，采用的是 &lt;strong&gt;自底向上&lt;/strong&gt; 的思路。加载着色器程序麻烦，有了 shader；加载模型困难，有了model，shader包含在内；model则被object包含&amp;hellip;不断地从底层向上抽象。&lt;/p&gt;
+&lt;p&gt;换成游戏逻辑的部分，情况就很不同，不知道从哪下手，总觉得每个地方入手都不够底层，害怕会有历史遗留问题。后来我想通了，那不妨转换思路，改成 &lt;strong&gt;自顶向下&lt;/strong&gt; ，从上层一步步往下，只写抽象的伪代码，不断的分解需求，直到不能再分解为止。&lt;/p&gt;
+&lt;p&gt;这个过程我就不断地进行状态模拟。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>从git到opengl项目管理</title>
         <link>https://blog.ztcdream.com/p/%E4%BB%8Egit%E5%88%B0opengl%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</link>
         <pubDate>Tue, 23 Dec 2025 20:18:16 +0800</pubDate>
