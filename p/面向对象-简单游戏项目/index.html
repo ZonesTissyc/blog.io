@@ -10,7 +10,7 @@
 <meta property='og:description' content="抽象化的代码架构\r面向对象可是C++区别于C的核心优势，最核心的好处是能提高代码复用。LearnOpenGL在每个单元后面都有一个类。\n一个基于OpenGL的C++游戏项目，最开始肯定是把所有的代码全放在一个main.cpp里。到后面知道了要将一些重复出现的代码分离，定义成一个函数。在了解了面向对象之后，终于不走弯路，把所有函数都写在类里面。\n最开始写的OpenGL项目是main+函数+部分类的形式。类化的代码多为导入的第三方库和高度封装这些库的类，main函数里面要搞定帧循环。而面向对象的终极目标，应该是main里相当简洁，只有一个类的初始化和结束，就像下面：\n1 2 3 4 5 6 7 8 #include &lt;application.h&gt; int main(){ Application app; app.run(); app.exit(); return 0; } main.cpp 里没有帧循环，程序全放在 application 类里。\n很容易写的类\rOpenGL项目，特别是游戏项目，一些类在早期就能写出来。\ncamera.h\r摄像机的类当然相当简单：\n记录 自身的世界坐标系位置Pos，上方向向量 Front，右方向向量以及欧拉角。\n设置一些函数可以 接收参数来 改变 这些值。\n设置一个函数，最终 返回 我们最想要的观察矩阵。\n这个类的目标是很明确的，最终是返回一个矩阵。有了这个目标，设置 private 和 methods 就很自然了。\nInputController.h\r这个类是与输入设备交互的类，要处理玩家的输入。如果有做过后端项目的话，就知道java web里有一个 Interceptor 类可以拦截所有的 Http 请求，由请求的内容跳转不同的逻辑。\n仿照这个java web的思路， InputController类应当处理所有的输入，并且在帧循环一开始就拦截，有且仅有一个拦截器，这样才不会乱套。\ncontroller控制谁呢？我觉得控制摄像机也行，控制玩家也可以。不用切换人称视角的话，直接控制摄像机更好些。\nwindow.h\r这个类的功能就很单一了：初始化glfw、glad，保存window指针。我们的项目里还记录了window的大小，以及设置调整窗口的函数。\n渲染逻辑\r在渲染画面的相关代码上，我们也走过不少弯路。一开始所有的VAO/VBO，shader全写在main里，导致main函数相当臃肿。后面还有各种模型model，网格mesh，动画animation，必须使用面向对象的思想。\n渲染画面部分的类要写好，就必须对渲染的流程十分了解。\n1.画面是一帧一帧生成的，因此有了帧循环。\n2.渲染初期要指定shaderPragram，而shaderPragram要提前编译好，编译时至少要指定vertexShader、framShader，于是就有了 shader.h 类。\n">
 <meta property='og:url' content='https://blog.ztcdream.com/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%AE%80%E5%8D%95%E6%B8%B8%E6%88%8F%E9%A1%B9%E7%9B%AE/'>
 <meta property='og:site_name' content='ZTC&#39;Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-01-03T22:48:47&#43;08:00'/><meta property='article:modified_time' content='2026-01-03T22:48:47&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-01-03T22:48:47&#43;08:00'/><meta property='article:modified_time' content='2026-01-04T00:14:07&#43;08:00'/>
 <meta name="twitter:title" content="面向对象-简单游戏项目">
 <meta name="twitter:description" content="抽象化的代码架构\r面向对象可是C++区别于C的核心优势，最核心的好处是能提高代码复用。LearnOpenGL在每个单元后面都有一个类。\n一个基于OpenGL的C++游戏项目，最开始肯定是把所有的代码全放在一个main.cpp里。到后面知道了要将一些重复出现的代码分离，定义成一个函数。在了解了面向对象之后，终于不走弯路，把所有函数都写在类里面。\n最开始写的OpenGL项目是main+函数+部分类的形式。类化的代码多为导入的第三方库和高度封装这些库的类，main函数里面要搞定帧循环。而面向对象的终极目标，应该是main里相当简洁，只有一个类的初始化和结束，就像下面：\n1 2 3 4 5 6 7 8 #include &lt;application.h&gt; int main(){ Application app; app.run(); app.exit(); return 0; } main.cpp 里没有帧循环，程序全放在 application 类里。\n很容易写的类\rOpenGL项目，特别是游戏项目，一些类在早期就能写出来。\ncamera.h\r摄像机的类当然相当简单：\n记录 自身的世界坐标系位置Pos，上方向向量 Front，右方向向量以及欧拉角。\n设置一些函数可以 接收参数来 改变 这些值。\n设置一个函数，最终 返回 我们最想要的观察矩阵。\n这个类的目标是很明确的，最终是返回一个矩阵。有了这个目标，设置 private 和 methods 就很自然了。\nInputController.h\r这个类是与输入设备交互的类，要处理玩家的输入。如果有做过后端项目的话，就知道java web里有一个 Interceptor 类可以拦截所有的 Http 请求，由请求的内容跳转不同的逻辑。\n仿照这个java web的思路， InputController类应当处理所有的输入，并且在帧循环一开始就拦截，有且仅有一个拦截器，这样才不会乱套。\ncontroller控制谁呢？我觉得控制摄像机也行，控制玩家也可以。不用切换人称视角的话，直接控制摄像机更好些。\nwindow.h\r这个类的功能就很单一了：初始化glfw、glad，保存window指针。我们的项目里还记录了window的大小，以及设置调整窗口的函数。\n渲染逻辑\r在渲染画面的相关代码上，我们也走过不少弯路。一开始所有的VAO/VBO，shader全写在main里，导致main函数相当臃肿。后面还有各种模型model，网格mesh，动画animation，必须使用面向对象的思想。\n渲染画面部分的类要写好，就必须对渲染的流程十分了解。\n1.画面是一帧一帧生成的，因此有了帧循环。\n2.渲染初期要指定shaderPragram，而shaderPragram要提前编译好，编译时至少要指定vertexShader、framShader，于是就有了 shader.h 类。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -479,7 +479,19 @@
 
         <span>Licensed under CC BY-NC-SA 4.0</span>
     </section>
-    </footer>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2026年1月4日 00:14
+        </span>
+    </section></footer>
 
 
     
