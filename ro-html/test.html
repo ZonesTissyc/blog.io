@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生化小测解析（AI） | Biochemistry Review Assistant</title>
+    <title>生物化学小测解析（AI） | Biochemistry Review Assistant</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
@@ -56,14 +56,6 @@
             padding: 1rem;
         }
 
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            height: 300px;
-            margin: 0 auto;
-        }
-
         .tab-active {
             border-bottom: 2px solid #3b82f6;
             color: #3b82f6;
@@ -76,8 +68,16 @@
         }
         
         .answer-list li {
-            margin-bottom: 1rem;
-            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .answer-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .animate-fade-in {
@@ -90,40 +90,42 @@
         }
 
         .def-hint {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             opacity: 0.9;
             margin-top: 0.5rem;
-            padding: 2px 8px;
-            border: 1px solid rgba(255,255,255,0.3);
-            background: rgba(255,255,255,0.15);
-            border-radius: 6px;
-            font-weight: 500;
+            padding: 4px 10px;
+            border: 1px solid rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            font-weight: 600;
         }
 
         .tooltip-custom {
             visibility: hidden;
-            width: 280px;
-            background-color: #1e293b;
-            color: #fff;
+            width: 320px;
+            background-color: #0f172a;
+            color: #f8fafc;
             text-align: left;
-            border-radius: 8px;
-            padding: 12px;
+            border-radius: 12px;
+            padding: 16px;
             position: absolute;
             z-index: 50;
             bottom: 110%;
             left: 50%;
-            margin-left: -140px;
+            margin-left: -160px;
             opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 0.75rem;
-            line-height: 1.4;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
             pointer-events: none;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .card-inner:hover .tooltip-custom {
             visibility: visible;
             opacity: 1;
+            transform: translateY(-5px);
         }
     </style>
 </head>
@@ -136,24 +138,22 @@
                     BC
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold text-slate-900">生物化学小测解析</h1>
-                    <p class="text-xs text-slate-500">分点解答 | 备考详尽版</p>
+                    <h1 class="text-xl font-bold text-slate-900">生物化学小测解析（AI）</h1>
+                    <p class="text-xs text-slate-500">备考详尽版</p>
                 </div>
             </div>
             <div class="hidden md:flex items-center gap-4 text-sm text-slate-500">
-                <span><i class="fas fa-calendar-alt mr-1"></i> 2025-2026 系列测试</span>
+                <span><i class="fas fa-microscope mr-1"></i> 生物复习系统</span>
             </div>
         </div>
     </header>
 
     <div class="flex flex-1 overflow-hidden max-w-7xl mx-auto w-full">
+        <!-- Desktop Sidebar Nav -->
         <nav class="hidden md:block w-64 bg-white border-r border-slate-200 overflow-y-auto flex-none">
             <div class="p-4 space-y-2">
-                <button onclick="switchTab('overview')" id="nav-overview" class="w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors tab-active flex items-center gap-3">
-                    <i class="fas fa-home w-5"></i> 总览 (Overview)
-                </button>
-                <div class="pt-4 pb-2 text-xs font-semibold text-slate-400 uppercase tracking-wider px-4">测试模块</div>
-                <button onclick="switchTab('test1')" id="nav-test1" class="w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors flex items-center gap-3">
+                <div class="pt-2 pb-2 text-xs font-semibold text-slate-400 uppercase tracking-wider px-4">复习模块列表</div>
+                <button onclick="switchTab('test1')" id="nav-test1" class="w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors tab-active flex items-center gap-3">
                     <i class="fas fa-dna w-5 text-teal-500"></i> Test 1 (核酸与信号)
                 </button>
                 <button onclick="switchTab('test2')" id="nav-test2" class="w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors flex items-center gap-3">
@@ -166,69 +166,80 @@
         </nav>
 
         <main class="flex-1 overflow-y-auto bg-slate-50 p-4 md:p-8" id="content-area">
-            <!-- VIEW: OVERVIEW -->
-            <div id="view-overview" class="space-y-6 animate-fade-in">
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-2">问答题精解</h2>
-                    <p class="text-slate-600">所有 12 道问答题的深度分点解释。每个分点均包含核心结论与具体的生化原理解析。</p>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
-                        <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fas fa-chart-pie text-blue-500"></i> 分值权重提示</h3>
-                        <div class="chart-container"><canvas id="structureChart"></canvas></div>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100 flex flex-col justify-center">
-                        <h3 class="font-bold text-slate-800 mb-4">学习策略建议</h3>
-                        <ul class="space-y-3 text-sm text-slate-600">
-                            <li class="flex items-start gap-2"><i class="fas fa-edit text-blue-500 mt-1"></i> <strong>关键词记忆：</strong> 问答题中加粗的部分是得分的关键酶或中间产物。</li>
-                            <li class="flex items-start gap-2"><i class="fas fa-sync text-green-500 mt-1"></i> <strong>逻辑链条：</strong> 重点关注信号传导和代谢计算的逻辑顺序，这是生化的精髓。</li>
-                        </ul>
-                    </div>
-                </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="md:hidden mb-6 sticky top-0 z-20 bg-slate-50/95 backdrop-blur-md pb-4 pt-2 border-b border-slate-200">
+                <label for="mobile-tab-select" class="block text-[10px] font-bold text-slate-400 uppercase tracking-tighter mb-2">切换测试模块</label>
+                <select id="mobile-tab-select" onchange="switchTab(this.value)" class="w-full bg-white border border-slate-200 rounded-xl p-4 text-sm font-bold text-slate-800 shadow-lg focus:ring-2 focus:ring-blue-500 outline-none appearance-none">
+                    <option value="test1">🧬 Test 1: 核酸代谢与信号传导</option>
+                    <option value="test2">🍞 Test 2: 糖代谢与氧化磷酸化</option>
+                    <option value="test3">🥓 Test 3: 脂质与氨基酸代谢</option>
+                </select>
             </div>
 
             <!-- VIEW: TEST 1 -->
-            <div id="view-test1" class="hidden space-y-8 animate-fade-in">
-                <div class="bg-gradient-to-r from-teal-500 to-emerald-600 rounded-xl p-6 text-white shadow-lg">
-                    <h2 class="text-2xl font-bold mb-2">Test 1: 核酸代谢与信号传导</h2>
+            <div id="view-test1" class="space-y-10 animate-fade-in">
+                <div class="bg-gradient-to-br from-teal-500 to-emerald-700 rounded-2xl p-8 text-white shadow-xl">
+                    <h2 class="text-3xl font-bold mb-3">Test 1: 核酸代谢与细胞通讯</h2>
+                    <p class="text-sm opacity-90 leading-relaxed">此部分核心为遗传物质的结构化学基础及细胞内基于受体的级联响应。重点复习 DNA 双螺旋物理参数、各种 RNA 的功能分工以及典型的 GPCR 通路。</p>
                 </div>
                 <section>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fas fa-sticky-note text-teal-500"></i> 名词解释</h3>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-2 h-8 bg-teal-500 rounded-full"></div>
+                        <h3 class="text-2xl font-bold text-slate-800">名词解释</h3>
+                    </div>
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" id="test1-flashcards"></div>
                 </section>
                 <section>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fas fa-pen-fancy text-teal-500"></i> 问答题深度解析</h3>
-                    <div class="space-y-4" id="test1-essays"></div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-2 h-8 bg-teal-500 rounded-full"></div>
+                        <h3 class="text-2xl font-bold text-slate-800">问答题精解</h3>
+                    </div>
+                    <div class="space-y-6" id="test1-essays"></div>
                 </section>
             </div>
 
             <!-- VIEW: TEST 2 -->
-            <div id="view-test2" class="hidden space-y-8 animate-fade-in">
-                <div class="bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl p-6 text-white shadow-lg">
-                    <h2 class="text-2xl font-bold mb-2">Test 2: 糖代谢与氧化磷酸化</h2>
+            <div id="view-test2" class="hidden space-y-10 animate-fade-in">
+                <div class="bg-gradient-to-br from-amber-500 to-orange-700 rounded-2xl p-8 text-white shadow-xl">
+                    <h2 class="text-3xl font-bold mb-3">Test 2: 糖代谢与生物能学</h2>
+                    <p class="text-sm opacity-90 leading-relaxed">能量代谢的核心。重点关注葡萄糖的分解与异生、TCA 循环的枢纽作用、氧化磷酸化的电子传递链以及糖原代谢在血糖平衡中的角色。</p>
                 </div>
                 <section>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fas fa-sticky-note text-amber-500"></i> 名词解释</h3>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-2 h-8 bg-amber-500 rounded-full"></div>
+                        <h3 class="text-2xl font-bold text-slate-800">名词解释</h3>
+                    </div>
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" id="test2-flashcards"></div>
                 </section>
                 <section>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fas fa-pen-fancy text-amber-500"></i> 问答题深度解析</h3>
-                    <div class="space-y-4" id="test2-essays"></div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-2 h-8 bg-amber-500 rounded-full"></div>
+                        <h3 class="text-2xl font-bold text-slate-800">问答题精解</h3>
+                    </div>
+                    <div class="space-y-6" id="test2-essays"></div>
                 </section>
             </div>
 
             <!-- VIEW: TEST 3 -->
-            <div id="view-test3" class="hidden space-y-8 animate-fade-in">
-                <div class="bg-gradient-to-r from-rose-500 to-pink-600 rounded-xl p-6 text-white shadow-lg">
-                    <h2 class="text-2xl font-bold mb-2">Test 3: 脂质与氨基酸代谢</h2>
+            <div id="view-test3" class="hidden space-y-10 animate-fade-in">
+                <div class="bg-gradient-to-br from-rose-500 to-pink-700 rounded-2xl p-8 text-white shadow-xl">
+                    <h2 class="text-3xl font-bold mb-3">Test 3: 脂质与蛋白质分解代谢</h2>
+                    <p class="text-sm opacity-90 leading-relaxed">侧重于脂肪酸的能量动员、酮体生成的生理意义、氨基酸脱氨基作用以及人体内毒性氨的转化排泄（尿素循环）。</p>
                 </div>
                 <section>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fas fa-sticky-note text-rose-500"></i> 名词解释</h3>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-2 h-8 bg-rose-500 rounded-full"></div>
+                        <h3 class="text-2xl font-bold text-slate-800">名词解释</h3>
+                    </div>
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" id="test3-flashcards"></div>
                 </section>
                 <section>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fas fa-pen-fancy text-rose-500"></i> 问答题深度解析</h3>
-                    <div class="space-y-4" id="test3-essays"></div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-2 h-8 bg-rose-500 rounded-full"></div>
+                        <h3 class="text-2xl font-bold text-slate-800">问答题精解</h3>
+                    </div>
+                    <div class="space-y-6" id="test3-essays"></div>
                 </section>
             </div>
         </main>
@@ -238,7 +249,7 @@
         const appData = {
             test1: {
                 terms: [
-                    { en: "Nucleoside", cn: "核苷", def: "核苷由碱基（嘌呤/嘧啶）与戊糖（核糖/脱氧核糖）通过N-糖苷键缩合而成。是核苷酸的基础构件。戊糖C1'与嘧啶N1或嘌呤N9相连。" },
+                    { en: "Nucleoside", cn: "核苷", def: "核苷由碱基（嘌呤或嘧啶）与戊糖（核糖或脱氧核糖）通过N-糖苷键缩合而成。是核苷酸的基础构件。戊糖C1'与嘧啶N1或嘌呤N9相连。" },
                     { en: "Agonist", cn: "激动剂", def: "能与特定受体结合并引起受体构象改变，从而激活下游信号通路并产生生物学效应的信号分子。与拮抗剂作用相反。" },
                     { en: "Base pair", cn: "碱基对", def: "核酸双链中碱基通过氢键遵循互补原则形成的配对。在DNA中，A-T形成2个氢键，G-C形成3个氢键，是DNA稳定性的基础。" },
                     { en: "G-tetraplex", cn: "G-四联体", def: "富含鸟嘌呤的序列形成的特殊四链螺旋结构，常见于染色体端粒区，对维持基因组稳定性和调控基因表达有重要意义。" },
@@ -254,151 +265,151 @@
                         q: "简述DNA双螺旋结构模型，并分析其生物学意义。", 
                         ans: `
                         <ul class="answer-list">
-                            <li><strong>1. 结构特征：</strong> DNA 是由两条反向平行的多核苷酸链绕共同轴心盘旋而成的右手双螺旋。脱氧核糖和磷酸骨架位于外部，碱基垂直指向内部并遵循 <strong>A=T, G≡C</strong> 互补配对原则。螺旋直径约 2nm，每圈包含 10.5 个碱基对，螺距 3.4nm。</li>
-                            <li><strong>2. 遗传稳定性：</strong> 内部密集的氢键和碱基堆积力共同维持了结构的极高热力学稳定性，这确保了遗传信息在世代传递过程中的物理安全，减少了突变的发生概率。</li>
-                            <li><strong>3. 复制机制的物理基础：</strong> 碱基互补原则使得 DNA 分子在复制时可以作为<strong>自动模板</strong>。两条链解开后，每一条链都能引导新链的精确合成（半保留复制），保证了遗传信息复制的忠实性。</li>
-                            <li><strong>4. 信息编码与表达：</strong> DNA 碱基序列的无限排列组合构成了遗传指令的数字化仓库。这种结构不仅利于储存大量信息，还利于蛋白质通过大沟、小沟识别并与之结合进行转录调控。</li>
+                            <li><strong>1. 结构特征解析：</strong> DNA 是两条反向平行的脱氧核糖核酸链围绕同一轴心形成的右手螺旋。磷酸与脱氧核糖交替连接构成外部骨架，带负电荷。碱基垂直伸入螺旋内部，遵循 <strong>A=T（2氢键）和 G≡C（3氢键）</strong> 的互补原则。螺旋直径约 2nm，每 10.5bp 为一个螺距（3.4nm）。</li>
+                            <li><strong>2. 物理化学稳定性：</strong> 内部碱基堆积力（主要）和氢键（次要）共同维持了结构的稳定性。这种稳定性保证了生物在面对环境扰动（如热运动、pH波动）时，遗传信息能够被安全、完整地储存，防止因结构崩塌导致的基因丢失。</li>
+                            <li><strong>3. 遗传信息复制的逻辑：</strong> 碱基互补原则不仅限定了结构，更提供了<strong>自动化的模板</strong>。复制时，亲代链解开，每一条单链都能精确指导互补子链的合成（半保留复制）。这种机制保证了遗传信息在世代交替中的高保真传递，是生命延续的基石。</li>
+                            <li><strong>4. 信息容量与调控：</strong> 碱基排列的无限可能性构成了生命的“数字编码”。双螺旋表面形成的大沟 (Major groove) 和小沟 (Minor groove) 为调节蛋白（如转录因子）提供了特异性的识别位点，使得基因表达能根据环境需求被精准调控。</li>
                         </ul>` 
                     },
                     { 
                         q: "DNA和RNA在化学组成和结构上有何区别？这些区别与其功能有何关系？", 
                         ans: `
                         <ul class="answer-list">
-                            <li><strong>1. 化学组成差异：</strong> DNA 的五碳糖为 <strong>2'-脱氧核糖</strong>，特有碱基为胸腺嘧啶 (T)；RNA 的五碳糖为 <strong>核糖</strong>，特有碱基为尿嘧啶 (U)。核糖 2'-OH 的存在使得 RNA 在化学性质上远比 DNA 活泼且易被水解。</li>
-                            <li><strong>2. 结构形态差异：</strong> DNA 通常以稳定的、长达数百万碱基对的双链螺旋形式存在；RNA 则通常为短得多的单链分子，但能通过分子内配对形成复杂的<strong>发夹、茎环</strong>等三级结构。</li>
-                            <li><strong>3. 功能逻辑分析：</strong> DNA 的脱氧结构和双链形式极大地增强了化学稳定性，使其进化为<strong>遗传信息的长期仓库</strong>。而 RNA 的不稳定性及其多样化的空间构象，使其更适合扮演<strong>瞬时信息传递者 (mRNA)</strong>、翻译适配器 (tRNA) 以及催化工具 (核酶) 等动态角色。</li>
+                            <li><strong>1. 化学成分的微调：</strong> DNA 使用 <strong>2'-脱氧核糖</strong> 且碱基包含胸腺嘧啶 (T)；RNA 使用 <strong>核糖</strong> 且包含尿嘧啶 (U)。核糖 2' 位上多出的 -OH 基团使得 RNA 极易发生自发水解或被酶攻击，而 DNA 则因此获得了极高的化学惰性，更适合作为长期信息仓库。</li>
+                            <li><strong>2. 结构形态的演化：</strong> DNA 多为超长、规则的双链螺旋结构，适合大规模打包和压缩；RNA 则多为短得多的单链分子，但能通过分子内配对形成 <strong>茎环 (Stem-loop)、发夹</strong> 等复杂三级结构。这些复杂构象赋予了 RNA 类似于蛋白质的分子识别和催化潜力。</li>
+                            <li><strong>3. 功能逻辑分析：</strong> DNA 的稳定性和长链化服务于<strong>遗传物质的持久储存</strong>。RNA 的“不稳定”和“灵活性”则服务于其多重动态功能：mRNA 负责信息的瞬时转递；tRNA 负责精确的翻译搬运；rRNA 甚至具有核酶活性，直接参与生化反应。这种分工体现了生物进化中“稳定性”与“功能性”的完美博弈。</li>
                         </ul>` 
                     },
                     { 
                         q: "参与蛋白质合成的RNA有哪些种类？它们各起什么作用？", 
                         ans: `
                         <ul class="answer-list">
-                            <li><strong>1. mRNA (信使 RNA)：</strong> 它是遗传信息的携带者。它将 DNA 上的密码子序列转录下来，并作为蛋白质合成的<strong>直接模板</strong>。它含有翻译起始信号、ORF（开放阅读框）和终止信号。</li>
-                            <li><strong>2. tRNA (转运 RNA)：</strong> 它是蛋白质合成的“翻译官”。其 3'-末端 CCA 序列连接特定的氨基酸，底部具有<strong>反密码子</strong>。它通过反密码子识别 mRNA 上的密码子，将正确的氨基酸按顺序转运至核糖体。</li>
-                            <li><strong>3. rRNA (核糖体 RNA)：</strong> 它是蛋白质合成的“车间”。rRNA 与蛋白质结合形成核糖体（大小亚基）。它不仅提供结构支架，其中的大亚基 rRNA 还具有<strong>肽酰转移酶活性</strong>，直接催化氨基酸之间肽键的形成。</li>
+                            <li><strong>1. mRNA (信使 RNA)：生命的图纸。</strong> 它是由 DNA 经转录产生的遗传信息载体。mRNA 上连续的<strong>密码子</strong>序列决定了待合成多肽链的氨基酸排列顺序。它作为翻译的直接模板，引导核糖体装配。</li>
+                            <li><strong>2. tRNA (转运 RNA)：氨基酸的搬运工与翻译机。</strong> 它是最小的 RNA 之一。3'-末端 CCA 序列负责负载特定的氨基酸，底部的<strong>反密码子环</strong>负责通过碱基互补识别 mRNA 上的密码子。它实现了从“核酸语言”到“氨基酸语言”的物理跨越。</li>
+                            <li><strong>3. rRNA (核糖体 RNA)：合成的车间与动力源。</strong> 它是含量最丰富的 RNA（约占 80%）。rRNA 与蛋白质结合形成核糖体的大小亚基。它不仅提供翻译所需的结构支架，其中的大亚基 rRNA 还具有 <strong>肽酰转移酶活性</strong> 的核酶，直接催化肽键的形成。</li>
                         </ul>` 
                     },
                     { 
                         q: "何为信号传导？试述肾上腺素在促进糖原降解中的级联放大过程。", 
                         ans: `
                         <ul class="answer-list">
-                            <li><strong>1. 信号传导概念：</strong> 指细胞通过受体识别并接收胞外化学信号（如激素），并通过胞内一系列分子开关（如磷酸化修饰）将信号逐级传递，最终引起代谢改变或基因表达变化的过程。</li>
-                            <li><strong>2. 第一级放大（受体激活）：</strong> 肾上腺素结合 <strong>GPCR</strong>（β-受体），诱导其构象改变并激活胞内的 <strong>Gs 蛋白</strong>。一个激活的受体可以激活多个 G 蛋白分子。</li>
-                            <li><strong>3. 第二级放大（酶活化）：</strong> 激活的 Gsα 激活 <strong>腺苷酸环化酶 (AC)</strong>。AC 催化 ATP 大量生成第二信使 <strong>cAMP</strong>，使胞内 cAMP 浓度瞬间升高数百倍。</li>
-                            <li><strong>4. 第三级放大（激酶瀑布）：</strong> cAMP 激活 <strong>蛋白激酶 A (PKA)</strong>。PKA 进而磷酸化 <strong>磷酸化酶激酶</strong>，后者再磷酸化 <strong>糖原磷酸化酶</strong>。每一层酶催化都能将信号放大数千倍，最终导致糖原在几秒钟内迅速分解，为机体提供紧急能量。</li>
+                            <li><strong>1. 信号传导核心概念：</strong> 指细胞接收胞外化学信号（如激素、生长因子），通过跨膜受体将其转化为胞内的一系列化学反应序列，最终引起细胞代谢状态或基因表达发生精准改变的生物学过程。</li>
+                            <li><strong>2. 初期放大 (受体与G蛋白)：</strong> 肾上腺素作为“第一信使”结合 <strong>GPCR (β-受体)</strong>。一个激活的受体可以连续激活数十个胞内三聚体 <strong>Gs 蛋白</strong>。这是第一层放大。</li>
+                            <li><strong>3. 二次放大 (酶促产物)：</strong> 活化的 Gsα 刺激 <strong>腺苷酸环化酶 (AC)</strong>。AC 作为催化剂，在短时间内催化成百上千个 ATP 分子转化为 <strong>cAMP</strong>（第二信使）。这是信号浓度的几何级增长。</li>
+                            <li><strong>4. 级联式效应响应：</strong> cAMP 变构激活 <strong>蛋白激酶 A (PKA)</strong>。PKA 磷酸化激活 <strong>磷酸化酶激酶</strong>，后者进一步磷酸化 <strong>糖原磷酸化酶</strong>。每一层酶的加入都呈指数级放大信号。最终，原本极微量的肾上腺素在秒级时间内导致成千上万个糖原分子降解为葡萄糖供能，体现了生化信号的高效性。</li>
                         </ul>` 
                     }
                 ]
             },
             test2: {
                 terms: [
-                    { en: "Glycolysis", cn: "糖酵解", def: "葡萄糖在胞质中分解生成丙酮酸的过程。净产生2个ATP和2个NADH。是所有生物获取能量的最基础途径。" },
-                    { en: "Pyruvate", cn: "丙酮酸", def: "糖代谢关键交叉点。有氧转为乙酰CoA；缺氧还原为乳酸；也是糖异生和脂类合成的重要碳源。" },
-                    { en: "Acetyl-CoA", cn: "乙酰辅酶A", def: "代谢核心枢纽。通过与草酰乙酸结合进入TCA循环，或作为脂类和酮体合成的原料。" },
-                    { en: "Gluconeogenesis", cn: "糖异生", def: "由非糖前体（乳酸、甘油等）在肝及肾中转化为葡萄糖的过程。功能是在饥饿下维持血糖水平。" },
-                    { en: "Glyoxylate cycle", cn: "乙醛酸循环", def: "存在于植物和微生物。旁路掉TCA的脱羧步骤，使乙酰CoA能异生成糖。实现脂肪向糖的净转化。" },
-                    { en: "Hexokinase", cn: "己糖激酶", def: "糖酵解第一个限速酶，将葡萄糖磷酸化为G-6-P。该步反应不可逆并消耗1分子ATP。" },
-                    { en: "Cori cycle", cn: "乳酸循环", def: "肌肉乳酸运往肝脏异生成糖，再回馈肌肉的循环。避免乳酸积聚并实现能量循环利用。" },
-                    { en: "Glycogen", cn: "糖原", def: "由葡萄糖构成的支链多糖。是动物能量储备形式，主要存在于肝和骨骼肌。" },
-                    { en: "Oxidative Phos.", cn: "氧化磷酸化", def: "代谢物脱下电子经呼吸链传递生成水，伴随质子梯度驱动ATP合酶产生ATP的过程。" },
-                    { en: "Ubiquinone", cn: "泛醌 (CoQ)", def: "线粒体呼吸链中脂溶性非蛋白载体。负责在复合体I/II与III之间传递电子并伴随质子跨膜转运。" }
+                    { en: "Glycolysis", cn: "糖酵解", def: "在细胞质中进行的一系列10步酶促反应。将1分子葡萄糖分解为2分子丙酮酸，同时净产2个ATP和2个NADH。是生命体获取能量最原始且最广泛的方式，可在缺氧条件下维持ATP供应。" },
+                    { en: "Pyruvate", cn: "丙酮酸", def: "糖、脂、氨基酸代谢的共同十字路口。有氧时经PDH转为乙酰CoA入TCA循环；缺氧时还原为乳酸（人）或乙醇（酵母）；亦可经糖异生转回葡萄糖。其去向受细胞能量状态和氧气供应调控。" },
+                    { en: "Acetyl-CoA", cn: "乙酰辅酶A", def: "代谢中的核心活性中间体。由糖、脂、蛋白质降解产生。它是TCA循环的起始底物，也是脂肪酸合成、胆固醇合成及酮体生成的共同原料。其乙酰基团通过硫酯键连接在CoA上，具有极高的反应活性。" },
+                    { en: "Gluconeogenesis", cn: "糖异生", def: "由非糖前体（如生糖氨基酸、乳酸、甘油及TCA循环中间体）在肝脏和肾脏中合成为葡萄糖的过程。它不是糖酵解的简单逆反应（绕过了3个限速步），主要生理意义是饥饿时维持血糖恒定。" },
+                    { en: "Glyoxylate cycle", cn: "乙醛酸循环", def: "多见于植物 and 微生物。它利用乙醛酸酶和苹果酸合酶，避开了TCA循环中的脱羧步骤（异柠檬酸→琥珀酸），使得2分子乙酰CoA能净合成1分子琥珀酸，进而异生成糖。实现脂肪转糖。" },
+                    { en: "Hexokinase", cn: "己糖激酶", def: "糖酵解的第一个限速酶。催化葡萄糖磷酸化为6-磷酸葡萄糖(G-6-P)，该步反应不可逆并消耗1个ATP。G-6-P对该酶具有强烈的反馈抑制作用，确保细胞根据自身对糖的需求来调节代谢速率。" },
+                    { en: "Cori cycle", cn: "乳酸循环", def: "肌肉在剧烈运动下产生的乳酸，通过血液运往肝脏。在肝脏内经糖异生重新合成为葡萄糖，葡萄糖释放入血后再次被肌肉利用。该循环既回收了能量，又避免了乳酸在肌肉中的堆积引起酸中毒。" },
+                    { en: "Glycogen", cn: "糖原", def: "由葡萄糖残基通过α-1,4-糖苷键（链）和α-1,6-糖苷键（支点）构成的高度支链化多糖。作为动物体内能量的快速动员库，主要储存于肝脏（调节血糖）和骨骼肌（剧烈运动供能）。" },
+                    { en: "Oxidative Phos.", cn: "氧化磷酸化", def: "代谢物脱下的电子经线粒体内膜呼吸链传递给氧生成水。在此过程中释放的自由能驱动H+跨膜，建立电化学梯度。质子流经ATP合酶驱动ADP磷酸化产生ATP。是真核细胞产生ATP的主渠道。" },
+                    { en: "Ubiquinone", cn: "泛醌 (CoQ)", def: "线粒体呼吸链中唯一的脂溶性非蛋白成分。由长疏水侧链（异戊二烯单元）和醌环组成。它能接受复合体I或II的电子并传递给复合体III，同时作为质子泵参与质子梯度的建立。" }
                 ],
                 essays: [
                     { 
                         q: "糖酵解关键代谢过程有哪些，其意义是什么？", 
                         ans: `
                         <ul class="answer-list">
-                            <li><strong>1. 三个限速步骤：</strong> 糖酵解由 10 步反应组成，其中有 3 个由变构酶催化的不可逆反应是关键：<strong>己糖激酶 (HK)</strong>、<strong>磷酸果糖激酶-1 (PFK-1)</strong> 和 <strong>丙酮酸激酶 (PK)</strong>。其中 PFK-1 是最重要的限速步骤。</li>
-                            <li><strong>2. 应急供能意义：</strong> 在剧烈运动或机体缺氧（如高原、呼吸障碍）时，它是唯一的 ATP 来源。虽然产能效率低（1G 产 2ATP），但速率快，能满足爆发性需求。</li>
-                            <li><strong>3. 代谢前体意义：</strong> 糖酵解中间体是许多生物合成的原料。例如：<strong>磷酸二羟丙酮</strong>可转化为 3-磷酸甘油（脂肪合成）；<strong>3-磷酸甘油酸</strong>可转化为丝氨酸。</li>
-                            <li><strong>4. 临床相关性：</strong> 成熟红细胞由于缺乏线粒体，完全依赖糖酵解维持生命；癌细胞即使在有氧条件下也倾向于糖酵解（Warburg效应），这为临床肿瘤成像（PET-CT）提供了理论基础。</li>
+                            <li><strong>1. 核心限速步骤：</strong> 糖酵解虽然包含 10 步反应，但代谢流向受三组不可逆反应调控：<strong>己糖激酶 (HK)</strong> 锁定葡萄糖；<strong>磷酸果糖激酶-1 (PFK-1)</strong> 是最重要的限速点，受 ATP 和柠檬酸抑制；<strong>丙酮酸激酶 (PK)</strong> 是最后的产能关卡。</li>
+                            <li><strong>2. 极端环境下生存的基础：</strong> 在剧烈运动（局部缺氧）或机体窒息等极度缺氧状态下，它是唯一能提供 ATP 的代谢途径。尽管每分子糖产 ATP 效率低，但由于通量巨大，能产生足够的能量支持生命体度过危机。</li>
+                            <li><strong>3. 物质合成的“预备车间”：</strong> 糖酵解提供了大量合成代谢的前体。例如，<strong>磷酸二羟丙酮</strong> 可转化为甘油（脂肪合成）；<strong>3-磷酸甘油酸</strong> 是丝氨酸合成的碳架。这使得糖代谢能灵活支援脂类和氨基酸的构建。</li>
+                            <li><strong>4. 特定细胞的生命线：</strong> 成熟红细胞完全缺乏线粒体，100% 依赖糖酵解供能。此外，神经组织和癌细胞（Warburg效应）也高度依赖糖酵解，这在临床医学（如 PET 扫描）中有重要应用价值。</li>
                         </ul>` 
                     },
                     { 
                         q: "TCA循环的重要代谢包括哪些，其意义是什么？", 
                         ans: `
                         <ul class="answer-list">
-                            <li><strong>1. 核心关键酶：</strong> TCA 循环在线粒体基质进行。其限速酶包括 <strong>柠檬酸合酶</strong>、<strong>异柠檬酸脱氢酶</strong> 和 <strong>α-酮戊二酸脱氢酶复合体</strong>。反应受 ATP、NADH 水平的严格负反馈调节。</li>
-                            <li><strong>2. 产能总汇：</strong> 它是三大营养物质（糖、脂、蛋白质）彻底氧化的共同终路。一分子乙酰 CoA 经一圈循环可产生 <strong>3 NADH, 1 FADH2, 1 GTP</strong>，随后通过氧化磷酸化产生大量 ATP。</li>
-                            <li><strong>3. 两用代谢中心（Amphibolic）：</strong> 它不仅是分解产能的中心，还提供了多种生物合成的中间体。如：<strong>草酰乙酸</strong>可用于糖异生；<strong>α-酮戊二酸</strong>和<strong>琥珀酰 CoA</strong>分别用于谷氨酸和血红素的合成。</li>
-                            <li><strong>4. 物质联系意义：</strong> 通过 TCA 循环，糖可以转化为脂，氨基酸可以进入能量代谢，是体内物质平衡和转化的核心枢纽。</li>
+                            <li><strong>1. 关键酶与调控逻辑：</strong> 循环在线粒体基质中运行。其“守门人”是 <strong>柠檬酸合酶</strong>，受 ATP 负反馈。随后 <strong>异柠檬酸脱氢酶</strong> 和 <strong>α-酮戊二酸脱氢酶复合体</strong> 连续发生氧化脱羧。反应受细胞能荷（ATP/NADH 水平）和钙离子严格调控。</li>
+                            <li><strong>2. 生物氧化的终极引擎：</strong> 它是糖、脂、蛋白质彻底氧化的共同终路。乙酰基团在此完全被氧化为 CO2。一圈循环产 <strong>3 NADH, 1 FADH2, 1 GTP</strong>，这些还原当量在呼吸链中能产生约 10 个 ATP。它是生命体最主要、最高效的能量来源。</li>
+                            <li><strong>3. 双向代谢中心 (Amphibolic Role)：</strong> 循环不仅是“终点”，也是“起点”。中间体如 <strong>草酰乙酸</strong> 可跨膜去糖异生；<strong>α-酮戊二酸</strong> 转氨后即为谷氨酸；<strong>琥珀酰 CoA</strong> 是合成血红素的必需原料。它实现了能量生产与物质合成的无缝对接。</li>
+                            <li><strong>4. 调控与整合：</strong> 通过 TCA 循环，身体可以精确感知能量水平。当 ATP 充足时，循环减慢，乙酰 CoA 被分流用于合成脂肪，体现了机体卓越的物质资源分配能力。</li>
                         </ul>` 
                     },
                     { 
                         q: "1个葡萄糖分子彻底氧化得到多少个ATP？请计算描述。", 
                         ans: `
                         <ul class="answer-list">
-                            <li><strong>1. 糖酵解阶段（胞质）：</strong> 产生 2 分子 ATP（底物水平磷酸化）和 2 分子 NADH。这 2 个 NADH 通过穿梭进入线粒体。若是<strong>苹果酸穿梭</strong>产生 5 ATP，<strong>甘油磷酸穿梭</strong>则产生 3 ATP。</li>
-                            <li><strong>2. 丙酮酸氧化脱羧（线粒体）：</strong> 2 分子丙酮酸转化为 2 乙酰 CoA，产生 <strong>2 NADH</strong>。进入呼吸链产生 <strong>5 ATP</strong>。</li>
-                            <li><strong>3. TCA 循环阶段（线粒体）：</strong> 2 个乙酰 CoA 运行两圈循环，产生 2 GTP (2 ATP)、6 NADH (15 ATP) 和 2 FADH2 (3 ATP)。总计 <strong>20 ATP</strong>。</li>
-                            <li><strong>4. 最终总计：</strong> 将上述三阶段累加，总能量收益为 <strong>30 或 32 ATP</strong>。这种差异主要取决于组织类型对穿梭机制的选择（心肝脑通常为 32，骨骼肌为 30）。</li>
+                            <li><strong>1. 糖酵解 (胞质)：</strong> 1 葡萄糖分解为 2 丙酮酸。直接产生 <strong>2 ATP</strong>。脱下的 2 NADH 需经穿梭。若用 <strong>苹果酸-天冬氨酸穿梭</strong> 产 5 ATP (2*2.5)；若用 <strong>甘油磷酸穿梭</strong> 产 3 ATP (2*1.5)。</li>
+                            <li><strong>2. 丙酮酸氧化脱羧 (线粒体)：</strong> 2 丙酮酸由 PDH 催化转化为 2 乙酰 CoA。此过程产生 <strong>2 NADH</strong>。进入呼吸链产生 <strong>5 ATP</strong> (2*2.5)。</li>
+                            <li><strong>3. TCA 循环阶段 (线粒体)：</strong> 2 乙酰 CoA 进行两圈循环。直接产生 <strong>2 GTP (2 ATP)</strong>。脱下 6 NADH (6*2.5 = 15 ATP) 和 2 FADH2 (2*1.5 = 3 ATP)。总计 <strong>20 ATP</strong>。</li>
+                            <li><strong>4. 最终总计：</strong> 将上述步骤合并，若按最高效率计算（苹果酸穿梭）：2 + 5 + 5 + 20 = <strong>32 ATP</strong>。这种高精度的能量计算展示了真核细胞利用线粒体实现能量提取的极致效率。</li>
                         </ul>` 
                     },
                     { 
                         q: "肝糖原和肌糖原是如何分解代谢以维持血糖的稳定和肌肉运动需要的？", 
                         ans: `
                         <ul class="answer-list">
-                            <li><strong>1. 分解共同路径：</strong> 两者都在糖原磷酸化酶作用下分解为 <strong>1-磷酸葡萄糖 (G-1-P)</strong>，随后转变为 6-磷酸葡萄糖 (G-6-P)。</li>
-                            <li><strong>2. 肝糖原的独特功能：</strong> 肝脏组织特异性表达 <strong>葡萄糖-6-磷酸酶</strong>。该酶能将 G-6-P 脱去磷酸生成自由葡萄糖并释放入血。这使得肝糖原成为空腹状态下<strong>血糖的最重要来源</strong>。</li>
-                            <li><strong>3. 肌糖原的自利性质：</strong> 肌肉缺乏 G-6-P 酶，因此分解产生的 G-6-P 无法转化为自由葡萄糖。它直接进入肌细胞内的糖酵解或有氧氧化路径，专门用于<strong>产生肌肉收缩所需的 ATP</strong>。</li>
-                            <li><strong>4. 生理调控差异：</strong> 肝糖原分解主要受胰高血糖素和肾上腺素调节，旨在保护大脑（维持血糖）；肌糖原分解则由肾上腺素和钙离子驱动，旨在支持剧烈运动。</li>
+                            <li><strong>1. 共同起始步骤：</strong> 糖原受<strong>糖原磷酸化酶</strong>攻击，从末端依次切割下葡萄糖残基生成 1-磷酸葡萄糖 (G-1-P)。随后经变位酶转变为 6-磷酸葡萄糖 (G-6-P)。这是分解的共有通路。</li>
+                            <li><strong>2. 肝脏的“利他性”：</strong> 肝脏具有特异性的 <strong>葡萄糖-6-磷酸酶</strong>。它能将 G-6-P 的磷酸根脱去，产生自由葡萄糖。该葡萄糖可穿过细胞膜进入血液，从而在进食间隔或饥饿状态下<strong>维持血糖水平恒定</strong>，保障大脑等器官的能量供应。</li>
+                            <li><strong>3. 肌肉的“自利性”：</strong> 骨骼肌细胞缺乏 G-6-P 酶。分解产生的 G-6-P 无法穿出细胞。它直接进入肌细胞内的糖酵解或有氧氧化路径。其目的纯粹是产生 ATP 供肌肉收缩利用，<strong>不对外补充血糖</strong>。</li>
+                            <li><strong>4. 激素调节差异：</strong> 肝糖原分解主要受<strong>胰高血糖素</strong>调控；肌糖原对胰高血糖素不敏感，主要由<strong>肾上腺素</strong>和神经冲动激发的钙离子驱动，服务于“战斗或逃跑”反应。</li>
                         </ul>` 
                     }
                 ]
             },
             test3: {
                 terms: [
-                    { en: "Fatty Acid", cn: "脂肪酸", def: "长烃链带羧基。脂质核心组分。分为饱和与不饱和类。作为中性脂肪和磷脂组分，是高效能量储备手段。" },
-                    { en: "Carnitine", cn: "肉碱", def: "脂肪酰基转运载体。协助长链脂肪酰CoA穿过线粒体内膜进入基质。是脂肪酸氧化的限速步骤。" },
-                    { en: "Malonyl-CoA", cn: "丙二酰辅酶A", def: "脂肪酸合成原料。能强烈抑制肉碱脂酰转移酶I(CPT-I)，从而阻止脂肪酸在合成时被氧化。" },
-                    { en: "β-oxidation", cn: "β-氧化", def: "脂肪酸在线粒体基质中经脱氢、加水、再脱氢、硫解，每轮释放1分子乙酰CoA的过程。" },
-                    { en: "Cholesterol", cn: "胆固醇", def: "调节生物膜流动性。是胆汁酸、类固醇激素及维生素D的前体。主要在肝脏合成。" },
-                    { en: "Ketone body", cn: "酮体", def: "肝产生的乙酰乙酸、β-羟丁酸和丙酮。作为向肝外组织（如心、脑）输送能源的便捷形式，饥饿时尤为重要。" },
-                    { en: "Transamination", cn: "转氨基作用", def: "转氨酶催化氨基酸氨基转移给α-酮酸的过程。不释放氨，主要利用维生素B6作为辅酶。" },
-                    { en: "Urea cycle", cn: "尿素循环", def: "肝脏将有毒游离氨转化为无毒尿素排出的循环。跨越线粒体和胞液两个场所。" },
-                    { en: "Nitrogen fix.", cn: "固氮作用", def: "固氮菌利用固氮酶将大气中分子氮(N2)还原为氨(NH3)的过程。自然界氮循环核心环节。" },
-                    { en: "Ubiquitin", cn: "泛素", def: "标记异常蛋白的小蛋白。共价结合后引导蛋白进入蛋白酶体进行降解。是蛋白质量控制的核心。" }
+                    { en: "Fatty Acid", cn: "脂肪酸", def: "一类长烃链带末端羧基的有机酸。中性脂肪和磷脂的核心组分。按饱和度分为饱和、单不饱和及多不饱和。脂肪酸是高效的能量密度储备（约38kJ/g），氧化时产生大量水，是动物越冬和候鸟迁徙的关键能源。" },
+                    { en: "Carnitine", cn: "肉碱", def: "一种左旋氨基酸衍生物。在脂肪酸代谢中充当“穿梭巴士”，由肉碱脂酰转移酶I(CPT-I)催化。它负责将胞质中的长链脂肪酰基运送到线粒体基质中进行β-氧化，是脂肪分解代谢的关键限速环节。" },
+                    { en: "Malonyl-CoA", cn: "丙二酰辅酶A", def: "脂肪酸从头合成路径中的首个中间体，由乙酰CoA羧化而成。它不仅是合成的原料，更是β-氧化的强效变构抑制剂。它通过阻断肉碱穿梭来阻止脂肪酸在合成的同时被分解，体现了代谢调节的协调性。" },
+                    { en: "β-oxidation", cn: "β-氧化", def: "脂肪酸在线粒体基质中进行的氧化路径。每一轮循环包括脱氢、加水、再脱氢和硫解四步。反应发生在脂肪酰基的β-碳原子上。每一轮使脂肪链缩短2个碳，并产生1个乙酰CoA及还原当量NADH和FADH2。" },
+                    { en: "Cholesterol", cn: "胆固醇", def: "类固醇化合物。是真核生物细胞膜的重要组成部分，调节膜的流动性。同时它是胆汁酸、维生素D3及所有类固醇激素（如皮质醇、性激素）合成的母体。主要在肝脏通过乙酰CoA多步缩合而成。" },
+                    { en: "Ketone body", cn: "酮体", def: "乙酰乙酸、β-羟丁酸和丙酮的统称。由肝脏线粒体在脂肪酸氧化旺盛但TCA循环受限时产生。酮体能溶于水，易于随血运往肝外组织（如大脑、心肌），在长期饥饿状态下是神经系统的主要能量代偿方案。" },
+                    { en: "Transamination", cn: "转氨基作用", def: "氨基酸脱氨基的主要方式。在转氨酶催化下，氨基酸的α-氨基转移给α-酮酸。辅酶通常为磷酸吡哆醛(Vit B6)。该过程实现了体内非必需氨基酸的相互转化，并未真正释放游离氨。" },
+                    { en: "Urea cycle", cn: "尿素循环", def: "哺乳动物排泄代谢氮的主要途径。在线粒体起始并于胞液中完成的一系列循环反应。将有毒的游离氨、CO2和天冬氨酸的氮结合形成无毒的尿素。每合成1分子尿素消耗约4个高能磷酸键。它是人体解毒功能的核心。" },
+                    { en: "Nitrogen fix.", cn: "固氮作用", def: "自然界氮循环的核心。由某些原核微生物（如根瘤菌）利用复杂的固氮酶复合体，在常温常压下将大气中极其稳定的分子氮(N2)还原为氨(NH3)的过程。该过程对氧气极度敏感且消耗大量能量。" },
+                    { en: "Ubiquitin", cn: "泛素", def: "一种含76个氨基酸的小分子球蛋白。它通过共价结合标记受损、变性或短寿命的靶蛋白。标记后的蛋白被引导至蛋白酶体(26S Proteasome)进行降解。它是细胞内调节蛋白浓度、维持蛋白质组稳态的核心分子。" }
                 ],
                 essays: [
                     { 
                         q: "饱和偶数碳脂肪酸的β-氧化在哪里发生，产物是什么，是如何进行的？", 
                         ans: `
                         <ul class="answer-list">
-                            <li><strong>1. 细胞定位：</strong> 主要发生于线粒体基质。长链脂肪酸需先在胞质中活化，并通过<strong>肉碱穿梭系统</strong>才能穿过线粒体内膜。</li>
-                            <li><strong>2. 四步循环反应：</strong> 每轮氧化包括：1) <strong>脱氢</strong>（产生 FADH2）；2) <strong>加水</strong>（生成羟基）；3) <strong>再脱氢</strong>（产生 NADH）；4) <strong>硫解</strong>（由 CoA 攻击释放乙酰 CoA）。</li>
-                            <li><strong>3. 产物构成：</strong> 每进行一轮 β-氧化，脂肪链缩短 2 个碳原子，同时产生 <strong>1 乙酰 CoA, 1 NADH 和 1 FADH2</strong>。最后的 4 碳丁酰 CoA 经最后一轮硫解直接产生 2 个乙酰 CoA。</li>
-                            <li><strong>4. 调控关键：</strong> 该过程主要受丙二酰 CoA 的变构抑制，以协调脂肪酸的合成与分解。</li>
+                            <li><strong>1. 亚细胞定位与入膜：</strong> 氧化主要在线粒体基质中进行。长链脂肪酸在胞质活化为脂肪酰 CoA 后，由于无法直接穿膜，必须借助<strong>肉碱穿梭系统</strong>（CPT-I, 转运蛋白, CPT-II）跨过线粒体内膜。这是代谢进入的“安检口”。</li>
+                            <li><strong>2. 经典的四步循环逻辑：</strong> 每轮氧化分为：1) <strong>脱氢</strong> (FAD受氢)；2) <strong>加水</strong> (β-位引入羟基)；3) <strong>再脱氢</strong> (NAD受氢)；4) <strong>硫解</strong> (由 CoA 攻击切割)。每一步反应都在脂肪链的 β-碳原子上进行。</li>
+                            <li><strong>3. 产物构成解析：</strong> 每经过一轮循环，脂肪链缩短 2 个碳，并向系统输出 <strong>1 分子乙酰 CoA、1 分子 NADH 和 1 分子 FADH2</strong>。最后一轮循环（针对 4 碳丁酰 CoA）直接分裂为 2 分子乙酰 CoA，无需额外循环。</li>
+                            <li><strong>4. 调控关键点：</strong> 该途径主要受 <strong>丙二酰 CoA</strong> 抑制。当机体饱食且脂肪酸合成活跃时，β-氧化会被迫停止，从而避免无效循环，体现了生化反应的资源优化原则。</li>
                         </ul>` 
                     },
                     { 
-                        q: "1分子16C饱和脂肪酸彻底氧化得到多少个ATP？请写出计算步骤。", 
+                        q: "1分子16C饱和脂肪酸彻底氧化得到多少个ATP？请计算描述。", 
                         ans: `
                         <ul class="answer-list">
-                            <li><strong>1. 脂肪酸活化：</strong> 脂肪酸活化为脂酰 CoA 消耗 1 ATP 的 2 个高能磷酸键（ATP -> AMP），故扣除 <strong>2 ATP</strong>。</li>
-                            <li><strong>2. β-氧化循环：</strong> 16C 脂肪酸需进行 <strong>(16/2)-1 = 7 轮</strong>循环。共产生 7 NADH 和 7 FADH2。能量收益 = 7×2.5 + 7×1.5 = <strong>28 ATP</strong>。</li>
-                            <li><strong>3. 乙酰 CoA 氧化：</strong> 16C 产生 16/2 = <strong>8 个乙酰 CoA</strong>。每个进入 TCA 循环产 10 ATP。能量收益 = 8 × 10 = <strong>80 ATP</strong>。</li>
-                            <li><strong>4. 最终结算：</strong> 总收益 = 28 (氧化) + 80 (TCA) - 2 (活化) = <strong>106 ATP</strong>。相比于等质量的糖，脂肪酸提供的能量密度极高。</li>
+                            <li><strong>1. 启动投资 (Activation Cost)：</strong> 脂肪酸在胞质中由脂酰 CoA 合成酶催化活化，虽然只涉及 1 个 ATP，但断裂了 2 个高能磷酸键（ATP → AMP），故必须在最终收益中<strong>扣除 2 个 ATP</strong>。</li>
+                            <li><strong>2. β-氧化循环收益：</strong> 16C 脂肪酸需进行 <strong>(16/2) - 1 = 7 轮</strong> 循环。总产出 = 7 NADH + 7 FADH2。能量换算：7*2.5 + 7*1.5 = <strong>28 ATP</strong>。</li>
+                            <li><strong>3. 乙酰 CoA 氧化收益：</strong> 16C 产生 16/2 = <strong>8 个乙酰 CoA</strong>。每个乙酰 CoA 进入 TCA 循环产 10 ATP (1 GTP, 3 NADH, 1 FADH2)。总收益 = 8 * 10 = <strong>80 ATP</strong>。</li>
+                            <li><strong>4. 最终资产核算：</strong> 总能量产出 = 28 (β-氧化产出) + 80 (TCA 产出) - 2 (初期投资) = <strong>106 ATP</strong>。相比于等质量葡萄糖产生约 32 ATP，脂肪酸的含能效率极高，反映了脂肪作为高密度储能物质的进化优势。</li>
                         </ul>` 
                     },
                     { 
                         q: "氨基酸分解代谢过程中，氨基基团与碳骨架的归宿如何？", 
                         ans: `
                         <ul class="answer-list">
-                            <li><strong>1. 氨基基团 (-NH2) 的归宿：</strong> 主要通过<strong>转氨基</strong>和<strong>联合脱氨基</strong>作用释放出游离氨。氨是有毒的，在肝脏中通过<strong>尿素循环</strong>转化为无毒尿素排出；部分氨也可用于合成新的非必需氨基酸、嘌呤、嘧啶或谷氨酰胺。</li>
+                            <li><strong>1. 氨基 (-NH2) 的归宿：</strong> 氨基通过联合脱氨基作用释放为游离氨。氨对中枢系统剧毒，绝大部分在肝脏进入<strong>尿素循环</strong>转化为无毒尿素排除。极少量用于合成非必需氨基酸、嘌呤、嘧啶，或者在肾脏中结合 H+ 形成铵盐排出以调节酸碱平衡。</li>
                             <li><strong>2. 碳骨架（α-酮酸）的三大出路：</strong>
-                                <br>A. <strong>氧化供能：</strong> 进入 TCA 循环彻底氧化产生 ATP、CO2 和 H2O。
+                                <br>A. <strong>氧化供能：</strong> 直接进入 TCA 循环彻底氧化产生 ATP、CO2 和 H2O。
                                 <br>B. <strong>生糖作用：</strong> 转化为丙酮酸、草酰乙酸等，通过糖异生合成葡萄糖（见于生糖氨基酸）。
-                                <br>C. <strong>生脂/生酮：</strong> 转化为乙酰 CoA 或乙酰乙酰 CoA，进而合成脂肪酸或酮体（见于生酮氨基酸，如亮氨酸、赖氨酸）。
-                            </li>
+                                <br>C. <strong>生脂/生酮：</strong> 转化为乙酰 CoA 或乙酰乙酰 CoA，进而合成脂肪酸或酮体（见于生酮氨基酸，如亮氨酸、赖氨酸）。</li>
+                            <li><strong>3. 生理整合意义：</strong> 这种分流机制确保了人体在蛋白质摄入过量或饥饿时，能将氨基酸转化为急需的能量或储备物质，体现了机体强大的“变废为宝”能力。</li>
                         </ul>` 
                     },
                     { 
                         q: "哺乳动物体内尿素循环途径如何，其生物学意义是什么。", 
                         ans: `
                         <ul class="answer-list">
-                            <li><strong>1. 循环核心步骤：</strong> 循环在线粒体中起始（合成氨基甲酰磷酸和瓜氨酸），在胞液中完成。关键中间产物包括 <strong>鸟氨酸、瓜氨酸、精氨酸代琥珀酸、精氨酸</strong>。最后由精氨酸酶水解精氨酸，释放尿素并重新生成鸟氨酸循环利用。</li>
-                            <li><strong>2. 解毒生物学意义：</strong> 氨是蛋白质代谢的产物，对中枢神经系统具有剧毒（干扰 TCA 循环及神经递质）。尿素循环是体内<strong>清除氨毒最有效、最主要的途径</strong>。</li>
-                            <li><strong>3. 代谢联系意义：</strong> 循环中的中间体精氨酸代琥珀酸可以裂解产生延胡索酸（TCA 中间体），从而建立了尿素循环与能量代谢（TCA 循环）之间的紧密联系，称为“克雷布斯双环”。</li>
+                            <li><strong>1. 跨场所循环机制：</strong> 循环在肝脏内进行。第一、二步反应在线粒体中（合成氨基甲酰磷酸和瓜氨酸）；后续反应转至胞液（生成精氨酸代琥珀酸、精氨酸并水解尿素）。这种亚细胞分工不仅能隔离毒性氨，还能利用线粒体的能量环境。</li>
+                            <li><strong>2. 绝对解毒意义：</strong> 氨是蛋白质降解产生的具有高度神经毒性的废物。尿素循环将极毒的氨转化为极易溶于水、无毒的<strong>尿素</strong>。如果此环节受阻（如肝功能衰竭），血氨升高会导致致命的肝性脑病（肝昏迷）。</li>
+                            <li><strong>3. 代谢成本与联系：</strong> 合成 1 分子尿素约消耗 4 个 ATP。循环通过产生的延胡索酸与 TCA 循环紧密相连（克雷布斯双环），实现了含氮废弃物处理与能量流动的深度整合。它是人体蛋白质营养平衡的“最终排污站”。</li>
                         </ul>` 
                     }
                 ]
@@ -412,19 +423,28 @@
             renderEssays('test1', appData.test1.essays, 'teal');
             renderEssays('test2', appData.test2.essays, 'amber');
             renderEssays('test3', appData.test3.essays, 'rose');
-            initChart();
+            
+            // 默认展示 Test 1
+            switchTab('test1');
         }
 
         function switchTab(tabId) {
-            ['overview', 'test1', 'test2', 'test3'].forEach(id => {
+            ['test1', 'test2', 'test3'].forEach(id => {
                 const view = document.getElementById('view-' + id);
                 if (view) view.classList.add('hidden');
                 const navBtn = document.getElementById('nav-' + id);
                 if (navBtn) navBtn.classList.remove('tab-active', 'bg-blue-50', 'text-blue-600');
             });
-            document.getElementById('view-' + tabId).classList.remove('hidden');
+            
+            const selectedView = document.getElementById('view-' + tabId);
+            if(selectedView) selectedView.classList.remove('hidden');
+            
             const activeBtn = document.getElementById('nav-' + tabId);
             if (activeBtn) activeBtn.classList.add('tab-active');
+            
+            // 同步移动端选择
+            const mobileSelect = document.getElementById('mobile-tab-select');
+            if (mobileSelect) mobileSelect.value = tabId;
         }
 
         function renderFlashcards(testId, terms, color) {
@@ -432,15 +452,19 @@
             container.innerHTML = terms.map(term => `
                 <div class="h-32 card-flip" onclick="this.querySelector('.card-inner').classList.toggle('is-flipped')">
                     <div class="card-inner relative">
-                        <div class="card-front flex-col p-2 text-center group">
-                            <span class="font-bold text-xs md:text-sm text-slate-700">${term.en}</span>
+                        <div class="card-front flex-col p-4 text-center">
+                            <span class="font-bold text-xs md:text-sm text-slate-700 leading-tight">${term.en}</span>
+                            <div class="mt-2 text-[8px] text-slate-300 uppercase tracking-widest font-bold">名词</div>
                         </div>
-                        <div class="card-back bg-${color}-500 p-2 text-center text-white">
-                            <span class="font-bold text-sm mb-1">${term.cn}</span>
-                            <div class="def-hint"><i class="fas fa-search-plus"></i> 悬停详解</div>
-                            <div class="tooltip-custom bg-slate-800 text-white border border-white/20">
-                                <div class="font-bold text-xs border-b border-white/20 pb-1 mb-1 text-${color}-300">${term.en} 详解:</div>
-                                ${term.def}
+                        <div class="card-back bg-${color}-500 p-4 text-center text-white border border-${color}-600">
+                            <span class="font-bold text-base mb-2">${term.cn}</span>
+                            <div class="def-hint"><i class="fas fa-search-plus"></i> 深度定义</div>
+                            <div class="tooltip-custom">
+                                <div class="font-bold text-xs border-b border-white/20 pb-2 mb-2 text-${color}-300 flex items-center justify-between">
+                                    <span>${term.en} 详解</span>
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <p class="text-[11px] leading-relaxed opacity-95">${term.def}</p>
                             </div>
                         </div>
                     </div>
@@ -451,16 +475,18 @@
         function renderEssays(testId, questions, color) {
             const container = document.getElementById(testId + '-essays');
             container.innerHTML = questions.map((item, index) => `
-                <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-sm">
-                    <button onclick="toggleAccordion(this)" class="w-full text-left p-4 flex justify-between items-center bg-slate-50 hover:bg-white transition-colors">
-                        <span class="font-bold text-slate-800 text-sm md:text-base leading-snug">Q${index + 1}. ${item.q}</span>
-                        <i class="fas fa-chevron-down text-slate-400 transition-transform ml-2"></i>
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <button onclick="toggleAccordion(this)" class="w-full text-left p-6 flex justify-between items-center bg-slate-50 hover:bg-white transition-colors group">
+                        <span class="font-bold text-slate-800 text-sm md:text-lg leading-snug group-hover:text-${color}-600 transition-colors">Q${index + 1}. ${item.q}</span>
+                        <i class="fas fa-chevron-down text-slate-300 group-hover:text-${color}-500 transition-all ml-4"></i>
                     </button>
-                    <div class="hidden p-6 border-t border-slate-100 bg-white text-slate-700 text-sm md:text-base animate-fade-in">
-                        <div class="mb-4 font-bold text-${color}-600 flex items-center gap-2 border-b border-${color}-100 pb-2">
-                            <i class="fas fa-check-circle"></i> 深度参考解答
+                    <div class="hidden p-8 border-t border-slate-100 bg-white text-slate-700 text-sm md:text-base animate-fade-in">
+                        <div class="mb-6 font-bold text-${color}-700 flex items-center gap-3 border-b-2 border-${color}-50 pb-3">
+                            <i class="fas fa-scroll"></i> 详尽参考答案与评分要点：
                         </div>
-                        ${item.ans}
+                        <div class="prose max-w-none text-slate-600">
+                            ${item.ans}
+                        </div>
                     </div>
                 </div>
             `).join('');
@@ -469,20 +495,13 @@
         function toggleAccordion(btn) {
             const content = btn.nextElementSibling;
             const icon = btn.querySelector('i');
+            const isHidden = content.classList.contains('hidden');
             content.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
+            icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
         }
 
         function initChart() {
-            const ctx = document.getElementById('structureChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['名词解释 (40分)', '问答题 (60分)'],
-                    datasets: [{ data: [40, 60], backgroundColor: ['#3b82f6', '#10b981'], borderWidth: 0 }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
-            });
+            // 已精简 UI，此处仅保留逻辑引用防止报错
         }
 
         window.addEventListener('load', init);
